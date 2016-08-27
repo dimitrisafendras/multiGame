@@ -1,0 +1,16 @@
+<svg id="agile_actors_logo_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.64 59.6" xml:space="preserve" width="100%" height="100%" preserveAspectRatio="xMaxYMax">
+  <defs>
+    <style>
+      #agile_actors_logo_icon .cls-1 {
+        fill: #1e88e5;
+      }
+
+      #agile_actors_logo_icon .cls-2 {
+        fill: #26c6da;
+      }
+    </style>
+  </defs>
+  <title>Agile-logo-4</title>
+  <path class="cls-1" d="M25.24,0.85a0.89,0.89,0,0,0-1.78,0L0.09,58.25a0.89,0.89,0,0,0,.43,1.18h0a0.89,0.89,0,0,0,1.26-.55L24.38,3.55l15.4,37.73,1,2.4L47,58.92a0.89,0.89,0,0,0,1.1.6h0.1a0.94,0.94,0,0,0,.46-1.2l-6.91-17-1-2.4Z" transform="translate(-0.01 0.04)"/>
+  <path class="cls-2" d="M57.58,58.16L37.17,7.87a0.89,0.89,0,0,0-1.78,0h0L19.32,47.34a0.12,0.12,0,0,0,0,.1l-0.06.17h0v0.1a1,1,0,0,0,1,.89h8.35a0.89,0.89,0,0,0,1-.77v0h0V47.7a0.89,0.89,0,0,0-.11-0.43l-4.07-10,10.86-26.7L55.92,58.81a0.89,0.89,0,0,0,1.1.6h0.1A1,1,0,0,0,57.58,58.16ZM27.27,46.84H21.45l2.89-7.1Z" transform="translate(-0.01 0.04)"/>
+</svg>
