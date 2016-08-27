@@ -3,9 +3,6 @@ import ValueProposition from './value-proposition';
 import Introduction from './introduction';
 import AgileActorsVision from './agile-actors-vision';
 
-//
-// Define the component
-//
 class About extends React.Component {
   render() {
     return (

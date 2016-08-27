@@ -1,10 +1,9 @@
 import React from 'react';
-import { useSheet } from 'components/common/jss';
 import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
-import { FlexContainer, Content } from 'components/common/content';
-import { default as canUseDOM } from 'can-use-dom';
-import { default as _ } from 'lodash';
+import canUseDOM from 'can-use-dom';
+import _ from 'lodash';
 import { triggerEvent } from 'react-google-maps/lib/utils';
+import { useSheet, FlexContainer, Content } from 'components/common';
 
 const content = {
   address: '62A Ethnikis Antistasis street, Chalandri 152 31 Attika, Greece',
@@ -41,7 +40,7 @@ const style = {
   },
 };
 
-export default class SimpleMapPage extends React.Component {
+class SimpleMapPage extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -111,8 +110,8 @@ export default class SimpleMapPage extends React.Component {
         />
     );
   }
-
 }
+
 function AgileMap({ sheet }) {
   const { classes } = sheet;
   return (
@@ -125,7 +124,7 @@ function AgileMap({ sheet }) {
         {content.address}
       </Content>
     </FlexContainer>
-);
+  );
 };
 
 AgileMap.propTypes = {

@@ -30,15 +30,13 @@ const style = {
   },
 };
 
-//
-// Define the component
-//
 const ValueProposition = ({ sheet }) => {
   const { classes } = sheet;
 
   return (
     <article>
-      <FlexContainer largeContainer
+      <FlexContainer
+        largeContainer
         column
         className={classes.container}>
 

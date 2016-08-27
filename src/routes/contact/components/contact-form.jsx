@@ -77,7 +77,7 @@ const config = {
   errorText: 'An error occured, please try again.',
 };
 
-export default class SubmitValidationForm extends React.Component {
+class SubmitValidationForm extends React.Component {
   static propTypes = {
     message: React.PropTypes.string,
     open: React.PropTypes.bool,

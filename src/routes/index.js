@@ -1,7 +1,12 @@
 // We only need to import the modules necessary for initial render
 import { ApplicationLayout } from 'layouts';
 import CounterRoute from './Counter';
-import Home from './home';
+import HomeRoute from './home';
+import BecomeAgileActorRoute from './become-agile-actor';
+import OrganizationsRoute from './organizations';
+import CareersView from './careers';
+import AboutView from './about';
+import ContactView from './contact';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -9,9 +14,14 @@ import Home from './home';
 export const createRoutes = (store) => ({
   path: '/',
   component: ApplicationLayout,
-  indexRoute: Home,
+  indexRoute: HomeRoute,
   childRoutes: [
     CounterRoute(store),
+    BecomeAgileActorRoute,
+    OrganizationsRoute,
+    CareersView,
+    AboutView,
+    ContactView,
   ],
 });
 
