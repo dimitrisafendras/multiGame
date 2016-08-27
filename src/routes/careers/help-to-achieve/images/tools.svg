@@ -1,0 +1,61 @@
+<svg id="achieve_tools_img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.74 156.93" xml:space="preserve" width="100%" height="100%" preserveAspectRatio="xMaxYMax">
+  <defs>
+    <style>
+      #achieve_tools_img .cls-1 {
+        fill: #f9a825;
+        opacity: 0.8;
+        isolation: isolate;
+      }
+
+      #achieve_tools_img .cls-2 {
+        fill: #d9d8d7;
+      }
+
+     #achieve_tools_img .cls-3 {
+        fill: #e6e5e5;
+      }
+
+      #achieve_tools_img .cls-4 {
+        fill: #fff;
+      }
+
+      #achieve_tools_img .cls-5 {
+        fill: #cccbca;
+      }
+
+      #achieve_tools_img .cls-6 {
+        fill: #c1c1c1;
+      }
+
+      #achieve_tools_img .cls-7 {
+        fill: #a5a5a5;
+      }
+
+      #achieve_tools_img .cls-8 {
+        fill: #898989;
+      }
+    </style>
+  </defs>
+  <title>achieve tools</title>
+  <g>
+    <polygon class="cls-1" points="40.29 156.93 0 65.41 72.04 0 158.74 47.32 138.14 146.18 40.29 156.93"/>
+    <g>
+      <polygon class="cls-2" points="61.69 81.48 85.2 97.05 85.2 65.81 61.69 81.48"/>
+      <polygon class="cls-3" points="108.71 81.48 85.2 97.05 85.2 65.81 108.71 81.48"/>
+      <polygon class="cls-4" points="85.2 65.81 61.69 81.48 48.83 72.84 72.34 57.17 85.2 65.81"/>
+      <polygon class="cls-4" points="85.2 65.81 108.71 81.48 121.57 72.84 98.06 57.17 85.2 65.81"/>
+      <polygon class="cls-5" points="85.2 81.38 64.7 95.04 85.2 108.71 105.59 95.04 85.2 81.38"/>
+      <polygon class="cls-6" points="61.69 81.48 61.69 108.81 85.2 124.48 85.2 97.05 61.69 81.48"/>
+      <polygon class="cls-7" points="108.71 81.48 108.71 108.81 85.2 124.48 85.2 97.05 108.71 81.48"/>
+      <polygon class="cls-8" points="108.71 81.48 108.71 108.81 92.73 119.46 85.2 97.05 108.71 81.48"/>
+      <polygon class="cls-4" points="121.57 90.02 98.06 105.69 85.2 97.05 108.71 81.48 121.57 90.02"/>
+      <polygon class="cls-4" points="48.83 90.02 72.34 105.69 85.2 97.05 61.69 81.48 48.83 90.02"/>
+      <g>
+        <path class="cls-4" d="M47.32,64.5a6,6,0,0,0-6,6,6,6,0,0,0-6-6,6,6,0,0,0,6-6A5.92,5.92,0,0,0,47.32,64.5Z" transform="translate(0 0)"/>
+        <path class="cls-4" d="M102.38,39.69A5.4,5.4,0,0,0,97,45.11a5.4,5.4,0,0,0-5.43-5.43A5.4,5.4,0,0,0,97,34.26,5.4,5.4,0,0,0,102.38,39.69Z" transform="translate(0 0)"/>
+        <path class="cls-4" d="M89.62,57.17a3.24,3.24,0,0,0-3.21,3.21,3.24,3.24,0,0,0-3.21-3.21A3.24,3.24,0,0,0,86.4,54,3.17,3.17,0,0,0,89.62,57.17Z" transform="translate(0 0)"/>
+        <path class="cls-4" d="M110.92,52.65A2.34,2.34,0,0,0,108.61,55a2.34,2.34,0,0,0-2.31-2.31,2.34,2.34,0,0,0,2.31-2.31A2.41,2.41,0,0,0,110.92,52.65Z" transform="translate(0 0)"/>
+      </g>
+    </g>
+  </g>
+</svg>

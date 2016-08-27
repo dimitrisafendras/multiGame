@@ -1,0 +1,86 @@
+<svg id="fourSteps_target_img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 197.37" xml:space="preserve" width="100%" height="100%" preserveAspectRatio="xMaxYMax">
+  <defs>
+    <style>
+     #fourSteps_target_img .cls-1 {
+        fill: #f7f7f7;
+      }
+
+     #fourSteps_target_img .cls-1:hover {
+        fill: #F48FB1;
+      }
+
+     #fourSteps_target_img .cls-01 {
+        pointer-events: none;
+      }
+
+      #fourSteps_target_img .cls-2, #fourSteps_target_img  .cls-4 {
+        fill: #991349;
+      }
+
+      #fourSteps_target_img .cls-2 {
+        opacity: 0.2;
+      }
+
+      #fourSteps_target_img .cls-11, #fourSteps_target_img  .cls-2 {
+        isolation: isolate;
+      }
+
+      #fourSteps_target_img .cls-3 {
+        fill: #c2185b;
+      }
+
+      #fourSteps_target_img .cls-5 {
+        fill: #ec407a;
+      }
+
+      #fourSteps_target_img .cls-6 {
+        fill: #d14b88;
+      }
+
+      #fourSteps_target_img .cls-7 {
+        fill: #bc286b;
+      }
+
+      #fourSteps_target_img .cls-8 {
+        fill: #f1f2f2;
+      }
+
+      #fourSteps_target_img .cls-9 {
+        fill: #f48fb1;
+      }
+
+      #fourSteps_target_img .cls-10 {
+        fill: #ffecb2;
+      }
+
+      #fourSteps_target_img .cls-11 {
+        fill: #3c2415;
+        opacity: 0.15;
+      }
+    </style>
+  </defs>
+  <title>coaching step target</title>
+  <g>
+    <circle class="cls-1" cx="128.09" cy="98.68" r="98.68"/>
+    <g class="cls-01">
+      <path class="cls-2" d="M95.2,151.47C94.91,160.22,113,167.31,135.55,168s41-5.15,41.32-13.9S159.08,137.66,136.52,137,95.5,142.81,95.2,151.47Z" transform="translate(0.02 0.4)"/>
+      <path class="cls-3" d="M165.21,79c0.88-26.25-14.58-48.13-34.9-50.27h2.24a4.73,4.73,0,0,1,1.17.1c20.81,1.46,36.75,23.72,35.88,50.36s-18.28,47.83-39.08,47.93h-1.17a17.36,17.36,0,0,1-2.24-.19C147.51,126.28,164.33,105.38,165.21,79Z" transform="translate(0.02 0.4)"/>
+      <path class="cls-4" d="M168,147l-3.4.39L154,116.85a49.89,49.89,0,0,0,5.44-6.42Z" transform="translate(0.02 0.4)"/>
+      <path class="cls-5" d="M128,28.57a4.73,4.73,0,0,1,1.17.1c0.39,0,.68.1,1.07,0.1C150.53,30.91,166,52.88,165.11,79S147.41,126.19,127,127h-2.24c-21.39-.68-38-23.24-37-50.46S106.58,27.89,128,28.57Z" transform="translate(0.02 0.4)"/>
+      <path class="cls-6" d="M115.52,125.31l-13.22,31.5L99,156.13,109.3,122.3A30.61,30.61,0,0,0,115.52,125.31Z" transform="translate(0.02 0.4)"/>
+      <path class="cls-7" d="M154.51,165l-3.4.39L137.4,125.6c2.63-.49,4.86-1.85,7.39-2.63Z" transform="translate(0.02 0.4)"/>
+      <ellipse class="cls-8" cx="126.43" cy="77.76" rx="39.38" ry="31.02" transform="translate(44.6 201.98) rotate(-88.13)"/>
+      <ellipse class="cls-5" cx="126.43" cy="77.76" rx="29.56" ry="23.24" transform="translate(44.6 201.97) rotate(-88.13)"/>
+      <ellipse class="cls-8" cx="126.43" cy="77.76" rx="19.64" ry="15.46" transform="translate(44.6 201.98) rotate(-88.13)"/>
+      <ellipse class="cls-5" cx="126.43" cy="77.76" rx="9.53" ry="7.49" transform="translate(44.6 201.98) rotate(-88.13)"/>
+      <g>
+        <path class="cls-3" d="M109.4,81.17a1.45,1.45,0,0,0,1.75-1.07L114,68a1.45,1.45,0,0,0-1.07-1.75L4.69,41a1.45,1.45,0,0,0-1.75,1.07L0.12,54.14a1.41,1.41,0,0,0,1.07,1.75Z" transform="translate(0.02 0.4)"/>
+        <path class="cls-8" d="M9.55,57.84L1.19,55.89A1.45,1.45,0,0,1,.12,54.14L2.94,42.09A1.45,1.45,0,0,1,4.69,41L13,43Z" transform="translate(0.02 0.4)"/>
+        <rect class="cls-9" x="2.15" y="48.52" width="15.36" height="3.01" transform="translate(-41.1 48.56) rotate(-76.79)"/>
+        <path class="cls-10" d="M107.16,78.35l3.4-2.43-2.24-2.82,3.31-2-1.85-3.31,3-1.46s12.35,4.57,11,10.11-14.49,4.86-14.49,4.86Z" transform="translate(0.02 0.4)"/>
+        <polygon class="cls-9" points="122.45 72.63 120.7 80.11 128.09 77.49 122.45 72.63"/>
+        <path class="cls-11" d="M0,54.14l1.36-5.83L126.61,77.57l-5.93,2.14V79.52c-3.6,1.65-8.94,1.65-10.69,1.65H109.4L9.55,57.84l-2.92-.68L1.19,55.89A1.44,1.44,0,0,1,0,54.14Z" transform="translate(0.02 0.4)"/>
+      </g>
+    </g>
+  </g>
+</svg>

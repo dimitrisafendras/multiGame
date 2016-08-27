@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 
-class AppContainer extends Component {
+class Application extends Component {
   static propTypes = {
     history: PropTypes.object.isRequired,
     routes: PropTypes.object.isRequired,
@@ -14,12 +14,10 @@ class AppContainer extends Component {
 
     return (
       <Provider store={store}>
-        <div style={{ height: '100%' }}>
-          <Router history={history} children={routes} />
-        </div>
+        <Router history={history} children={routes} />
       </Provider>
     );
   }
 }
 
-export default AppContainer;
+export default Application;

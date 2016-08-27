@@ -16,7 +16,7 @@ const webpackConfig = {
   devtool: config.compiler_devtool,
   resolve: {
     root: paths.client(),
-    extensions: ['', '.js', '.jsx', '.json'],
+    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss', '.sass', '.svg'],
   },
   module: {},
 };
@@ -271,7 +271,7 @@ webpackConfig.module.loaders.push(
     loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml',
   },
   {
-    test: /\.(png|jpg)$/,    loader: 'url?limit=8192',
+    test: /\.(png|jpg|gif)$/,    loader: 'url?limit=8192',
   },
 );
 /* eslint-enable */
