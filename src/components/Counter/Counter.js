@@ -1,20 +1,20 @@
 import React from 'react';
 import classes from './Counter.scss';
 
-export const Counter = (props) => (
+export const Counter = ({counter, doubleAsync, increment}) => (
   <div>
     <h2 className={classes.counterContainer}>
       Counter:
       {' '}
       <span className={classes['counter--green']}>
-        {props.counter}
+        {counter}
       </span>
     </h2>
-    <button className='btn btn-default' onClick={props.increment}>
+    <button className='btn btn-default' onClick={increment}>
       Increment
     </button>
     {' '}
-    <button className='btn btn-default' onClick={props.doubleAsync}>
+    <button className='btn btn-default' onClick={doubleAsync}>
       Double (Async)
     </button>
   </div>
