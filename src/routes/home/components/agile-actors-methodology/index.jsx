@@ -86,7 +86,7 @@ class AgileActorsMethodology extends React.Component {
               className={classes.container}>
               <FlexContainer
                 center
-                className={classNames(classes.imgWrapper, classes['itemImage_'+ index])}>
+                className={classNames(classes.imgWrapper, classes[`itemImage_${index}`])}>
                 <Content
                   image
                   className={classes.img}>
@@ -94,7 +94,7 @@ class AgileActorsMethodology extends React.Component {
                 </Content>
               </FlexContainer>
               <FlexContainer
-                className={classNames(classes.textWrapper, classes['itemText_'+ index])}
+                className={classNames(classes.textWrapper, classes[`itemText_${index}`])}
                 column>
                 <Content
                   title
@@ -133,7 +133,7 @@ class AgileActorsMethodology extends React.Component {
               key={`aa-methodology-${item.id}-item`}>
               <FlexContainer
                 center
-                className={classNames(classes.imgWrapper, classes['itemImage_'+ index])}>
+                className={classNames(classes.imgWrapper, classes[`itemImage_${index}`])}>
                 <Content
                   image
                   className={classes.img}>
@@ -141,7 +141,7 @@ class AgileActorsMethodology extends React.Component {
                 </Content>
               </FlexContainer>
               <FlexContainer
-                className={classNames(classes.textWrapper, classes['itemText_'+ index])}
+                className={classNames(classes.textWrapper, classes[`itemText_${index}`])}
                 column>
                 <Content
                   title
@@ -168,10 +168,7 @@ class AgileActorsMethodology extends React.Component {
 
     return (
       <article>
-        <Container
-          normalContainer
-          center
-          column>
+        <Container normalContainer>
           <FlexContainer
             center>
             <Content

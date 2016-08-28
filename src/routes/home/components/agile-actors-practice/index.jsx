@@ -294,8 +294,6 @@ class AgileActorsPractice extends React.Component {
       <article>
         <Container
           normalContainer
-          center
-          column
           className={classes.outerContainer}>
           <FlexContainer
             center>

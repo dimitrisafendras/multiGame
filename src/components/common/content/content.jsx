@@ -158,10 +158,18 @@ const makeClassesFromProps = (props, classes) => classNames(
   props.className
 );
 
+const cleanProps = (props) => Object.entries(props).reduce((cleanProps, [key, value]) => {
+  if (!defaultStyle[key]) {
+    cleanProps[key] = value;
+  }
+
+  return cleanProps;
+}, {});
+
 // Define the components
 export const Container = ({ className, ...rest }) => (
   <div
-    {...rest}
+    {...cleanProps(rest)}
     className={makeClassesFromProps({ className, ...rest }, classes)} />
 );
 
@@ -176,7 +184,7 @@ Container.displayName = 'Container';
 
 export const FlexContainer = ({ className, ...rest }) => (
   <Box
-    {...rest}
+    {...cleanProps(rest)}
     className={makeClassesFromProps({ className, ...rest }, classes)} />
 );
 
@@ -189,7 +197,7 @@ FlexContainer.displayName = 'FlexContainer';
 export const Content = ({ className, ...rest }) => (
   <div
     className={makeClassesFromProps({ className, ...rest }, classes)}
-    {...rest} />
+    {...cleanProps(rest)} />
 );
 
 Content.propTypes = {
