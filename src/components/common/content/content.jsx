@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { jss } from 'components/common/jss';
 import Box from 'components/common/box';
 import classNames from 'classnames';
@@ -158,13 +159,7 @@ const makeClassesFromProps = (props, classes) => classNames(
   props.className
 );
 
-const cleanProps = (props) => Object.entries(props).reduce((cleanProps, [key, value]) => {
-  if (!defaultStyle[key]) {
-    cleanProps[key] = value;
-  }
-
-  return cleanProps;
-}, {});
+const cleanProps = (props) => _.omit(props, Object.keys(defaultStyle));
 
 // Define the components
 export const Container = ({ className, ...rest }) => (
