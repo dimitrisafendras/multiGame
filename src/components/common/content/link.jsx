@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link as ReactLink } from 'react-router';
 
 import { classes, makeClassesFromProps } from './styles';
 
-export const Link = ({ className, ...rest }) => (
-  <ReactLink
-    {...rest}
-    className={makeClassesFromProps({ className, ...rest }, classes)} />
-);
+export class Link extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+  };
 
-Link.propTypes = {
-  className: React.PropTypes.string,
-};
-
-Link.displayName = 'Link';
+  render() {
+    const { className, ...rest } = this.props;
+    return (
+      <ReactLink
+        {...rest}
+        className={makeClassesFromProps({ className, ...rest }, classes)} />
+    );
+  }
+}
