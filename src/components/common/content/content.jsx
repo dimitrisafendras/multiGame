@@ -159,7 +159,8 @@ const makeClassesFromProps = (props, classes) => classNames(
   props.className
 );
 
-const cleanProps = (props) => _.omit(props, Object.keys(defaultStyle));
+const defaultStyleKeys = Object.keys(defaultStyle);
+const cleanProps = (props) => _.omit(props, defaultStyleKeys);
 
 // Define the components
 export const Container = ({ className, ...rest }) => (
