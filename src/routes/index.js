@@ -4,9 +4,9 @@ import CounterRoute from './Counter';
 import HomeRoute from './home';
 import BecomeAgileActorRoute from './become-agile-actor';
 import OrganizationsRoute from './organizations';
-import CareersView from './careers';
-import AboutView from './about';
-import ContactView from './contact';
+import CareersRoute from './careers';
+import AboutRoute from './about';
+import ContactRoute from './contact';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -14,14 +14,14 @@ import ContactView from './contact';
 export const createRoutes = (store) => ({
   path: '/',
   component: ApplicationLayout,
-  indexRoute: HomeRoute,
+  indexRoute: HomeRoute(store),
   childRoutes: [
     CounterRoute(store),
     BecomeAgileActorRoute,
     OrganizationsRoute,
-    CareersView,
-    AboutView,
-    ContactView,
+    CareersRoute,
+    AboutRoute,
+    ContactRoute,
   ],
 });
 

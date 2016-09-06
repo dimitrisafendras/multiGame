@@ -1,0 +1,1 @@
+define({  "title": "agile-actor",  "url": "localhost:5000",  "name": "agile-actor",  "version": "0.1.0",  "description": "agile-actor server boilerplate covering essentials for APIs",  "sampleUrl": false,  "apidoc": "0.2.0",  "generator": {    "name": "apidoc",    "time": "2016-05-09T16:51:13.234Z",    "url": "http://apidocjs.com",    "version": "0.16.1"  }});
