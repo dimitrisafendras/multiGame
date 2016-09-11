@@ -1,4 +1,8 @@
 import Koa from 'koa';
+import http from 'http';
+import IO from 'socket.io';
+import cookie from 'cookie';
+
 import convert from 'koa-convert';
 import webpack from 'webpack';
 import webpackConfig from '../build/webpack.config';
@@ -10,9 +14,17 @@ import config from '../config';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHMRMiddleware from './middleware/webpack-hmr';
 
+import {
+  appSetup,
+  appModules,
+} from './agile-actor/lib';
+
 const debug = _debug('app:server');
 const paths = config.utils_paths;
 const app = new Koa();
+
+// Agile Actor server setup
+appSetup(app);
 
 // Enable koa-proxy if it has been enabled in the config.
 if (config.proxy && config.proxy.enabled) {
@@ -22,9 +34,9 @@ if (config.proxy && config.proxy.enabled) {
 // This rewrites all routes requests to the root /index.html file
 // (ignoring file requests). If you want to implement isomorphic
 // rendering, you'll want to remove this middleware.
-app.use(convert(historyApiFallback({
-  verbose: false,
-})));
+// app.use(convert(historyApiFallback({
+//   verbose: false,
+// })));
 
 // ------------------------------------
 // Apply Webpack HMR Middleware
@@ -58,4 +70,7 @@ if (config.env === 'development') {
   app.use(serve(paths.dist()));
 }
 
-export default app;
+// Agile Actor server modules
+const server = appModules(app);
+
+export default server;

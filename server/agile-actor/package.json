@@ -1,0 +1,77 @@
+{
+  "name": "agile-actor",
+  "version": "0.1.0",
+  "description": "agile-actor server boilerplate covering essentials for APIs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "./node_modules/.bin/nodemon index.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill",
+    "lint": "eslint src/**/*.js",
+    "docs": "./node_modules/.bin/apidoc -i src/ -o static/docs"
+  },
+  "keywords": [
+    "agile-actor",
+    "api",
+    "koa",
+    "koa2",
+    "boilerplate",
+    "es6",
+    "thinky",
+    "passportjs"
+  ],
+  "apidoc": {
+    "title": "agile-actor",
+    "url": "localhost:5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agileactors/agile-actor"
+  },
+  "dependencies": {
+    "babel-core": "^6.5.1",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2016-node5": "^1.1.2",
+    "babel-preset-stage-0": "^6.5.0",
+    "bcrypt": "^0.8.5",
+    "cookie": "^0.3.1",
+    "glob": "^7.0.3",
+    "graph.ql": "^2.0.0",
+    "jsonwebtoken": "^6.2.0",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.1.0",
+    "koa-connect-history-api-fallback": "^0.3.1",
+    "koa-convert": "^1.2.0",
+    "koa-generic-session": "^1.10.2",
+    "koa-generic-session-rethinkdb": "^1.1.1",
+    "koa-graphql": "^0.5.1",
+    "koa-logger": "^2.0.0",
+    "koa-mount": "^2.0.0",
+    "koa-passport": "^2.1.1",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "passport-facebook": "^2.1.0",
+    "passport-github": "^1.1.0",
+    "passport-google-openidconnect": "0.0.4",
+    "passport-linkedin-oauth2": "^1.4.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "rethinkdbdash": "^2.3.21",
+    "socket.io": "^1.4.8",
+    "thinky": "^2.3.2"
+  },
+  "devDependencies": {
+    "apidoc": "^0.16.1",
+    "babel-eslint": "^6.0.2",
+    "babel-register": "^6.5.1",
+    "chai": "^3.5.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^9.0.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^5.0.1",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.8.1",
+    "supertest": "^1.2.0"
+  }
+}

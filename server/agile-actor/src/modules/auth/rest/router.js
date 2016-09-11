@@ -1,8 +1,8 @@
 import * as auth from './controller';
 
-export const baseUrl = '/auth';
+export const prefix = '/auth';
 
-export default [
+export const routes = [
   {
     method: 'POST',
     route: '/',
