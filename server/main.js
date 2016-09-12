@@ -1,7 +1,4 @@
 import Koa from 'koa';
-import http from 'http';
-import IO from 'socket.io';
-import cookie from 'cookie';
 
 import convert from 'koa-convert';
 import webpack from 'webpack';

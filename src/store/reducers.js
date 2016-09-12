@@ -10,6 +10,7 @@ export const makeRootReducer = (asyncReducers) => combineReducers({
 export const injectReducer = (store, { key, reducer }) => {
   store.asyncReducers[key] = reducer;
   store.replaceReducer(makeRootReducer(store.asyncReducers));
+  console.log(key, store.getState(), store);
 };
 
 export default makeRootReducer;

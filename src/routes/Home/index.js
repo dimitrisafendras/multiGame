@@ -7,8 +7,14 @@ import { onSignInAndOnSignOut } from './modules/user/user-actions';
 import { contentUpdate } from './modules/content/content-actions';
 
 export default (store) => {
-  injectReducer(store, { key: 'user', userReducer });
-  injectReducer(store, { key: 'content', contentReducer });
+  injectReducer(store, {
+    key: 'user',
+    reducer: userReducer,
+  });
+  injectReducer(store, {
+    key: 'content',
+    reducer: contentReducer,
+  });
 
   //
   // Asynchronous listener of the changes of the user's authentication state.
