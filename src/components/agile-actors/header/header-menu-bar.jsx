@@ -33,7 +33,6 @@ const style = {
 const tabKey = (link) => `aa-header-tabs--${link.replace(' ', '')}`;
 
 const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
-  console.log('--------XXXXXXX---', content);
   const activeTabIndex =
     content
       .filter((item) => (item.order === 1))

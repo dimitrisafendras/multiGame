@@ -16,9 +16,9 @@ const style = {
 
 const { classes } = jss.createStyleSheet(style).attach();
 
-export const Logo = ({className}) => (
+export const Logo = ({ className }) => (
   <Link to={'/'}>
-    <Content Image
+    <Content
       className={classNames(classes.img, className)}>
       <Images.AgileActorsLogo />
     </Content>

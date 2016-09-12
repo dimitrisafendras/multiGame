@@ -122,6 +122,28 @@ const Header = ({
 }) => {
   const { classes } = sheet;
 
+  const userIcon = !(user && user.email) ? (
+    <IconButton
+      style={style.headerMenuBar.button}
+      iconStyle={style.headerMenuBar.icon}
+      onClick={handleLoginRegisterTouchTap}>
+      <FontIcon
+        className={'material-icons'}>
+        person
+      </FontIcon>
+    </IconButton>
+    ) : (
+    <IconButton
+      style={style.headerMenuBar.button}
+      iconStyle={style.headerMenuBar.loggedInIcon}
+      onClick={onSignOut}>
+      <FontIcon
+        className={'material-icons'}>
+        person
+      </FontIcon>
+    </IconButton>
+  );
+
   return (
     <div className={classes.mainMenu}>
       <AppBar
@@ -148,29 +170,7 @@ const Header = ({
         <div style={
             style.headerMenuBar.mobile
           }>
-          {
-            !(user && user.email) ? (
-              <IconButton
-                style={style.headerMenuBar.button}
-                iconStyle={style.headerMenuBar.icon}
-                onClick={handleLoginRegisterTouchTap}>
-                <FontIcon
-                  className={'material-icons'}>
-                  person
-                </FontIcon>
-              </IconButton>
-              ) : (
-              <IconButton
-                style={style.headerMenuBar.button}
-                iconStyle={style.headerMenuBar.loggedInIcon}
-                onClick={onSignOut}>
-                <FontIcon
-                  className={'material-icons'}>
-                  person
-                </FontIcon>
-              </IconButton>
-            )
-          }
+          {userIcon}
         </div>
 
         <div style={style.headerMenuBar}>

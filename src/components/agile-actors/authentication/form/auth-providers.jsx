@@ -91,7 +91,6 @@ class AuthProviders extends React.Component {
       <Container className={container}>
         {content.providers.map(({ provider, backgroundColor }) =>
           <Button key={`aa-auth-provider-${provider}`}
-            provider={provider}
             className={providerWrapper}
             backgroundColor={backgroundColor}
             onTouchTap={function () { authProvider({ provider }); }}>
