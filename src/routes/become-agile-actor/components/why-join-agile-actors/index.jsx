@@ -135,7 +135,7 @@ const WhyJoinAgileActors = ({ sheet }) => {
           )}
 
         </FlexContainer>
-        <Button linkButton
+        <Button
           href={content.buttonLink}
           target={'_black'}
           className={classes.button}>

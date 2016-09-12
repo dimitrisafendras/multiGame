@@ -38,7 +38,6 @@ export const userOnAuthAndOnUnauth = (processResultAuth, processResultUnAuth) =>
     .then((response) => response.data.user)
     .then((user) => {
       if (user && user.email) {
-        console.log('model-service/user/Client authenticated:', user, user.currentLoginAttempt);
         processResultAuth(user);
         return;
       }

@@ -40,7 +40,7 @@ function JoinUs({ sheet }) {
           className={classes.text}>
           {content.text}
         </Content>
-        <Button linkButton href={content.buttonLink} target={'_black'}>
+        <Button href={content.buttonLink} target={'_black'}>
           {content.buttonLabel}
         </Button>
       </FlexContainer>
