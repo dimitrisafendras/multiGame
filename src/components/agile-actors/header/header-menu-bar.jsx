@@ -32,9 +32,10 @@ const style = {
 
 const tabKey = (link) => `aa-header-tabs--${link.replace(' ', '')}`;
 
-const HeaderMenuBar = ({ siteContent, link, activeRoute, sheet }) => {
+const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
+  console.log('--------XXXXXXX---', content);
   const activeTabIndex =
-    siteContent
+    content
       .filter((item) => (item.order === 1))
       .findIndex((item) => item.link === activeRoute);
 
@@ -43,7 +44,7 @@ const HeaderMenuBar = ({ siteContent, link, activeRoute, sheet }) => {
   return (
     <div className={classes.tabs}>
       <Tabs value={activeTabIndex}>
-        {siteContent.filter((item) => (item.order === 1)).map((item, index) => (
+        {content.filter((item) => (item.order === 1)).map((item, index) => (
           <Tab value={index}
             label={item.title}
             style={style.tab}
@@ -58,7 +59,7 @@ const HeaderMenuBar = ({ siteContent, link, activeRoute, sheet }) => {
 };
 
 HeaderMenuBar.propTypes = {
-  siteContent: React.PropTypes.array,
+  content: React.PropTypes.array,
   link: React.PropTypes.func,
   activeRoute: React.PropTypes.string,
   sheet: React.PropTypes.object,

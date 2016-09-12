@@ -55,7 +55,7 @@ const style = {
 
 class Sidebar extends React.Component {
   static propTypes = {
-    siteContent: React.PropTypes.array,
+    content: React.PropTypes.array,
     link: React.PropTypes.func,
     open: React.PropTypes.bool,
     toggleSidebar: React.PropTypes.func,
@@ -89,7 +89,7 @@ class Sidebar extends React.Component {
 
   render() {
     const { props, handleToggle } = this;
-    const { siteContent, link, sheet } = props;
+    const { content, link, sheet } = props;
     const { classes } = sheet;
 
     return (
@@ -137,7 +137,7 @@ class Sidebar extends React.Component {
 
         <div className={classes.divider}>
 
-          {siteContent.filter((item) => (item.order <= 2)).map((item) => (
+          {content.filter((item) => (item.order <= 2)).map((item) => (
             <MenuItem
               innerDivStyle={{
                 ...style.menuItem,

@@ -111,7 +111,7 @@ const style = {
 };
 
 const Header = ({
-  siteContent,
+  content,
   link,
   handleLeftIconButtonTouchTap,
   handleLoginRegisterTouchTap,
@@ -175,7 +175,7 @@ const Header = ({
 
         <div style={style.headerMenuBar}>
           <HeaderMenuBar
-            {...{ siteContent, link, activeRoute }}
+            {...{ content, link, activeRoute }}
           />
           { /* <ProfileAndSigninTab */ }
             { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
@@ -194,7 +194,7 @@ const Header = ({
  */
 
 Header.propTypes = {
-  siteContent: React.PropTypes.array,
+  content: React.PropTypes.array,
   link: React.PropTypes.func,
   handleLeftIconButtonTouchTap: React.PropTypes.func,
   handleLoginRegisterTouchTap: React.PropTypes.func,

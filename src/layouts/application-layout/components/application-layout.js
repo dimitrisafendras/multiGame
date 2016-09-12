@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, {
+  Component,
+  PropTypes,
+} from 'react';
 import muiTheme from 'styles/customized-mui-theme';
 
-import {
-  Styles,
-  Header,
-} from 'containers';
+import { Styles } from 'containers';
+import { Header } from '../containers';
 
 import {
   Sidebar,
@@ -78,7 +79,7 @@ export default class ApplicationLayout extends Component {
           /> */ }
         <div style={style.content}>
           {children}
-          { /* <Footer {...rest} /> */ }
+          <Footer {...rest} />
         </div>
       </Styles>
     );

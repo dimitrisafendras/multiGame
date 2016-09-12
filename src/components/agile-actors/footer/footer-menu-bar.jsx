@@ -2,11 +2,12 @@ import React from 'react';
 import { Container, FlexContainer, Content, Link } from 'components/common/content';
 import { useSheet } from 'components/common/jss';
 import muiTheme from 'styles/customized-mui-theme';
+
 // import { blueGrey400 } from 'material-ui/styles/colors';
 
 const linkKey = (link) => `nav-footer--${link.replace(' ', '')}`;
 
-const content = {
+const componentContent = {
   copyright: '© 2016 Agile Actors, All Rights Reserved',
 };
 
@@ -44,7 +45,7 @@ const style = {
   },
 };
 
-const FooterMenuBar = ({ siteContent, link, sheet }) => {
+const FooterMenuBar = ({ content, link, sheet }) => {
   const { classes } = sheet;
 
   return (
@@ -57,7 +58,7 @@ const FooterMenuBar = ({ siteContent, link, sheet }) => {
         wrap
         center
         className={classes.linksContainer}>
-        {siteContent.map((item) => (
+        {content.map((item) => (
           <Content
             key={linkKey(item.link)}
             className={classes.links}
@@ -73,7 +74,7 @@ const FooterMenuBar = ({ siteContent, link, sheet }) => {
         className={classes.copyrightContainer}>
         <Link to={'/'}
           className={classes.copyright}>
-          {content.copyright}
+          {componentContent.copyright}
         </Link>
       </Container>
     </FlexContainer>
@@ -81,7 +82,7 @@ const FooterMenuBar = ({ siteContent, link, sheet }) => {
 };
 
 FooterMenuBar.propTypes = {
-  siteContent: React.PropTypes.array,
+  content: React.PropTypes.array,
   link: React.PropTypes.func,
   sheet: React.PropTypes.object,
 };

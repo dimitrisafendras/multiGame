@@ -1,3 +1,7 @@
-import ApplicationLayout from './application-layout';
+import {
+  ApplicationLayout,
+} from './containers';
 
-export default ApplicationLayout;
+export {
+  ApplicationLayout,
+};
