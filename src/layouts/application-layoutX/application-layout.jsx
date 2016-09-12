@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Header from 'components/Header';
+import Header from 'components/HeaderX';
 import { Styles } from 'containers';
 
 export default class ApplicationLayout extends Component {

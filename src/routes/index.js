@@ -1,5 +1,5 @@
 // We only need to import the modules necessary for initial render
-import { ApplicationLayout } from 'layouts';
+import { ApplicationLayout } from 'containers';
 import CounterRoute from './Counter';
 import HomeRoute from './home';
 import BecomeAgileActorRoute from './become-agile-actor';
