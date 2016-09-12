@@ -43,7 +43,6 @@ export const userOnAuthAndOnUnauth = (processResultAuth, processResultUnAuth) =>
         return;
       }
 
-      console.log('modelservice/user/Client unauthenticated.', (user && user.currentLoginAttempt));
       processResultUnAuth(user);
     })
   ));
