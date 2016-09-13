@@ -3,7 +3,7 @@ import { Content, FlexContainer } from 'components/common/content';
 import { useSheet } from 'components/common/jss';
 import muiTheme from 'styles/customized-mui-theme';
 import classNames from 'classnames';
-import Form from './form';
+import { Form } from './form';
 
 //
 // Define the content of the component.
