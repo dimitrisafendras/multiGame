@@ -38,7 +38,7 @@ export const signOut = () => (dispatch) => userUnAuthanticate(() => null);
 // authentication state. It dispatches a signedIn(user) action when a user
 // signes in and a signedOut(null) action when a user signes out.
 //
-export const onSignInAndOnSignOut = () => (dispatch) => userOnAuthAndOnUnauth(
+export const onSignInAndOnSignOut = (dispatch) => userOnAuthAndOnUnauth(
   (user) => {
     dispatch(signedIn(user));
     dispatch(push('/BecomeAgileActor'));

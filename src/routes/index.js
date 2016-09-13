@@ -29,7 +29,7 @@ export const createRoutes = (store) => {
   // user auth state changes from auth to unauth or vise versa, invokes the
   // store dispatcher for the signedIn and signedOut actions respectivelly.
   //
-  store.dispatch(onSignInAndOnSignOut());
+  store.dispatch(onSignInAndOnSignOut);
 
   //
   // Initialize static content
