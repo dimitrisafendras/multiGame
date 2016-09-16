@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+
 import classNames from 'classnames';
+
 import muiTheme from 'styles/customized-mui-theme';
-import Images from './images';
+
+import { AgileActorsLogo } from './images';
 import {
   jss,
   Content,
@@ -14,13 +17,12 @@ const style = {
   },
 };
 
-const { classes } = jss.createStyleSheet(style).attach();
+const { classes: { img } } = jss.createStyleSheet(style).attach();
 
 export const Logo = ({ className }) => (
   <Link to={'/'}>
-    <Content
-      className={classNames(classes.img, className)}>
-      <Images.AgileActorsLogo />
+    <Content className={classNames(img, className)}>
+      <AgileActorsLogo />
     </Content>
   </Link>
 );

@@ -5,7 +5,7 @@ import {
   jss,
   Content,
 } from 'components/common';
-import Images from './images';
+import { AgileActorsLogoIcon } from './images';
 
 const style = {
   img: {
@@ -20,11 +20,11 @@ const style = {
 
 const { classes } = jss.createStyleSheet(style).attach();
 
-export const SquareLogo = (props) => (
-  <Link to={'/'} {...props}>
+export const SquareLogo = ({ className, ...rest }) => (
+  <Link to={'/'} {...rest}>
     <Content Image
-      className={classNames(classes.img, props.className)}>
-      <Images.AgileActorsLogoIcon />
+      className={classNames(classes.img, className)}>
+      <AgileActorsLogoIcon />
     </Content>
   </Link>
 );
