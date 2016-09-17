@@ -3,21 +3,9 @@ import { Link } from 'react-router';
 
 import classNames from 'classnames';
 
-import muiTheme from 'styles/customized-mui-theme';
-
+import { Content } from 'components';
 import { AgileActorsLogo } from './images';
-import {
-  jss,
-  Content,
-} from 'components';
-
-const style = {
-  img: {
-    height: muiTheme.appBar.logoHeight,
-  },
-};
-
-const { classes: { img } } = jss.createStyleSheet(style).attach();
+import { img } from './style';
 
 type Props = {
   className?: string,
