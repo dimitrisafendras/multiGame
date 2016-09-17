@@ -1,34 +1,19 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
-import {
-  jss,
-  Content,
-} from 'components';
+import { Content } from 'components';
 import { AgileActorsLogoIcon } from './images';
+import { imgSquare } from './style';
 
-const style = {
-  img: {
-    height: '110px',
-    width: '100px',
-    marginTop: '10px',
-    marginBottom: '20px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
+type Props = {
+  className?: string,
 };
 
-const { classes } = jss.createStyleSheet(style).attach();
-
-export const SquareLogo = ({ className, ...rest }) => (
+export const SquareLogo = ({ className, ...rest } : Props) => (
   <Link to={'/'} {...rest}>
     <Content Image
-      className={classNames(classes.img, className)}>
+      className={classNames(imgSquare, className)}>
       <AgileActorsLogoIcon />
     </Content>
   </Link>
 );
-
-SquareLogo.propTypes = {
-  className: PropTypes.string,
-};
