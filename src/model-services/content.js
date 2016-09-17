@@ -3,16 +3,16 @@ const NavigationContents = {
     becomeAgileActor: {
       title: 'Become an Agile Actor',
       link: '/BecomeAgileActor',
+      order: 2,
+    },
+    organizations: {
+      title: 'Organizations',
+      link: '/Organizations',
       order: 1,
     },
     careers: {
       title: 'Careers',
       link: '/Careers',
-      order: 1,
-    },
-    organizations: {
-      title: 'Organizations',
-      link: '/Organizations',
       order: 1,
     },
     about: {

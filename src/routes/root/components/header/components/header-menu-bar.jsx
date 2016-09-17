@@ -9,14 +9,15 @@ import {
 const style = {
   tabs: {
     position: 'absolute',
-    top: 0,
-    right: 0,
+    top: '0px',
+    right: '30px',
     width: '100%',
     paddingRight: '68px',
     paddingLeft: '320px',
-    lineHeight: '68px',
+    lineHeight: '58px',
     boxSizing: 'border-box',
     zIndex: 1100,
+    maxWidth: '700px',
   },
   tab: {
     height: muiTheme.appBar.height,
