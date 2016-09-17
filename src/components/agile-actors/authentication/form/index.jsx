@@ -1,9 +1,5 @@
-import Form from './form';
-import AuthForm from './auth-form';
-import AuthProviders from './auth-providers';
+import { Form } from './containers';
 
 export {
   Form,
-  AuthForm,
-  AuthProviders,
 };

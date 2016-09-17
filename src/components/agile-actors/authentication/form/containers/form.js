@@ -1,14 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { signIn } from 'layouts/application-layout/modules/user/user-actions';
+
+import {
+  AuthProviders as AuthorizationProviders,
+  AuthForm as AuthorizationForm,
+} from '../components';
+
 import {
   Content,
   FlexContainer,
   useSheet,
 } from 'components/common';
 
-import {
-  AuthProviders,
-  AuthForm,
-} from 'containers';
+const authConnect = connect(
+  (state) => ({}),
+  (dispatch) => ({
+    authProvider: (options) => { // { provider, email, password}
+      dispatch(signIn(options));
+    },
+  })
+);
+
+const AuthProviders = authConnect(AuthorizationProviders);
+const AuthForm = authConnect(AuthorizationForm);
 
 //
 // Define the content of the component.

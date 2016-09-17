@@ -12,7 +12,6 @@ import muiTheme from 'styles/customized-mui-theme';
 import { Logo } from 'components/agile-actors';
 
 // import ProfileAndSigninTab from './profile-and-signin-tab';
-// var classNames = require('classnames/bind');
 
 const style = {
   appBar: {
@@ -185,13 +184,6 @@ const Header = ({
     </div>
   );
 };
-
-/**
- *
- <ProfileAndSigninTab
- handleLoginRegisterTouchTap={handleLoginRegisterTouchTap}
- />
- */
 
 Header.propTypes = {
   content: React.PropTypes.array,
