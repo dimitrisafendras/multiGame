@@ -1,39 +1,6 @@
-import React from 'react';
-import {
-  Content,
-  FlexContainer,
-  useSheet,
-} from 'components';
 import muiTheme from 'styles/customized-mui-theme';
-import classNames from 'classnames';
-import { Form } from './form';
 
-//
-// Define the content of the component.
-//
-const content = {
-  login: {
-    title: 'Create an account',
-    text:
-      `Phasellus, nostra dicta natus lectus dolor metus, ratione illum donec lacinia
-      ducimus harum doloremque autem vitae eleifend deleniti delectus voluptates.
-      Itaque. Veniam volutpat vivamus, ullamco minim.`,
-    button: 'register',
-  },
-  register: {
-    title: 'Already have an account?',
-    text:
-      `Phasellus, nostra dicta natus lectus dolor metus, ratione illum donec lacinia
-      ducimus harum doloremque autem vitae eleifend deleniti delectus voluptates.
-      Itaque. Veniam volutpat vivamus, ullamco minim.`,
-    button: 'login',
-  },
-};
-
-//
-// Define the CSS styles of the component.
-//
-const style = {
+export const style = {
   formContainer: {
     backgroundColor: muiTheme.palette.white,
     color: muiTheme.palette.grey600,
@@ -116,50 +83,3 @@ const style = {
     },
   },
 };
-
-//
-// Define the component.
-//
-function LoginRegister({ sheet, mode, changeMode }) {
-  const { classes } = sheet;
-
-  return (
-    <FlexContainer>
-      <FlexContainer center
-        className={classNames(classes.formContainer, mode)}>
-        <Form mode={mode} />
-      </FlexContainer>
-      <FlexContainer
-        container
-        column
-        className={classes.instructions}>
-        <Content
-          text
-          className={classes.title}>
-          {content[mode].title}
-        </Content>
-        <Content
-          text
-          className={classes.text}>
-          {content[mode].text}
-        </Content>
-        <button
-          className={classes.button}
-          onTouchTap={function () {
-            changeMode(content[mode].button);
-          }}
-          >
-          {content[mode].button}
-        </button>
-      </FlexContainer>
-    </FlexContainer>
-  );
-};
-
-LoginRegister.propTypes = {
-  sheet: React.PropTypes.object,
-  mode: React.PropTypes.string,
-  changeMode: React.PropTypes.func,
-};
-
-export default useSheet(LoginRegister, style);

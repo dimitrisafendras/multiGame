@@ -19,14 +19,14 @@ const style = {
 
 const { classes: { img } } = jss.createStyleSheet(style).attach();
 
-export const Logo = ({ className }) => (
+type Props = {
+  className?: string,
+};
+
+export const Logo = ({ className } : Props) => (
   <Link to={'/'}>
     <Content className={classNames(img, className)}>
       <AgileActorsLogo />
     </Content>
   </Link>
 );
-
-Logo.propTypes = {
-  className: PropTypes.string,
-};
