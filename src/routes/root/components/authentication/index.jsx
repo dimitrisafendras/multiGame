@@ -1,4 +1,4 @@
-import Authentication from './authentication';
+import Authentication from './containers/authentication';
 
 export {
   Authentication,

@@ -2,17 +2,15 @@ export const content = {
   login: {
     title: 'Create an account',
     text:
-      `Phasellus, nostra dicta natus lectus dolor metus, ratione illum donec lacinia
-      ducimus harum doloremque autem vitae eleifend deleniti delectus voluptates.
-      Itaque. Veniam volutpat vivamus, ullamco minim.`,
+      `If you don't have an account yet,
+      proceed to registration and become a member of
+      Agile Actors. Tech Professionals that work, learn and coach.`,
     button: 'register',
   },
   register: {
     title: 'Already have an account?',
     text:
-      `Phasellus, nostra dicta natus lectus dolor metus, ratione illum donec lacinia
-      ducimus harum doloremque autem vitae eleifend deleniti delectus voluptates.
-      Itaque. Veniam volutpat vivamus, ullamco minim.`,
+      `If you already have an account, just proceed to login.`,
     button: 'login',
   },
 };
