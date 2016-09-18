@@ -1,7 +1,4 @@
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
+import React, { PropTypes, Component } from 'react';
 import muiTheme from 'styles/customized-mui-theme';
 
 import {
@@ -24,11 +21,13 @@ const style = {
   },
 };
 
+type Props = {
+  children: PropTypes.element,
+  location: Object,
+}
+
 class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.element,
-    location: PropTypes.object,
-  };
+  props: Props;
 
   constructor(props) {
     super(props);

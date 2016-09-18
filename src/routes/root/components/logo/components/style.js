@@ -15,9 +15,14 @@ const style = {
   },
 };
 
-export const {
+const {
   classes: {
     img,
     imgSquare,
   },
 } = jss.createStyleSheet(style).attach();
+
+export {
+  img,
+  imgSquare,
+};

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Collapse from 'react-collapse';
 import { presets } from 'react-motion';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -22,8 +21,8 @@ const content = {
 type Props = {
   open: boolean,
   toggleAuthentication: () => void,
-  sheet: object,
-  user: object,
+  sheet: Object,
+  user: Object,
 };
 
 class Authentication extends Component {
@@ -97,7 +96,6 @@ class Authentication extends Component {
   render() {
     const { props } = this;
     const { classes } = props.sheet;
-    const _this = this;
 
     return (
       <article
