@@ -13,12 +13,12 @@ const authUser = (
   .then((response) => (response.data.user))
   .then(onSuccess)
   .catch(onError);
-  return;
 };
 
 export const userAuthanticate = (processResult, { provider, email, password }) => {
   if (provider === 'local') {
     authUser({ email, password }, processResult, processResult);
+    return;
   }
 
   window.open(
