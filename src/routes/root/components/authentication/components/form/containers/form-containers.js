@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { signIn } from 'routes/root/modules/user/user-actions';
+import {
+  signIn,
+  signUp,
+} from 'routes/root/modules/user/user-actions';
 
 import {
   AuthProviders as AuthorizationProviders,
@@ -11,8 +14,12 @@ import {
 const authConnect = connect(
   (state) => ({}),
   (dispatch) => ({
-    authProvider: (options) => { // { provider, email, password}
+    signIn: (options) => { // { provider, email, password }
       dispatch(signIn(options));
+    },
+
+    signUp: (options) => { // { email, password }
+      dispatch(signUp(options));
     },
   })
 );

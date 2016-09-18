@@ -64,7 +64,8 @@ class AuthForm extends React.Component {
     sheet: React.PropTypes.object,
     canSubmit: React.PropTypes.bool,
     mode: React.PropTypes.string,
-    authProvider: React.PropTypes.func,
+    signIn: React.PropTypes.func,
+    signUp: React.PropTypes.func,
   };
 
   constructor(props) {
@@ -73,8 +74,17 @@ class AuthForm extends React.Component {
   }
 
   submitForm = (data) => {
-    data.passwordConfirm && delete data.passwordConfirm;
-    this.props.authProvider({
+    const { mode, signIn, signUp } = this.props;
+    if (mode === 'register') {
+      if (data.password !== data.passwordConfirm) {
+        return;
+      }
+      data.passwordConfirm && delete data.passwordConfirm;
+      signUp(data);
+      return;
+    }
+
+    signIn({
       ...data,
       provider: 'local',
     });

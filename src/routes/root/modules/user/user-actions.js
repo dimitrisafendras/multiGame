@@ -18,6 +18,7 @@ import {
   userAuthanticate,
   userUnAuthanticate,
   userOnAuthAndOnUnauth,
+  userRegister,
 } from 'model-services/user';
 
 import { push } from 'react-router-redux';
@@ -31,6 +32,8 @@ export const signIn = (options) => (dispatch, getState) => {
 };
 
 export const signOut = () => (dispatch) => userUnAuthanticate(() => null);
+
+export const signUp = (userData) => (dispatch) => userRegister(userData);
 
 //
 // User Asynchronous action creator, triggered from the model-service api.

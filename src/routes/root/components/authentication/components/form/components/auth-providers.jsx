@@ -85,7 +85,7 @@ class AuthProviders extends React.Component {
   };
 
   render() {
-    const { authProvider, sheet } = this.props;
+    const { signIn, sheet } = this.props;
     const { container, providerWrapper } = sheet.classes;
     return (
       <Container className={container}>
@@ -93,7 +93,7 @@ class AuthProviders extends React.Component {
           <Button key={`aa-auth-provider-${provider}`}
             className={providerWrapper}
             backgroundColor={backgroundColor}
-            onTouchTap={function () { authProvider({ provider }); }}>
+            onTouchTap={function () { signIn({ provider }); }}>
             {provider}
           </Button>
         )}

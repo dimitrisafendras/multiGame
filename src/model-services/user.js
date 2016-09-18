@@ -1,14 +1,24 @@
 import axios from 'axios';
 import io from 'socket.io-client';
 
+import { graphql } from './server-apis';
+
+const authUser = (
+  { email, password },
+  onSuccess = (() => {}),
+  onError = (() => {}),
+) => {
+  axios
+  .post('/auth', { email, password })
+  .then((response) => (response.data.user))
+  .then(onSuccess)
+  .catch(onError);
+  return;
+};
+
 export const userAuthanticate = (processResult, { provider, email, password }) => {
   if (provider === 'local') {
-    axios
-    .post('/auth', { email, password })
-    .then((response) => (response.data.user))
-    .then(processResult)
-    .catch(processResult);
-    return;
+    authUser({ email, password }, processResult, processResult);
   }
 
   window.open(
@@ -45,4 +55,39 @@ export const userOnAuthAndOnUnauth = (processResultAuth, processResultUnAuth) =>
       processResultUnAuth(user);
     })
   ));
+};
+
+export const userRegister = ({
+  email,
+  password,
+  firstName,
+  lastName,
+  displayName,
+}) => {
+  graphql
+  .mutate(`{
+    user: createLocalUser(
+      email: "${email}"
+      password: "${password}"
+    ) {
+      email
+      firstName
+      lastName
+      displayName
+    }
+  }`)
+  .then(data => data.user)
+  .then(({ email, password }) => {
+    authUser(
+      { email, password },
+      () => {},
+
+      (err) => {
+        console.log('model-services/userRegister', err);
+      }
+    );
+  })
+  .catch(err => {
+    console.log('model-services/userRegister', err);
+  });
 };
