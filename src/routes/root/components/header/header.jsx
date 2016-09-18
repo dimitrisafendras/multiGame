@@ -5,6 +5,9 @@ import {
   IconButton,
   FontIcon,
 } from 'material-ui';
+
+import { Button, Link } from 'components';
+
 import { useSheet } from 'components/jss';
 
 import { Logo } from 'routes/root/components';
@@ -35,16 +38,16 @@ const Header = ({
         person
       </FontIcon>
     </IconButton>
-    ) : (
-    <IconButton
-      style={style.headerMenuBar.button}
-      iconStyle={style.headerMenuBar.loggedInIcon}
-      onClick={onSignOut}>
-      <FontIcon
-        className={'material-icons'}>
-        person
-      </FontIcon>
-    </IconButton>
+  ) : (
+    <Button
+      className={classes.button}
+      onClick={onSignOut}
+      style={{
+        ...style.headerMenuBar.button,
+        ...style.headerMenuBar.icon,
+      }}>
+      {user.displayName || user.email}
+    </Button>
   );
 
   return (
@@ -70,16 +73,12 @@ const Header = ({
         iconStyleRight={style.appBar.iconStyleRight}
       />
       <div>
-        <div style={
-            style.headerMenuBar.mobile
-          }>
+        <div style={style.headerMenuBar.mobile}>
           {userIcon}
         </div>
 
         <div style={style.headerMenuBar}>
-          <HeaderMenuBar
-            {...{ content, link, activeRoute }}
-          />
+          <HeaderMenuBar {...{ content, link, activeRoute }} />
           { /* <ProfileAndSigninTab */ }
             { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
           { /* /> */ }

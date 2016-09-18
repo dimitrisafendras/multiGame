@@ -6,7 +6,7 @@ const NavigationContents = {
       order: 2,
     },
     organizations: {
-      title: 'Organizations',
+      title: 'Business Services',
       link: '/Organizations',
       order: 1,
     },

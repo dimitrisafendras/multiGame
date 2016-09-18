@@ -10,7 +10,7 @@ const style = {
   tabs: {
     position: 'absolute',
     top: '0px',
-    right: '30px',
+    right: '120px',
     width: '100%',
     paddingRight: '68px',
     paddingLeft: '320px',
