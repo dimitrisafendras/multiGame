@@ -67,7 +67,7 @@ export default getMuiTheme({
   },
   appBar: {
     logoHeight: '48px',
-    logoWidth: '300px',
+    logoWidth: '250px',
     boxSizing: 'border-box',
     color: white,
     height: 60,

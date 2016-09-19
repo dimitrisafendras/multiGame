@@ -15,11 +15,19 @@ export const style = {
     width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
     height: '100%',
     zIndex: '1200',
-    background: '#eeeeee',
     textAlign: 'right',
+    display: 'flex',
+    flexWrap: 'no-wrap',
+    alignItems: 'stretch',
+    alignContent: 'stretch',
+  },
+  mainMenuItemTabs: {
+    flexGrow: 1
   },
   mainMenuItem: {
     display: 'inline-block',
+    verticalAlign: 'top',
+    flexShrink: 1
   },
   appBarContainer: {},
   appBar: {
@@ -36,40 +44,17 @@ export const style = {
     height: 60,
     maxHeight: 60,
   },
-  appBarIconStyleRight: {
-    marginTop: 0,
-    marginRight: -24,
-    marginLeft: 'auto',
-  },
   headerMenuBarMobile: {},
+  headerMenuBarButton: {
+    height: '60px !important',
+    width: '60px !important',
+    padding: '6px !important',
+    marginLeft: 'auto !important',
+    borderLeft: `1px solid ${muiTheme.palette.grey300}`,
+  },
   headerMenuBar: {
-    button: {
-      height: 60,
-      width: 60,
-      padding: 6,
-      borderLeft: `1px solid ${muiTheme.palette.grey300}`,
-    },
     icon: {
-      height: 48,
-      lineHeight: '48px',
-      width: 48,
       color: muiTheme.palette.cyan400,
-    },
-    loggedInIcon: {
-      color: muiTheme.palette.blue600,
-      notificationBall: {
-        width: 6,
-        height: 6,
-        display: 'block',
-        background: muiTheme.palette.cyan400,
-        borderRadius: '50%',
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        zIndex: 1000,
-        transform: 'translate(2px, -8px)',
-        border: `1px solid ${muiTheme.palette.white}`,
-      },
     },
     menuIcon: {
       color: muiTheme.palette.blue600,
@@ -78,6 +63,15 @@ export const style = {
   '@media (min-width: 768px)': {
     mainMenu: {
       height: '68px'
+    },
+    mainMenuItem: {
+      height: '68px'
+    },
+    headerMenuBarButton: {
+      height: '68px !important',
+      width: '68px !important',
+      padding: '10px !important',
+      marginLeft: 'auto !important',
     },
     appBarContainer: {
       height: '68px'

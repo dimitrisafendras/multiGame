@@ -13,11 +13,15 @@ const style = {
     boxSizing: 'border-box',
     zIndex: 1100,
     maxWidth: '700px',
+    minWidth: '50%',
+    width: '100%',
   },
   tab: {
-    height: muiTheme.appBar.height,
+    // width: 'auto !important',
+    height: '68px',
     fontSize: '13px',
     fontWeight: '700',
+    // padding: '0 10px !important',
   },
   '@media (max-width: 767px)': {
     tabs: {
@@ -38,19 +42,18 @@ const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
   const { classes } = sheet;
 
   return (
-    <div className={classes.tabs}>
-      <Tabs value={activeTabIndex}>
+      <Tabs value={activeTabIndex}
+            className={classes.tabs}>
         {content.filter((item) => (item.order === 1)).map((item, index) => (
           <Tab value={index}
             label={item.title}
-            style={style.tab}
+            className={classes.tab}
             key={tabKey(item.link)}
             onActive={function () {
               link(item.link);
             }} />
           ))}
       </Tabs>
-    </div>
   );
 };
 

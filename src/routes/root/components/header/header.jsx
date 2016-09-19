@@ -30,6 +30,7 @@ const Header = ({
 
   const userIcon = !(user && user.email) ? (
     <IconButton
+      className={classes.headerMenuBarButton}
       style={style.headerMenuBar.button}
       iconStyle={style.headerMenuBar.icon}
       onClick={handleLoginRegisterTouchTap}>
@@ -40,7 +41,7 @@ const Header = ({
     </IconButton>
   ) : (
     <Button
-      className={classes.button}
+      className={classes.headerMenuBarButton}
       onClick={onSignOut}
       style={{
         ...style.headerMenuBar.button,
@@ -61,36 +62,33 @@ const Header = ({
         />
       </div>
       <div className={classes.mainMenuContent}>
-        <div className={classes.mainMenuItem}>
-          {/* Header Tabs */}
-          <div style={style.headerMenuBar}>
-            <HeaderMenuBar {...{ content, link, activeRoute }} />
-            { /* <ProfileAndSigninTab */ }
-            { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
-            { /* /> */ }
-          </div>
+
+        {/* Header Tabs */}
+        <div className={classes.mainMenuItem} style={style.mainMenuItemTabs}>
+          <HeaderMenuBar {...{ content, link, activeRoute }} />
+          { /* <ProfileAndSigninTab */ }
+          { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
+          { /* /> */ }
         </div>
 
+        {/* Header Icons */}
         <div className={classes.mainMenuItem}>
-          {/* User Icon */}
-          <div style={style.headerMenuBar.mobile}>
+          <div className={classes.headerMenuBarMobile}>
+            {/* User Icon */}
             {userIcon}
-          </div>
-        </div>
 
-        <div className={classes.mainMenuItem}>
-          {/* Menu Icon */}
-          <IconButton
-            style={style.headerMenuBar.button}
-            iconStyle={{
-              ...style.headerMenuBar.icon,
-              ...style.headerMenuBar.menuIcon,
-            }}
-            onTouchTap={handleLeftIconButtonTouchTap}
-            iconClassName={'material-icons'}
-            className={classes.appBarIconStyleRight}>
-            menu
-          </IconButton>
+            {/* Menu Icon */}
+            <IconButton
+              iconStyle={{
+                ...style.headerMenuBar.icon,
+                ...style.headerMenuBar.menuIcon,
+              }}
+              onTouchTap={handleLeftIconButtonTouchTap}
+              iconClassName={'material-icons'}
+              className={classes.headerMenuBarButton}>
+              menu
+            </IconButton>
+          </div>
         </div>
 
       </div>
