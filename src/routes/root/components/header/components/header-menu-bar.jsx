@@ -8,13 +8,8 @@ import {
 
 const style = {
   tabs: {
-    position: 'absolute',
-    top: '0px',
-    right: '120px',
-    width: '100%',
-    paddingRight: '68px',
-    paddingLeft: '320px',
-    lineHeight: '58px',
+    height: '100%',
+    lineHeight: '100%',
     boxSizing: 'border-box',
     zIndex: 1100,
     maxWidth: '700px',

@@ -1,30 +1,6 @@
 import muiTheme from 'styles/customized-mui-theme';
 
 export const style = {
-  appBar: {
-    container: {
-      boxShadow: 'none',
-      overflow: 'hidden',
-    },
-    titleStyle: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'left',
-      overflow: 'hidden',
-      height: 60,
-      maxHeight: 60,
-    },
-    iconStyleRight: {
-      marginTop: 0,
-      marginRight: -24,
-      marginLeft: 'auto',
-    },
-  },
-  appBarIconStyleRight: {
-    marginTop: 0,
-    marginRight: -24,
-    marginLeft: 'auto',
-  },
   mainMenu: {
     position: 'fixed',
     top: '0px',
@@ -32,14 +8,41 @@ export const style = {
     maxWidth: muiTheme.appBar.maxWidth,
     zIndex: '100',
   },
+  mainMenuContent: {
+    position: 'absolute',
+    top: '0px',
+    right: '0px',
+    width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
+    height: '100%',
+    zIndex: '1200',
+    background: '#eeeeee',
+    textAlign: 'right',
+  },
+  mainMenuItem: {
+    display: 'inline-block',
+  },
+  appBarContainer: {},
+  appBar: {
+    boxShadow: 'none',
+    overflow: 'hidden',
+    height: '100%',
+    alignItems: 'center',
+  },
+  appBarTitleStyle: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'left',
+    overflow: 'hidden',
+    height: 60,
+    maxHeight: 60,
+  },
+  appBarIconStyleRight: {
+    marginTop: 0,
+    marginRight: -24,
+    marginLeft: 'auto',
+  },
+  headerMenuBarMobile: {},
   headerMenuBar: {
-    mobile: {
-      position: 'fixed',
-      top: 0,
-      right: 60,
-      zIndex: 1200,
-      height: 60,
-    },
     button: {
       height: 60,
       width: 60,
@@ -73,6 +76,16 @@ export const style = {
     },
   },
   '@media (min-width: 768px)': {
+    mainMenu: {
+      height: '68px'
+    },
+    appBarContainer: {
+      height: '68px'
+    },
+    appBarTitleStyle: {
+      height: '68px',
+      maxHeight: '68px',
+    },
     appBar: {
       iconStyleRight: {
         display: 'none !important',
@@ -81,10 +94,8 @@ export const style = {
     appBarIconStyleRight: {
       display: 'none !important',
     },
-    headerMenuBar: {
-      mobile: {
+    headerMenuBarMobile: {
         display: 'none !important',
-      },
     },
   },
   '@media (min-width: 1200px)': {

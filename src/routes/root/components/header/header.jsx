@@ -52,12 +52,34 @@ const Header = ({
 
   return (
     <div className={classes.mainMenu}>
-      <AppBar
-        style={style.appBar.container}
-        title={<Logo />}
-        titleStyle={style.appBar.titleStyle}
-        showMenuIconButton={false}
-        iconElementRight={
+      <div className={classes.appBarContainer}>
+        <AppBar
+          style={style.appBar}
+          title={<Logo />}
+          titleStyle={style.appBarTitleStyle}
+          showMenuIconButton={false}
+        />
+      </div>
+      <div className={classes.mainMenuContent}>
+        <div className={classes.mainMenuItem}>
+          {/* Header Tabs */}
+          <div style={style.headerMenuBar}>
+            <HeaderMenuBar {...{ content, link, activeRoute }} />
+            { /* <ProfileAndSigninTab */ }
+            { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
+            { /* /> */ }
+          </div>
+        </div>
+
+        <div className={classes.mainMenuItem}>
+          {/* User Icon */}
+          <div style={style.headerMenuBar.mobile}>
+            {userIcon}
+          </div>
+        </div>
+
+        <div className={classes.mainMenuItem}>
+          {/* Menu Icon */}
           <IconButton
             style={style.headerMenuBar.button}
             iconStyle={{
@@ -69,20 +91,8 @@ const Header = ({
             className={classes.appBarIconStyleRight}>
             menu
           </IconButton>
-        }
-        iconStyleRight={style.appBar.iconStyleRight}
-      />
-      <div>
-        <div style={style.headerMenuBar.mobile}>
-          {userIcon}
         </div>
 
-        <div style={style.headerMenuBar}>
-          <HeaderMenuBar {...{ content, link, activeRoute }} />
-          { /* <ProfileAndSigninTab */ }
-            { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
-          { /* /> */ }
-        </div>
       </div>
     </div>
   );
