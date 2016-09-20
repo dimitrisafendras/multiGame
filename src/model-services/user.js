@@ -42,18 +42,19 @@ export const userUnAuthanticate = (processResult) => {
 */
 export const userOnAuthAndOnUnauth = (processResultAuth, processResultUnAuth) => {
   const socket = io('/session');
-  socket.on('authUnauth', () => (
-    axios
-    .get('/auth/checkAuth')
-    .then((response) => response.data.user)
-    .then((user) => {
-      if (user && user.email) {
-        processResultAuth(user);
-        return;
-      }
-
-      processResultUnAuth(user);
-    })
+  socket.on('authUnauth', (user) => (
+    user && user.email ? processResultAuth(user) : processResultUnAuth(user)
+    // axios
+    // .get('/auth/checkAuth')
+    // .then((response) => response.data.user)
+    // .then((user) => {
+    //   if (user && user.email) {
+    //     processResultAuth(user);
+    //     return;
+    //   }
+    //
+    //   processResultUnAuth(user);
+    // })
   ));
 };
 

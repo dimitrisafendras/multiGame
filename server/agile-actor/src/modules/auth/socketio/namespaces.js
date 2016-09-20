@@ -27,7 +27,7 @@ export default (io) => {
     .run()
     .then((cursor) => {
       cursor.on('data', (newUserLogin) => {
-        socket.emit('authUnauth');
+        socket.emit('authUnauth', newUserLogin.new_val.user);
 
         console.log('  --> SocketIO emit authUnauth', id, newUserLogin.new_val);
       });
