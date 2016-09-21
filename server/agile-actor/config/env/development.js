@@ -4,7 +4,6 @@ export default {
   rethinkdb: {
     host: 'localhost',
     port: 28015,
-    db: 'agileactors_dev',
   },
   auth: {
     github: {

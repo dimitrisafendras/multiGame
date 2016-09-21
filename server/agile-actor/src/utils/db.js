@@ -1,4 +1,7 @@
-import config from '../../config';
 import rethinkdb from 'rethinkdbdash';
 
-export default rethinkdb(config.rethinkdb); // export connection
+import config from '../../config';
+
+const r = rethinkdb(config.rethinkdb);
+
+export default r;

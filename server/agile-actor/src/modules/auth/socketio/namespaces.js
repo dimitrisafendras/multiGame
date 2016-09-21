@@ -1,6 +1,6 @@
 import cookie from 'cookie';
 
-import sessionStoreDB from '../../../../src/utils/db';
+import r from '../../../../src/utils/db';
 
 export default (io) => {
   const sessionIo = io.of('/session');
@@ -19,7 +19,7 @@ export default (io) => {
 
     socket.emit('authUnauth');
 
-    sessionStoreDB
+    r
     .db('sessions')
     .table('sessions')
     .filter({ sid })

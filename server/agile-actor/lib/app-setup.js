@@ -5,19 +5,16 @@ import koaSession from 'koa-generic-session';
 import RethinkSession from 'koa-generic-session-rethinkdb';
 
 import config from '../config';
-import passport from '../src/modules/auth/passport';
-
 import { errorMiddleware } from '../src/middleware';
 
-import sessionStoreDB from '../src/utils/db';
+import passport from '../src/modules/auth/passport';
+import r from '../src/utils/db';
 
 export default (app) => {
   app.keys = [config.session];
 
   const sessionStore = new RethinkSession({
-    connection: sessionStoreDB, // DB connection
-
-    // dbName: aaConfig.rethinkdb.db,
+    connection: r, // DB connection
   });
   sessionStore.setup(); // create the db, table and indexes to store sessions
 
@@ -30,7 +27,7 @@ export default (app) => {
 
   app.use(convert(logger()));
   app.use(convert(bodyParser({
-    detectJSON: (ctx) => /\.json$/i.test(ctx.path),
+    detectJSON: ctx => /\.json$/i.test(ctx.path),
   })));
   app.use(convert(session));
   app.use(errorMiddleware());
