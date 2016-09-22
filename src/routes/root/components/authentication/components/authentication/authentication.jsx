@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Collapse from 'react-collapse';
 import { presets } from 'react-motion';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -41,7 +42,7 @@ class Authentication extends Component {
   updateDimensions() {
     clearTimeout(this.resizeTimer);
 
-    this.resizeTimer = setTimeout(() => (
+    this.resizeTimer = setInterval(() => (
       this.resizeTimer && this.checkScroll()
     ), 50);
   }
@@ -82,7 +83,7 @@ class Authentication extends Component {
 
   checkScroll() {
     if (!this.state.open) return;
-    const node = this.nodeRef; // ReactDOM.findDOMNode(this.nodeRef);
+    const node = this.topNode; // ReactDOM.findDOMNode(this.refs.topNode);
     if (!node) return;
 
     const currentViewHeight = window.innerHeight - appBarHeight;
@@ -94,17 +95,17 @@ class Authentication extends Component {
   }
 
   render() {
-    const { props } = this;
-    const { classes } = props.sheet;
+    const { scrollbar, open, mode } = this.state;
+    const { classes } = this.props.sheet;
 
     return (
       <article
-        ref={(node) => { this.nodeRef = node; }}
-        className={classNames(classes.component, { scrollbar: this.state.scrollbar })}>
+        ref={(ref) => { this.topNode = ref; }}
+        className={classNames(classes.component, { scrollbar })}>
         <Collapse
-          isOpened={this.state.open}
+          isOpened={open}
           springConfig={presets.gentle}
-          onRest={() => { /* _this.checkScroll(); */ }}>
+          onRest={() => { this.checkScroll(); }} >
           <Scrollbars
             autoHeight
             autoHeightMax={700}
@@ -142,7 +143,7 @@ class Authentication extends Component {
               </FlexContainer>
               <LoginRegister
                 changeMode={(mode) => { this.changeMode(mode); }}
-                mode={this.state.mode} />
+                mode={mode} />
             </FlexContainer>
           </Scrollbars>
         </Collapse>

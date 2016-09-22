@@ -1,15 +1,20 @@
 import muiTheme from 'styles/customized-mui-theme';
 
+const {
+  palette,
+  appBar,
+} = muiTheme;
+
 export const style = {
   component: {
     position: 'fixed',
     width: '100%',
     zIndex: '99999',
-    backgroundColor: muiTheme.palette.blue700,
+    backgroundColor: palette.blue700,
 
     '&.scrollbar': {
-      top: muiTheme.appBar.height,
-      bottom: '0px',
+      top: appBar.height,
+      // bottom: `${0}px`,
       overflowY: 'scroll',
       overflowX: 'hidden',
     },
@@ -21,10 +26,10 @@ export const style = {
     paddingLeft: '9.4%',
     paddingRight: '9.4%',
     boxSizing: 'border-box',
-    maxWidth: muiTheme.appBar.maxWidth,
+    maxWidth: appBar.maxWidth,
   },
   actionsWrapper: {
-    color: muiTheme.palette.white,
+    color: palette.white,
     marginBottom: '20px',
   },
   action: {
@@ -49,4 +54,4 @@ export const style = {
   },
 };
 
-export const appBarHeight = parseInt(muiTheme.appBar.height);
+export const appBarHeight = parseInt(appBar.height);
