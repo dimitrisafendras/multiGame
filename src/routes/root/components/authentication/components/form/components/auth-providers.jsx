@@ -11,19 +11,19 @@ const content = {
   providers: [
     {
       provider: 'facebook',
-      backgroundColor: '#4a90e2',
+      backgroundColor: '#365899',
     },
     {
       provider: 'linkedin',
-      backgroundColor: '#1b3b60',
+      backgroundColor: '#0073B2',
     },
     {
       provider: 'google',
-      backgroundColor: '#d0021b',
+      backgroundColor: '#DB4437',
     },
     {
       provider: 'github',
-      backgroundColor: '#d0021b',
+      backgroundColor: '#7A3497',
     },
   ],
 };
