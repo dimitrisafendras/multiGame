@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Collapse from 'react-collapse';
 import { presets } from 'react-motion';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -42,7 +41,7 @@ class Authentication extends Component {
   updateDimensions() {
     clearTimeout(this.resizeTimer);
 
-    this.resizeTimer = setInterval(() => (
+    this.resizeTimer = setTimeout(() => (
       this.resizeTimer && this.checkScroll()
     ), 50);
   }
@@ -58,12 +57,11 @@ class Authentication extends Component {
   }
 
   componentWillReceiveProps({ open, user }) {
-    const state = {};
-    state.open = !!open && !(user && user.email);
-    if (!open) {
-      state.scrollbar = false;
-    }
-    this.setState(state);
+    const status = !!open && !(user && user.email);
+    this.setState({
+      open: status,
+      scrollbar: status,
+    });
   }
 
   handleToggle() {
