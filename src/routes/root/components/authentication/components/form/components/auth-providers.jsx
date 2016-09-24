@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
 import muiTheme from 'styles/customized-mui-theme';
-import { RaisedButton } from 'material-ui';
-import { Container } from 'components/content';
+import { Container, Button } from 'components/content';
 
 //
 // Define the content of the component
@@ -11,19 +10,19 @@ const content = {
   providers: [
     {
       provider: 'facebook',
-      backgroundColor: '#4a90e2',
+      backgroundColor: '#365899',
     },
     {
       provider: 'linkedin',
-      backgroundColor: '#1b3b60',
+      backgroundColor: '#0073B2',
     },
     {
       provider: 'google',
-      backgroundColor: '#d0021b',
+      backgroundColor: '#DB4437',
     },
     {
       provider: 'github',
-      backgroundColor: '#d0021b',
+      backgroundColor: '#7A3497',
     },
   ],
 };
@@ -61,28 +60,14 @@ const style = {
 //
 // Define the component
 //
-export const Button = (props) => {
-  const { children, Reststyle, ...rest } = props;
-  return (
-    <RaisedButton
-      style={{ ...style.button, ...Reststyle }}
-      label={children}
-      labelStyle={style.button}
-      {...rest} />
-  );
-};
-
-Button.propTypes = {
-  children: React.PropTypes.node,
-  Reststyle: React.PropTypes.object,
+type Props = {
+  signIn: (options: { provider: string }) => void,
+  sheet: Object,
+  mode: string,
 };
 
 class AuthProviders extends React.Component {
-  static propTypes = {
-    authProvider: React.PropTypes.func,
-    sheet: React.PropTypes.object,
-    mode: React.PropTypes.string,
-  };
+  props: Props;
 
   render() {
     const { signIn, sheet } = this.props;
@@ -90,14 +75,15 @@ class AuthProviders extends React.Component {
     return (
       <Container className={container}>
         {content.providers.map(({ provider, backgroundColor }) =>
-          <Button key={`aa-auth-provider-${provider}`}
+          <Button
+            key={`aa-auth-provider-${provider}`}
             className={providerWrapper}
             backgroundColor={backgroundColor}
-            onTouchTap={function () { signIn({ provider }); }}>
-            {provider}
-          </Button>
+            labelStyle={style.button}
+            label={provider}
+            onTouchTap={function () { signIn({ provider }); }} />
         )}
-      </Container >
+      </Container>
     );
   };
 };

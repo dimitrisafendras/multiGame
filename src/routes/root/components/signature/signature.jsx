@@ -6,8 +6,10 @@ const currentYear = new Date().getFullYear();
 const copyrightPeriod = (releaseYear !== currentYear)
   ? `${releaseYear} - ${currentYear}` : releaseYear;
 
-export const Signature = () => (
+const Signature = () => (
   <div className={classes.signature}>
     &copy; {copyrightPeriod} AgileActors, All Rights Reserved
   </div>
 );
+
+export default Signature;

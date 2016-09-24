@@ -27,7 +27,9 @@ export const signIn = (options) => (dispatch, getState) => {
   const { user } = getState();
 
   if (!user || !user.provider) {
-    userAuthanticate(() => null, options);
+    userAuthanticate((user) => {
+      dispatch(signedIn(user));
+    }, options);
   }
 };
 

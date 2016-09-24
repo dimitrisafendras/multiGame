@@ -29,10 +29,10 @@ User.pre('save', function preSave(next) {
   new Promise((resolve, reject) => {
     bcrypt.genSalt(10, (err, salt) => {
       if (err) {
-        return reject(err);
-      } else {
-        resolve(salt);
+        reject(err);
+        return;
       }
+      resolve(salt);
     });
   })
   .then((salt) => {

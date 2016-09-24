@@ -7,7 +7,18 @@ const defaultStyle = {
   display: 'inline-table',
 };
 
-export const Button = ({ children, className, style, ...rest }) => (
+type Props = {
+  children?: React.PropTypes.any,
+  style?: Object,
+  className?: string,
+};
+
+export const Button = ({
+  children,
+  className,
+  style,
+  ...rest,
+} : Props) => (
   <RaisedButton
     className={className}
     style={{ ...defaultStyle, ...style }}
@@ -15,11 +26,5 @@ export const Button = ({ children, className, style, ...rest }) => (
     labelStyle={defaultStyle.button}
     {...rest} />
 );
-
-Button.propTypes = {
-  children: React.PropTypes.any,
-  style: React.PropTypes.object,
-  className: React.PropTypes.string,
-};
 
 Button.displayName = 'Button';

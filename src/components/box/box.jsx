@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 // import { jss } from 'components/jss';
@@ -38,7 +38,33 @@ const flexWarn = () => {
   }
 };
 
-function Box(props) {
+type Props = {
+  className?: string,
+  fit?: boolean,
+  center?: boolean,
+  inline?: boolean,
+  wrap?: boolean | string,
+  column?: boolean,
+  flex?: number | string,
+  flexGrow?: number,
+  flexShrink?: number,
+  flexBasis?: number | string,
+  reverse?: boolean,
+  order?: boolean,
+  justifyContent?: string,
+  alignItems?: string,
+  alignSelf?: string,
+  alignContent?: string,
+  width?: string,
+  minWidth?: string,
+  maxWidth?: string,
+  height?: string,
+  minHeight?: string,
+  maxHeight?: string,
+  children: PropTypes.node,
+};
+
+function Box(props : Props) {
   // filter out and use box related props from props
   const {
     flex, flexGrow, flexShrink, flexBasis,
@@ -107,41 +133,6 @@ function Box(props) {
       className={classNames(/* classes.boxStyles, */ props.className)}
       {...{ style, children, onClick }} />
   );
-};
-
-Box.propTypes = {
-  className: React.PropTypes.string,
-  fit: React.PropTypes.bool,
-  center: React.PropTypes.bool,
-  inline: React.PropTypes.bool,
-  wrap: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.string,
-  ]),
-  column: React.PropTypes.bool,
-  flex: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string,
-  ]),
-  flexGrow: React.PropTypes.number,
-  flexShrink: React.PropTypes.number,
-  flexBasis: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string,
-  ]),
-  reverse: React.PropTypes.bool,
-  order: React.PropTypes.bool,
-  justifyContent: React.PropTypes.string,
-  alignItems: React.PropTypes.string,
-  alignSelf: React.PropTypes.string,
-  alignContent: React.PropTypes.string,
-  width: React.PropTypes.string,
-  minWidth: React.PropTypes.string,
-  maxWidth: React.PropTypes.string,
-  height: React.PropTypes.string,
-  minHeight: React.PropTypes.string,
-  maxHeight: React.PropTypes.string,
-  children: React.PropTypes.node,
 };
 
 export default Box;

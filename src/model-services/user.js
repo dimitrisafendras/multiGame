@@ -15,6 +15,23 @@ const authUser = (
   .catch(onError);
 };
 
+const checkAuth = (
+  processResultAuth = (() => {}),
+  processResultUnAuth = (() => {}),
+) => {
+  axios
+  .get('/auth/checkAuth')
+  .then((response) => response.data.user)
+  .then((user) => {
+    if (user && user.email) {
+      processResultAuth(user);
+      return;
+    }
+
+    processResultUnAuth(user);
+  });
+};
+
 export const userAuthanticate = (processResult, { provider, email, password }) => {
   if (provider === 'local') {
     authUser({ email, password }, processResult, processResult);
@@ -42,19 +59,13 @@ export const userUnAuthanticate = (processResult) => {
 */
 export const userOnAuthAndOnUnauth = (processResultAuth, processResultUnAuth) => {
   const socket = io('/session');
-  socket.on('authUnauth', () => (
-    axios
-    .get('/auth/checkAuth')
-    .then((response) => response.data.user)
-    .then((user) => {
-      if (user && user.email) {
-        processResultAuth(user);
-        return;
-      }
-
+  socket.on('authUnauth', (user) => {
+    if (user && user.email) {
+      processResultAuth(user);
+    } else {
       processResultUnAuth(user);
-    })
-  ));
+    }
+  });
 };
 
 export const userRegister = ({

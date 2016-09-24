@@ -33,7 +33,7 @@ class Authentication extends Component {
     this.state = {
       open: false,
       mode: 'login',
-      scrollbar: false,
+      autoHeightMax: window.innerHeight - appBarHeight,
     };
   }
 
@@ -41,28 +41,36 @@ class Authentication extends Component {
   updateDimensions() {
     clearTimeout(this.resizeTimer);
 
-    this.resizeTimer = setTimeout(() => (
-      this.resizeTimer && this.checkScroll()
-    ), 50);
+    this.resizeTimer = setTimeout(() => {
+      if (!this.resizeTimer) return;
+
+      const autoHeightMax = window.innerHeight - appBarHeight;
+      if (autoHeightMax !== this.state.autoHeightMax) {
+        this.setState({
+          autoHeightMax,
+        });
+      }
+    }, 500);
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => { this.updateDimensions(); });
+    window.addEventListener('resize', () => {
+      this.updateDimensions();
+    });
     this.updateDimensions();
   }
 
   componentWillUnmount() {
-    this.resizeTimer && clearTimeout(this.resizeTimer);
-    this.resizeTimer = false;
+    if (this.resizeTimer) {
+      clearTimeout(this.resizeTimer);
+      this.resizeTimer = false;
+    }
   }
 
   componentWillReceiveProps({ open, user }) {
-    const state = {};
-    state.open = !!open && !(user && user.email);
-    if (!open) {
-      state.scrollbar = false;
-    }
-    this.setState(state);
+    this.setState({
+      open: !!open && !(user && user.email),
+    });
   }
 
   handleToggle() {
@@ -80,34 +88,18 @@ class Authentication extends Component {
     }
   }
 
-  checkScroll() {
-    if (!this.state.open) return;
-    const node = this.nodeRef; // ReactDOM.findDOMNode(this.nodeRef);
-    if (!node) return;
-
-    const currentViewHeight = window.innerHeight - appBarHeight;
-    const scrollbar = currentViewHeight < node.clientHeight;
-
-    if (scrollbar !== this.state.scrollbar) {
-      this.setState({ scrollbar });
-    }
-  }
-
   render() {
-    const { props } = this;
-    const { classes } = props.sheet;
+    const { autoHeightMax, open, mode } = this.state;
+    const { classes } = this.props.sheet;
 
     return (
       <article
-        ref={(node) => { this.nodeRef = node; }}
-        className={classNames(classes.component, { scrollbar: this.state.scrollbar })}>
-        <Collapse
-          isOpened={this.state.open}
-          springConfig={presets.gentle}
-          onRest={() => { /* _this.checkScroll(); */ }}>
+        ref={(ref) => { this.topNode = ref; }}
+        className={classNames(classes.component)}>
+        <Collapse isOpened={open} springConfig={presets.gentle}>
           <Scrollbars
             autoHeight
-            autoHeightMax={700}
+            autoHeightMax={autoHeightMax}
             autoHide
             autoHideTimeout={1000}
             autoHideDuration={200}>
@@ -121,13 +113,13 @@ class Authentication extends Component {
                 <Content
                   text
                   className={classes.action}
-                  onTouchTap={() => { this.changeMode('login'); }}>
+                  onTouchTap={() => this.changeMode('login')}>
                   {content.login}
                 </Content>
                 <Content
                   text
                   className={classes.action}
-                  onTouchTap={() => { this.changeMode('register'); }}>
+                  onTouchTap={() => this.changeMode('register')}>
                   {content.register}
                 </Content>
                 <FlexContainer
@@ -136,13 +128,13 @@ class Authentication extends Component {
                   <Content
                     text
                     className={classes.close}
-                    onTouchTap={() => { this.handleToggle(); }}
+                    onTouchTap={() => this.handleToggle()}
                     dangerouslySetInnerHTML={{ __html: '&times;' }} />
                 </FlexContainer>
               </FlexContainer>
               <LoginRegister
-                changeMode={(mode) => { this.changeMode(mode); }}
-                mode={this.state.mode} />
+                changeMode={(mode) => this.changeMode(mode)}
+                mode={mode} />
             </FlexContainer>
           </Scrollbars>
         </Collapse>
