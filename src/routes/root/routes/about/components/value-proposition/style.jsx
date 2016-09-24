@@ -26,13 +26,14 @@ export const style = {
   },
   title: {
     width: '70%',
+    marginBottom: '70px',
   },
   subtitle: {
     width: '60%',
   },
   text: {
     width: '60%',
-    marginTop: '70px',
+    marginTop: '20px',
     maxWidth: '624px',
   },
   button: {
@@ -40,7 +41,7 @@ export const style = {
   },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '55% 40%',
+      backgroundSize: '45% 40%',
     },
     title: {
       width: '60%',

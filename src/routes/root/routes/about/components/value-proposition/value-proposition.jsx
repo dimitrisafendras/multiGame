@@ -42,7 +42,8 @@ const ValueProposition = ({ sheet }) => {
           <Button
             secondary
             className={classes.button}
-            containerElement={<Link to={content.buttonRoute} />}>
+            href={content.buttonLink}
+            target={'_black'}>
             {content.buttonLabel}
           </Button>
         </FlexContainer>
