@@ -4,13 +4,13 @@ import muiTheme from 'styles/customized-mui-theme';
 import {
   Styles,
   Header,
-} from '../containers';
+} from 'routes/root/containers';
 
 import {
-//  Sidebar,
+  Sidebar,
   Footer,
   Authentication,
-} from './';
+} from 'routes/root/components';
 
 const style = {
   content: {
@@ -73,11 +73,11 @@ class Layout extends Component {
           open={this.state.authenticationOpen}
           {...rest}
           />
-        { /* <Sidebar
+        <Sidebar
           toggleSidebar={function () { _this.toggleSidebar(); }}
           open={this.state.sidebarOpen}
           {...rest}
-          /> */ }
+          />
         <div style={style.content}>
           {children}
           <Footer {...rest} />

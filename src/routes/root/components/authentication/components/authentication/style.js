@@ -11,13 +11,6 @@ export const style = {
     width: '100%',
     zIndex: '99999',
     backgroundColor: palette.blue700,
-
-    '&.scrollbar': {
-      top: appBar.height,
-      // bottom: `${0}px`,
-      overflowY: 'scroll',
-      overflowX: 'hidden',
-    },
   },
   container: {
     overflow: 'scroll',
