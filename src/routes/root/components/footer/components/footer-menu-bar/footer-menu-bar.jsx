@@ -1,5 +1,5 @@
 import React from 'react';
-import { content } from './content';
+import { contentData } from './content';
 import { style } from './style';
 import { 
   useSheet,
@@ -7,7 +7,7 @@ import {
   FlexContainer, 
   Content, 
   Link 
-} from 'components/content';
+} from 'components';
 
 const linkKey = (link) => `nav-footer--${link.replace(' ', '')}`;
 
@@ -40,7 +40,7 @@ const FooterMenuBar = ({ content, link, sheet }) => {
         className={classes.copyrightContainer}>
         <Link to={'/'}
           className={classes.copyright}>
-          {content.copyright}
+          {contentData.copyright}
         </Link>
       </Container>
     </FlexContainer>

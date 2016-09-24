@@ -54,7 +54,7 @@ export const style = {
     marginRight: 'auto',
   },
   title: {
-    color: muiTheme.palette.blue600,
+    color: muiTheme.palette.blue700,
     fontWeight: '300',
     marginTop: '35px',
   },
