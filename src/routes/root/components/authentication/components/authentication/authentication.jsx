@@ -50,7 +50,7 @@ class Authentication extends Component {
           autoHeightMax,
         });
       }
-    }, 500);
+    }, 50);
   }
 
   componentDidMount() {
