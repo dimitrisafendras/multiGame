@@ -4,13 +4,13 @@ import muiTheme from 'styles/customized-mui-theme';
 import {
   Styles,
   Header,
-} from '../containers';
+} from 'routes/root/containers';
 
 import {
   Sidebar,
   Footer,
   Authentication,
-} from './';
+} from 'routes/root/components';
 
 const style = {
   content: {
