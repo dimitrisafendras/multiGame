@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
-import muiTheme from 'styles/customized-mui-theme';
 import {
   Tabs,
   Tab,
@@ -12,9 +11,13 @@ const style = {
     lineHeight: '100%',
     boxSizing: 'border-box',
     zIndex: 1100,
-    maxWidth: '700px',
-    minWidth: '50%',
-    width: '100%',
+  },
+  tabsContentContainer: {
+    // width: 'auto !important',
+    // display: 'flex',
+    // flexWrap: 'nowrap',
+    // justifyContent: 'space-between',
+    // alignItems: 'stretch',
   },
   tab: {
     // width: 'auto !important',
@@ -22,6 +25,8 @@ const style = {
     fontSize: '13px',
     fontWeight: '700',
     // padding: '0 10px !important',
+    // flexGrow: '1',
+    // flexShrink: '1',
   },
   '@media (max-width: 767px)': {
     tabs: {
@@ -42,18 +47,19 @@ const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
   const { classes } = sheet;
 
   return (
-      <Tabs value={activeTabIndex}
-            className={classes.tabs}>
-        {content.filter((item) => (item.order === 1)).map((item, index) => (
-          <Tab value={index}
-            label={item.title}
-            className={classes.tab}
-            key={tabKey(item.link)}
-            onActive={function () {
-              link(item.link);
-            }} />
-          ))}
-      </Tabs>
+    <Tabs value={activeTabIndex}
+      className={classes.tabs}
+      tabItemContainerStyle={style.tabsContentContainer}>
+      {content.filter((item) => (item.order === 1)).map((item, index) => (
+        <Tab value={index}
+          label={item.title}
+          className={classes.tab}
+          key={tabKey(item.link)}
+          onActive={function () {
+            link(item.link);
+          }} />
+        ))}
+    </Tabs>
   );
 };
 

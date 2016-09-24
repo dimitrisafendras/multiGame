@@ -15,19 +15,15 @@ export const style = {
     width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
     height: '100%',
     zIndex: '1200',
-    textAlign: 'right',
     display: 'flex',
     flexWrap: 'no-wrap',
-    alignItems: 'stretch',
-    alignContent: 'stretch',
-  },
-  mainMenuItemTabs: {
-    flexGrow: 1
+    justifyContent: 'flex-end',
   },
   mainMenuItem: {
-    display: 'inline-block',
-    verticalAlign: 'top',
-    flexShrink: 1
+    flexShrink: 1,
+  },
+  mainMenuItemGrow: {
+    flexGrow: 1,
   },
   appBarContainer: {},
   appBar: {
@@ -62,10 +58,13 @@ export const style = {
   },
   '@media (min-width: 768px)': {
     mainMenu: {
-      height: '68px'
+      height: '68px',
+    },
+    mainMenuContent: {
+      width: `calc(100% - 320px)`,
     },
     mainMenuItem: {
-      height: '68px'
+      height: '68px',
     },
     headerMenuBarButton: {
       height: '68px !important',
@@ -74,7 +73,7 @@ export const style = {
       marginLeft: 'auto !important',
     },
     appBarContainer: {
-      height: '68px'
+      height: '68px',
     },
     appBarTitleStyle: {
       height: '68px',
@@ -86,13 +85,16 @@ export const style = {
       },
     },
     appBarIconStyleRight: {
-      display: 'none !important',
+      // display: 'none !important',
     },
     headerMenuBarMobile: {
-        display: 'none !important',
+      // display: 'none !important',
     },
   },
   '@media (min-width: 1200px)': {
+    mainMenuContent: {
+      maxWidth: `500px`,
+    },
     appBar: {
       container: {
         maxHeight: 78,

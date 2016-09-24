@@ -64,7 +64,7 @@ const Header = ({
       <div className={classes.mainMenuContent}>
 
         {/* Header Tabs */}
-        <div className={classes.mainMenuItem} style={style.mainMenuItemTabs}>
+        <div className={classes.mainMenuItem} style={style.mainMenuItemGrow}>
           <HeaderMenuBar {...{ content, link, activeRoute }} />
           { /* <ProfileAndSigninTab */ }
           { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
