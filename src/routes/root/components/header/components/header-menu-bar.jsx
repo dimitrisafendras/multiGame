@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
-import muiTheme from 'styles/customized-mui-theme';
+
 import {
   Tabs,
   Tab,
@@ -20,7 +20,7 @@ const style = {
     maxWidth: '700px',
   },
   tab: {
-    height: muiTheme.appBar.height,
+    height: '100%',
     fontSize: '13px',
     fontWeight: '700',
   },
