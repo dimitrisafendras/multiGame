@@ -1,17 +1,16 @@
 import React from 'react';
-import { useSheet } from 'components/jss';
+import classNames from 'classnames';
+import { style } from './style';
+import { content } from './content';
+import Slider from 'react-slick';
 import {
+  useSheet,
   Content,
   Container,
   FlexContainer,
   Button,
   Link,
-} from 'components/content';
-import classNames from 'classnames';
-import Slider from 'react-slick';
-
-import { content } from './content';
-import { style } from './style';
+} from 'components';
 
 //
 // slider settings
@@ -27,7 +26,7 @@ const SliderSettings = {
 };
 
 //
-// Define the component
+// The component
 //
 
 class AgileActorsMethodology extends React.Component {

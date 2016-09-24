@@ -1,8 +1,8 @@
 import React from 'react';
-import ValueProposition from './value-proposition/index';
-import AgileActorsMethodology from './agile-actors-methodology';
-import AgileActorsPractice from './agile-actors-practice';
-import Organizations from './organizations';
+import ValueProposition from './value-proposition/value-proposition';
+import AgileActorsMethodology from './agile-actors-methodology/agile-actors-methodology';
+import AgileActorsPractice from './agile-actors-practice/agile-actors-practice';
+import Organizations from './organizations/organizations';
 
 //
 // Define the component
