@@ -1,36 +1,30 @@
-import React from 'react';
-
-import {
-  AppBar,
-  Avatar,
-  IconButton,
-  FontIcon,
-} from 'material-ui';
-
-import { Button } from 'components';
-
-import { useSheet } from 'components/jss';
-
-import { Logo } from 'routes/root/components';
-import HeaderMenuBar from './components/header-menu-bar';
-import { style } from './style';
+import React from "react";
+import {AppBar, IconButton, FontIcon, FlatButton} from "material-ui";
+import {Button} from "components";
+import {useSheet} from "components/jss";
+import {Logo} from "routes/root/components";
+import HeaderMenuBar from "./components/header-menu-bar";
+import {style} from "./style";
 
 // import ProfileAndSigninTab from '../containers/profile-and-signin-tab';
 
-const Header = ({
-  content,
-  link,
-  handleLeftIconButtonTouchTap,
-  handleLoginRegisterTouchTap,
-  activeRoute,
-  sheet,
-  onSignOut,
-  user,
-}) => {
-  const { classes } = sheet;
+const Header = (
+  {
+    content,
+    link,
+    handleLeftIconButtonTouchTap,
+    handleLoginRegisterTouchTap,
+    activeRoute,
+    sheet,
+    onSignOut,
+    user,
+  }
+) => {
+  const {classes} = sheet;
 
-  const userButton = !(user && user.email) ? (
+  const userButtonMobile = !(user && user.email) ? (
     <IconButton
+      title="Login / Register"
       className={classes.headerMenuBarButton}
       style={style.headerMenuBar.button}
       iconStyle={style.headerMenuBar.icon}
@@ -40,14 +34,66 @@ const Header = ({
     </IconButton>
   ) : (
     <IconButton
+      title="Logout"
       className={classes.headerMenuBarButton}
       style={style.headerMenuBar.button}
       iconStyle={style.headerMenuBar.icon}
-      onClick={handleLoginRegisterTouchTap}
+      onClick={onSignOut}
       iconClassName={['material-icons', classes.headerMenuBarButtonUserLoggedIn].join(' ')}
       >
-        notifications
+        exit_to_app
     </IconButton>
+  );
+
+  const userButton = !(user && user.email) ? (
+    <FlatButton
+      title="Login / Register"
+      className={[
+        classes.headerMenuBarButton,
+        classes.headerMenuBarButtonLogin,
+      ].join(' ')}
+      style={style.headerMenuBar.button}
+      onClick={handleLoginRegisterTouchTap}
+      label="Login / Register"
+      icon={
+        <FontIcon
+          className={'material-icons'}>
+          person
+        </FontIcon>
+      }
+      hoverColor={'transparent'}
+    />
+  ) : (
+    <div>
+      <FlatButton
+        title="Profile"
+        className={[
+          classes.headerMenuBarButton,
+          classes.headerMenuBarButtonLogin,
+          classes.headerMenuBarButtonLoggedIn
+        ].join(' ')}
+        style={style.headerMenuBar.button}
+        label={`Welcome,  ${ (user.name) ? user.name : user.email }`}
+        icon={
+          <FontIcon
+            style={style.headerMenuBar.menuIcon}
+            className={'material-icons'}
+            icon>
+            notifications
+          </FontIcon>
+        }
+      />
+      <FlatButton
+        title="Logout"
+        className={[
+          classes.headerMenuBarButton,
+          classes.headerMenuBarButtonLogout
+        ].join(' ')}
+        style={style.headerMenuBar.button}
+        onClick={onSignOut}
+        label={`logout`}
+      />
+    </div>
   );
 
   return (
@@ -64,14 +110,14 @@ const Header = ({
 
         {/* Header Tabs */}
         <div className={classes.mainMenuItem} style={style.mainMenuItemGrow}>
-          <HeaderMenuBar {...{ content, link, activeRoute }} />
+          <HeaderMenuBar {...{content, link, activeRoute}} />
         </div>
 
-        {/* Header Icons */}
-        <div className={classes.mainMenuItem}>
+        {/* Header Mobile Icons */}
+        <div className={[classes.mainMenuItem, classes.mainMenuItemMobile].join(' ')}>
           <div className={classes.mainMenuIconContainer}>
             {/* User Icon */}
-            {userButton}
+            {userButtonMobile}
 
             {/* Menu Icon */}
             <IconButton
@@ -84,6 +130,14 @@ const Header = ({
               className={[classes.headerMenuBarButton, classes.headerMenuBarButtonMenu].join(' ')}>
               menu
             </IconButton>
+          </div>
+        </div>
+
+        {/* Header Tablet/Desktop Icons */}
+        <div className={[classes.mainMenuItem, classes.mainMenuItemTablet].join(' ')}>
+          <div className={classes.mainMenuIconContainer}>
+            {/* User Icon */}
+            {userButton}
           </div>
         </div>
 
