@@ -26,13 +26,14 @@ export const style = {
   },
   title: {
     width: '70%',
+    marginBottom: '70px',
   },
   subtitle: {
     width: '60%',
   },
   text: {
     width: '60%',
-    marginTop: '70px',
+    marginTop: '20px',
     maxWidth: '624px',
   },
   button: {
