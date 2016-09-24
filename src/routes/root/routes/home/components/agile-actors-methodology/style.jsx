@@ -14,7 +14,7 @@ export const style = {
     height: '620px',
   },
   outerTitle: {
-    color: muiTheme.palette.blue600,
+    color: muiTheme.palette.blue700,
     marginBottom: '6.1%',
     textAlign: 'center',
   },

@@ -8,6 +8,7 @@ export const style = {
     backgroundColor: muiTheme.palette.white,
   },
   outerTitle: {
+    color: muiTheme.palette.blue700,
     marginBottom: '6.1%',
     textAlign: 'center',
   },
