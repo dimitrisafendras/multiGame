@@ -30,7 +30,7 @@ const Header = (
       iconStyle={style.headerMenuBar.icon}
       onClick={handleLoginRegisterTouchTap}
       iconClassName={'material-icons'}>
-        person
+      person
     </IconButton>
   ) : (
     <IconButton
@@ -40,8 +40,8 @@ const Header = (
       iconStyle={style.headerMenuBar.icon}
       onClick={onSignOut}
       iconClassName={['material-icons', classes.headerMenuBarButtonUserLoggedIn].join(' ')}
-      >
-        exit_to_app
+    >
+      exit_to_app
     </IconButton>
   );
 

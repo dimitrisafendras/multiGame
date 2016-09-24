@@ -15,7 +15,7 @@ import {
 const style = {
   content: {
     height: '100vh',
-    marginTop: muiTheme.appBar.height,
+    marginTop: muiTheme.appBar.mobileHeight,
     display: 'block',
     boxSizing: 'border-box',
   },

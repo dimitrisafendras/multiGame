@@ -53,8 +53,8 @@ export const style = {
   },
   logo: {},
   headerMenuBarButton: {
-    height: '60px !important',
-    width: '60px !important',
+    height: `${muiTheme.appBar.mobileHeight}px !important`,
+    width: `${muiTheme.appBar.mobileHeight}px !important`,
     padding: '6px !important',
     marginLeft: 'auto !important',
     textTransform: 'uppercase',
@@ -98,13 +98,13 @@ export const style = {
   },
   '@media (min-width: 768px)': {
     mainMenu: {
-      height: '68px',
+      height: `${muiTheme.appBar.tabletHeight}px`,
     },
     mainMenuContent: {
       width: `calc(100% - 320px)`,
     },
     mainMenuItem: {
-      height: '68px',
+      height: `${muiTheme.appBar.tabletHeight}px`,
     },
     mainMenuItemMobile: {
       display: 'none',
@@ -116,7 +116,7 @@ export const style = {
       borderRight: `1px solid ${muiTheme.palette.grey300}`,
     },
     headerMenuBarButton: {
-      height: '68px !important',
+      height: `${muiTheme.appBar.tabletHeight}px !important`,
       width: 'auto !important',
       padding: '10px !important',
       marginLeft: 'auto !important',
@@ -131,15 +131,12 @@ export const style = {
       marginTop: '5px !important',
       borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
     },
-    headerMenuBarButtonMenu: {
-      display: 'none !important',
-    },
     appBarContainer: {
-      height: '68px',
+      height: `${muiTheme.appBar.tabletHeight}px`,
     },
     appBarTitleStyle: {
-      height: '68px',
-      maxHeight: '68px',
+      height: `${muiTheme.appBar.tabletHeight}px`,
+      maxHeight: `${muiTheme.appBar.tabletHeight}px`,
     },
     logo: {},
     appBar: {
