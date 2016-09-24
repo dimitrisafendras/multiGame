@@ -1,46 +1,48 @@
 import Images from './images';
 
 //
-// Define the content of the component
+// The content of the component
 //
-const content = {
-  title: 'TEST',
+export const content = {
+  title: 'An Organization built to help you achieve',
   practice: [
     {
-      id: 'methodologies',
-      title: 'Agile Methodologies',
-      Img: Images.Methodologies,
+      id: 'tools',
+      title: 'Tools',
+      Img: Images.Tools,
       content:
-        `Scrum, Management 3.0 and everything that makes possible
-      the development and maintenance of complex projects and applications.`,
+        `Great work needs great tools. We make sure you have exactly 
+        what you need to get the job done without breaking a sweat.`,
     },
     {
-      id: 'uiUx',
-      title: 'UX / UI',
-      Img: Images.UiUx,
+      id: 'development',
+      title: 'Personal Development',
+      Img: Images.Development,
       content:
-        `Even if you’re not a Web Designer or a Frontend Developer, it’s essential to
-      understand how users experience and interact with applications, what are the best
-      practices and how to build things that make sense.`,
+        `No matter how experienced or inexperienced you are, at Agile Actors we
+         care about what you can be and we’re by your side while you’re getting 
+         there. You’ll be working with smart, skilled people, learn from the 
+         best and trained to reach for the stars.`,
     },
     {
-      id: 'swDevelopment',
-      title: 'Software Development',
-      Img: Images.SwDevelopment,
+      id: 'fun',
+      title: 'Fun',
+      Img: Images.Fun,
       content:
-        `Frontend, backend, mobile, big data, event driven, responsive, integration
-      and so on. Software development is more complex than ever and we’re here to
-      carefully select and practice what’s relevant, useful and meaningful for the
-      modern tech professional.`,
+        `Even if you’re not a Web Designer or a Frontend Developer, it’s essential
+         to understand how users experience
+         and interact with applications, what
+         are the best practices and how to build
+         things that make sense.`,
     },
     {
-      id: 'coaching',
-      title: 'Personal Coaching',
-      Img: Images.Coaching,
+      id: 'respect',
+      title: 'Respect',
+      Img: Images.Respect,
       content:
-        `Through practice, expert guidance and help, we’re making your career
-      goals take shape. An Agile Actor is learning to be a coach and a coachee,
-      evolving and maturing in both roles.`,
+        `We are respectful, open-minded and only care about being good at what you do. 
+        Your gender, sexual preferences, skin color, language or family name won’t make 
+        a difference here.`,
     },
   ],
   buttonLabel: 'Find out More',

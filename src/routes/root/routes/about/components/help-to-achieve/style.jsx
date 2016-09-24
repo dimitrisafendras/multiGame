@@ -1,9 +1,9 @@
 import muiTheme from 'styles/customized-mui-theme';
 
 //
-// Define the style of the component
+// The style of the component
 //
-const style = {
+export const style = {
   outerContainer: {
     backgroundColor: muiTheme.palette.white,
   },
@@ -48,7 +48,6 @@ const style = {
     marginRight: '-35px',
   },
   img: {
-    height: '90px',
     marginTop: '0px',
     marginBottom: '0px',
     marginLeft: 'auto',

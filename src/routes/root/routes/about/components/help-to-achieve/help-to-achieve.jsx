@@ -1,17 +1,15 @@
 import React from 'react';
-import { useSheet } from 'components/jss';
-import { 
+import Slider from 'react-slick';
+import { content } from './content';
+import { style } from './style';
+import {
+  useSheet,
   Content, 
   Container, 
   FlexContainer, 
   Button, 
-  Link } from 'components/content';
-import muiTheme from 'styles/customized-mui-theme';
-import Slider from 'react-slick';
-
-
-import { content } from './content';
-import { style } from './style';
+  Link
+} from 'components';
 
 //
 // slider settings
