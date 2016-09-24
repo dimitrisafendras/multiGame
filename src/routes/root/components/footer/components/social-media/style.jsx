@@ -33,7 +33,7 @@ export const style = {
   },
   socialLink: {
     textDecoration: 'none',
-    color: muiTheme.palette.blue600,
+    color: muiTheme.palette.blue700,
   },
   socialImage: {
     backgroundColor: muiTheme.palette.white,
