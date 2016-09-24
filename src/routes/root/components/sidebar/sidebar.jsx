@@ -10,7 +10,7 @@ import {
 
 import muiTheme from 'styles/customized-mui-theme';
 
-import { Signature } from 'routes/root/components/';
+import { Signature } from 'routes/root/components';
 
 const style = {
   drawerContainer: {

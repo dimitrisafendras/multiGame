@@ -7,7 +7,7 @@ import {
 } from '../containers';
 
 import {
-//  Sidebar,
+  Sidebar,
   Footer,
   Authentication,
 } from './';
@@ -73,11 +73,11 @@ class Layout extends Component {
           open={this.state.authenticationOpen}
           {...rest}
           />
-        { /* <Sidebar
+        <Sidebar
           toggleSidebar={function () { _this.toggleSidebar(); }}
           open={this.state.sidebarOpen}
           {...rest}
-          /> */ }
+          />
         <div style={style.content}>
           {children}
           <Footer {...rest} />
