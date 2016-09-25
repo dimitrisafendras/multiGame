@@ -1,10 +1,5 @@
 const NavigationContents = {
   content: {
-    becomeAgileActor: {
-      title: 'Become an Agile Actor',
-      link: '/BecomeAgileActor',
-      order: 2,
-    },
     organizations: {
       title: 'Business Services',
       link: '/Organizations',

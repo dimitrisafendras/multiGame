@@ -1,7 +1,6 @@
 // We only need to import the modules necessary for initial render
 import {
   HomeRoute,
-  BecomeAgileActorRoute,
   OrganizationsRoute,
   CareersRoute,
   AboutRoute,
@@ -42,7 +41,6 @@ export const rootRoute = (store) => {
     component: Layout,
     indexRoute: HomeRoute,
     childRoutes: [
-      BecomeAgileActorRoute,
       OrganizationsRoute,
       CareersRoute,
       AboutRoute,
