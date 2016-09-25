@@ -25,7 +25,7 @@ export default (io) => {
       console.log('  --> SocketIO on connection - Access DB sessions query', id, sessionData);
       if (!sessionData) return;
 
-      if (sessionData.user && sessionData.use.email) {
+      if (sessionData.user && sessionData.user.email) {
         socket.emit('authorization', sessionData.user);
       } else {
         socket.emit('unAuthorization', sessionData.user);
