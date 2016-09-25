@@ -1,6 +1,6 @@
 import React from 'react';
 import ValueProposition from './value-proposition/value-proposition';
-// import Offerings from './offerings/offerings';
+import Offerings from './offerings/offerings';
 
 //
 // Define the component
@@ -10,6 +10,7 @@ class Organizations extends React.Component {
     return (
       <section>
         <ValueProposition />
+        <Offerings />
       </section>
     );
   }
