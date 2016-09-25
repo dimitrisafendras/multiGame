@@ -39,12 +39,18 @@ export const style = {
   button: {
     marginTop: '50px',
   },
+  '@media (max-width: 1250px)': {
+    title: {
+      marginBottom: '50px',
+    },
+   },
   '@media (max-width: 1024px)': {
     backgroundImage: {
       backgroundSize: '55% 40%',
     },
     title: {
       width: '60%',
+      marginBottom: '40px',
     },
     subtitle: {
       width: '50%',
@@ -57,9 +63,11 @@ export const style = {
     backgroundImage: {
       opacity: '0.2',
       backgroundSize: '95% 60%',
+      marginBottom: '40px',
     },
     title: {
       width: '100%',
+      marginBottom: '30px',
     },
     subtitle: {
       width: '100%',
@@ -67,7 +75,7 @@ export const style = {
     text: {
       width: '100%',
       maxWidth: '100%',
-      marginTop: '11%',
+      marginTop: '15px',
     },
   },
   '@media (max-width: 700px)': {
@@ -81,17 +89,17 @@ export const style = {
       backgroundSize: '95% 45%',
       opacity: '0.2',
     },
+    title: {
+      marginBottom: '10%',
+    },
     text: {
-      marginTop: '11%',
+      marginTop: '5%',
     },
   },
   '@media (max-width: 500px)': {
     backgroundImage: {
       backgroundSize: '95% 35%',
       opacity: '0.2',
-    },
-    text: {
-      marginTop: '11%',
     },
   },
   '@media (max-width: 400px)': {
