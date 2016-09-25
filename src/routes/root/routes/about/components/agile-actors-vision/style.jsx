@@ -43,7 +43,7 @@ export const style = {
     backgroundImage: {
       position: 'relative',
       backgroundSize: '100%',
-      height: '200px',
+      height: '250px',
       width: '45%',
       marginRight: '5%',
     },
@@ -62,8 +62,9 @@ export const style = {
       width: '100%',
       position: 'relative',
       backgroundSize: '100% 100%',
-      height: '300px',
+      height: '200px',
       marginRight: '0px',
+      marginBottom: '10px',
     },
     textWrapper: {
       width: '100%',
