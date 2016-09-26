@@ -8,10 +8,9 @@ class Contact extends React.Component {
   render() {
     return (
       <section>
-        <ValueProposition />
+        <AgileMap />
         <Introduction />
         <ContactForm />
-        <AgileMap />
       </section>
     );
   }

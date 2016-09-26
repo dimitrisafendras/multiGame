@@ -6,20 +6,24 @@ import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
 import { Snackbar } from 'material-ui';
 import { useSheet } from 'components/jss';
+import {Card} from 'material-ui/Card';
 
 //
 // Define the CSS styles of the component.
 //
 const style = {
+  container: {
+    width: '100%',
+  },
   form: {
     marginBottom: '10px',
   },
   label: {
     fontWeight: 'bold',
     width: '80% !important',
-    minWidth: '300px',
+    //minWidth: '300px',
     display: 'block !important',
-    maxWidth: '800px',
+    //maxWidth: '800px',
   },
   button: {
     marginTop: '30px',
@@ -137,38 +141,41 @@ class SubmitValidationForm extends React.Component {
     const _this = this;
     const { classes } = this.props.sheet;
     return (
-      <div>
-        <Formsy.Form className={classes.form} id={'form-aa'}
-          onValid={enableButton}
-          onInvalid={disableButton}
-          onValidSubmit={_this.submitForm} >
-          <FlexContainer column>
-          {config.fields.map((field) => (
-            <FormsyText
-              name={field.name}
-              validations={field.pattern}
-              validationError={field.error}
-              required
-              floatingLabelText={field.label}
-              key={`aa-careers-form-contact-${field.name}`}
-              className={classes.label}
-              multiLine={field.multiLine} rows={field.rows}
-            />
-          ))}
-            <Button className={classes.button}
-              type={'submit'}
-              disabled={!this.state.canSubmit}>
-              {config.button}
-            </Button>
-          </FlexContainer>
-        </Formsy.Form>
-        <Snackbar
-          open={this.state.open}
-          message={this.state.message}
-          autoHideDuration={4000}
-          onRequestClose={handleRequestClose}
-          className={classes.toast} />
-      </div>
+      <FlexContainer largeContainer center
+                      column>
+        <Card className={classes.container}>
+          <Formsy.Form className={classes.form} id={'form-aa'}
+            onValid={enableButton}
+            onInvalid={disableButton}
+            onValidSubmit={_this.submitForm} >
+            <FlexContainer column center>
+            {config.fields.map((field) => (
+              <FormsyText
+                name={field.name}
+                validations={field.pattern}
+                validationError={field.error}
+                required autoComplete="false"
+                floatingLabelText={field.label}
+                key={`aa-careers-form-contact-${field.name}`}
+                className={classes.label}
+                multiLine={field.multiLine} rows={field.rows}
+              />
+            ))}
+              <Button className={classes.button}
+                type={'submit'}
+                disabled={!this.state.canSubmit}>
+                {config.button}
+              </Button>
+            </FlexContainer>
+          </Formsy.Form>
+          <Snackbar
+            open={this.state.open}
+            message={this.state.message}
+            autoHideDuration={4000}
+            onRequestClose={handleRequestClose}
+            className={classes.toast} />
+        </Card>
+      </FlexContainer>
     );
   }
 };

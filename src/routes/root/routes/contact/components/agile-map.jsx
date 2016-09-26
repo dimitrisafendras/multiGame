@@ -13,7 +13,9 @@ const content = {
 
 const style = {
   outerContainer: {
-    height: '400px',
+    height: '360px',
+    width: '100%',
+    padding: '0px',
   },
   container: {
     width: '100%',
@@ -115,14 +117,9 @@ class SimpleMapPage extends React.Component {
 function AgileMap({ sheet }) {
   const { classes } = sheet;
   return (
-    <FlexContainer normalContainer column
+    <FlexContainer largeContainer
       className={classes.outerContainer}>
-      <div className={classes.container}>
         <SimpleMapPage />
-      </div>
-      <Content subTitle className={classes.text}>
-        {content.address}
-      </Content>
     </FlexContainer>
   );
 };
