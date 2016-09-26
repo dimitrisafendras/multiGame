@@ -93,7 +93,7 @@ const Header = ({
         <div style={style.headerMenuBar}>
           <HeaderMenuBar {...{ content, link, activeRoute }} />
           { /* <ProfileAndSigninTab */ }
-            { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
+          { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
           { /* /> */ }
         </div>
       </div>
