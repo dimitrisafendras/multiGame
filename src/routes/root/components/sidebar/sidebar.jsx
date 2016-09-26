@@ -90,7 +90,7 @@ class Sidebar extends Component {
 
   render() {
     const { props, handleToggle } = this;
-    const { content, link, sheet, user, onSignOut } = props;
+    const { content, link, sheet, user } = props;
     const { classes } = sheet;
 
     return (
@@ -106,10 +106,6 @@ class Sidebar extends Component {
         ) : (
           <FlatButton
             label={user.displayName}
-            style={{
-              ...style.drawerUserButtonHolder.button,
-              ...style.drawerUserButtonHolder.buttonLast,
-            }}
             onClick={this.handleSignOut}
           />
         )}
