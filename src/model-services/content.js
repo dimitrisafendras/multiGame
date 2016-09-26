@@ -1,4 +1,4 @@
-const NavigationContents = {
+const navigationContents = {
   content: {
     becomeAgileActor: {
       title: 'Become an Agile Actor',
@@ -37,4 +37,4 @@ export const minimunIncluded = (elm) => elm.order === 1;
 export const mediumIncluded = (elm) => elm.order <= 2;
 export const allIncluded = (elm) => elm.order <= 5;
 
-export default Object.values(NavigationContents.content);
+export default Object.values(navigationContents.content);
