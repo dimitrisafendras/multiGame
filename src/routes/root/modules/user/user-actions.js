@@ -13,29 +13,41 @@ signedOut.type = 'USER_SIGNED_OUT';
 // User asynchronous action creators
 // signIn
 // signOut
+// signUp
 //
-import {
-  userAuthanticate,
-  userUnAuthanticate,
-  userOnAuthAndOnUnauth,
-  userRegister,
-} from 'model-services/user';
+import { user as userService } from 'model-services';
 
 import { push } from 'react-router-redux';
 
 export const signIn = (options) => (dispatch, getState) => {
   const { user } = getState();
+  if (user && user.email) return;
 
-  if (!user || !user.provider) {
-    userAuthanticate((user) => {
-      dispatch(signedIn(user));
-    }, options);
-  }
+  userService
+  .auth(options)
+  .then((user) => {
+    dispatch(signedIn(user));
+  })
+  .catch((error) => {
+    console.log('user-actions signIn', error);
+  });
 };
 
-export const signOut = () => (dispatch) => userUnAuthanticate(() => null);
+export const signOut = () => (dispatch) => {
+  userService
+  .unAuth()
+  .catch((error) => {
+    console.log('user-actions signOut', error);
+  });
+};
 
-export const signUp = (userData) => (dispatch) => userRegister(userData);
+export const signUp = (userData) => (dispatch) => {
+  userService
+  .createLocalUser(userData)
+  .catch((error) => {
+    console.log('user-actions signUp', error);
+  });
+};
 
 //
 // User Asynchronous action creator, triggered from the model-service api.
@@ -43,14 +55,13 @@ export const signUp = (userData) => (dispatch) => userRegister(userData);
 // authentication state. It dispatches a signedIn(user) action when a user
 // signes in and a signedOut(null) action when a user signes out.
 //
-export const onSignInAndOnSignOut = (dispatch) => userOnAuthAndOnUnauth(
-  (user) => {
+export const onSignInAndOnSignOut = (dispatch) => {
+  userService.setOnAuth((user) => {
     dispatch(signedIn(user));
     dispatch(push('/BecomeAgileActor'));
-  },
-
-  (user) => {
-    dispatch(signedOut(null));
+  });
+  userService.setOnUnAuth((user) => {
+    dispatch(signedOut({}));
     dispatch(push('/'));
-  },
- );
+  });
+};
