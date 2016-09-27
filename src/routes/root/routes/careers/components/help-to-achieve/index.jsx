@@ -1,131 +1,328 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
 import Images from './images';
-import { Content, Container, FlexContainer } from 'components/content';
-import { grey200 } from 'material-ui/styles/colors';
+import { Content, Container, FlexContainer, Button, Link } from 'components/content';
+import muiTheme from 'styles/customized-mui-theme';
+import Slider from 'react-slick';
 
 //
-// Define the component
+// Define the content of the component
 //
 const content = {
-  title: 'An organization built to help you achieve',
-  achievementPaths: [
+  title: 'TEST',
+  practice: [
     {
-      id: 'tools',
-      title: 'Tools',
-      Img: Images.Tools,
+      id: 'methodologies',
+      title: 'Agile Methodologies',
+      Img: Images.Methodologies,
       content:
-      `Great work needs great tools. We make sure you have exactly what
-      you need to get the job done without breaking a sweat..`,
+      `Scrum, Management 3.0 and everything that makes possible
+      the development and maintenance of complex projects and applications.`,
     },
     {
-      id: 'personal-dev',
-      title: 'Personal development',
-      Img: Images.PersonalDev,
+      id: 'uiUx',
+      title: 'UX / UI',
+      Img: Images.UiUx,
       content:
-      `No matter how experienced or inexperienced you are, at Agile Actors
-      we care about what you can be and we’re by your side while you’re getting
-      there. You’ll be working with smart, skilled people, learn from the best
-      and trained to reach for the stars.`,
+      `Even if you’re not a Web Designer or a Frontend Developer, it’s essential to
+      understand how users experience and interact with applications, what are the best
+      practices and how to build things that make sense.`,
     },
     {
-      id: 'fun',
-      title: 'Fun',
-      Img: Images.Fun,
+      id: 'swDevelopment',
+      title: 'Software Development',
+      Img: Images.SwDevelopment,
       content:
-      `Work is a big part of your life and we’re well-aware of that. Having
-      fun while you’re doing it is equally important. Our culture and
-      workplace are designed around breaking the daily routine and
-      battling stress before it even appears.`,
+      `Frontend, backend, mobile, big data, event driven, responsive, integration
+      and so on. Software development is more complex than ever and we’re here to
+      carefully select and practice what’s relevant, useful and meaningful for the
+      modern tech professional.`,
     },
     {
-      id: 'respect',
-      title: 'Respect',
-      Img: Images.Respect,
+      id: 'coaching',
+      title: 'Personal Coaching',
+      Img: Images.Coaching,
       content:
-      `We are respectful, open-minded and only care about being good at what
-      you do. Your gender, sexual preferences, skin color, language or
-      family name won’t make a difference here.`,
+      `Through practice, expert guidance and help, we’re making your career
+      goals take shape. An Agile Actor is learning to be a coach and a coachee,
+      evolving and maturing in both roles.`,
     },
   ],
+  buttonLabel: 'Find out More',
+  buttonRoute: '/BecomeAgileActor',
 };
 
+//
+// Define the CSS styles of the components
+//
 const style = {
   outerContainer: {
-    backgroundColor: grey200,
+    backgroundColor: muiTheme.palette.white,
+  },
+  outerTitle: {
+    marginBottom: '6.1%',
+    textAlign: 'center',
+  },
+  containerWrapper: {
+    '&:first-child': {
+      marginRight: '10px',
+    },
+    '&:last-child': {
+      marginLeft: '10px',
+    },
   },
   container: {
-    marginTop: '0px',
-    marginBottom: '0px',
-    marginLeft: '15px',
-    marginRight: '15px',
+    backgroundColor: muiTheme.palette.grey200,
+    marginLeft: '10px',
+    marginRight: '10px',
+    width: '306px',
+    height: '460px',
+    paddingTop: '35px',
+    paddingBottom: '35px',
+    paddingLeft: '35px',
+    paddingRight: '35px',
+    boxSizing: 'border-box',
+    border: '2px solid #eee',
+    '&:first-child': {
+      marginLeft: '0px',
+    },
+    '&:last-child': {
+      marginRight: '0px',
+    },
   },
-  textWrapper: {
-    width: '230px',
-    height: '263px',
-    textAlign: 'left',
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    paddingLeft: '0px',
-    paddingRight: '0px',
-
+  imgWrapper: {
+    backgroundColor: muiTheme.palette.white,
+    width: '306px',
+    height: '180px',
+    marginTop: '-35px',
+    marginBottom: '0px',
+    marginLeft: '-35px',
+    marginRight: '-35px',
   },
   img: {
-    width: '160px',
-    height: '160px',
-    marginTop: '40px',
-    marginBottom: '25px',
-    marginLeft: '0px',
-    marginRight: '0px',
-    paddingLeft: '30px',
+    height: '90px',
+    marginTop: '0px',
+    marginBottom: '0px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  '@media (max-width: 519px)': {
+  title: {
+    color: muiTheme.palette.blue700,
+    fontWeight: '300',
+    marginTop: '35px',
+  },
+  button: {
+    marginTop: '6.1%',
+  },
+  '@media (max-width: 1581px)': {
+    containerWrapper: {
+      '&:first-child': {
+        marginRight: '5px',
+        marginLeft: '5px',
+        marginBottom: '20px',
+      },
+      '&:last-child': {
+        marginRight: '5px',
+        marginLeft: '5px',
+      },
+    },
+  },
+  '@media (max-width: 767px)': {
     container: {
-      height: 'auto',
+      marginLeft: '0px !important',
+      marginRight: '0px !important',
+    },
+    button: {
+      marginTop: 'calc(6.1% + 20px)',
     },
   },
 };
 
 //
-// Define the component
+// slider settings
 //
-function HelpToAchieve({ sheet }) {
-  const { classes } = sheet;
+const SliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  touchMove: true,
+};
 
-  return (
-    <article>
-      <FlexContainer normalContainer
-        column
-        className={classes.outerContainer}>
-        <Content normalTitle>
-          {content.title}
-        </Content>
+class HelpToAchieve extends React.Component {
+  static propTypes = {
+    sheet: React.PropTypes.object,
+  };
 
-        <FlexContainer fullWidthContainer
-          wrap justifyContent={'space-around'}>
-          {content.achievementPaths.map((item) =>
-            (<Container container
-              className={classes.container}
-              key={`aa-practice-${item.id}-item`}>
-              <Content image
-                className={classes.img}>
-                {item.Img}
-              </Content>
-              <div className={classes.textWrapper}>
-                <Content title>
+  constructor(props) {
+    super(props);
+    this.state = {
+      mq: window.matchMedia('(max-width: 767px)'),
+    };
+  }
+
+  // Debounce window resize event for performance
+  updateDimensions() {
+    const that = this;
+
+    clearTimeout(this.resizeTimer);
+
+    this.resizeTimer = setTimeout(function () {
+      // Resize finished
+
+      if (that.mounted) { // Check if component unmounted in the meantime
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+        (mediaQuery.matches !== that.state.mq) && that.setState({slider: !mediaQuery.matches});
+      }
+    }, 250);
+  }
+
+  componentDidMount() {
+    this.mounted = true;
+    window.addEventListener('resize', this.updateDimensions.bind(this));
+    this.updateDimensions();
+  }
+
+  componentWillUnmount() {
+    this.resizeTimer && clearTimeout(this.resizeTimer);
+    this.mounted = false;
+  }
+
+  render() {
+    const {classes} = this.props.sheet;
+    let contentBoxes;
+
+    if (this.state.slider) {
+      contentBoxes =
+        <FlexContainer
+          center
+          wrap>
+          <FlexContainer
+            container
+            className={classes.containerWrapper}>
+            {content.practice.slice(0, 2).map((item) =>
+              (<Container
+                container
+                className={classes.container}
+                key={`aa-practice-${item.id}-item`}>
+                <FlexContainer
+                  center
+                  className={classes.imgWrapper}>
+                  <Content
+                    image
+                    className={classes.img}>
+                    {item.Img}
+                  </Content>
+                </FlexContainer>
+                <Content
+                  title
+                  className={classes.title}>
                   {item.title}
                 </Content>
                 <Content text>
                   {item.content}
                 </Content>
-              </div>
-            </Container>)
-          )}
-        </FlexContainer>
-      </FlexContainer>
-    </article>
-  );
-};
+              </Container>)
+              )}
+          </FlexContainer>
+          <FlexContainer
+            container
+            className={classes.containerWrapper}>
+            {content.practice.slice(2, 4).map((item) =>
+              (<Container
+                container
+                className={classes.container}
+                key={`aa-practice-${item.id}-item`}>
+                <FlexContainer
+                  center
+                  className={classes.imgWrapper}>
+                  <Content
+                    image
+                    className={classes.img}>
+                    {item.Img}
+                  </Content>
+                </FlexContainer>
+                <Content
+                  title
+                  className={classes.title}>
+                  {item.title}
+                </Content>
+                <Content text>
+                  {item.content}
+                </Content>
+              </Container>)
+              )}
+          </FlexContainer>
+        </FlexContainer>;
+    } else {
+      contentBoxes =
+        <Slider
+          {...SliderSettings}>
+          {content.practice.map((item) =>
+            (<div key={`aa-practice-${item.id}-item`}>
+              <FlexContainer
+                center>
+                <Container
+                  container
+                  className={classes.container}>
+                  <FlexContainer
+                    center
+                    className={classes.imgWrapper}>
+                    <Content
+                      image
+                      className={classes.img}>
+                      {item.Img}
+                    </Content>
+                  </FlexContainer>
+                  <Content
+                    title
+                    className={classes.title}>
+                    {item.title}
+                  </Content>
+                  <Content text>
+                    {item.content}
+                  </Content>
+                </Container>
+              </FlexContainer>
+            </div>)
+            )}
+        </Slider>;
+    }
+
+    return (
+      <article>
+        <Container
+          normalContainer
+          center
+          column
+          className={classes.outerContainer}>
+          <FlexContainer
+            center>
+            <Content
+              normalTitle
+              className={classes.outerTitle}>
+              {content.title}
+            </Content>
+          </FlexContainer>
+
+          {contentBoxes}
+
+          <FlexContainer
+            center>
+            <Button
+              secondary
+              containerElement={<Link to={content.buttonRoute} />}
+              className={classes.button}>
+              {content.buttonLabel}
+            </Button>
+          </FlexContainer>
+        </Container>
+      </article>
+    );
+  }
+}
 
 HelpToAchieve.propTypes = {
   sheet: React.PropTypes.object,
