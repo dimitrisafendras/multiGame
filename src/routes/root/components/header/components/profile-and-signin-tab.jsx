@@ -1,9 +1,6 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
 import { Button } from 'components/content';
-import { connect } from 'react-redux';
-
-import { signOut, signIn } from '../../redux/modules/user/user-actions';
 
 const content = {
   signIn: 'Signin',
@@ -113,18 +110,4 @@ ProfileAndSigninTab.propTypes = {
   handleLoginRegisterTouchTap: React.PropTypes.func,
 };
 
-const mapStateToNavSigninProps = (state) => {
-  let { user } = state;
-  user = user && user.displayName;
-  return { user };
-};
-
-const mapDispatchToNavSigninProps = (dispatch) => ({
-  onSignOut: () => dispatch(signOut()),
-  onSignIn: (options) => dispatch(signIn(options)),
-});
-
-export default connect(
-  mapStateToNavSigninProps,
-  mapDispatchToNavSigninProps,
-)(ProfileAndSigninTab);
+export default ProfileAndSigninTab;

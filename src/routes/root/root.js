@@ -5,6 +5,7 @@ import {
   CareersRoute,
   AboutRoute,
   ContactRoute,
+  UserRoute,
 } from './routes';
 
 import { Layout } from './containers';
@@ -45,6 +46,7 @@ export const rootRoute = (store) => {
       CareersRoute,
       AboutRoute,
       ContactRoute,
+      UserRoute(store),
     ],
   };
 };

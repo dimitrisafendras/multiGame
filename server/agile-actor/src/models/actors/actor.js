@@ -1,6 +1,5 @@
-import config from '../../../config';
 import thinky from '../../utils/thinky';
-import Achievement from './achievement';
+import Achievement from './achievements';
 
 const { r, type } = thinky;
 const providersList = [

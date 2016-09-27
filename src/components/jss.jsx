@@ -1,5 +1,5 @@
 import { create } from 'jss';
-import reactJss from 'react-jss';
+import { create as createInjectSheet } from 'react-jss';
 import vendorPrefixer from 'jss-vendor-prefixer';
 import camelCase from 'jss-camel-case';
 import nested from 'jss-nested';
@@ -14,6 +14,7 @@ jss.use(vendorPrefixer());
 jss.use(camelCase());
 jss.use(nested());
 
-const useSheet = reactJss(jss);
+const injectSheet = createInjectSheet(jss);
+const useSheet = (component, styles) => injectSheet(styles)(component);
 
 export { jss, useSheet };
