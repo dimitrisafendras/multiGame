@@ -13,6 +13,7 @@ import webpackHMRMiddleware from './middleware/webpack-hmr';
 
 import {
   appSetup,
+  serveSpaRoutes,
   appModules,
 } from './agile-actor/lib';
 
@@ -27,6 +28,8 @@ appSetup(app);
 if (config.proxy && config.proxy.enabled) {
   app.use(convert(proxy(config.proxy.options)));
 }
+
+serveSpaRoutes(app);
 
 // This rewrites all routes requests to the root /index.html file
 // (ignoring file requests). If you want to implement isomorphic
