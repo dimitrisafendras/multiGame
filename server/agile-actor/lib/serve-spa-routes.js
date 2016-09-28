@@ -1,4 +1,4 @@
-import Router from 'koa-router';
+import fs from 'fs';
 
 const sapRoutes = [
   '/User',
@@ -10,9 +10,26 @@ const sapRoutes = [
 ];
 
 export default (app) => {
-  const router = new Router();
+  sapRoutes.forEach(route => app.use((ctx, next) => {
+    if (ctx.url !== route) return next();
+    // ctx.path = route;
+    // ctx.redirect('/', route);
+    //
+    // ctx.type = 'html';
+    // ctx.body =
+    ctx.respond = false;
 
-  sapRoutes.forEach(route => router.redirect(route, '/', 301));
-
-  app.use(router.routes());
+    const rs = fs.createReadStream(`${process.cwd()}/dist/index.html`);
+    const body = [];
+    rs
+    .on('error', (err) => console.error(err))
+    .on('data', (chunk) => body.push(chunk))
+    .on('end', () => {
+      ctx.res.writeHead(200, {
+        'Content-Type': 'text/html',
+        Location: route,
+      });
+      ctx.res.end(Buffer.concat(body).toString());
+    });
+  }));
 };

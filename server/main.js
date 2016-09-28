@@ -23,13 +23,12 @@ const app = new Koa();
 
 // Agile Actor server setup
 appSetup(app);
+serveSpaRoutes(app);
 
 // Enable koa-proxy if it has been enabled in the config.
 if (config.proxy && config.proxy.enabled) {
   app.use(convert(proxy(config.proxy.options)));
 }
-
-serveSpaRoutes(app);
 
 // This rewrites all routes requests to the root /index.html file
 // (ignoring file requests). If you want to implement isomorphic
