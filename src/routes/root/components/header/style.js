@@ -102,6 +102,7 @@ export const style = {
     },
     mainMenuContent: {
       width: `calc(100% - 320px)`,
+      maxWidth: `400px`,
     },
     mainMenuItem: {
       height: `${muiTheme.appBar.tabletHeight}px`,
@@ -147,7 +148,7 @@ export const style = {
   },
   '@media (min-width: 1200px)': {
     mainMenuContent: {
-      maxWidth: `800px`,
+      maxWidth: `400px`,
     },
     appBar: {
       container: {
