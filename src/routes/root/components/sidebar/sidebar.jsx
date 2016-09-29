@@ -101,14 +101,15 @@ class Sidebar extends Component {
         openSecondary
         width={style.drawerContainer.width}>
 
-        {!(user && user.email) ? (
-          this.renderLoginButton()
-        ) : (
-          <FlatButton
-            label={user.displayName}
-            onClick={this.handleSignOut}
-          />
-        )}
+        {/* TODO: uncomment after static*/}
+        {/*{!(user && user.email) ? (*/}
+          {/*this.renderLoginButton()*/}
+        {/*) : (*/}
+          {/*<FlatButton*/}
+            {/*label={user.displayName}*/}
+            {/*onClick={this.handleSignOut}*/}
+          {/*/>*/}
+        {/*)}*/}
 
         <IconButton
           touch

@@ -137,7 +137,9 @@ const Header = ({
         <div className={[classes.mainMenuItem, classes.mainMenuItemMobile].join(' ')}>
           <div className={classes.mainMenuIconContainer}>
             {/* User Icon */}
-            {userButtonMobile}
+
+            {/* TODO: uncomment after static*/}
+            {/* userButtonMobile */}
 
             {/* Menu Icon */}
             <IconButton
@@ -154,12 +156,13 @@ const Header = ({
         </div>
 
         {/* Header Tablet/Desktop Icons */}
-        <div className={[classes.mainMenuItem, classes.mainMenuItemTablet].join(' ')}>
-          <div className={classes.mainMenuIconContainer}>
-            {/* User Icon */}
-            {userButton}
-          </div>
-        </div>
+        {/* TODO: uncomment after static*/}
+        {/*<div className={[classes.mainMenuItem, classes.mainMenuItemTablet].join(' ')}>*/}
+          {/*<div className={classes.mainMenuIconContainer}>*/}
+            {/*/!* User Icon *!/*/}
+            {/*{userButton}*/}
+          {/*</div>*/}
+        {/*</div>*/}
 
       </div>
     </div>
