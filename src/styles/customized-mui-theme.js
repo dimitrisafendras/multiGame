@@ -34,8 +34,8 @@ export default getMuiTheme({
   zIndex,
   fontFamily: 'Lato, Helvetica, Arial, sans-serif',
   palette: {
-    primary1Color: blue600,
-    primary2Color: blue700,
+    primary1Color: blue700,
+    primary2Color: blue600,
     primary3Color: grey400,
     accent1Color: cyan400,
     accent2Color: grey100,
@@ -85,7 +85,7 @@ export default getMuiTheme({
   tabs: {
     backgroundColor: white,
     selectedTextColor: blue700,
-    textColor: blue600,
+    textColor: blue700,
   },
   textField: {
     borderColor: grey200,

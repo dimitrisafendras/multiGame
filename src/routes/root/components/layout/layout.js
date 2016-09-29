@@ -4,10 +4,10 @@ import muiTheme from 'styles/customized-mui-theme';
 import {
   Styles,
   Header,
+  Sidebar,
 } from 'routes/root/containers';
 
 import {
-  Sidebar,
   Footer,
   Authentication,
 } from 'routes/root/components';
@@ -43,38 +43,38 @@ class Layout extends Component {
     }
   }
 
-  toggleSidebar() {
+  toggleSidebar = () => {
     this.setState({
       sidebarOpen: !this.state.sidebarOpen,
     });
-  }
+  };
 
-  toggleAuthentication() {
+  toggleAuthentication = () => {
     this.setState({
       authenticationOpen: !this.state.authenticationOpen,
     });
-  }
+  };
 
   render() {
     const props = this.props;
     const { location, children, ...rest } = props;
-    const _this = this;
 
     return (
       <Styles>
         <Header
           {...rest}
           activeRoute={location.pathname}
-          handleLeftIconButtonTouchTap={function () { _this.toggleSidebar(); }}
-          handleLoginRegisterTouchTap={function () { _this.toggleAuthentication(); }}
+          handleLeftIconButtonTouchTap={this.toggleSidebar}
+          handleLoginRegisterTouchTap={this.toggleAuthentication}
           />
         <Authentication
-          toggleAuthentication={function () { _this.toggleAuthentication(); }}
+          toggleAuthentication={this.toggleAuthentication}
           open={this.state.authenticationOpen}
           {...rest}
           />
         <Sidebar
-          toggleSidebar={function () { _this.toggleSidebar(); }}
+          handleLoginRegisterTouchTap={this.toggleAuthentication}
+          toggleSidebar={this.toggleSidebar}
           open={this.state.sidebarOpen}
           {...rest}
           />

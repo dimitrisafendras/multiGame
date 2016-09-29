@@ -18,7 +18,10 @@ type Props = {
   link: () => void,
   open: boolean,
   toggleSidebar: () => void,
+  handleLoginRegisterTouchTap: () => void,
   sheet: Object,
+  user: Object,
+  onSignOut: () => void,
 };
 
 class Sidebar extends Component {
@@ -47,11 +50,47 @@ class Sidebar extends Component {
     }
   };
 
+  handleToggleAuth = () => {
+    this.props.handleLoginRegisterTouchTap();
+    this.handleToggle();
+  };
+
+  handleSignOut = () => {
+    this.props.onSignOut();
+    this.handleToggle();
+    this.props.handleLoginRegisterTouchTap();
+  };
+
   linkKey = (key) => `nav-drawer--${key.replace(' ', '')}`;
+
+  renderLoginButton() {
+    return (
+      <div style={style.drawerUserButtonHolder}>
+        {/* Login Button */}
+        <FlatButton
+          label={'Login'}
+          labelPosition={'after'}
+          style={style.drawerUserButtonHolder.button}
+          icon={<FontIcon className={'material-icons'}>person</FontIcon>}
+          onClick={this.props.handleLoginRegisterTouchTap}
+        />
+
+        {/* Register Button */}
+        <FlatButton
+          label={'Register'}
+          style={{
+            ...style.drawerUserButtonHolder.button,
+            ...style.drawerUserButtonHolder.buttonLast,
+          }}
+          onClick={this.handleToggleAuth}
+        />
+      </div>
+    );
+  }
 
   render() {
     const { props, handleToggle } = this;
-    const { content, link, sheet } = props;
+    const { content, link, sheet, user } = props;
     const { classes } = sheet;
 
     return (
@@ -62,25 +101,14 @@ class Sidebar extends Component {
         openSecondary
         width={style.drawerContainer.width}>
 
-        <div
-          style={style.drawerUserButtonHolder}>
-          {/* Login Button */}
+        {!(user && user.email) ? (
+          this.renderLoginButton()
+        ) : (
           <FlatButton
-            label={'Login'}
-            labelPosition={'after'}
-            style={style.drawerUserButtonHolder.button}
-            icon={<FontIcon className={'material-icons'}>person</FontIcon>}
+            label={user.displayName}
+            onClick={this.handleSignOut}
           />
-
-          {/* Register Button */}
-          <FlatButton
-            label={'Register'}
-            style={{
-              ...style.drawerUserButtonHolder.button,
-              ...style.drawerUserButtonHolder.buttonLast,
-            }}
-          />
-        </div>
+        )}
 
         <IconButton
           touch

@@ -1,26 +1,43 @@
-import React from "react";
-import {AppBar, IconButton, FontIcon, FlatButton} from "material-ui";
-import {Button} from "components";
-import {useSheet} from "components/jss";
-import {Logo} from "routes/root/components";
-import HeaderMenuBar from "./components/header-menu-bar";
-import {style} from "./style";
+import React from 'react';
+
+import {
+  AppBar,
+  IconButton,
+  FontIcon,
+  FlatButton,
+} from 'material-ui';
+
+import { Button } from 'components';
+
+import { useSheet } from 'components/jss';
+
+import { Logo } from 'routes/root/components';
+import HeaderMenuBar from './components/header-menu-bar';
+import { style } from './style';
 
 // import ProfileAndSigninTab from '../containers/profile-and-signin-tab';
+type Props = {
+  content: [],
+  link: (to: string) => void,
+  handleLeftIconButtonTouchTap: () => void,
+  handleLoginRegisterTouchTap: () => void,
+  activeRoute: string,
+  sheet: Object,
+  onSignOut: () => void,
+  user: Object,
+};
 
-const Header = (
-  {
-    content,
-    link,
-    handleLeftIconButtonTouchTap,
-    handleLoginRegisterTouchTap,
-    activeRoute,
-    sheet,
-    onSignOut,
-    user,
-  }
-) => {
-  const {classes} = sheet;
+const Header = ({
+  content,
+  link,
+  handleLeftIconButtonTouchTap,
+  handleLoginRegisterTouchTap,
+  activeRoute,
+  sheet,
+  onSignOut,
+  user,
+}: Props) => {
+  const { classes } = sheet;
 
   const userButtonMobile = !(user && user.email) ? (
     <IconButton
@@ -90,7 +107,10 @@ const Header = (
           classes.headerMenuBarButtonLogout
         ].join(' ')}
         style={style.headerMenuBar.button}
-        onClick={onSignOut}
+        onClick={() => {
+          onSignOut();
+          handleLoginRegisterTouchTap();
+        }}
         label={`logout`}
       />
     </div>
@@ -144,17 +164,6 @@ const Header = (
       </div>
     </div>
   );
-};
-
-Header.propTypes = {
-  content: React.PropTypes.array,
-  link: React.PropTypes.func,
-  handleLeftIconButtonTouchTap: React.PropTypes.func,
-  handleLoginRegisterTouchTap: React.PropTypes.func,
-  activeRoute: React.PropTypes.string,
-  sheet: React.PropTypes.object,
-  onSignOut: React.PropTypes.func,
-  user: React.PropTypes.object,
 };
 
 export default useSheet(Header, style);
