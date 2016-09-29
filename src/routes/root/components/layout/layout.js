@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components/jss';
 
 import {
   Styles,
@@ -15,11 +16,18 @@ import {
 const style = {
   content: {
     height: '100vh',
-    marginTop: muiTheme.appBar.mobileHeight,
+    marginTop: `${muiTheme.appBar.mobileHeight}px`,
     display: 'block',
     boxSizing: 'border-box',
   },
+  '@media (min-width: 768px)': {
+    content: {
+      marginTop: `${muiTheme.appBar.tabletHeight}px`,
+    },
+  },
 };
+
+const { classes } = jss.createStyleSheet(style).attach();
 
 type Props = {
   children: PropTypes.element,
@@ -78,7 +86,7 @@ class Layout extends Component {
           open={this.state.sidebarOpen}
           {...rest}
           />
-        <div style={style.content}>
+        <div className={classes.content}>
           {children}
           <Footer {...rest} />
         </div>
