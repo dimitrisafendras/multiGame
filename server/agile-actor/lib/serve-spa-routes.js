@@ -1,7 +1,6 @@
-import fs from 'fs';
+// import fs from 'fs';
 
 const sapRoutes = [
-  '/User',
   '/Careers',
   '/Organizations',
   '/About',
@@ -12,21 +11,34 @@ const sapRoutes = [
 export default (app) => {
   sapRoutes.forEach(route => app.use((ctx, next) => {
     if (ctx.url !== route) return next();
-    ctx.path = route;
     ctx.redirect('/', route);
-    // ctx.respond = false;
 
+    // const { req, res } = ctx;
+    // const protocol = req.socket.encrypted ? 'https' : 'http';
+    // const Location = `${protocol}//${req.headers.host}${route}`;
+    // res.writeHead(200, {
+    //   'Content-Type': 'text/html',
+    //   Location,
+    // });
+    // ctx.type = 'html';
+    // ctx.body = fs.createReadStream(`${process.cwd()}/dist/index.html`);
+
+    // ctx.respond = false;
+    // const { req, res } = ctx;
+    // const protocol = req.socket.encrypted ? 'https' : 'http';
+    // const Location = `${protocol}//${req.headers.host}${route}`;
     // const rs = fs.createReadStream(`${process.cwd()}/dist/index.html`);
     // const body = [];
     // rs
     // .on('error', (err) => console.error(err))
     // .on('data', (chunk) => body.push(chunk))
     // .on('end', () => {
-    //   ctx.res.writeHead(200, {
+    //   res.writeHead(200, {
     //     'Content-Type': 'text/html',
-    //     Location: route,
+    //     Location,
     //   });
-    //   ctx.res.end(Buffer.concat(body).toString());
+    //   res.end(Buffer.concat(body).toString());
     // });
+    return null;
   }));
 };
