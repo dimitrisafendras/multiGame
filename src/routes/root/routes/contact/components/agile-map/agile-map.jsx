@@ -4,46 +4,11 @@ import canUseDOM from 'can-use-dom';
 import _ from 'lodash';
 import { triggerEvent } from 'react-google-maps/lib/utils';
 import { useSheet, FlexContainer, Content } from 'components';
-
-const content = {
-  address: '62A Ethnikis Antistasis street, Chalandri 152 31 Attika, Greece',
-  url: 'https://www.google.com/maps?sll=38.013649,23.788266&q=Ethnikis+Antistasis+62A+Chalandri,' +
-       '+Greece&z=9',
-};
-
-const style = {
-  outerContainer: {
-    height: '360px',
-    width: '100%',
-    padding: '0px',
-  },
-  container: {
-    width: '100%',
-    height: '80%',
-    marginBottom: '30px',
-    maxWidth: '800px',
-    opacity: 0.5,
-    ':hover': {
-      opacity: 1,
-    },
-  },
-  text: {
-    height: '20%',
-    marginTop: '20px',
-    marginBottom: '20px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  '@media (max-width: 1580px)': {
-    container: {
-      width: '90%',
-      marginBottom: '50px',
-    },
-  },
-};
+import { style } from './style';
+import { content } from './content';
 
 class SimpleMapPage extends React.Component {
-
+  // TODO Update callbalck for resize event listener
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -59,7 +24,7 @@ class SimpleMapPage extends React.Component {
       ],
     };
 
-    this.handleWindowResize = _.throttle(::this.handleWindowResize, 500);
+    // this.handleWindowResize = _.throttle(::this.handleWindowResize, 500);
   }
 
   componentDidMount() {
@@ -67,7 +32,7 @@ class SimpleMapPage extends React.Component {
       return;
     }
 
-    window.addEventListener('resize', this.handleWindowResize);
+    // window.addEventListener('resize', this.handleWindowResize);
   }
 
   componentWillUnmount() {
@@ -75,12 +40,12 @@ class SimpleMapPage extends React.Component {
       return;
     }
 
-    window.removeEventListener('resize', this.handleWindowResize);
+    // window.removeEventListener('resize', this.handleWindowResize);
   }
 
-  handleWindowResize() {
-    triggerEvent(this._googleMapComponent, 'resize');
-  }
+  // handleWindowResize() {
+  //  triggerEvent(this._googleMapComponent, 'resize');
+  // }
 
   handleMapClick(event) {
     window.open(content.url);
@@ -103,13 +68,11 @@ class SimpleMapPage extends React.Component {
             }
           }
             defaultZoom={16}
-            defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}
-
-            >
+            defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}>
             <Marker onClick={this.handleMapClick} {...this.state.markers[0]} />
           </GoogleMap>
         }
-        />
+      />
     );
   }
 }
@@ -118,8 +81,8 @@ function AgileMap({ sheet }) {
   const { classes } = sheet;
   return (
     <FlexContainer largeContainer
-      className={classes.outerContainer}>
-        <SimpleMapPage />
+                   className={classes.outerContainer}>
+      <SimpleMapPage />
     </FlexContainer>
   );
 };

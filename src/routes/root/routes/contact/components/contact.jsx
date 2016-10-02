@@ -1,8 +1,7 @@
 import React from 'react';
-import ValueProposition from './value-proposition';
-import Introduction from './introduction';
-import ContactForm from './contact-form';
-import AgileMap from './agile-map';
+import AgileMap from './agile-map/agile-map';
+import Introduction from './introduction/introduction';
+import ContactForm from './contact-form/contact-form';
 
 class Contact extends React.Component {
   render() {

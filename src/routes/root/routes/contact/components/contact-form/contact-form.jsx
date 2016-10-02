@@ -7,79 +7,9 @@ import { FormsyText } from 'formsy-material-ui';
 import { Snackbar } from 'material-ui';
 import { useSheet } from 'components/jss';
 import {Card} from 'material-ui/Card';
+import { style } from './style';
+import { content } from './content';
 
-//
-// Define the CSS styles of the component.
-//
-const style = {
-  container: {
-    width: '100%',
-  },
-  form: {
-    marginBottom: '10px',
-  },
-  label: {
-    fontWeight: 'bold',
-    width: '80% !important',
-    //minWidth: '300px',
-    display: 'block !important',
-    //maxWidth: '800px',
-  },
-  button: {
-    marginTop: '30px',
-  },
-  toast: {
-    textAlign: 'center',
-  },
-  '@media (max-width: 1580px)': {
-    label: {
-      width: '90%',
-    },
-  },
-};
-
-//
-// Define the content of the component.
-//
-const config = {
-  fields: [
-    {
-      name: 'name',
-      label: 'Name',
-      pattern: 'minLength:2,maxLength:100',
-      error: 'Please enter a valid name',
-      multiLine: false,
-      rows: 1,
-    },
-    {
-      name: 'email',
-      label: 'Email',
-      pattern: 'isEmail',
-      error: 'Please enter a valid email',
-      multiLine: false,
-      rows: 1,
-    },
-    {
-      name: 'subject',
-      label: 'Subject',
-      pattern: 'minLength:2,maxLength:100',
-      error: 'Please write us something more',
-      multiLine: false,
-      rows: 1,
-    },
-    {
-      name: 'message',
-      label: 'Message',
-      pattern: 'minLength:3,maxLength:400',
-      error: 'Please write us something more',
-      multiLine: true,
-      rows: 3,
-    },
-  ],
-  button: 'send',
-  successText: 'Your message was successful sent!',
-  errorText: 'An error occured, please try again.',
-};
 
 class SubmitValidationForm extends React.Component {
   static propTypes = {
@@ -93,7 +23,7 @@ class SubmitValidationForm extends React.Component {
     super(props);
     this.state = {
       open: false,
-      message: config.successText,
+      message: content.successText,
     };
   }
 
@@ -124,12 +54,12 @@ class SubmitValidationForm extends React.Component {
 
   showSuccessToast = () => this.setState({ ...this.state,
       open: true,
-      message: config.successText,
+      message: content.successText,
     });
 
   showErrorToast = () => this.setState({ ...this.state,
       open: true,
-      message: config.errorText,
+      message: content.errorText,
     });
 
   handleRequestClose = () => this.setState({ ...this.state,
@@ -149,7 +79,7 @@ class SubmitValidationForm extends React.Component {
             onInvalid={disableButton}
             onValidSubmit={_this.submitForm} >
             <FlexContainer column center>
-            {config.fields.map((field) => (
+            {content.fields.map((field) => (
               <FormsyText
                 name={field.name}
                 validations={field.pattern}
@@ -164,7 +94,7 @@ class SubmitValidationForm extends React.Component {
               <Button className={classes.button}
                 type={'submit'}
                 disabled={!this.state.canSubmit}>
-                {config.button}
+                {content.button}
               </Button>
             </FlexContainer>
           </Formsy.Form>
