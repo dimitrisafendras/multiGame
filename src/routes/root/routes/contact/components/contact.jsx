@@ -1,15 +1,17 @@
 import React from 'react';
-import AgileMap from './agile-map/agile-map';
+import AgileActorsMap from './agile-actors-map/agile-actors-map';
 import Introduction from './introduction/introduction';
 import ContactForm from './contact-form/contact-form';
+import AgileActorsTransportation from './agile-actors-transportation/agile-actors-transportation';
 
 class Contact extends React.Component {
   render() {
     return (
       <section>
-        <AgileMap />
+        <AgileActorsMap />
         <Introduction />
         <ContactForm />
+        <AgileActorsTransportation/>
       </section>
     );
   }
