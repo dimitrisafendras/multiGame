@@ -10,7 +10,6 @@ import {Card} from 'material-ui/Card';
 import { style } from './style';
 import { content } from './content';
 
-
 class SubmitValidationForm extends React.Component {
   static propTypes = {
     message: React.PropTypes.string,
@@ -71,28 +70,28 @@ class SubmitValidationForm extends React.Component {
     const _this = this;
     const { classes } = this.props.sheet;
     return (
-      <FlexContainer largeContainer center
-                      column>
+      <FlexContainer largeContainer
+        center column className={classes.component}>
         <Card className={classes.container}>
           <Formsy.Form className={classes.form} id={'form-aa'}
             onValid={enableButton}
             onInvalid={disableButton}
             onValidSubmit={_this.submitForm} >
             <FlexContainer column center>
-            {content.fields.map((field) => (
-              <FormsyText
-                name={field.name}
-                validations={field.pattern}
-                validationError={field.error}
-                required autoComplete="false"
-                floatingLabelText={field.label}
-                key={`aa-careers-form-contact-${field.name}`}
-                className={classes.label}
-                multiLine={field.multiLine} rows={field.rows}
-              />
+              {content.fields.map((field) => (
+                <FormsyText
+                  name={field.name}
+                  validations={field.pattern}
+                  validationError={field.error}
+                  required autoComplete={false}
+                  floatingLabelText={field.label}
+                  key={`aa-careers-form-contact-${field.name}`}
+                  className={classes.label}
+                  multiLine={field.multiLine} rows={field.rows}
+                />
             ))}
               <Button className={classes.button}
-                type={'submit'}
+                type={'submit'} secondary
                 disabled={!this.state.canSubmit}>
                 {content.button}
               </Button>

@@ -15,7 +15,7 @@ export const style = {
     fontSize: '20px',
     fontWeight: '300',
     marginTop: '15px',
-    marginBottom: '0px',
+    marginBottom: '46px',
     marginLeft: 'auto',
     marginRight: 'auto',
     textAlign: 'center',
