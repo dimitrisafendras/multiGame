@@ -58,7 +58,7 @@ export const signUp = (userData) => (dispatch) => {
 export const onSignInAndOnSignOut = (dispatch) => {
   userService.setOnAuth((user) => {
     dispatch(signedIn(user));
-    dispatch(push('/BecomeAgileActor'));
+    dispatch(push('/User'));
   });
   userService.setOnUnAuth((user) => {
     dispatch(signedOut({}));

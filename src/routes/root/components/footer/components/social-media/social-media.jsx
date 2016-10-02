@@ -1,9 +1,13 @@
 import React from 'react';
-import { useSheet } from 'components/jss';
-import { Content, FlexContainer, Container } from 'components/content';
 import { Logo } from 'routes/root/components';
 import { content } from './content';
 import { style } from './style';
+import {
+  useSheet,
+  Content,
+  FlexContainer,
+  Container
+} from 'components';
 
 const SocialMedia = ({ sheet }) => {
   const { classes } = sheet;

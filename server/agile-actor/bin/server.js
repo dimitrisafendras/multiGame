@@ -5,11 +5,13 @@ import {
   appSetup,
   appModules,
   serveStatic,
+  serveSpaRoutes,
 } from '../lib';
 
-let app = new Koa();
+const app = new Koa();
 
 appSetup(app);
+serveSpaRoutes(app);
 serveStatic(app);
 const server = appModules(app);
 
