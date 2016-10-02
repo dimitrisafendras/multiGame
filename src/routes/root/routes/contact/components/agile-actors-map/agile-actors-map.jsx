@@ -77,7 +77,7 @@ class SimpleMapPage extends React.Component {
   }
 }
 
-function AgileMap({ sheet }) {
+function AgileActorsMap({ sheet }) {
   const { classes } = sheet;
   return (
     <FlexContainer largeContainer
@@ -87,8 +87,8 @@ function AgileMap({ sheet }) {
   );
 };
 
-AgileMap.propTypes = {
+AgileActorsMap.propTypes = {
   sheet: React.PropTypes.object,
 };
 
-export default useSheet(AgileMap, style);
+export default useSheet(AgileActorsMap, style);

@@ -7,7 +7,7 @@ import { content } from './content';
 //
 // Define the component.
 //
-function Proposal({ sheet }) {
+function Introduction({ sheet }) {
   const { classes } = sheet;
   return (
     <article>
@@ -26,8 +26,8 @@ function Proposal({ sheet }) {
   );
 };
 
-Proposal.propTypes = {
+Introduction.propTypes = {
   sheet: React.PropTypes.object,
 };
 
-export default useSheet(Proposal, style);
+export default useSheet(Introduction, style);
