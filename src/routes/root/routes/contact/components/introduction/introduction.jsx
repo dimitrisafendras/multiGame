@@ -11,15 +11,19 @@ function Introduction({ sheet }) {
   const { classes } = sheet;
   return (
     <article>
-      <FlexContainer largeContainer center
-        className={classes.container} column>
-        <Content normalTitle
+      <FlexContainer normalContainer column
+        center className={classes.container} >
+        <Content largeTitle
           className={classes.title}>
           {content.title}
         </Content>
-        <Content subTitle
+        <Content normalSubTitle
           className={classes.subTitle}>
           {content.text}
+          <a href={`tel:${content.phone}`}
+            className={classes.phone}>
+            {content.phoneDisplay}
+          </a>
         </Content>
       </FlexContainer>
     </article>
