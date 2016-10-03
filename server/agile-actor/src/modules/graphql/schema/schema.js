@@ -6,6 +6,26 @@ import { transformUser } from '../../../modules/auth/passport/providers/local';
 // takes an `id` argument and returns the User with that ID.
 // Note that the `query` is a GraphQLObjectType, just like User.
 export const { schema, query } = graphqlSchema(`
+  type Contact {
+    id: String!
+    email: String!
+    name: String
+    createdAt: String
+  }
+
+  type Message {
+    id: String!
+    email: String!
+    subject: String!
+    message: String!
+  }
+
+  type MessageStatus {
+    status: String!
+    email: String
+    subject: String
+  }
+
   # Agile Actor user type
   type User {
     id: String!
@@ -30,6 +50,13 @@ export const { schema, query } = graphqlSchema(`
   }
 
   type Mutation {
+    createMessage(
+      email: String!
+      name: String!
+      subject: String!
+      message: String!
+    ) : MessageStatus
+
     createLocalUser(
       email: String!
       password: String!
@@ -57,6 +84,22 @@ export const { schema, query } = graphqlSchema(`
     },
 
     Mutation: {
+      createMessage: async (
+        _,
+        {
+          email,
+          name,
+          subject,
+          message,
+        }
+      ) => {
+        return {
+          status: 'ok',
+          subject,
+          email,
+        };
+      },
+
       createLocalUser: async (
         obj,
         userAttributes,
