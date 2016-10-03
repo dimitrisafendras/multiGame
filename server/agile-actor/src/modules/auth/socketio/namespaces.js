@@ -1,6 +1,9 @@
 import cookie from 'cookie';
 
-import r from '../../../../src/utils/db';
+import { Session } from '../../../models';
+import { sessionsModel } from '../../../utils/thinky';
+
+const { r } = sessionsModel;
 
 export default (io) => {
   const sessionIo = io.of('/session');
@@ -16,9 +19,7 @@ export default (io) => {
     const sid = `koa:sess:${sessionCookieId}`;
     console.log('  --> SocketIO on connection', id, sessionCookieId);
 
-    r
-    .db('sessions')
-    .table('sessions')
+    Session
     .filter({ sid })
     .run()
     .then(([sessionData]) => {
@@ -36,7 +37,6 @@ export default (io) => {
     });
 
     r
-    .db('sessions')
     .table('sessions')
     .filter({ sid })
     .changes()

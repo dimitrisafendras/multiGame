@@ -4,6 +4,12 @@ export default {
   rethinkdb: {
     host: 'localhost',
     port: 28015,
+    db: 'agileactors_test',
+  },
+  rethinkdbSessions: {
+    host: 'localhost',
+    port: 28015,
+    db: 'sessions',
   },
   auth: {
     github: {
