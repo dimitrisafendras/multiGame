@@ -1,9 +1,10 @@
 import Thinky from 'thinky';
-import {
-  r,
-  rs,
-} from './db';
+import rethinkdb from 'rethinkdbdash';
+
 import config from '../../config';
+
+const r = rethinkdb(config.rethinkdb);
+const rs = rethinkdb(config.rethinkdbSessions);
 
 const models = new Thinky({
   r,
@@ -15,7 +16,13 @@ const sessionsModel = new Thinky({
   ...config.rethinkdbSessions,
 });
 
+// const operationsModel = new Thinky({
+//   r: ro,
+//   ...config.rethinkdbOperations,
+// });
+
 export {
   models,
   sessionsModel,
+  // operationsModel,
 };

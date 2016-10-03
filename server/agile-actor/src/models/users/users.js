@@ -23,7 +23,8 @@ User.pre('save', function (next) {
   const { password, provider } = this;
 
   if (!this.isModified('password') || provider !== 'local') {
-    return next();
+    next();
+    return;
   }
 
   new Promise((resolve, reject) => {
