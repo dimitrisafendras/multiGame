@@ -1,5 +1,5 @@
 import graphqlSchema from 'graph.ql';
-import UserModel from '../../../models/users';
+import User from '../../../models/users';
 import { transformUser } from '../../../modules/auth/passport/providers/local';
 
 // Define the schema with one top-level field, `user`, that
@@ -18,6 +18,7 @@ export const { schema, query } = graphqlSchema(`
     createdAt: String
   }
 
+  # Array of User type elements
   type Users {
     all: [User]
   }
@@ -41,17 +42,17 @@ export const { schema, query } = graphqlSchema(`
   }
   `, {
     Query: {
-      me: async (_, __, { user }) => {
-        try {
-          return await UserModel.get(user.email).run();
-        } catch (err) {
-          return { email: 'NO_AUTHORIZED_USER' };
-        }
-      },
-
-      user: async (_, { email }) => await UserModel.get(email).run(),
+      me: async (
+        _,
+        __,
+        { user: { email } }
+      ) => await User.get(email).run(),
+      user: async (
+        _,
+        { email }
+      ) => await User.get(email).run(),
       users: async () => ({
-        all: await UserModel.filter({}).run(),
+        all: await User.filter({}).run(),
       }),
     },
 
@@ -61,15 +62,15 @@ export const { schema, query } = graphqlSchema(`
         userAttributes,
         context,
       ) => {
-        const user = new UserModel(transformUser(userAttributes));
+        const user = new User(transformUser(userAttributes));
         const newUser = await user.save();
         delete newUser.password;
         context.user = newUser;
         return newUser;
       },
 
-      deleteUser: async (obj, { email }, context) => {
-        await UserModel.get(email).delete().run();
+      deleteUser: async (obj, { email }) => {
+        await User.get(email).delete().run();
         return { id: '', name: '' };
       },
     },
