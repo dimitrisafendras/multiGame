@@ -11,7 +11,7 @@ export const content = {
       subtitle: 'holargos station',
       Img: Images.Tube,
       content:
-        `Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `Tube: Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
     {
@@ -20,7 +20,7 @@ export const content = {
       subtitle: 'bus station',
       Img: Images.Bus,
       content:
-        `Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `Bus Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
     {
@@ -29,7 +29,7 @@ export const content = {
       subtitle: 'find taxi',
       Img: Images.Taxi,
       content:
-        `Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `Taxi Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
   ],
