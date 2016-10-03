@@ -50,7 +50,7 @@ export const { schema, query } = graphqlSchema(`
   }
 
   type Mutation {
-    createMessage(
+    createContactMessage(
       email: String!
       name: String!
       subject: String!
@@ -84,7 +84,7 @@ export const { schema, query } = graphqlSchema(`
     },
 
     Mutation: {
-      createMessage: async (
+      createContactMessage: async (
         _,
         {
           email,
