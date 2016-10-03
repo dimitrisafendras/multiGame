@@ -8,13 +8,13 @@ import config from '../config';
 import { errorMiddleware } from '../src/middleware';
 
 import passport from '../src/modules/auth/passport';
-import r from '../src/utils/db';
+import { sessionsModel } from '../src/utils/thinky';
 
 export default (app) => {
   app.keys = [config.session];
 
   const sessionStore = new RethinkSession({
-    connection: r, // DB connection
+    connection: sessionsModel.r, // DB connection
   });
   sessionStore.setup(); // create the db, table and indexes to store sessions
 

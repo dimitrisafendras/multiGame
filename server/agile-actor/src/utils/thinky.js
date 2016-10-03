@@ -1,20 +1,21 @@
 import Thinky from 'thinky';
-import r from './db';
-import config from '../../config';
-
-const sessionsModel = new Thinky({
+import {
   r,
-  ...config.rethinkdbSessions,
-});
+  rs,
+} from './db';
+import config from '../../config';
 
 const models = new Thinky({
   r,
   ...config.rethinkdb,
 });
 
-export {
-  sessionsModel,
-  models,
-};
+const sessionsModel = new Thinky({
+  r: rs,
+  ...config.rethinkdbSessions,
+});
 
-export default models;
+export {
+  models,
+  sessionsModel,
+};

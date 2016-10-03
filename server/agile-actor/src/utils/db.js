@@ -4,4 +4,9 @@ import config from '../../config';
 
 const r = rethinkdb(config.rethinkdb);
 
-export default r;
+const rs = rethinkdb(config.rethinkdbSessions);
+
+export {
+  r,
+  rs,
+};
