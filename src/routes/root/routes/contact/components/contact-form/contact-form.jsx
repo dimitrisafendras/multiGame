@@ -1,6 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import escape from 'escape-html';
+import {createContactMessage} from 'model-services/user/graphql/contacts';
 import { FlexContainer, Button } from 'components/content';
 import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
@@ -11,12 +11,6 @@ import { style } from './style';
 import { content } from './content';
 
 class SubmitValidationForm extends React.Component {
-  static propTypes = {
-    message: React.PropTypes.string,
-    open: React.PropTypes.bool,
-    sheet: React.PropTypes.object,
-    canSubmit: React.PropTypes.bool,
-  };
 
   constructor(props) {
     super(props);
@@ -40,11 +34,15 @@ class SubmitValidationForm extends React.Component {
       data[key] = escape(data[key]);
     }
 
-    axios
-    .post('/EmailContact', { data })
+    createContactMessage(data)
     .then((response) => {
-      _this.showSuccessToast();
-      document.getElementById('form-aa').reset();
+      if(response.createContactMessage.status === 'ok') {
+        _this.showSuccessToast();
+        _this.refs.aaContactForm.reset();
+      }
+      else {
+        _this.showErrorToast();
+      }
     })
   .catch((response) => {
     _this.showErrorToast();
@@ -73,18 +71,18 @@ class SubmitValidationForm extends React.Component {
       <FlexContainer largeContainer
         center column className={classes.component}>
         <Card className={classes.container}>
-          <Formsy.Form className={classes.form} id={'form-aa'}
+          <Formsy.Form className={classes.form} ref={'aaContactForm'}
             onValid={enableButton}
             onInvalid={disableButton}
-            onValidSubmit={_this.submitForm} >
+            onValidSubmit={_this.submitForm}
+            autoComplete='off'>
             <FlexContainer column center>
               {content.fields.map((field) => (
                 <FormsyText
                   name={field.name}
                   validations={field.pattern}
                   validationError={field.error}
-                  required autoComplete={false}
-                  floatingLabelText={field.label}
+                  required floatingLabelText={field.label}
                   key={`aa-careers-form-contact-${field.name}`}
                   className={classes.label}
                   multiLine={field.multiLine} rows={field.rows}
@@ -107,6 +105,13 @@ class SubmitValidationForm extends React.Component {
       </FlexContainer>
     );
   }
+};
+
+SubmitValidationForm.propTypes = {
+  message: React.PropTypes.string,
+  open: React.PropTypes.bool,
+  sheet: React.PropTypes.object,
+  canSubmit: React.PropTypes.bool,
 };
 
 export default useSheet(SubmitValidationForm, style);
