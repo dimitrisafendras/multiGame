@@ -8,18 +8,16 @@ export const createContactMessage = ({
   name,
   subject,
   message,
-}) => {
-  return (
-    graphql
-    .mutate(`{
-      createContactMessage(
-        email: "${email}"
-        name: "${name}"
-        subject: "${subject}"
-        message: "${message}"
-      ) {
-        status
-      }
-    }`)
-  );
-};
+}) => (
+  graphql
+  .mutate(`{
+    createContactMessage(
+      email: "${email}"
+      name: "${name}"
+      subject: "${subject}"
+      message: "${message}"
+    ) {
+      status
+    }
+  }`)
+);
