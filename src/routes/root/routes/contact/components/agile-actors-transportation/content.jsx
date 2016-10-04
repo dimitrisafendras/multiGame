@@ -29,7 +29,7 @@ export const content = {
       subtitle: 'find taxi',
       Img: Images.Taxi,
       content:
-        `Taxi Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `TFacilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
   ],

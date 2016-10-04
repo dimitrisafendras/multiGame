@@ -4,21 +4,46 @@ import muiTheme from 'styles/customized-mui-theme';
 // The styles of the components
 //
 export const style = {
+  component:{
+    marginBottom: '25px',
+    height: '470px',
+  },
+  outerContainer: {
+    // width: '300px',
+  },
   container: {
-    minWidth: '150px',
-    marginRight: '20px',
-    marginLeft: '20px',
-    maxWidth: '640px',
+    width: '640px',
+    marginLeft: '10px',
+    marginRight: '10px',
+    height: '430px',
+    paddingTop: '35px',
+    paddingBottom: '35px',
+    paddingLeft: '35px',
+    paddingRight: '35px',
+    boxSizing: 'border-box',
+    '&:first-child': {
+      marginLeft: '0px',
+    },
+    '&:last-child': {
+      marginRight: '0px',
+    },
+  },
+  imgWrapper: {
+    backgroundColor: muiTheme.palette.white,
+    width: '260px',
+    height: '81px',
+    marginBottom: '25px',
+    marginLeft: '-12px',
   },
   img: {
-    height: '81px',
-    width: '49px',
     marginTop: '0px',
     marginBottom: '0px',
     marginLeft: 'auto',
     marginRight: 'auto',
   },
   title: {
+    color: muiTheme.palette.blue700,
+    textTransform: 'uppercase',
     fontSize: '24px !important',
     marginBottom: '33px !important',
   },
@@ -34,12 +59,40 @@ export const style = {
     fontWeight: 'bold',
     textTransform: 'uppercase',
     marginTop: '25px',
-
+    paddingLeft: '60px',
+    paddingRight: '30px',
   },
   text: {
     fontSize: '15px',
     fontWeight: 'normal',
     maxWidth: '555px',
     marginTop: '10px',
+    paddingLeft: '60px',
+  },
+  '@media (max-width: 767px)': {
+    component: {
+      paddingTop: '0px',
+    },
+    container: {
+      marginLeft: '0px !important',
+      marginRight: '0px !important',
+      width: '306px',
+    },
+    title: {
+      textAlign: 'center',
+      marginBottom: '20px !important',
+    },
+    subTitle: {
+      textAlign: 'center',
+      marginBottom: '10px',
+      paddingLeft: '0px',
+    },
+    text: {
+      paddingLeft: '0px',
+      paddingRight: '0',
+      maxWidth: '232px',
+      marginBottom: '25px',
+      textAlign: 'center',
+    },
   },
 };
