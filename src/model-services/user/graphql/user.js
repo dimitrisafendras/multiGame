@@ -1,8 +1,5 @@
 import { graphql } from 'model-services/server-apis';
 
-/*
- * User Registration graphql mutation invocation
- */
 export const createLocalUser = ({
   email,
   password,
