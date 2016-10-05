@@ -10,8 +10,9 @@ export const content = {
       title: 'tube',
       subtitle: 'holargos station',
       Img: Images.Tube,
+      ImgMobile: Images.TubeActive,
       content:
-        `Tube: Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `Tube: Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. tube Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
     {
@@ -19,8 +20,9 @@ export const content = {
       title: 'bus',
       subtitle: 'bus station',
       Img: Images.Bus,
+      ImgMobile: Images.BusActive,
       content:
-        `Bus Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `Bus Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. bus Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
     {
@@ -28,8 +30,9 @@ export const content = {
       title: 'taxi',
       subtitle: 'find taxi',
       Img: Images.Taxi,
+      ImgMobile: Images.TaxiActive,
       content:
-        `TFacilisi tempora excepturi dolorum platea pariatur. Cupidatat. Ligula integer occaecati
+        `Taxi: Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. taxi Ligula integer occaecati
          eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
     },
   ],

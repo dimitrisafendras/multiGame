@@ -4,20 +4,17 @@ import muiTheme from 'styles/customized-mui-theme';
 // The styles of the components
 //
 export const style = {
-  component:{
+  component: {
     marginBottom: '25px',
-    height: '470px',
-  },
-  outerContainer: {
-    // width: '300px',
+    paddingTop: '0px',
   },
   container: {
     width: '640px',
     marginLeft: '10px',
     marginRight: '10px',
-    height: '430px',
+    height: '380px',
     paddingTop: '35px',
-    paddingBottom: '35px',
+    paddingBottom: '20px',
     paddingLeft: '35px',
     paddingRight: '35px',
     boxSizing: 'border-box',
@@ -46,6 +43,7 @@ export const style = {
     textTransform: 'uppercase',
     fontSize: '24px !important',
     marginBottom: '33px !important',
+    backgroundColor: 'transparent !important',
   },
   inkBar: {
     backgroundColor: muiTheme.palette.blue700,
@@ -65,18 +63,19 @@ export const style = {
   text: {
     fontSize: '15px',
     fontWeight: 'normal',
+    lineHeight: '1.5',
     maxWidth: '555px',
     marginTop: '10px',
     paddingLeft: '60px',
+    paddingRight: '30px',
   },
   '@media (max-width: 767px)': {
     component: {
-      paddingTop: '0px',
     },
     container: {
       marginLeft: '0px !important',
       marginRight: '0px !important',
-      width: '306px',
+      width: '300px',
     },
     title: {
       textAlign: 'center',
@@ -86,10 +85,11 @@ export const style = {
       textAlign: 'center',
       marginBottom: '10px',
       paddingLeft: '0px',
+      paddingRight: '0px',
     },
     text: {
       paddingLeft: '0px',
-      paddingRight: '0',
+      paddingRight: '0px',
       maxWidth: '232px',
       marginBottom: '25px',
       textAlign: 'center',

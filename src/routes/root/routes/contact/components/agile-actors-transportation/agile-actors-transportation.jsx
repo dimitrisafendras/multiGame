@@ -60,67 +60,67 @@ class AgileActorsTransportation extends React.Component {
   render() {
     const { classes } = this.props.sheet;
     let meanBoxes;
-    if (this.state.slider){
+    if (this.state.slider) {
       meanBoxes =
-      <Tabs className={classes.container} inkBarStyle={style.inkBar}>
-        {content.means.map((mean) => (
-          <Tab icon={mean.Img} label={mean.title} key={`aa-transportation-${mean.id}`}
-            className={classes.title}>
-            <Content largeText className={classes.subTitle}>
-              {mean.subtitle}
-            </Content>
-            <Content largeText className={classes.text}>
-              {mean.content}
-            </Content>
-          </Tab>
-        ))}
-        </Tabs>
-    }
-    else{
-      meanBoxes =
-      <Slider
-        {...SliderSettings}>
-        {content.means.map((mean) =>
-          (
-            <div key={`aa-transportation-${mean.id}`}>
-            <FlexContainer
-              center className={classes.outerContainer}>
-              <Container
-                container
-                className={classes.container}>
-                <FlexContainer
-                  center
-                  className={classes.imgWrapper}>
-                  <Content
-                    image
-                    className={classes.img}>
-                    {mean.Img}
-                  </Content>
-                </FlexContainer>
-                <Content
-                  title
-                  className={classes.title}>
-                  {mean.title}
-                </Content>
+        <FlexContainer center>
+          <Tabs className={classes.container} inkBarStyle={style.inkBar}>
+            {content.means.map((mean) => (
+              <Tab icon={mean.Img} label={mean.title} key={`aa-transportation-${mean.id}`}
+                className={classes.title} disableTouchRipple>
                 <Content largeText className={classes.subTitle}>
                   {mean.subtitle}
                 </Content>
                 <Content largeText className={classes.text}>
                   {mean.content}
                 </Content>
-              </Container>
-            </FlexContainer>
-          </div>
-          )
-          )}
-      </Slider>;
+              </Tab>
+            ))}
+          </Tabs>
+        </FlexContainer>;
+    } else
+    {
+      meanBoxes =
+        <Slider
+          {...SliderSettings}>
+          {content.means.map((mean) =>
+            (
+            <div key={`aa-transportation-${mean.id}`}>
+              <FlexContainer center>
+                <Container
+                  container
+                  className={classes.container}>
+                  <FlexContainer
+                    center
+                    className={classes.imgWrapper}>
+                    <Content
+                      image
+                      className={classes.img}>
+                      {mean.ImgMobile}
+                    </Content>
+                  </FlexContainer>
+                  <Content
+                    title
+                    className={classes.title}>
+                    {mean.title}
+                  </Content>
+                  <Content largeText className={classes.subTitle}>
+                    {mean.subtitle}
+                  </Content>
+                  <Content largeText className={classes.text}>
+                    {mean.content}
+                  </Content>
+                </Container>
+              </FlexContainer>
+            </div>
+            )
+            )}
+        </Slider>;
     }
     return (
       <article>
-        <FlexContainer center
-          normalContainer className={classes.component}>
+        <Container normalContainer className={classes.component}>
           {meanBoxes}
-        </FlexContainer>
+        </Container>
       </article>
     );
   };

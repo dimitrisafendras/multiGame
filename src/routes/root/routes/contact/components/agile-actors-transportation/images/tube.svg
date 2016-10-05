@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="49px" height="81px" viewBox="0 0 49 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="tube_img" width="49px" height="81px" viewBox="0 0 49 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 40 (33762) - http://www.bohemiancoding.com/sketch -->
-    <title>7643348E-AA51-425F-81E0-5A5463D57A3E</title>
+    <title>FA604764-A350-4AA4-8064-B3F4D2F8D0F1</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.699999988">
-        <g id="contact-illustrations" transform="translate(-281.000000, -36.000000)">
+    <defs>
+			<style>
+				#tube_img {
+					opacity:0.7;
+				}
+				#tube_img:hover{
+					opacity:1;
+				}
+			</style>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="contact-illustrations" transform="translate(-281.000000, -165.000000)">
             <g id="Group" transform="translate(281.000000, 36.000000)">
-                <g id="tube">
+                <g id="tube-copy" transform="translate(0.000000, 129.000000)">
                     <polygon id="Fill-1" fill="#1976D2" points="36 8 38 8 38 0 12 0 12 8 14 8 14 2 36 2"></polygon>
                     <polygon id="Fill-2" fill="#FFCA28" points="1 58 49 58 49 8 1 8"></polygon>
                     <g id="Group-14" transform="translate(0.000000, 14.709600)">
