@@ -53,7 +53,7 @@ export const style = {
       color: muiTheme.palette.cyan400,
     },
     loggedInIcon: {
-      color: muiTheme.palette.blue600,
+      color: muiTheme.palette.blue700,
       notificationBall: {
         width: 6,
         height: 6,
@@ -69,7 +69,7 @@ export const style = {
       },
     },
     menuIcon: {
-      color: muiTheme.palette.blue600,
+      color: muiTheme.palette.blue700,
     },
   },
   '@media (min-width: 768px)': {
