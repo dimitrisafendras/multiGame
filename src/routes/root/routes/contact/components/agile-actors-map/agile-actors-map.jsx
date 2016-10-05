@@ -9,6 +9,7 @@ import { content } from './content';
 
 class SimpleMapPage extends React.Component {
   // TODO Update callbalck for resize event listener
+  // TODO Add infobox
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -18,8 +19,9 @@ class SimpleMapPage extends React.Component {
             lat: 38.0136492,
             lng: 23.787719,
           },
-          key: 'Agile Actors',
-          defaultAnimation: 2,
+          key: 'AGILE ACTORS',
+          title: 'AGILE ACTORS Ethnikis Antistaseos 62A, Chalandri, 152 31, Attica, Greece',
+          icon: 'images/contact/p-i-n-copy.png',
         },
       ],
     };
@@ -69,7 +71,8 @@ class SimpleMapPage extends React.Component {
           }
             defaultZoom={16}
             defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}>
-            <Marker onClick={this.handleMapClick} {...this.state.markers[0]} />
+            <Marker onClick={this.handleMapClick} {...this.state.markers[0]} >
+            </Marker>
           </GoogleMap>
         }
       />
@@ -81,7 +84,7 @@ function AgileActorsMap({ sheet }) {
   const { classes } = sheet;
   return (
     <FlexContainer largeContainer
-                   className={classes.outerContainer}>
+                   className={classes.container}>
       <SimpleMapPage />
     </FlexContainer>
   );

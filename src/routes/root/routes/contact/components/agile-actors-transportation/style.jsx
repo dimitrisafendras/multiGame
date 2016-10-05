@@ -26,7 +26,6 @@ export const style = {
     },
   },
   imgWrapper: {
-    backgroundColor: muiTheme.palette.white,
     width: '260px',
     height: '81px',
     marginBottom: '25px',
@@ -70,12 +69,11 @@ export const style = {
     paddingRight: '30px',
   },
   '@media (max-width: 767px)': {
-    component: {
-    },
     container: {
       marginLeft: '0px !important',
       marginRight: '0px !important',
       width: '300px',
+      height: '420px',
     },
     title: {
       textAlign: 'center',
@@ -93,6 +91,14 @@ export const style = {
       maxWidth: '232px',
       marginBottom: '25px',
       textAlign: 'center',
+    },
+  },
+  '@media (max-width: 320px)': {
+    component: {
+      paddingBottom: '8%',
+    },
+    imgWrapper: {
+      marginLeft: '-30px',
     },
   },
 };
