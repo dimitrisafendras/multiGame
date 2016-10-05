@@ -43,6 +43,7 @@ export const style = {
     fontSize: '24px !important',
     marginBottom: '33px !important',
     backgroundColor: 'transparent !important',
+    height: '110px !important',
   },
   inkBar: {
     backgroundColor: muiTheme.palette.blue700,

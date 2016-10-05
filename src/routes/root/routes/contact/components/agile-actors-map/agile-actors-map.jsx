@@ -70,9 +70,9 @@ class SimpleMapPage extends React.Component {
             }
           }
             defaultZoom={16}
-            defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}>
-            <Marker onClick={this.handleMapClick} {...this.state.markers[0]} >
-            </Marker>
+            defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}
+            draggable={false}>
+            <Marker onClick={this.handleMapClick} {...this.state.markers[0]}/>
           </GoogleMap>
         }
       />
