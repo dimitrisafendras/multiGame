@@ -12,21 +12,11 @@ const style = {
     boxSizing: 'border-box',
     zIndex: 1100,
   },
-  tabsContentContainer: {
-    // width: 'auto !important',
-    // display: 'flex',
-    // flexWrap: 'nowrap',
-    // justifyContent: 'space-between',
-    // alignItems: 'stretch',
-  },
+  tabsContentContainer: {},
   tab: {
-    // width: 'auto !important',
     height: '68px',
     fontSize: '13px',
     fontWeight: '700',
-    // padding: '0 10px !important',
-    // flexGrow: '1',
-    // flexShrink: '1',
   },
   '@media (max-width: 767px)': {
     tabs: {
