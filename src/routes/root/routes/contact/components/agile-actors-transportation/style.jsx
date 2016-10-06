@@ -79,6 +79,7 @@ export const style = {
     title: {
       textAlign: 'center',
       marginBottom: '20px !important',
+      height: 'auto !important',
     },
     subTitle: {
       textAlign: 'center',
