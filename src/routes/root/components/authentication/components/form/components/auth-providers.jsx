@@ -3,9 +3,6 @@ import { useSheet } from 'components/jss';
 import muiTheme from 'styles/customized-mui-theme';
 import { Container, Button } from 'components/content';
 
-//
-// Define the content of the component
-//
 const content = {
   providers: [
     {
@@ -27,9 +24,6 @@ const content = {
   ],
 };
 
-//
-// Define the CSS styles of the components
-//
 const style = {
   container: {
     width: '260px',
@@ -48,18 +42,9 @@ const style = {
     display: 'inline-table',
     color: muiTheme.palette.white,
     fontSize: '13px',
-    //opacity: '0.5',
-    //transition: '1s ease',
-    //':hover': {
-    //  opacity: 1,
-    //},
   },
-
 };
 
-//
-// Define the component
-//
 type Props = {
   signIn: (options: { provider: string }) => void,
   sheet: Object,

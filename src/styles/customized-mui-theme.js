@@ -92,12 +92,12 @@ export default getMuiTheme({
     floatingLabelColor: cyan400,
     focusColor: cyan400,
     hintColor: cyan400,
-    textColor: grey600,
+    textColor: blue700,
     errorColor: redA200,
   },
   snackbar: {
     backgroundColor: blue600,
-    textColor: cyan400,
+    textColor: white,
   },
   breakpoints: {
     mobile: '',

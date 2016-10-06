@@ -1,7 +1,7 @@
-import thinky from '../../utils/thinky';
+import { models } from '../../utils/thinky';
 import Achievement from './achievements';
 
-const { r, type } = thinky;
+const { r, type } = models;
 const providersList = [
   'agileactors',
   'google',
@@ -20,7 +20,7 @@ const phoneTypes = [
   'home',
 ];
 
-const AgileActor = thinky.createModel('AgileActor', {
+const AgileActor = models.createModel('AgileActor', {
   type: type.string().default('AgileActor'),
   name: {
     firstName: type.string(),

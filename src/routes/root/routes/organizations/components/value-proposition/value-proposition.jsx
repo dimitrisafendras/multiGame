@@ -8,10 +8,11 @@ import {
   Container,
 } from 'components';
 
-//
-// The component
-//
-const ValueProposition = ({ sheet }) => {
+type Props = {
+  sheet: Object,
+};
+
+const ValueProposition = ({ sheet }: Props) => {
   const { classes } = sheet;
 
   return (
@@ -41,10 +42,6 @@ const ValueProposition = ({ sheet }) => {
       </Container>
     </article>
   );
-};
-
-ValueProposition.propTypes = {
-  sheet: React.PropTypes.object,
 };
 
 export default useSheet(ValueProposition, style);
