@@ -1,4 +1,4 @@
-import muiTheme from "styles/customized-mui-theme";
+import muiTheme from 'styles/customized-mui-theme';
 
 export const style = {
   mainMenu: {
