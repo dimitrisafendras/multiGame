@@ -1,93 +1,155 @@
 import muiTheme from 'styles/customized-mui-theme';
 
 export const style = {
-  appBar: {
-    container: {
-      boxShadow: 'none',
-      overflow: 'hidden',
-    },
-    titleStyle: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'left',
-      overflow: 'hidden',
-      height: 60,
-      maxHeight: 60,
-    },
-    iconStyleRight: {
-      marginTop: 0,
-      marginRight: -24,
-      marginLeft: 'auto',
-    },
-  },
-  appBarIconStyleRight: {
-    marginTop: 0,
-    marginRight: -24,
-    marginLeft: 'auto',
-  },
   mainMenu: {
     position: 'fixed',
     top: '0px',
+    left: '50%',
+    transform: 'translateX(-50%)',
     width: '100%',
     maxWidth: muiTheme.appBar.maxWidth,
     zIndex: '100',
   },
+  mainMenuContent: {
+    position: 'absolute',
+    top: '0px',
+    right: '0px',
+    width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
+    height: '100%',
+    zIndex: '1200',
+    display: 'flex',
+    flexWrap: 'no-wrap',
+    justifyContent: 'flex-end',
+  },
+  mainMenuItem: {
+    flexShrink: 1,
+  },
+  mainMenuItemGrow: {
+    flexGrow: 1,
+  },
+  mainMenuItemMobile: {
+    display: 'block',
+  },
+  mainMenuItemTablet: {
+    display: 'none',
+  },
+  mainMenuIconContainer: {
+    borderLeft: `1px solid ${muiTheme.palette.grey300}`,
+  },
+  appBarContainer: {},
+  appBar: {
+    boxShadow: 'none',
+    overflow: 'hidden',
+    height: '100%',
+    alignItems: 'center',
+  },
+  appBarTitleStyle: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'left',
+    overflow: 'hidden',
+    height: 60,
+    maxHeight: 60,
+  },
+  logo: {},
+  headerMenuBarButton: {
+    height: `${muiTheme.appBar.mobileHeight}px !important`,
+    width: `${muiTheme.appBar.mobileHeight}px !important`,
+    padding: '6px !important',
+    marginLeft: 'auto !important',
+    textTransform: 'uppercase',
+    color: muiTheme.palette.cyan400,
+  },
+  headerMenuBarButtonLogin: {
+    opacity: 0.75,
+    '&:after': {
+      content: '    ',
+      display: 'block',
+      position: 'absolute',
+      top: '100%',
+      width: '100%',
+      height: '3px',
+      backgroundColor: muiTheme.palette.cyan400,
+      transition: '300ms',
+    },
+    '&:hover': {
+      opacity: 1,
+      '&:after': {
+        transform: 'translateY(-100%)',
+      }
+    }
+  },
+  headerMenuBarButtonMenu: {
+    borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
+  },
+  headerMenuBarButtonUserLoggedIn: {
+    color: `${muiTheme.palette.blue600} !important`,
+  },
   headerMenuBar: {
-    mobile: {
-      position: 'fixed',
-      top: 0,
-      right: 60,
-      zIndex: 1200,
-      height: 60,
-    },
     button: {
-      height: 60,
-      width: 60,
-      padding: 6,
-      borderLeft: `1px solid ${muiTheme.palette.grey300}`,
-    },
-    icon: {
-      height: 48,
-      lineHeight: '48px',
-      width: 48,
       color: muiTheme.palette.cyan400,
     },
-    loggedInIcon: {
-      color: muiTheme.palette.blue700,
-      notificationBall: {
-        width: 6,
-        height: 6,
-        display: 'block',
-        background: muiTheme.palette.cyan400,
-        borderRadius: '50%',
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        zIndex: 1000,
-        transform: 'translate(2px, -8px)',
-        border: `1px solid ${muiTheme.palette.white}`,
-      },
+    icon: {
+      color: muiTheme.palette.cyan400,
     },
     menuIcon: {
-      color: muiTheme.palette.blue700,
+      color: muiTheme.palette.blue600,
     },
   },
   '@media (min-width: 768px)': {
+    mainMenu: {
+      height: `${muiTheme.appBar.tabletHeight}px`,
+    },
+    mainMenuContent: {
+      width: `calc(100% - 320px)`,
+      maxWidth: `400px`,
+    },
+    mainMenuItem: {
+      height: `${muiTheme.appBar.tabletHeight}px`,
+    },
+    mainMenuItemMobile: {
+      display: 'none',
+    },
+    mainMenuItemTablet: {
+      display: 'block',
+    },
+    mainMenuIconContainer: {
+      borderRight: `1px solid ${muiTheme.palette.grey300}`,
+    },
+    headerMenuBarButton: {
+      height: `${muiTheme.appBar.tabletHeight}px !important`,
+      width: 'auto !important',
+      padding: '10px !important',
+      marginLeft: 'auto !important',
+    },
+    headerMenuBarButtonLoggedIn: {
+      padding: '0px !important',
+    },
+    headerMenuBarButtonLogout: {
+      height: '38px !important',
+      width: 'auto !important',
+      padding: '0 !important',
+      marginTop: '5px !important',
+      borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
+    },
+    appBarContainer: {
+      height: `${muiTheme.appBar.tabletHeight}px`,
+    },
+    appBarTitleStyle: {
+      height: `${muiTheme.appBar.tabletHeight}px`,
+      maxHeight: `${muiTheme.appBar.tabletHeight}px`,
+    },
+    logo: {},
     appBar: {
       iconStyleRight: {
         display: 'none !important',
       },
     },
-    appBarIconStyleRight: {
-      display: 'none !important',
-    },
-    headerMenuBar: {
-      mobile: {
-        display: 'none !important',
-      },
-    },
   },
   '@media (min-width: 1200px)': {
+    mainMenuContent: {
+      maxWidth: `400px`,
+    },
     appBar: {
       container: {
         maxHeight: 78,

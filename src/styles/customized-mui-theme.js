@@ -67,9 +67,11 @@ export default getMuiTheme({
   },
   appBar: {
     logoHeight: '48px',
+    logoWidth: '250px',
     boxSizing: 'border-box',
     color: white,
-    height: 60,
+    mobileHeight: 60,
+    tabletHeight: 68,
     width: '100%',
     maxWidth: '1600px',
     titleFontWeight: 400,
@@ -77,7 +79,7 @@ export default getMuiTheme({
     paddingLeft: '9.4%',
     paddingRight: '9.4%',
     get paddingTop() {
-      return (parseInt(this.height) - parseInt(this.logoHeight)) / 2 + 'px';
+      return (parseInt(this.mobileHeight) - parseInt(this.logoHeight)) / 2 + 'px';
     },
   },
   tabs: {

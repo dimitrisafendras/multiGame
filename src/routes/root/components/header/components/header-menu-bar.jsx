@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
-
 import {
   Tabs,
   Tab,
@@ -8,19 +7,14 @@ import {
 
 const style = {
   tabs: {
-    position: 'absolute',
-    top: '0px',
-    right: '120px',
-    width: '100%',
-    paddingRight: '68px',
-    paddingLeft: '320px',
-    lineHeight: '58px',
+    height: '100%',
+    lineHeight: '100%',
     boxSizing: 'border-box',
     zIndex: 1100,
-    maxWidth: '700px',
   },
+  tabsContentContainer: {},
   tab: {
-    height: '100%',
+    height: '68px',
     fontSize: '13px',
     fontWeight: '700',
   },
@@ -43,19 +37,19 @@ const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
   const { classes } = sheet;
 
   return (
-    <div className={classes.tabs}>
-      <Tabs value={activeTabIndex}>
-        {content.filter((item) => (item.order === 1)).map((item, index) => (
-          <Tab value={index}
-            label={item.title}
-            style={style.tab}
-            key={tabKey(item.link)}
-            onActive={function () {
-              link(item.link);
-            }} />
-          ))}
-      </Tabs>
-    </div>
+    <Tabs value={activeTabIndex}
+      className={classes.tabs}
+      tabItemContainerStyle={style.tabsContentContainer}>
+      {content.filter((item) => (item.order === 1)).map((item, index) => (
+        <Tab value={index}
+          label={item.title}
+          className={classes.tab}
+          key={tabKey(item.link)}
+          onActive={function () {
+            link(item.link);
+          }} />
+        ))}
+    </Tabs>
   );
 };
 
