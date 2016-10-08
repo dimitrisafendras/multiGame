@@ -8,14 +8,14 @@ import { useSheet } from 'components/jss';
 import { style } from './style';
 
 type Props = {
-  handleLoginRegisterTouchTap: () => void,
+  toggleAuthentication: () => void,
   onSignOut: () => void,
   sheet: Object,
   user: Object,
 };
 
 const UserButtonMobile = ({
-  handleLoginRegisterTouchTap,
+  toggleAuthentication,
   onSignOut,
   sheet: { classes },
   user,
@@ -26,7 +26,7 @@ const UserButtonMobile = ({
       className={classes.headerMenuBarButton}
       style={style.headerMenuBar.button}
       iconStyle={style.headerMenuBar.icon}
-      onClick={handleLoginRegisterTouchTap}
+      onClick={toggleAuthentication}
       iconClassName={'material-icons'}>
       person
     </IconButton>

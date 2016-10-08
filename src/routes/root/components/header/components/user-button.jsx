@@ -9,14 +9,14 @@ import { useSheet } from 'components/jss';
 import { style } from './style';
 
 type Props = {
-  handleLoginRegisterTouchTap: () => void,
+  toggleAuthentication: () => void,
   onSignOut: () => void,
   user: Object,
   sheet: Object,
 };
 
 const UserButton = ({
-  handleLoginRegisterTouchTap,
+  toggleAuthentication,
   onSignOut,
   user,
   sheet: { classes },
@@ -29,7 +29,7 @@ const UserButton = ({
         classes.headerMenuBarButtonLogin,
       ].join(' ')}
       style={style.headerMenuBar.button}
-      onClick={handleLoginRegisterTouchTap}
+      onClick={toggleAuthentication}
       label={'Login / Register'}
       icon={
         <FontIcon
@@ -68,7 +68,7 @@ const UserButton = ({
         style={style.headerMenuBar.button}
         onClick={() => {
           onSignOut();
-          handleLoginRegisterTouchTap();
+          toggleAuthentication();
         }}
         label={`logout`}
       />

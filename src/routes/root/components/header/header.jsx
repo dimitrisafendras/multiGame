@@ -19,14 +19,14 @@ import { signInEnabled } from './config';
 
 type Props = {
   handleLeftIconButtonTouchTap: () => void,
-  handleLoginRegisterTouchTap: () => void,
+  toggleAuthentication: () => void,
   activeRoute: string,
   sheet: Object,
 };
 
 const Header = ({
   handleLeftIconButtonTouchTap,
-  handleLoginRegisterTouchTap,
+  toggleAuthentication,
   activeRoute,
   sheet: { classes },
 }: Props) => (
@@ -43,7 +43,7 @@ const Header = ({
 
       {/* Header Tabs */}
       <div className={classes.mainMenuItem} style={style.mainMenuItemGrow}>
-        <HeaderMenuBar activeRoute={activeRoute} />
+        <HeaderMenuBar {...{ activeRoute }} />
       </div>
 
       <div className={[classes.mainMenuItem, classes.mainMenuItemMobile].join(' ')}>
@@ -52,7 +52,7 @@ const Header = ({
           {signInEnabled && (
             <UserButtonMobile {...{
               handleLeftIconButtonTouchTap,
-              handleLoginRegisterTouchTap,
+              toggleAuthentication,
             }} />
           )}
 
@@ -75,7 +75,7 @@ const Header = ({
           {signInEnabled && (
             <UserButton {...{
               handleLeftIconButtonTouchTap,
-              handleLoginRegisterTouchTap,
+              toggleAuthentication,
             }} />
           )}
         </div>

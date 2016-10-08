@@ -4,12 +4,12 @@ import { jss } from 'components/jss';
 
 import {
   Styles,
-  Sidebar,
 } from 'routes/root/containers';
 
 import {
   Header,
   Footer,
+  Sidebar,
   Authentication,
 } from 'routes/root/components';
 
@@ -64,31 +64,27 @@ class Layout extends Component {
   };
 
   render() {
-    const props = this.props;
-    const { location, children, ...rest } = props;
+    const { location, children } = this.props;
 
     return (
       <Styles>
         <Header
-          {...rest}
           activeRoute={location.pathname}
           handleLeftIconButtonTouchTap={this.toggleSidebar}
-          handleLoginRegisterTouchTap={this.toggleAuthentication}
+          toggleAuthentication={this.toggleAuthentication}
           />
         <Authentication
           toggleAuthentication={this.toggleAuthentication}
           open={this.state.authenticationOpen}
-          {...rest}
           />
         <Sidebar
-          handleLoginRegisterTouchTap={this.toggleAuthentication}
+          toggleAuthentication={this.toggleAuthentication}
           toggleSidebar={this.toggleSidebar}
           open={this.state.sidebarOpen}
-          {...rest}
           />
         <div className={classes.content}>
           {children}
-          <Footer {...rest} />
+          <Footer />
         </div>
       </Styles>
     );
