@@ -4,11 +4,11 @@ import { jss } from 'components/jss';
 
 import {
   Styles,
-  Header,
   Sidebar,
 } from 'routes/root/containers';
 
 import {
+  Header,
   Footer,
   Authentication,
 } from 'routes/root/components';

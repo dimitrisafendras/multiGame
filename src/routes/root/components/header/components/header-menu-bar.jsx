@@ -12,7 +12,7 @@ const style = {
     boxSizing: 'border-box',
     zIndex: 1100,
   },
-  tabsContentContainer: {},
+  tabsContainer: {},
   tab: {
     height: '68px',
     fontSize: '13px',
@@ -27,37 +27,39 @@ const style = {
 
 const tabKey = (link) => `aa-header-tabs--${link.replace(' ', '')}`;
 
-const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
-  const activeTabIndex = (
-    content
-    .filter((item) => (item.order === 1))
-    .findIndex((item) => item.link === activeRoute)
-  );
+type Props = {
+  content: [],
+  link: (to: string) => void,
+  activeRoute: string,
+  sheet: Object,
+};
 
-  const { classes } = sheet;
+const HeaderMenuBar = ({
+  content,
+  link,
+  activeRoute,
+  sheet: { classes },
+}: Props) => {
+  const menuItems = content.filter((item) => (item.order === 1));
+  const activeTabIndex = menuItems.findIndex((item) => item.link === activeRoute);
 
   return (
-    <Tabs value={activeTabIndex}
+    <Tabs
       className={classes.tabs}
-      tabItemContainerStyle={style.tabsContentContainer}>
-      {content.filter((item) => (item.order === 1)).map((item, index) => (
+      tabItemContainerStyle={style.tabsContainer}
+      value={activeTabIndex}>
+      {menuItems.map((item, index) => (
         <Tab value={index}
           label={item.title}
           className={classes.tab}
           key={tabKey(item.link)}
           onActive={function () {
             link(item.link);
-          }} />
-        ))}
+          }}
+        />
+      ))}
     </Tabs>
   );
-};
-
-HeaderMenuBar.propTypes = {
-  content: React.PropTypes.array,
-  link: React.PropTypes.func,
-  activeRoute: React.PropTypes.string,
-  sheet: React.PropTypes.object,
 };
 
 export default useSheet(HeaderMenuBar, style);

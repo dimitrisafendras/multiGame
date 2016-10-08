@@ -76,8 +76,8 @@ export const style = {
       opacity: 1,
       '&:after': {
         transform: 'translateY(-100%)',
-      },
-    },
+      }
+    }
   },
   headerMenuBarButtonMenu: {
     borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
