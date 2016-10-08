@@ -43,7 +43,7 @@ const Header = ({
 
       {/* Header Tabs */}
       <div className={classes.mainMenuItem} style={style.mainMenuItemGrow}>
-        <HeaderMenuBar {...activeRoute} />
+        <HeaderMenuBar activeRoute={activeRoute} />
       </div>
 
       <div className={[classes.mainMenuItem, classes.mainMenuItemMobile].join(' ')}>
