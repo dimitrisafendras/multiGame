@@ -1,7 +1,7 @@
 import config from '../config';
-import thinky from '../src/utils/thinky';
+import { models } from '../src/utils/thinky';
 
-const { r } = thinky;
+const { r } = models;
 
 export function cleanDb() {
   return r.tableList().forEach(function (table) {

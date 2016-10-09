@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-import { Layout } from '../components';
+import { HeaderMenuBar } from '../components';
 
 export default connect(
   ({ content }) => ({ content }),
@@ -9,5 +9,5 @@ export default connect(
     link: (path) => {
       path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
     },
-  })
-)(Layout);
+  }),
+)(HeaderMenuBar);

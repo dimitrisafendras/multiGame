@@ -1,25 +1,33 @@
 import React, { PropTypes, Component } from 'react';
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components/jss';
 
 import {
   Styles,
-  Header,
-  Sidebar,
 } from 'routes/root/containers';
 
 import {
+  Header,
   Footer,
+  Sidebar,
   Authentication,
 } from 'routes/root/components';
 
 const style = {
   content: {
     height: '100vh',
-    marginTop: muiTheme.appBar.height,
+    marginTop: `${muiTheme.appBar.mobileHeight}px`,
     display: 'block',
     boxSizing: 'border-box',
   },
+  '@media (min-width: 768px)': {
+    content: {
+      marginTop: `${muiTheme.appBar.tabletHeight}px`,
+    },
+  },
 };
+
+const { classes } = jss.createStyleSheet(style).attach();
 
 type Props = {
   children: PropTypes.element,
@@ -56,31 +64,27 @@ class Layout extends Component {
   };
 
   render() {
-    const props = this.props;
-    const { location, children, ...rest } = props;
+    const { location, children } = this.props;
 
     return (
       <Styles>
         <Header
-          {...rest}
           activeRoute={location.pathname}
           handleLeftIconButtonTouchTap={this.toggleSidebar}
-          handleLoginRegisterTouchTap={this.toggleAuthentication}
+          toggleAuthentication={this.toggleAuthentication}
           />
         <Authentication
           toggleAuthentication={this.toggleAuthentication}
           open={this.state.authenticationOpen}
-          {...rest}
           />
         <Sidebar
-          handleLoginRegisterTouchTap={this.toggleAuthentication}
+          toggleAuthentication={this.toggleAuthentication}
           toggleSidebar={this.toggleSidebar}
           open={this.state.sidebarOpen}
-          {...rest}
           />
-        <div style={style.content}>
+        <div className={classes.content}>
           {children}
-          <Footer {...rest} />
+          <Footer />
         </div>
       </Styles>
     );

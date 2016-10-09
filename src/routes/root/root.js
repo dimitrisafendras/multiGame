@@ -8,7 +8,7 @@ import {
   UserRoute,
 } from './routes';
 
-import { Layout } from './containers';
+import { Layout } from './components';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */

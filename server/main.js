@@ -13,6 +13,7 @@ import webpackHMRMiddleware from './middleware/webpack-hmr';
 
 import {
   appSetup,
+  serveSpaRoutes,
   appModules,
 } from './agile-actor/lib';
 
@@ -22,6 +23,7 @@ const app = new Koa();
 
 // Agile Actor server setup
 appSetup(app);
+serveSpaRoutes(app);
 
 // Enable koa-proxy if it has been enabled in the config.
 if (config.proxy && config.proxy.enabled) {

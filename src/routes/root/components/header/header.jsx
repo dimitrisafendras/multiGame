@@ -3,102 +3,86 @@ import React from 'react';
 import {
   AppBar,
   IconButton,
-  FontIcon,
 } from 'material-ui';
 
-import { Button } from 'components';
-
 import { useSheet } from 'components/jss';
-
 import { Logo } from 'routes/root/components';
-import HeaderMenuBar from './components/header-menu-bar';
+import {
+  HeaderMenuBar,
+  UserButton,
+  UserButtonMobile,
+} from './containers';
+
 import { style } from './style';
 
-// import ProfileAndSigninTab from '../containers/profile-and-signin-tab';
+import { signInEnabled } from './config';
+
 type Props = {
-  content: [],
-  link: (to: string) => void,
   handleLeftIconButtonTouchTap: () => void,
-  handleLoginRegisterTouchTap: () => void,
+  toggleAuthentication: () => void,
   activeRoute: string,
   sheet: Object,
-  onSignOut: () => void,
-  user: Object,
 };
 
 const Header = ({
-  content,
-  link,
   handleLeftIconButtonTouchTap,
-  handleLoginRegisterTouchTap,
+  toggleAuthentication,
   activeRoute,
-  sheet,
-  onSignOut,
-  user,
-}: Props) => {
-  const { classes } = sheet;
-
-  const userIcon = !(user && user.email) ? (
-    <IconButton
-      style={style.headerMenuBar.button}
-      iconStyle={style.headerMenuBar.icon}
-      onClick={handleLoginRegisterTouchTap}>
-      <FontIcon
-        className={'material-icons'}>
-        person
-      </FontIcon>
-    </IconButton>
-  ) : (
-    <Button
-      className={classes.button}
-      onClick={() => {
-        onSignOut();
-        handleLoginRegisterTouchTap();
-      }}
-      style={{
-        ...style.headerMenuBar.button,
-        ...style.headerMenuBar.icon,
-      }}>
-      {user.displayName || user.email}
-    </Button>
-  );
-
-  return (
-    <div className={classes.mainMenu}>
+  sheet: { classes },
+}: Props) => (
+  <div className={classes.mainMenu}>
+    <div className={classes.appBarContainer}>
       <AppBar
-        style={style.appBar.container}
-        title={<Logo />}
-        titleStyle={style.appBar.titleStyle}
+        style={style.appBar}
+        title={<Logo className={classes.logo} />}
+        titleStyle={style.appBarTitleStyle}
         showMenuIconButton={false}
-        iconElementRight={
+      />
+    </div>
+    <div className={classes.mainMenuContent}>
+
+      {/* Header Tabs */}
+      <div className={classes.mainMenuItem} style={style.mainMenuItemGrow}>
+        <HeaderMenuBar {...{ activeRoute }} />
+      </div>
+
+      <div className={[classes.mainMenuItem, classes.mainMenuItemMobile].join(' ')}>
+        <div className={classes.mainMenuIconContainer}>
+
+          {signInEnabled && (
+            <UserButtonMobile {...{
+              handleLeftIconButtonTouchTap,
+              toggleAuthentication,
+            }} />
+          )}
+
+          {/* Menu Icon */}
           <IconButton
-            style={style.headerMenuBar.button}
             iconStyle={{
               ...style.headerMenuBar.icon,
               ...style.headerMenuBar.menuIcon,
             }}
             onTouchTap={handleLeftIconButtonTouchTap}
             iconClassName={'material-icons'}
-            className={classes.appBarIconStyleRight}>
+            className={[classes.headerMenuBarButton, classes.headerMenuBarButtonMenu].join(' ')}>
             menu
           </IconButton>
-        }
-        iconStyleRight={style.appBar.iconStyleRight}
-      />
-      <div>
-        <div style={style.headerMenuBar.mobile}>
-          {userIcon}
-        </div>
-
-        <div style={style.headerMenuBar}>
-          <HeaderMenuBar {...{ content, link, activeRoute }} />
-          { /* <ProfileAndSigninTab */ }
-          { /* handleLoginRegisterTouchTap={handleLoginRegisterTouchTap} */ }
-          { /* /> */ }
         </div>
       </div>
+
+      <div className={[classes.mainMenuItem, classes.mainMenuItemTablet].join(' ')}>
+        <div className={classes.mainMenuIconContainer}>
+          {signInEnabled && (
+            <UserButton {...{
+              handleLeftIconButtonTouchTap,
+              toggleAuthentication,
+            }} />
+          )}
+        </div>
+      </div>
+
     </div>
-  );
-};
+  </div>
+);
 
 export default useSheet(Header, style);

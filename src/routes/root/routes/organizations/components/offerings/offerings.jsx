@@ -2,13 +2,13 @@ import React from 'react';
 import Slider from 'react-slick';
 import { style } from './style';
 import { content } from './content';
-import { 
-  useSheet, 
-  Content, 
-  Container, 
-  FlexContainer, 
-  Button, 
-  Link 
+import {
+  useSheet,
+  Content,
+  Container,
+  FlexContainer,
+  Button,
+  Link,
 } from 'components';
 
 //
@@ -23,13 +23,12 @@ const SliderSettings = {
   touchMove: true,
 };
 
-//
-// The component
-//
+type Props = {
+  sheet: Object,
+};
+
 class AgileActorsPractice extends React.Component {
-  static propTypes = {
-    sheet: React.PropTypes.object,
-  };
+  props: Props;
 
   constructor(props) {
     super(props);
@@ -170,9 +169,5 @@ class AgileActorsPractice extends React.Component {
     );
   }
 }
-
-AgileActorsPractice.propTypes = {
-  sheet: React.PropTypes.object,
-};
 
 export default useSheet(AgileActorsPractice, style);

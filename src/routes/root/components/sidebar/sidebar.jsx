@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { signOut } from 'routes/root/modules/user/user-actions';
+
 import { useSheet } from 'components/jss';
 import {
   Drawer,
@@ -13,12 +17,14 @@ import { Signature } from 'routes/root/components';
 
 import { style } from './style';
 
+import { signInEnabled } from './config';
+
 type Props = {
   content: [],
   link: () => void,
   open: boolean,
   toggleSidebar: () => void,
-  handleLoginRegisterTouchTap: () => void,
+  toggleAuthentication: () => void,
   sheet: Object,
   user: Object,
   onSignOut: () => void,
@@ -51,14 +57,14 @@ class Sidebar extends Component {
   };
 
   handleToggleAuth = () => {
-    this.props.handleLoginRegisterTouchTap();
+    this.props.toggleAuthentication();
     this.handleToggle();
   };
 
   handleSignOut = () => {
     this.props.onSignOut();
     this.handleToggle();
-    this.props.handleLoginRegisterTouchTap();
+    this.props.toggleAuthentication();
   };
 
   linkKey = (key) => `nav-drawer--${key.replace(' ', '')}`;
@@ -72,7 +78,7 @@ class Sidebar extends Component {
           labelPosition={'after'}
           style={style.drawerUserButtonHolder.button}
           icon={<FontIcon className={'material-icons'}>person</FontIcon>}
-          onClick={this.props.handleLoginRegisterTouchTap}
+          onClick={this.props.toggleAuthentication}
         />
 
         {/* Register Button */}
@@ -101,13 +107,14 @@ class Sidebar extends Component {
         openSecondary
         width={style.drawerContainer.width}>
 
-        {!(user && user.email) ? (
-          this.renderLoginButton()
-        ) : (
-          <FlatButton
-            label={user.displayName}
-            onClick={this.handleSignOut}
-          />
+        {signInEnabled && (
+          !(user && user.email) ? (
+            this.renderLoginButton()
+          ) : (
+            <FlatButton
+              label={user.displayName}
+              onClick={this.handleSignOut} />
+          )
         )}
 
         <IconButton
@@ -141,4 +148,12 @@ class Sidebar extends Component {
   }
 }
 
-export default useSheet(Sidebar, style);
+export default connect(
+  ({ content, user }) => ({ content, user }),
+  (dispatch) => ({
+    link: (path) => {
+      path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
+    },
+    onSignOut: () => dispatch(signOut()),
+  })
+)(useSheet(Sidebar, style));
