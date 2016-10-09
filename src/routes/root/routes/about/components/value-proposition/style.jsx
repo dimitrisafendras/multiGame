@@ -21,8 +21,8 @@ export const style = {
   backgroundImage: {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right center',
-    backgroundSize: '40% 45%',
+    backgroundPosition: '90.4% center',
+    backgroundSize: '30% 65%',
   },
   title: {
     width: '70%',
@@ -34,7 +34,6 @@ export const style = {
   text: {
     width: '60%',
     marginTop: '20px',
-    maxWidth: '624px',
   },
   button: {
     marginTop: '50px',
@@ -46,7 +45,7 @@ export const style = {
   },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '45% 40%',
+      backgroundSize: '40% 60%',
     },
     title: {
       width: '60%',
