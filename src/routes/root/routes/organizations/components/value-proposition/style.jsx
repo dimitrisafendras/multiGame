@@ -21,8 +21,8 @@ export const style = {
   backgroundImage: {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right center',
-    backgroundSize: '40% 75%',
+    backgroundPosition: '90.6% center',
+    backgroundSize: '40% 70%',
     top: '100px',
   },
   title: {
@@ -42,13 +42,13 @@ export const style = {
   },
   '@media (max-width: 1600px)': {
     backgroundImage: {
-      backgroundSize: '45% 65%',
+      backgroundSize: '45% 60%',
       top: '120px',
     },
   },
   '@media (max-width: 1250px)': {
     backgroundImage: {
-      backgroundSize: '50% 60%',
+      backgroundSize: '50% 55%',
       top: '130px',
     },
     title: {
@@ -57,8 +57,8 @@ export const style = {
    },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '50% 55%',
-      top: '135px',
+      backgroundSize: '45% 50%',
+      top: '140px',
     },
     title: {
       width: '60%',
