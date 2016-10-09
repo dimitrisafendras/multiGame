@@ -30,16 +30,13 @@ const isflexAttrValidValue = {
   flexBasis: true,
 };
 
-const flexWarn = (flexAttribute, flexShortCut) => {
-  if (!(flexAttribute && flexShortCut)) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
+const flexWarnOnConflict = (flexProp, flexShortcut) => {
+  if (flexProp && flexShortcut && process.env.NODE_ENV !== 'production') {
     console.warn(
-      `Box params:
+      `flex-Box properties:
        Do not use both shortcut 'flex' property
-       and single 'flexGrow', flexShrink' or 'flexBasis'.'
-       Those will overwrite the previously set 'flex' value.`
+       and single 'flexGrow', flexShrink' and/or 'flexBasis',
+       that overwrite the previously set 'flex' value.`
     );
   }
 };
@@ -125,16 +122,12 @@ function Box(props : Props) {
   const computedStyles = { boxStyles: {} };
   const boxStyles = computedStyles.boxStyles;
 
-  Object
-  .entries(boxProps)
-  .filter(([key, value]) => value)
+  Object.entries(boxProps)
+  .filter(([key, value]) => (
+    value && !(styles[key] && Object.assign(boxStyles, styles[key]))
+  ))
   .forEach(([key, value]) => {
-    if (styles[key]) {
-      Object.assign(boxStyles, styles[key]);
-      return;
-    }
-
-    flexWarn(isflexAttrValidValue[key], boxStyles.flex);
+    flexWarnOnConflict(isflexAttrValidValue[key], boxStyles.flex);
     boxStyles[key] = value;
   });
 
