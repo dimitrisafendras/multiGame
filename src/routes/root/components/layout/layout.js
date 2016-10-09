@@ -1,25 +1,33 @@
 import React, { PropTypes, Component } from 'react';
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components/jss';
 
 import {
   Styles,
-  Header,
 } from 'routes/root/containers';
 
 import {
-  Sidebar,
+  Header,
   Footer,
+  Sidebar,
   Authentication,
 } from 'routes/root/components';
 
 const style = {
   content: {
     height: '100vh',
-    marginTop: muiTheme.appBar.height,
+    marginTop: `${muiTheme.appBar.mobileHeight}px`,
     display: 'block',
     boxSizing: 'border-box',
   },
+  '@media (min-width: 768px)': {
+    content: {
+      marginTop: `${muiTheme.appBar.tabletHeight}px`,
+    },
+  },
 };
+
+const { classes } = jss.createStyleSheet(style).attach();
 
 type Props = {
   children: PropTypes.element,
@@ -43,44 +51,40 @@ class Layout extends Component {
     }
   }
 
-  toggleSidebar() {
+  toggleSidebar = () => {
     this.setState({
       sidebarOpen: !this.state.sidebarOpen,
     });
-  }
+  };
 
-  toggleAuthentication() {
+  toggleAuthentication = () => {
     this.setState({
       authenticationOpen: !this.state.authenticationOpen,
     });
-  }
+  };
 
   render() {
-    const props = this.props;
-    const { location, children, ...rest } = props;
-    const _this = this;
+    const { location, children } = this.props;
 
     return (
       <Styles>
         <Header
-          {...rest}
           activeRoute={location.pathname}
-          handleLeftIconButtonTouchTap={function () { _this.toggleSidebar(); }}
-          handleLoginRegisterTouchTap={function () { _this.toggleAuthentication(); }}
+          handleLeftIconButtonTouchTap={this.toggleSidebar}
+          toggleAuthentication={this.toggleAuthentication}
           />
         <Authentication
-          toggleAuthentication={function () { _this.toggleAuthentication(); }}
+          toggleAuthentication={this.toggleAuthentication}
           open={this.state.authenticationOpen}
-          {...rest}
           />
         <Sidebar
-          toggleSidebar={function () { _this.toggleSidebar(); }}
+          toggleAuthentication={this.toggleAuthentication}
+          toggleSidebar={this.toggleSidebar}
           open={this.state.sidebarOpen}
-          {...rest}
           />
-        <div style={style.content}>
+        <div className={classes.content}>
           {children}
-          <Footer {...rest} />
+          <Footer />
         </div>
       </Styles>
     );

@@ -1,7 +1,9 @@
 import config from '../../../config';
-import thinky from '../../utils/thinky';
+import { models } from '../../utils/thinky';
 
-const Dot = thinky.createModel('Dot', {
+const { type } = models;
+
+const Dot = models.createModel('Dot', {
   type: type.string().default('Dot'),
 });
 

@@ -1,7 +1,8 @@
-import config from '../../../config';
-import thinky from '../../utils/thinky';
+import { models } from '../../utils/thinky';
 
-const Achievement = thinky.createModel('Achievement', {
+const { type } = models;
+
+const Achievement = models.createModel('Achievement', {
   type: type.string().default('Achievement'),
 });
 

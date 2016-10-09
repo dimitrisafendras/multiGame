@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { signOut } from 'routes/root/modules/user/user-actions';
+
 import { useSheet } from 'components/jss';
 import {
   Drawer,
@@ -13,12 +17,17 @@ import { Signature } from 'routes/root/components';
 
 import { style } from './style';
 
+import { signInEnabled } from './config';
+
 type Props = {
   content: [],
   link: () => void,
   open: boolean,
   toggleSidebar: () => void,
+  toggleAuthentication: () => void,
   sheet: Object,
+  user: Object,
+  onSignOut: () => void,
 };
 
 class Sidebar extends Component {
@@ -47,11 +56,47 @@ class Sidebar extends Component {
     }
   };
 
+  handleToggleAuth = () => {
+    this.props.toggleAuthentication();
+    this.handleToggle();
+  };
+
+  handleSignOut = () => {
+    this.props.onSignOut();
+    this.handleToggle();
+    this.props.toggleAuthentication();
+  };
+
   linkKey = (key) => `nav-drawer--${key.replace(' ', '')}`;
+
+  renderLoginButton() {
+    return (
+      <div style={style.drawerUserButtonHolder}>
+        {/* Login Button */}
+        <FlatButton
+          label={'Login'}
+          labelPosition={'after'}
+          style={style.drawerUserButtonHolder.button}
+          icon={<FontIcon className={'material-icons'}>person</FontIcon>}
+          onClick={this.props.toggleAuthentication}
+        />
+
+        {/* Register Button */}
+        <FlatButton
+          label={'Register'}
+          style={{
+            ...style.drawerUserButtonHolder.button,
+            ...style.drawerUserButtonHolder.buttonLast,
+          }}
+          onClick={this.handleToggleAuth}
+        />
+      </div>
+    );
+  }
 
   render() {
     const { props, handleToggle } = this;
-    const { content, link, sheet } = props;
+    const { content, link, sheet, user } = props;
     const { classes } = sheet;
 
     return (
@@ -62,25 +107,15 @@ class Sidebar extends Component {
         openSecondary
         width={style.drawerContainer.width}>
 
-        <div
-          style={style.drawerUserButtonHolder}>
-          {/* Login Button */}
-          <FlatButton
-            label={'Login'}
-            labelPosition={'after'}
-            style={style.drawerUserButtonHolder.button}
-            icon={<FontIcon className={'material-icons'}>person</FontIcon>}
-          />
-
-          {/* Register Button */}
-          <FlatButton
-            label={'Register'}
-            style={{
-              ...style.drawerUserButtonHolder.button,
-              ...style.drawerUserButtonHolder.buttonLast,
-            }}
-          />
-        </div>
+        {signInEnabled && (
+          !(user && user.email) ? (
+            this.renderLoginButton()
+          ) : (
+            <FlatButton
+              label={user.displayName}
+              onClick={this.handleSignOut} />
+          )
+        )}
 
         <IconButton
           touch
@@ -113,4 +148,12 @@ class Sidebar extends Component {
   }
 }
 
-export default useSheet(Sidebar, style);
+export default connect(
+  ({ content, user }) => ({ content, user }),
+  (dispatch) => ({
+    link: (path) => {
+      path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
+    },
+    onSignOut: () => dispatch(signOut()),
+  })
+)(useSheet(Sidebar, style));

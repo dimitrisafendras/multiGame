@@ -1,17 +1,17 @@
 import React from 'react';
-import ValueProposition from './value-proposition';
-import Introduction from './introduction';
-import ContactForm from './contact-form';
-import AgileMap from './agile-map';
+import AgileActorsMap from './agile-actors-map/agile-actors-map';
+import Introduction from './introduction/introduction';
+import ContactForm from './contact-form/contact-form';
+import AgileActorsTransportation from './agile-actors-transportation/agile-actors-transportation';
 
 class Contact extends React.Component {
   render() {
     return (
       <section>
-        <ValueProposition />
+        <AgileActorsMap />
         <Introduction />
         <ContactForm />
-        <AgileMap />
+        <AgileActorsTransportation/>
       </section>
     );
   }

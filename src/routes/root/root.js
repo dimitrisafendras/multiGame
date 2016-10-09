@@ -1,14 +1,14 @@
 // We only need to import the modules necessary for initial render
 import {
   HomeRoute,
-  BecomeAgileActorRoute,
   OrganizationsRoute,
   CareersRoute,
   AboutRoute,
   ContactRoute,
+  UserRoute,
 } from './routes';
 
-import { Layout } from './containers';
+import { Layout } from './components';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -42,11 +42,11 @@ export const rootRoute = (store) => {
     component: Layout,
     indexRoute: HomeRoute,
     childRoutes: [
-      BecomeAgileActorRoute,
       OrganizationsRoute,
       CareersRoute,
       AboutRoute,
       ContactRoute,
+      UserRoute(store),
     ],
   };
 };

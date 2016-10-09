@@ -1,17 +1,12 @@
 import React from 'react';
-import ValueProposition from './value-proposition';
-import Introduction from './introduction';
-import Offerings from './offerings';
+import ValueProposition from './value-proposition/value-proposition';
+import Offerings from './offerings/offerings';
 
-//
-// Define the component
-//
 class Organizations extends React.Component {
   render() {
     return (
       <section>
         <ValueProposition />
-        <Introduction />
         <Offerings />
       </section>
     );

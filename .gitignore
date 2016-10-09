@@ -3,6 +3,8 @@
 
 node_modules
 
+rethinkdb_data
+
 dist
 coverage
 
