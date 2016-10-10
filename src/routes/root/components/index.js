@@ -1,5 +1,5 @@
 import { Logo, SquareLogo } from './logo';
-import { Siganture } from './signature';
+import { Signature } from './signature';
 
 import { Header } from './header';
 import { Footer } from './footer';
@@ -12,7 +12,7 @@ import { Layout } from './layout';
 export {
   Logo,
   SquareLogo,
-  Siganture,
+  Signature,
   Header,
   Footer,
   Sidebar,

@@ -1,7 +1,4 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
-
-// import { jss } from 'components/jss';
 
 const styles = {
   flexContainer: {
@@ -27,14 +24,23 @@ const styles = {
   },
 };
 
-const isflexAttrValidValue = { flexGrow: true, flexShrink: true, flexBasis: true };
+const isflexAttrValidValue = {
+  flexGrow: true,
+  flexShrink: true,
+  flexBasis: true,
+};
 
-const flexWarn = () => {
+const flexWarn = (flexAttribute, flexShortCut) => {
+  if (!(flexAttribute && flexShortCut)) {
+    return;
+  }
   if (process.env.NODE_ENV !== 'production') {
-    console.warn('Box params: ',
-      'Do not use both shortcut `flex` property and single `flexGrow`,',
-      ' `flexShrink` or `flexBasis`.',
-      'Those will overwrite the previously set `flex` value.');
+    console.warn(
+      `Box params:
+       Do not use both shortcut 'flex' property
+       and single 'flexGrow', flexShrink' or 'flexBasis'.'
+       Those will overwrite the previously set 'flex' value.`
+    );
   }
 };
 
@@ -65,14 +71,30 @@ type Props = {
 };
 
 function Box(props : Props) {
-  // filter out and use box related props from props
   const {
-    flex, flexGrow, flexShrink, flexBasis,
-    inline, fit, center, wrap, column, reverse,
-    order, justifyContent, alignItems, alignSelf, alignContent,
-    width, minWidth, maxWidth, height, minHeight, maxHeight,
+    flex,
+    flexGrow,
+    flexShrink,
+    flexBasis,
+    inline,
+    fit,
+    center,
+    wrap,
+    column,
+    reverse,
+    order,
+    justifyContent,
+    alignItems,
+    alignSelf,
+    alignContent,
+    width,
+    minWidth,
+    maxWidth,
+    height,
+    minHeight,
+    maxHeight,
     ...restAfterBoxProps,
-  } = props;
+  } = props; // filter out flex-box related props
 
   const boxProps = {
     flexContainer: true,
@@ -103,35 +125,34 @@ function Box(props : Props) {
   const computedStyles = { boxStyles: {} };
   const boxStyles = computedStyles.boxStyles;
 
-  Object.entries(boxProps)
-    .filter(([key, value]) => value)
-    .forEach(([key, value]) => {
-      if (styles[key]) {
-        Object.assign(boxStyles, styles[key]);
-        return;
-      }
+  Object
+  .entries(boxProps)
+  .filter(([key, value]) => value)
+  .forEach(([key, value]) => {
+    if (styles[key]) {
+      Object.assign(boxStyles, styles[key]);
+      return;
+    }
 
-      isflexAttrValidValue[key] && boxStyles.flex && flexWarn();
-      boxStyles[key] = value;
-    });
+    flexWarn(isflexAttrValidValue[key], boxStyles.flex);
+    boxStyles[key] = value;
+  });
 
-  // resolve flex-wrap style property
-  (wrap === 'reverse') && (boxStyles.flexWrap += '-reverse');
+  if (wrap === 'reverse') { // resolve flex-wrap style property
+    boxStyles.flexWrap += '-reverse';
+  }
 
-  // resolve flex-direction style property
-  reverse && (boxStyles.flexDirection += '-reverse');
+  if (reverse) { // resolve flex-direction style property
+    boxStyles.flexDirection += '-reverse';
+  }
 
-  // const { classes } = jss.createStyleSheet(computedStyles).attach();
+  // pass the non Box related props to the container,
+  // along with the the processed style prop
+  const style = { ...restAfterBoxProps.style, ...boxStyles };
+  const { children, onClick, className } = restAfterBoxProps;
 
-  // pass the non Box related props to the container, along with the
-  // the processed style prop
-  let { style, children, onClick } = restAfterBoxProps;
-
-  style = { ...style, ...boxStyles };
   return (
-    <div
-      className={classNames(/* classes.boxStyles, */ props.className)}
-      {...{ style, children, onClick }} />
+    <div {...{ className, style, onClick, children }} />
   );
 };
 

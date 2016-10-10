@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
-import muiTheme from 'styles/customized-mui-theme';
 import {
   Tabs,
   Tab,
@@ -8,19 +7,14 @@ import {
 
 const style = {
   tabs: {
-    position: 'absolute',
-    top: '0px',
-    right: '120px',
-    width: '100%',
-    paddingRight: '68px',
-    paddingLeft: '320px',
-    lineHeight: '58px',
+    height: '100%',
+    lineHeight: '100%',
     boxSizing: 'border-box',
     zIndex: 1100,
-    maxWidth: '700px',
   },
+  tabsContainer: {},
   tab: {
-    height: muiTheme.appBar.height,
+    height: '68px',
     fontSize: '13px',
     fontWeight: '700',
   },
@@ -33,37 +27,39 @@ const style = {
 
 const tabKey = (link) => `aa-header-tabs--${link.replace(' ', '')}`;
 
-const HeaderMenuBar = ({ content, link, activeRoute, sheet }) => {
-  const activeTabIndex = (
-    content
-    .filter((item) => (item.order === 1))
-    .findIndex((item) => item.link === activeRoute)
-  );
-
-  const { classes } = sheet;
-
-  return (
-    <div className={classes.tabs}>
-      <Tabs value={activeTabIndex}>
-        {content.filter((item) => (item.order === 1)).map((item, index) => (
-          <Tab value={index}
-            label={item.title}
-            style={style.tab}
-            key={tabKey(item.link)}
-            onActive={function () {
-              link(item.link);
-            }} />
-          ))}
-      </Tabs>
-    </div>
-  );
+type Props = {
+  content: [],
+  link: (to: string) => void,
+  activeRoute: string,
+  sheet: Object,
 };
 
-HeaderMenuBar.propTypes = {
-  content: React.PropTypes.array,
-  link: React.PropTypes.func,
-  activeRoute: React.PropTypes.string,
-  sheet: React.PropTypes.object,
+const HeaderMenuBar = ({
+  content,
+  link,
+  activeRoute,
+  sheet: { classes },
+}: Props) => {
+  const menuItems = content.filter((item) => (item.order === 1));
+  const activeTabIndex = menuItems.findIndex((item) => item.link === activeRoute);
+
+  return (
+    <Tabs
+      className={classes.tabs}
+      tabItemContainerStyle={style.tabsContainer}
+      value={activeTabIndex}>
+      {menuItems.map((item, index) => (
+        <Tab value={index}
+          label={item.title}
+          className={classes.tab}
+          key={tabKey(item.link)}
+          onActive={function () {
+            link(item.link);
+          }}
+        />
+      ))}
+    </Tabs>
+  );
 };
 
 export default useSheet(HeaderMenuBar, style);

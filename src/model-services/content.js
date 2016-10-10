@@ -1,10 +1,5 @@
-const NavigationContents = {
+const navigationContents = {
   content: {
-    becomeAgileActor: {
-      title: 'Become an Agile Actor',
-      link: '/BecomeAgileActor',
-      order: 2,
-    },
     organizations: {
       title: 'Business Services',
       link: '/Organizations',
@@ -37,4 +32,4 @@ export const minimunIncluded = (elm) => elm.order === 1;
 export const mediumIncluded = (elm) => elm.order <= 2;
 export const allIncluded = (elm) => elm.order <= 5;
 
-export default Object.values(NavigationContents.content);
+export default Object.values(navigationContents.content);

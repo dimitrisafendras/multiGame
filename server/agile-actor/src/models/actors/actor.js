@@ -1,13 +1,13 @@
-import config from '../../../config';
-import thinky from '../../utils/thinky';
-import Achievement from './achievement';
+import { models } from '../../utils/thinky';
+import Achievement from './achievements';
 
-const { r, type } = thinky;
+const { r, type } = models;
 const providersList = [
   'agileactors',
   'google',
   'github',
   'linkedin',
+  'local',
 ];
 const emailTypes = [
   'personal',
@@ -20,11 +20,12 @@ const phoneTypes = [
   'home',
 ];
 
-const AgileActor = thinky.createModel('AgileActor', {
+const AgileActor = models.createModel('AgileActor', {
   type: type.string().default('AgileActor'),
   name: {
     firstName: type.string(),
     lastName: type.string(),
+    middle: type.string(),
   },
   gender: type.string(),
   email: type.string().email().required().options({ enforce_type: 'strict' }),
@@ -46,9 +47,9 @@ const AgileActor = thinky.createModel('AgileActor', {
       isVerified: type.boolean(),
     },
   ],
-  displayName: type.string().default(function () {
-    return this.name.firstName || this.email;
-  }),
+  displayName: type.string().default(() => (
+    this.name.firstName || this.email
+  )),
 
   createdAt: type.date().default(r.now()),
 
@@ -76,4 +77,4 @@ const AgileActor = thinky.createModel('AgileActor', {
   ],
 });
 
-export default Actor;
+export default AgileActor;

@@ -1,4 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { signOut } from 'routes/root/modules/user/user-actions';
+
 import { useSheet } from 'components/jss';
 import {
   Drawer,
@@ -8,60 +13,25 @@ import {
   FontIcon,
 } from 'material-ui';
 
-import muiTheme from 'styles/customized-mui-theme';
+import { Signature } from 'routes/root/components';
 
-import { Signature } from 'routes/root/components/';
+import { style } from './style';
 
-const style = {
-  drawerContainer: {
-    width: 320,
-  },
-  drawerUserButtonHolder: {
-    height: 36,
-    padding: '12px 6px',
-    background: muiTheme.palette.cyan500,
-    borderBottom: '1px solid ' + muiTheme.palette.grey400,
-    button: {
-      color: muiTheme.palette.white,
-      hoverColor: muiTheme.palette.cyan500,
-      borderRight: `1px solid ${muiTheme.palette.cyan400}`,
-    },
-    buttonLast: {
-      borderRight: 'none',
-    },
-  },
-  closeButton: {
-    position: 'fixed',
-    top: 0,
-    right: 0,
-    zIndex: 500,
-    height: 60,
-    width: 60,
-    padding: 6,
-    background: muiTheme.palette.white,
-    icon: {
-      color: muiTheme.palette.primary2Color,
-    },
-  },
-  divider: {
-    borderBottom: '1px solid ' + muiTheme.palette.grey400,
-  },
-  menuItem: {
-    padding: '10px 20px',
-    color: muiTheme.palette.primary1Color,
-    textTransform: 'uppercase',
-    fontSize: 14,
-  },
+import { signInEnabled } from './config';
+
+type Props = {
+  content: [],
+  link: () => void,
+  open: boolean,
+  toggleSidebar: () => void,
+  toggleAuthentication: () => void,
+  sheet: Object,
+  user: Object,
+  onSignOut: () => void,
 };
 
-class Sidebar extends React.Component {
-  static propTypes = {
-    content: React.PropTypes.array,
-    link: React.PropTypes.func,
-    open: React.PropTypes.bool,
-    toggleSidebar: React.PropTypes.func,
-    sheet: React.PropTypes.object,
-  };
+class Sidebar extends Component {
+  props: Props;
 
   constructor(props) {
     super(props);
@@ -70,9 +40,9 @@ class Sidebar extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.open !== this.state.open) {
-      this.setState({open: newProps.open});
+  componentWillReceiveProps({ open }) {
+    if (open !== this.state.open) {
+      this.setState({ open });
     }
   }
 
@@ -86,11 +56,47 @@ class Sidebar extends React.Component {
     }
   };
 
+  handleToggleAuth = () => {
+    this.props.toggleAuthentication();
+    this.handleToggle();
+  };
+
+  handleSignOut = () => {
+    this.props.onSignOut();
+    this.handleToggle();
+    this.props.toggleAuthentication();
+  };
+
   linkKey = (key) => `nav-drawer--${key.replace(' ', '')}`;
+
+  renderLoginButton() {
+    return (
+      <div style={style.drawerUserButtonHolder}>
+        {/* Login Button */}
+        <FlatButton
+          label={'Login'}
+          labelPosition={'after'}
+          style={style.drawerUserButtonHolder.button}
+          icon={<FontIcon className={'material-icons'}>person</FontIcon>}
+          onClick={this.props.toggleAuthentication}
+        />
+
+        {/* Register Button */}
+        <FlatButton
+          label={'Register'}
+          style={{
+            ...style.drawerUserButtonHolder.button,
+            ...style.drawerUserButtonHolder.buttonLast,
+          }}
+          onClick={this.handleToggleAuth}
+        />
+      </div>
+    );
+  }
 
   render() {
     const { props, handleToggle } = this;
-    const { content, link, sheet } = props;
+    const { content, link, sheet, user } = props;
     const { classes } = sheet;
 
     return (
@@ -99,50 +105,32 @@ class Sidebar extends React.Component {
         open={this.state.open}
         docked={false}
         openSecondary
-        width={style.drawerContainer.width}
-      >
+        width={style.drawerContainer.width}>
 
-        <div
-          style={style.drawerUserButtonHolder}>
-          {/* Login Button */}
-          <FlatButton
-            label={'Login'}
-            labelPosition={'after'}
-            style={{
-              ...style.drawerUserButtonHolder.button,
-            }}
-            icon={<FontIcon className={'material-icons'}>person</FontIcon>}
-          />
+        {signInEnabled && (
+          !(user && user.email) ? (
+            this.renderLoginButton()
+          ) : (
+            <FlatButton
+              label={user.displayName}
+              onClick={this.handleSignOut} />
+          )
+        )}
 
-          {/* Register Button */}
-          <FlatButton
-            label={'Register'}
-            style={{
-              ...style.drawerUserButtonHolder.button,
-              ...style.drawerUserButtonHolder.buttonLast,
-            }}
-          />
-        </div>
         <IconButton
           touch
-          backgroundColor={muiTheme.palette.white}
           style={style.closeButton}
           className={classes.icon}
           onClick={handleToggle}
-          iconStyle={{
-            ...style.closeButton.icon,
-          }}
+          iconStyle={style.closeButton.icon}
           iconClassName={'material-icons'}>
           close
         </IconButton>
 
         <div className={classes.divider}>
-
           {content.filter((item) => (item.order <= 2)).map((item) => (
             <MenuItem
-              innerDivStyle={{
-                ...style.menuItem,
-              }}
+              innerDivStyle={style.menuItem}
               key={this.linkKey(item.link)}
               onTouchTap={function () {
                 link(item.link);
@@ -151,12 +139,21 @@ class Sidebar extends React.Component {
               {item.title}
             </MenuItem>
           ))}
-
         </div>
+
         <Signature />
+
       </Drawer>
     );
   }
 }
 
-export default useSheet(Sidebar, style);
+export default connect(
+  ({ content, user }) => ({ content, user }),
+  (dispatch) => ({
+    link: (path) => {
+      path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
+    },
+    onSignOut: () => dispatch(signOut()),
+  })
+)(useSheet(Sidebar, style));
