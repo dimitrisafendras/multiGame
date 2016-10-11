@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 const styles = {
   flexContainer: {
@@ -30,8 +30,8 @@ const isflexAttrValidValue = {
   flexBasis: true,
 };
 
-const flexWarnOnConflict = (flexProp, flexShortcut) => {
-  if (flexProp && flexShortcut && process.env.NODE_ENV !== 'production') {
+const flexWarnOnConflict = (isFlexProp, isFlexShortcut) => {
+  if (isFlexProp && isFlexShortcut && process.env.NODE_ENV !== 'production') {
     console.warn(
       `flex-Box properties:
        Do not use both shortcut 'flex' property
@@ -67,7 +67,7 @@ type Props = {
   children: PropTypes.node,
 };
 
-function Box(props : Props) {
+function Box(props : Props): Component {
   const {
     flex,
     flexGrow,
