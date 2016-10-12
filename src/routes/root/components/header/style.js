@@ -83,7 +83,7 @@ export const style = {
     },
     mainMenuContent: {
       width: `calc(100% - 320px)`,
-      maxWidth: `400px`,
+      maxWidth: `500px`,
     },
     mainMenuItem: {
       height: `${muiTheme.appBar.tabletHeight}px`,
