@@ -34,7 +34,7 @@ export const style = {
   },
   title: {
     color: muiTheme.palette.blue700,
-    fontWeight: '100',
+    fontWeight: '400',
   },
   button: {
     marginTop: '6.1%',
