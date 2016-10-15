@@ -99,7 +99,7 @@ const defaultStyle = {
   },
   text: {
     fontSize: '15px',
-    lineHeight: '19px',
+    lineHeight: '20px',
     zIndex: '3',
   },
   backgroundImage: {
