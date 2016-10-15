@@ -6,7 +6,6 @@ import Images from './images';
 //
 export const style = {
   component: {
-    backgroundColor: muiTheme.palette.grey200,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -16,43 +15,28 @@ export const style = {
   },
   container: {
     backgroundColor: 'inherit',
+    flexDirection: 'row !important',
   },
   backgroundImage: {
+    position: 'relative',
+    backgroundSize: '100% 100%',
+    height: '250px',
+    width: '50%',
+    marginRight: '5%',
     backgroundImage: Images.Vision,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right center',
-    backgroundSize: '40% 75%',
+    backgroundPosition: 'center',
   },
   title: {
     color: muiTheme.palette.blue700,
   },
-  text: {
+  textWrapper: {
     width: '45%',
+  },
+  text: {
+    width: '100%',
     marginTop: '20px',
     maxWidth: '624px',
-  },
-  '@media (max-width: 1300px)': {
-    backgroundImage: {
-      backgroundSize: '45% 75%',
-    },
-  },
-  '@media (max-width: 1024px)': {
-    container: {
-      flexDirection: 'row !important',
-    },
-    backgroundImage: {
-      position: 'relative',
-      backgroundSize: '100%',
-      height: '250px',
-      width: '45%',
-      marginRight: '5%',
-    },
-    textWrapper: {
-      width: '50%',
-    },
-    text: {
-      width: '100%',
-    }
   },
   '@media (max-width: 767px)': {
     container: {
