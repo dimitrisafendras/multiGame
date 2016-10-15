@@ -15,6 +15,10 @@ import {
   useSheet,
 } from './jss';
 
+import {
+  SliderSettings
+} from './slider-settings';
+
 export {
   Box,
   Container,
@@ -25,4 +29,5 @@ export {
   InlineSvg,
   jss,
   useSheet,
+  SliderSettings,
 };
