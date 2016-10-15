@@ -78,7 +78,7 @@ class Layout extends Component {
         <Sidebar
           toggleAuthentication={this.toggleAuthentication}
           toggleSidebar={this.toggleSidebar}
-          open={this.state.sidebarOpen} >
+          open={this.state.sidebarOpen} />
         <div className={classes.content}>
           {children}
           <Footer />
