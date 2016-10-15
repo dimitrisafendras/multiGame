@@ -39,7 +39,6 @@ export const style = {
   },
   imgWrapper: {
     backgroundColor: muiTheme.palette.white,
-    width: '306px',
     height: '180px',
     marginTop: '-35px',
     marginBottom: '0px',
@@ -47,7 +46,6 @@ export const style = {
     marginRight: '-35px',
   },
   img: {
-    height: '90px',
     marginTop: '0px',
     marginBottom: '0px',
     marginLeft: 'auto',
