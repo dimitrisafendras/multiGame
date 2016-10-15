@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
+import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-import { contentData } from './content';
-import { style } from './style';
 import {
   useSheet,
   Container,
@@ -13,15 +11,18 @@ import {
   Link,
 } from 'components';
 
+import { contentData } from './content';
+import { style } from './style';
+
 const linkKey = (link) => `nav-footer--${link.replace(' ', '')}`;
 
 type Props = {
-  content: React.PropTypes.array,
-  link: React.PropTypes.func,
-  sheet: React.PropTypes.object,
+  content: [],
+  link: () => void,
+  sheet: Object,
 };
 
-const FooterMenuBar = ({
+export const FooterMenuBar = ({
   content,
   link,
   sheet: { classes },

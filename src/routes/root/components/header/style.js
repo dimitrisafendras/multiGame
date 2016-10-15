@@ -60,25 +60,6 @@ export const style = {
     textTransform: 'uppercase',
     color: muiTheme.palette.cyan400,
   },
-  headerMenuBarButtonLogin: {
-    opacity: 0.75,
-    '&:after': {
-      content: '    ',
-      display: 'block',
-      position: 'absolute',
-      top: '100%',
-      width: '100%',
-      height: '3px',
-      backgroundColor: muiTheme.palette.cyan400,
-      transition: '300ms',
-    },
-    '&:hover': {
-      opacity: 1,
-      '&:after': {
-        transform: 'translateY(-100%)',
-      },
-    },
-  },
   headerMenuBarButtonMenu: {
     borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
   },
@@ -102,7 +83,7 @@ export const style = {
     },
     mainMenuContent: {
       width: `calc(100% - 320px)`,
-      maxWidth: `400px`,
+      maxWidth: `500px`,
     },
     mainMenuItem: {
       height: `${muiTheme.appBar.tabletHeight}px`,
