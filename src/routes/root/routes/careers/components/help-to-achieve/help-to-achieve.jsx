@@ -84,8 +84,7 @@ class HelpToAchieve extends React.Component {
                   center
                   className={classes.imgWrapper}>
                   <Content
-                    image
-                    className={classes.img}>
+                    image>
                     {item.Img}
                   </Content>
                 </FlexContainer>

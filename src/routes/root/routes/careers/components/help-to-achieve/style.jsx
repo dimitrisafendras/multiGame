@@ -41,18 +41,11 @@ export const style = {
   },
   imgWrapper: {
     backgroundColor: muiTheme.palette.white,
-    width: '306px',
     height: '180px',
     marginTop: '-35px',
     marginBottom: '0px',
     marginLeft: '-35px',
     marginRight: '-35px',
-  },
-  img: {
-    marginTop: '0px',
-    marginBottom: '0px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
   },
   title: {
     color: muiTheme.palette.blue700,
