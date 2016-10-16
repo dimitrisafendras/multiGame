@@ -81,7 +81,6 @@ const styles = {
   },
 };
 
-
 const classes = jss.createStyleSheet(styles).attach().classes;
 
 export { styles, classes };
