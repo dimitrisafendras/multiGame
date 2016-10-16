@@ -10,9 +10,6 @@ import {
   Link
 } from 'components';
 
-//
-// The component
-//
 const Organizations = () => {
 
   return (
