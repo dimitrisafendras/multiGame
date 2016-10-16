@@ -1,8 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Images from './images';
-import { content } from './content';
+import content from './content';
 import { classes } from './style';
+
 import {
   useSheet,
   Content,
@@ -32,9 +33,9 @@ const LifeAtAgileActors = () => {
               {...SliderSettings}>
 
               {Images.map((image, index) =>(
-                <div style={{position: 'relative'}}>
-                  <div key={`life-at-aa-${index}-item`}
-                       className={classes.imagesWrapper}>
+                <div style={{position: 'relative'}}
+                     key={`life-at-aa-${index}-item`}>
+                  <div className={classes.imagesWrapper}>
                     <img src={image}
                          className={classes.image} />
                   </div>

@@ -1,9 +1,6 @@
 import Images from './images';
 
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'Agile Actors for Organizations',
   subTitle: 'Make sure your tech workforce fits your business needs',
   organisations: [
@@ -23,3 +20,5 @@ export const content = {
     },
   ],
 };
+
+export default content;

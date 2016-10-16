@@ -1,7 +1,7 @@
 import React from 'react';
-import { classes } from '../style';
-import { content } from '../content';
+import content from '../content';
 import classNames from 'classnames';
+import { classes } from '../style';
 
 import {
   Content,

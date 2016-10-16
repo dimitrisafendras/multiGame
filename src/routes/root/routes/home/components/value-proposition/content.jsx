@@ -1,7 +1,4 @@
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'Become a Stronger Tech Professional',
   subTitle: 'One sprint at a time',
   text: `Agile Actors is the ecosystem for the ambitious and talented tech professional.
@@ -10,3 +7,5 @@ export const content = {
   buttonLabel: 'Become an Agile Actor',
   buttonRoute: '/BecomeAgileActor',
 };
+
+export default content;

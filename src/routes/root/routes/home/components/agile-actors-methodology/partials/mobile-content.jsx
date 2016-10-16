@@ -1,8 +1,8 @@
 import React from 'react';
-import { classes } from '../style';
-import { content } from '../content';
-import classNames from 'classnames';
 import Slider from 'react-slick';
+import classNames from 'classnames';
+import content from '../content';
+import { classes } from '../style';
 
 import {
   Content,

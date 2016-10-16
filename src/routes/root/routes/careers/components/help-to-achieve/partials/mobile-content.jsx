@@ -1,7 +1,7 @@
 import React from 'react';
-import { classes } from '../style';
-import { content } from '../content';
 import Slider from 'react-slick';
+import content from '../content';
+import { classes } from '../style';
 
 import {
   Content,
