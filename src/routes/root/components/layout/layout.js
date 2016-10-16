@@ -71,17 +71,14 @@ class Layout extends Component {
         <Header
           activeRoute={location.pathname}
           handleLeftIconButtonTouchTap={this.toggleSidebar}
-          toggleAuthentication={this.toggleAuthentication}
-          />
+          toggleAuthentication={this.toggleAuthentication} />
         <Authentication
           toggleAuthentication={this.toggleAuthentication}
-          open={this.state.authenticationOpen}
-          />
+          open={this.state.authenticationOpen} />
         <Sidebar
           toggleAuthentication={this.toggleAuthentication}
           toggleSidebar={this.toggleSidebar}
-          open={this.state.sidebarOpen}
-          />
+          open={this.state.sidebarOpen} />
         <div className={classes.content}>
           {children}
           <Footer />

@@ -1,10 +1,14 @@
 import muiTheme from 'styles/customized-mui-theme';
 
-const style = {
+//
+// The style of the component
+//
+export const style = {
   outerContainer: {
     backgroundColor: muiTheme.palette.white,
   },
   outerTitle: {
+    color: muiTheme.palette.blue700,
     marginBottom: '6.1%',
     textAlign: 'center',
   },
@@ -37,19 +41,11 @@ const style = {
   },
   imgWrapper: {
     backgroundColor: muiTheme.palette.white,
-    width: '306px',
     height: '180px',
     marginTop: '-35px',
     marginBottom: '0px',
     marginLeft: '-35px',
     marginRight: '-35px',
-  },
-  img: {
-    height: '90px',
-    marginTop: '0px',
-    marginBottom: '0px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
   },
   title: {
     color: muiTheme.palette.blue700,
@@ -82,5 +78,3 @@ const style = {
     },
   },
 };
-
-export default style;

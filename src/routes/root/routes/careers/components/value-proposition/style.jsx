@@ -1,9 +1,6 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
 
-//
-// The styles of the components
-//
 export const style = {
   component: {
     backgroundColor: muiTheme.palette.blue600,
@@ -22,7 +19,7 @@ export const style = {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.4% center',
-    backgroundSize: '25%',
+    backgroundSize: '50%',
   },
   title: {
     width: '70%',
@@ -32,7 +29,7 @@ export const style = {
     width: '60%',
   },
   text: {
-    width: '60%',
+    width: '38%',
     marginTop: '20px',
     maxWidth: '624px',
   },
@@ -43,15 +40,10 @@ export const style = {
     title: {
       marginBottom: '50px',
     },
-   },
-  '@media (max-width: 1300px)': {
-    backgroundImage: {
-      backgroundSize: '30%',
-    },
   },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '35%',
+      backgroundSize: '40%',
     },
     title: {
       width: '60%',
@@ -67,9 +59,8 @@ export const style = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '70%',
+      backgroundSize: '81.8%',
       backgroundPosition: 'center',
-      marginBottom: '40px',
     },
     title: {
       width: '100%',
@@ -81,7 +72,7 @@ export const style = {
     text: {
       width: '100%',
       maxWidth: '100%',
-      marginTop: '15px',
+      marginTop: '11%',
     },
   },
   '@media (max-width: 600px)': {

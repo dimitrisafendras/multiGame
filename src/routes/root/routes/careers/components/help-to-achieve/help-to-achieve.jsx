@@ -1,11 +1,19 @@
 import React from 'react';
-import { useSheet } from 'components/jss';
-import { Content, Container, FlexContainer, Button, Link } from 'components/content';
 import Slider from 'react-slick';
+import { content } from './content';
+import { style } from './style';
+import {
+  useSheet,
+  Content, 
+  Container, 
+  FlexContainer, 
+  Button, 
+  Link
+} from 'components';
 
-import content from './content';
-import style from './style';
-
+//
+// slider settings
+//
 const SliderSettings = {
   dots: true,
   infinite: true,
@@ -15,12 +23,10 @@ const SliderSettings = {
   touchMove: true,
 };
 
-type Props = {
-  sheet: Object,
-};
-
 class HelpToAchieve extends React.Component {
-  props: Props;
+  static propTypes = {
+    sheet: React.PropTypes.object,
+  };
 
   constructor(props) {
     super(props);
@@ -41,11 +47,7 @@ class HelpToAchieve extends React.Component {
       if (that.mounted) { // Check if component unmounted in the meantime
         const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-        if (mediaQuery.matches !== that.state.mq) {
-          that.setState({
-            slider: mediaQuery.matches,
-          });
-        }
+        (mediaQuery.matches !== that.state.mq) && that.setState({slider: !mediaQuery.matches});
       }
     }, 250);
   }
@@ -61,87 +63,128 @@ class HelpToAchieve extends React.Component {
     this.mounted = false;
   }
 
-  renderSliderOption() {
-    const { classes } = this.props.sheet;
+  render() {
+    const {classes} = this.props.sheet;
+    let contentBoxes;
 
-    return (
-      <Slider {...SliderSettings}>
-        {content.practice.map((item) =>
-          (<div key={`aa-practice-${item.id}-item`}>
-            <FlexContainer center>
-              <Container container className={classes.container}>
-                <FlexContainer center className={classes.imgWrapper}>
-                  <Content image className={classes.img}>
+    if (this.state.slider) {
+      contentBoxes =
+        <FlexContainer
+          center
+          wrap>
+          <FlexContainer
+            container
+            className={classes.containerWrapper}>
+            {content.practice.slice(0, 2).map((item) =>
+              (<Container
+                container
+                className={classes.container}
+                key={`aa-practice-${item.id}-item`}>
+                <FlexContainer
+                  center
+                  className={classes.imgWrapper}>
+                  <Content
+                    image>
                     {item.Img}
                   </Content>
                 </FlexContainer>
-                <Content title className={classes.title}>
+                <Content
+                  title
+                  className={classes.title}>
                   {item.title}
                 </Content>
                 <Content text>
                   {item.content}
                 </Content>
-              </Container>
-            </FlexContainer>
-          </div>)
-          )}
-      </Slider>
-    );
-  }
+              </Container>)
+              )}
+          </FlexContainer>
+          <FlexContainer
+            container
+            className={classes.containerWrapper}>
+            {content.practice.slice(2, 4).map((item) =>
+              (<Container
+                container
+                className={classes.container}
+                key={`aa-practice-${item.id}-item`}>
+                <FlexContainer
+                  center
+                  className={classes.imgWrapper}>
+                  <Content
+                    image
+                    className={classes.img}>
+                    {item.Img}
+                  </Content>
+                </FlexContainer>
+                <Content
+                  title
+                  className={classes.title}>
+                  {item.title}
+                </Content>
+                <Content text>
+                  {item.content}
+                </Content>
+              </Container>)
+              )}
+          </FlexContainer>
+        </FlexContainer>;
+    } else {
+      contentBoxes =
+        <Slider
+          {...SliderSettings}>
+          {content.practice.map((item) =>
+            (<div key={`aa-practice-${item.id}-item`}>
+              <FlexContainer
+                center>
+                <Container
+                  container
+                  className={classes.container}>
+                  <FlexContainer
+                    center
+                    className={classes.imgWrapper}>
+                    <Content
+                      image
+                      className={classes.img}>
+                      {item.Img}
+                    </Content>
+                  </FlexContainer>
+                  <Content
+                    title
+                    className={classes.title}>
+                    {item.title}
+                  </Content>
+                  <Content text>
+                    {item.content}
+                  </Content>
+                </Container>
+              </FlexContainer>
+            </div>)
+            )}
+        </Slider>;
+    }
 
-  renderScrollOptionRow(from, size) {
-    const { classes } = this.props.sheet;
-
-    return content.practice.slice(from, size).map((item) => (
-      <Container container className={classes.container}
-        key={`aa-practice-${item.id}-item`}>
-        <FlexContainer center className={classes.imgWrapper}>
-          <Content image className={classes.img}>
-            {item.Img}
-          </Content>
-        </FlexContainer>
-        <Content title className={classes.title}>
-          {item.title}
-        </Content>
-        <Content text>
-          {item.content}
-        </Content>
-      </Container>
-    ));
-  }
-
-  renderScrollOption() {
-    const { classes } = this.props.sheet;
-
-    return (
-      <FlexContainer center wrap>
-        <FlexContainer container className={classes.containerWrapper}>
-          {this.renderScrollOptionRow(0, 2)}
-        </FlexContainer>
-        <FlexContainer container className={classes.containerWrapper}>
-          {this.renderScrollOptionRow(2, 4)}
-        </FlexContainer>
-      </FlexContainer>
-    );
-  }
-
-  render() {
-    const { classes } = this.props.sheet;
-    const { slider } = this.state;
     return (
       <article>
-        <Container normalContainer className={classes.outerContainer}>
-          <FlexContainer center>
-            <Content normalTitle className={classes.outerTitle}>
-              {content.title}
-            </Content>
-          </FlexContainer>
+        <Container
+          normalContainer
+          center
+          column
+          className={classes.outerContainer}>
+          <Content
+            normalTitle
+            className={classes.outerTitle}>
+            {content.title}
+          </Content>
 
-          {slider ? this.renderSliderOption() : this.renderScrollOption()}
+          {contentBoxes}
 
-          <FlexContainer center>
-            <Button secondary className={classes.button}
-              containerElement={<Link to={content.buttonRoute} />}>
+          <FlexContainer
+            center
+            className={classes.button}>
+            <Button
+              secondary
+              containerElement={<Link to={content.buttonRoute} />}
+              >
               {content.buttonLabel}
             </Button>
           </FlexContainer>
@@ -150,5 +193,9 @@ class HelpToAchieve extends React.Component {
     );
   }
 }
+
+HelpToAchieve.propTypes = {
+  sheet: React.PropTypes.object,
+};
 
 export default useSheet(HelpToAchieve, style);
