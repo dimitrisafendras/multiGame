@@ -18,6 +18,4 @@ const Images = [
   image7,
 ];
 
-console.log(Images);
-
 export default Images;
