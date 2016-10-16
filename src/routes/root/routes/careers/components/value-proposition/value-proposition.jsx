@@ -48,4 +48,4 @@ const ValueProposition = ({ link }) => {
   );
 };
 
-export default ValueProposition;
+export default linkAble(ValueProposition);

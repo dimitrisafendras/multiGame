@@ -3,12 +3,12 @@ import content from './content';
 import { classes } from './style';
 
 import {
-Content,
-Container,
-FlexContainer,
-Resizable,
-Button,
-Link,
+  Content,
+  Container,
+  FlexContainer,
+  Resizable,
+  Button,
+  Link,
 } from 'components';
 
 import {
@@ -17,31 +17,32 @@ import {
 } from './partials';
 
 const AgileActorsMethodology = ({ size }) => {
-    const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent tablet={size.tablet} />;
 
-    return (
-      <article>
-        <Container normalContainer>
-          <Content
-            normalTitle
-            className={classes.outerTitle}>
-            {content.title}
-          </Content>
+  const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent tablet={size.tablet} />;
 
-          {contentBoxes}
+  return (
+    <article>
+      <Container normalContainer>
+        <Content
+          normalTitle
+          className={classes.outerTitle}>
+          {content.title}
+        </Content>
 
-          <FlexContainer
-            center
-            className={classes.button}>
-            <Button
-              secondary
-              containerElement={<Link to={content.buttonRoute} />} >
-              {content.buttonLabel}
-            </Button>
-          </FlexContainer>
-        </Container>
-      </article>
-    );
+        {contentBoxes}
+
+        <FlexContainer
+          center
+          className={classes.button}>
+          <Button
+            secondary
+            containerElement={<Link to={content.buttonRoute} />} >
+            {content.buttonLabel}
+          </Button>
+        </FlexContainer>
+      </Container>
+    </article>
+  );
 }
 
 export default Resizable(AgileActorsMethodology);
