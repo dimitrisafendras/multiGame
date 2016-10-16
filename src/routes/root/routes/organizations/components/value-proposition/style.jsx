@@ -22,7 +22,7 @@ export const style = {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.6% center',
-    backgroundSize: '40% 70%',
+    backgroundSize: '40%',
     top: '100px',
   },
   title: {
@@ -40,16 +40,9 @@ export const style = {
   button: {
     marginTop: '50px',
   },
-  '@media (max-width: 1600px)': {
-    backgroundImage: {
-      backgroundSize: '45% 60%',
-      top: '120px',
-    },
-  },
   '@media (max-width: 1250px)': {
     backgroundImage: {
-      backgroundSize: '50% 55%',
-      top: '130px',
+      top: '105px',
     },
     title: {
       marginBottom: '50px',
@@ -57,8 +50,8 @@ export const style = {
    },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '45% 50%',
-      top: '140px',
+      backgroundSize: '43%',
+      top: '130px',
     },
     title: {
       width: '60%',
@@ -74,7 +67,8 @@ export const style = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '95% 60%',
+      backgroundSize: '81.8%',
+      backgroundPosition: 'center',
       marginBottom: '40px',
       top: '0px',
     },
@@ -91,34 +85,12 @@ export const style = {
       marginTop: '15px',
     },
   },
-  '@media (max-width: 700px)': {
-    backgroundImage: {
-      backgroundSize: '95% 55%',
-      opacity: '0.2',
-    },
-  },
   '@media (max-width: 600px)': {
-    backgroundImage: {
-      backgroundSize: '95% 45%',
-      opacity: '0.2',
-    },
     title: {
       marginBottom: '10%',
     },
     text: {
       marginTop: '5%',
-    },
-  },
-  '@media (max-width: 500px)': {
-    backgroundImage: {
-      backgroundSize: '95% 35%',
-      opacity: '0.2',
-    },
-  },
-  '@media (max-width: 400px)': {
-    backgroundImage: {
-      backgroundSize: '95% 25%',
-      opacity: '0.2',
     },
   },
 };

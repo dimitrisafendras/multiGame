@@ -19,7 +19,7 @@ export const style = {
   },
   backgroundImage: {
     position: 'relative',
-    backgroundSize: '100% 100%',
+    backgroundSize: 'auto 100%',
     height: '250px',
     width: '50%',
     marginRight: '5%',
@@ -38,6 +38,11 @@ export const style = {
     marginTop: '20px',
     maxWidth: '624px',
   },
+  '@media (max-width: 1024)': {
+    backgroundImage: {
+      backgroundSize: '100%',
+    },
+  },
   '@media (max-width: 767px)': {
     container: {
       flexDirection: 'column !important',
@@ -45,7 +50,7 @@ export const style = {
     backgroundImage: {
       width: '100%',
       position: 'relative',
-      backgroundSize: '100% 100%',
+      backgroundSize: 'auto 100%',
       height: '200px',
       marginRight: '0px',
       marginBottom: '10px',
