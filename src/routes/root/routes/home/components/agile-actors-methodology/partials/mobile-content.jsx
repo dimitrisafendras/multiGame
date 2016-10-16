@@ -2,11 +2,15 @@ import React from 'react';
 import { classes } from '../style';
 import { content } from '../content';
 import classNames from 'classnames';
+import Slider from 'react-slick';
 import {
   Content,
   FlexContainer,
   SliderSettings,
 } from 'components';
+
+
+console.log('SliderSettings', SliderSettings)
 
 const MobileContent = () => {
   return (

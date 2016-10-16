@@ -1,15 +1,20 @@
 import React from 'react';
 import { classes } from './style';
 import { content } from './content';
-import { NormalContent, MobileContent } from './partials';
+
 import {
-  Content,
-  Container,
-  FlexContainer,
-  Resizable,
-  Button,
-  Link,
+Content,
+Container,
+FlexContainer,
+Resizable,
+Button,
+Link,
 } from 'components';
+
+import {
+  NormalContent,
+  MobileContent,
+} from './partials';
 
 class AgileActorsMethodology extends React.Component {
   
