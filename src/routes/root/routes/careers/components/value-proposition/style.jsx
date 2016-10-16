@@ -19,7 +19,7 @@ export const style = {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.4% center',
-    backgroundSize: '50% 50%',
+    backgroundSize: '50%',
   },
   title: {
     width: '70%',
@@ -43,7 +43,7 @@ export const style = {
   },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '40% 40%',
+      backgroundSize: '40%',
     },
     title: {
       width: '60%',
@@ -59,7 +59,8 @@ export const style = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '95% 60%',
+      backgroundSize: '81.8%',
+      backgroundPosition: 'center',
     },
     title: {
       width: '100%',
@@ -74,34 +75,12 @@ export const style = {
       marginTop: '11%',
     },
   },
-  '@media (max-width: 700px)': {
-    backgroundImage: {
-      backgroundSize: '95% 55%',
-      opacity: '0.2',
-    },
-  },
   '@media (max-width: 600px)': {
-    backgroundImage: {
-      backgroundSize: '95% 45%',
-      opacity: '0.2',
-    },
     title: {
       marginBottom: '10%',
     },
     text: {
       marginTop: '5%',
-    },
-  },
-  '@media (max-width: 500px)': {
-    backgroundImage: {
-      backgroundSize: '95% 35%',
-      opacity: '0.2',
-    },
-  },
-  '@media (max-width: 400px)': {
-    backgroundImage: {
-      backgroundSize: '95% 25%',
-      opacity: '0.2',
     },
   },
 };

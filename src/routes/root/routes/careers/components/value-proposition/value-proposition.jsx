@@ -1,49 +1,52 @@
 import React from 'react';
 import { useSheet } from 'components/jss';
-import { style } from './style';
+
+import { Content, FlexContainer, Container, Button } from 'components/content';
+
 import { content } from './content';
-import { Content, FlexContainer, Container, Button, Link } from 'components/content';
+import { style } from './style';
 
-const ValueProposition = ({ sheet }) => {
-  const { classes } = sheet;
+import { linkAble } from 'routes/root/containers';
 
-  return (
-    <article
-      className={classes.component}>
-      <Container
-        container
-        className={classes.contentWrapper}>
-        <FlexContainer largeContainer
-          className={classes.container}
-          column>
-          <Content backgroundImage
-            className={classes.backgroundImage} />
-          <Content largeTitle
-            className={classes.title}>
-            {content.title}
-          </Content>
-          <Content largeSubTitle
-            className={classes.subtitle}>
-            {content.subTitle}
-          </Content>
-          <Content largeText
-            className={classes.text}>
-            {content.text}
-          </Content>
-          <Button
-            secondary
-            className={classes.button}
-            containerElement={<Link to={content.buttonRoute} />}>
-            {content.buttonLabel}
-          </Button>
-        </FlexContainer>
-      </Container>
-    </article>
-  );
+type Props = {
+  link: (pathOrUrl: string) => void,
+  sheet: Object,
 };
 
-ValueProposition.propTypes = {
-  sheet: React.PropTypes.object,
-};
+const ValueProposition = ({
+  link,
+  sheet: {
+    classes: {
+      component,
+      contentWrapper,
+      container,
+      backgroundImage,
+      title,
+      subtitle,
+      text,
+      button,
+    },
+  },
+}: Props) => (
+  <article className={component}>
+    <Container container className={contentWrapper}>
+      <FlexContainer largeContainer column className={container}>
+        <Content backgroundImage className={backgroundImage} />
+        <Content largeTitle className={title}>
+          {content.title}
+        </Content>
+        <Content largeSubTitle className={subtitle}>
+          {content.subTitle}
+        </Content>
+        <Content largeText className={text}>
+          {content.text}
+        </Content>
+        <Button secondary className={button} onClick={() => link(content.buttonRoute)}>
+          {content.buttonLabel}
+        </Button>
+      </FlexContainer>
+    </Container>
+  </article>
+);
 
-export default useSheet(ValueProposition, style);
+export default linkAble(useSheet(ValueProposition, style));

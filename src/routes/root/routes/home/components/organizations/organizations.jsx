@@ -4,6 +4,7 @@ import { content } from './content';
 import {
   useSheet,
   Content,
+  Container,
   FlexContainer,
   Button,
   Link
@@ -17,7 +18,7 @@ const Organizations = ({ sheet }) => {
 
   return (
     <article>
-      <FlexContainer
+      <Container
         normalContainer
         center
         column
@@ -91,7 +92,7 @@ const Organizations = ({ sheet }) => {
             </Button>
           </FlexContainer>
         </FlexContainer>
-      </FlexContainer>
+      </Container>
     </article>
   );
 };

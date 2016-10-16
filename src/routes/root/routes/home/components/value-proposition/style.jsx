@@ -21,8 +21,8 @@ export const style = {
   backgroundImage: {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right center',
-    backgroundSize: '40% 45%',
+    backgroundPosition: '90.4% center',
+    backgroundSize: '25%',
   },
   title: {
     width: '70%',
@@ -44,9 +44,14 @@ export const style = {
       marginBottom: '50px',
     },
    },
+  '@media (max-width: 1300px)': {
+    backgroundImage: {
+      backgroundSize: '30%',
+    },
+  },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '55% 40%',
+      backgroundSize: '35%',
     },
     title: {
       width: '60%',
@@ -62,7 +67,8 @@ export const style = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '95% 60%',
+      backgroundSize: '70%',
+      backgroundPosition: 'center',
       marginBottom: '40px',
     },
     title: {
@@ -78,34 +84,12 @@ export const style = {
       marginTop: '15px',
     },
   },
-  '@media (max-width: 700px)': {
-    backgroundImage: {
-      backgroundSize: '95% 55%',
-      opacity: '0.2',
-    },
-  },
   '@media (max-width: 600px)': {
-    backgroundImage: {
-      backgroundSize: '95% 45%',
-      opacity: '0.2',
-    },
     title: {
       marginBottom: '10%',
     },
     text: {
       marginTop: '5%',
-    },
-  },
-  '@media (max-width: 500px)': {
-    backgroundImage: {
-      backgroundSize: '95% 35%',
-      opacity: '0.2',
-    },
-  },
-  '@media (max-width: 400px)': {
-    backgroundImage: {
-      backgroundSize: '95% 25%',
-      opacity: '0.2',
     },
   },
 };
