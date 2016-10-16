@@ -1,9 +1,6 @@
 import Images from './images';
 
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'An Organization built to help you achieve',
   help: [
     {
@@ -48,3 +45,5 @@ export const content = {
   buttonLabel: 'Find out More',
   buttonRoute: '/BecomeAgileActor',
 };
+
+export default content;

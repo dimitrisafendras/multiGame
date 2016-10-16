@@ -1,6 +1,6 @@
 import React from 'react';
+import content from '../content';
 import { classes } from '../style';
-import { content } from '../content';
 
 import {
   Content,

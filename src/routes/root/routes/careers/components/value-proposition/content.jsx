@@ -1,4 +1,4 @@
-export const content = {
+const content = {
   title: 'Careers',
   subTitle: 'See our current openings',
   text: `We’re always looking for smart, motivated individuals to join us.
@@ -6,3 +6,5 @@ export const content = {
   buttonLabel: 'Check Openings',
   buttonRoute: '/BecomeAgileActor',
 };
+
+export default content;

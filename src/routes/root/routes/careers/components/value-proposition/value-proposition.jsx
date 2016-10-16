@@ -1,11 +1,16 @@
 import React from 'react';
-import { useSheet } from 'components/jss';
-import { style } from './style';
-import { content } from './content';
-import { Content, FlexContainer, Container, Button, Link } from 'components/content';
+import content from './content';
+import { classes } from './style';
 
-const ValueProposition = ({ sheet }) => {
-  const { classes } = sheet;
+import {
+  Content,
+  FlexContainer,
+  Container,
+  Button,
+  Link
+} from 'components/content';
+
+const ValueProposition = () => {
 
   return (
     <article
@@ -42,8 +47,4 @@ const ValueProposition = ({ sheet }) => {
   );
 };
 
-ValueProposition.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(ValueProposition, style);
+export default ValueProposition;

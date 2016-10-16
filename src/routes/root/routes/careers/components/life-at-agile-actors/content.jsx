@@ -1,7 +1,4 @@
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'Life at Agile Actors',
   text: `We’re working every single day to become the environment of choice 
   for motivated tech professionals that want to explore, blossom and mature 
@@ -12,3 +9,5 @@ export const content = {
   want to cooperate and coexist in a place where there’s excitement, fun, 
   transparency and a sense of accomplishment.`,
 };
+
+export default content;

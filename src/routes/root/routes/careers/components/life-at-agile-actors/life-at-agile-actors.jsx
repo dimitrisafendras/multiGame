@@ -1,8 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Images from './images';
-import { content } from './content';
+import content from './content';
 import { classes } from './style';
+
 import {
   useSheet,
   Content,

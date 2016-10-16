@@ -1,7 +1,8 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
+import { jss } from 'components';
 
-export const style = {
+const styles = {
   component: {
     backgroundColor: muiTheme.palette.blue600,
     display: 'flex',
@@ -84,3 +85,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };
