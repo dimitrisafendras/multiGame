@@ -16,10 +16,8 @@ import {
   MobileContent,
 } from './partials';
 
-class AgileActorsMethodology extends React.Component {
-  
-  render() {
-    const contentBoxes = this.props.size.mobile ? <MobileContent /> : <NormalContent tablet={this.props.size.tablet} />;
+const AgileActorsMethodology = ({ size }) => {
+    const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent tablet={size.tablet} />;
 
     return (
       <article>
@@ -44,7 +42,6 @@ class AgileActorsMethodology extends React.Component {
         </Container>
       </article>
     );
-  }
 }
 
 export default Resizable(AgileActorsMethodology);
