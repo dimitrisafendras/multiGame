@@ -15,9 +15,8 @@ import {
   useSheet,
 } from './jss';
 
-import {
-  SliderSettings
-} from './slider-settings';
+import SliderSettings from './slider-settings';
+import Resizable from './resizable-component';
 
 export {
   Box,
@@ -30,4 +29,5 @@ export {
   jss,
   useSheet,
   SliderSettings,
+  Resizable,
 };

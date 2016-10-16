@@ -5,7 +5,7 @@ import Images from './images';
 //
 export const content = {
   title: 'An Organization built to help you achieve',
-  practice: [
+  help: [
     {
       id: 'tools',
       title: 'Tools',

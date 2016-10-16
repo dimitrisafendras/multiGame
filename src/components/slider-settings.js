@@ -1,7 +1,4 @@
-//
-// slider settings
-//
-export const SliderSettings = {
+const SliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,
@@ -9,3 +6,5 @@ export const SliderSettings = {
   slidesToScroll: 1,
   touchMove: true,
 };
+
+export default SliderSettings;
