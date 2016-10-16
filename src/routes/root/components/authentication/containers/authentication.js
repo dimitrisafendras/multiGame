@@ -1,7 +1,5 @@
-import { connect } from 'react-redux';
+import { userAble } from 'routes/root/containers';
 
 import Authentication from '../components/authentication';
 
-export default connect(
-  ({ user }) => ({ user })
-)(Authentication);
+export default userAble(Authentication);

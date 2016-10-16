@@ -4,7 +4,7 @@ const content = {
   text: `We’re always looking for smart, motivated individuals to join us.
          If you’re looking for more than a job, go on and check our openings. We’d love to meet you.`,
   buttonLabel: 'Check Openings',
-  buttonRoute: '/BecomeAgileActor',
+  buttonRoute: 'https://agileactors.workable.com/',
 };
 
 export default content;

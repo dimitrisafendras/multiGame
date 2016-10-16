@@ -33,9 +33,9 @@ const LifeAtAgileActors = () => {
               {...SliderSettings}>
 
               {Images.map((image, index) =>(
-                <div style={{position: 'relative'}}>
-                  <div key={`life-at-aa-${index}-item`}
-                       className={classes.imagesWrapper}>
+                <div style={{position: 'relative'}}
+                     key={`life-at-aa-${index}-item`}>
+                  <div className={classes.imagesWrapper}>
                     <img src={image}
                          className={classes.image} />
                   </div>

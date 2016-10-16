@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-import { signOut } from 'routes/root/modules/user/user-actions';
+import {
+  contentAble,
+  userAble,
+  onSignOutAble,
+  linkAble,
+} from 'routes/root/containers';
 
 import { useSheet } from 'components/jss';
 import {
@@ -148,12 +151,10 @@ class Sidebar extends Component {
   }
 }
 
-export default connect(
-  ({ content, user }) => ({ content, user }),
-  (dispatch) => ({
-    link: (path) => {
-      path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
-    },
-    onSignOut: () => dispatch(signOut()),
-  })
-)(useSheet(Sidebar, style));
+export default contentAble(
+  userAble(
+    onSignOutAble(
+      linkAble(useSheet(Sidebar, style))
+    )
+  )
+);

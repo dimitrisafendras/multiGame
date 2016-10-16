@@ -1,6 +1,7 @@
 import React from 'react';
 import content from './content';
 import { classes } from './style';
+import { linkAble } from 'routes/root/containers';
 
 import {
   Content,
@@ -10,7 +11,9 @@ import {
   Link
 } from 'components/content';
 
-const ValueProposition = () => {
+const ValueProposition = ({ link }) => {
+
+  console.log('link', link)
 
   return (
     <article
@@ -35,10 +38,10 @@ const ValueProposition = () => {
             className={classes.text}>
             {content.text}
           </Content>
-          <Button
+          <Button 
             secondary
             className={classes.button}
-            containerElement={<Link to={content.buttonRoute} />}>
+            onClick={() => link(content.buttonRoute)}>
             {content.buttonLabel}
           </Button>
         </FlexContainer>
