@@ -13,8 +13,6 @@ import {
 
 const ValueProposition = ({ link }) => {
 
-  console.log('link', link)
-
   return (
     <article
       className={classes.component}>
