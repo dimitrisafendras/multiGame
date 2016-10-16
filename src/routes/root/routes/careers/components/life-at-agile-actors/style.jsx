@@ -33,16 +33,10 @@ const styles = {
     '& .slick-dots': {
       bottom: '5px',
 
-      '& button': {
-        '&:before': {
-          fontSize: '15px',
-          color: 'white !important',
-          opacity: '0.5',
-
-          '.slick-active &': {
-            opacity: '1'
-          },
-        },
+      '& button:before': {
+        fontSize: '15px',
+        color: 'white !important',
+        opacity: '0.5',
       },
     },
   },

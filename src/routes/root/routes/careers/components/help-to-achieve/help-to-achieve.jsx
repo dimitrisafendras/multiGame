@@ -170,23 +170,21 @@ class HelpToAchieve extends React.Component {
           center
           column
           className={classes.outerContainer}>
-          <FlexContainer
-            center>
-            <Content
-              normalTitle
-              className={classes.outerTitle}>
-              {content.title}
-            </Content>
-          </FlexContainer>
+          <Content
+            normalTitle
+            className={classes.outerTitle}>
+            {content.title}
+          </Content>
 
           {contentBoxes}
 
           <FlexContainer
-            center>
+            center
+            className={classes.button}>
             <Button
               secondary
               containerElement={<Link to={content.buttonRoute} />}
-              className={classes.button}>
+              >
               {content.buttonLabel}
             </Button>
           </FlexContainer>
