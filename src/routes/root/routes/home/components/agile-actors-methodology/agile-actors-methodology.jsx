@@ -3,12 +3,12 @@ import { classes } from './style';
 import { content } from './content';
 
 import {
-Content,
-Container,
-FlexContainer,
-Resizable,
-Button,
-Link,
+  Content,
+  Container,
+  FlexContainer,
+  Resizable,
+  Button,
+  Link,
 } from 'components';
 
 import {
@@ -16,32 +16,28 @@ import {
   MobileContent,
 } from './partials';
 
-const AgileActorsMethodology = ({ size }) => {
-    const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent tablet={size.tablet} />;
+type Props = {
+  size : Object,
+};
 
-    return (
-      <article>
-        <Container normalContainer>
-          <Content
-            normalTitle
-            className={classes.outerTitle}>
-            {content.title}
-          </Content>
+const AgileActorsMethodology = ({ size }: Props) => {
+  const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent tablet={size.tablet} />;
 
-          {contentBoxes}
-
-          <FlexContainer
-            center
-            className={classes.button}>
-            <Button
-              secondary
-              containerElement={<Link to={content.buttonRoute} />} >
-              {content.buttonLabel}
-            </Button>
-          </FlexContainer>
-        </Container>
-      </article>
-    );
+  return (
+    <article>
+      <Container normalContainer>
+        <Content normalTitle className={classes.outerTitle}>
+          {content.title}
+        </Content>
+        {contentBoxes}
+        <FlexContainer center className={classes.button}>
+        <Button secondary containerElement={<Link to={content.buttonRoute} />}>
+          {content.buttonLabel}
+        </Button>
+        </FlexContainer>
+      </Container>
+    </article>
+  );
 }
 
 export default Resizable(AgileActorsMethodology);

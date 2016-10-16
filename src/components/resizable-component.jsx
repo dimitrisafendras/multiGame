@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Resizable = ResizableComponent => class extends React.Component {
+const Resizable = (ResizableComponent) => class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,6 +37,7 @@ const Resizable = ResizableComponent => class extends React.Component {
     this.resizeTimer && clearTimeout(this.resizeTimer);
     this.mounted = false;
   }
+
   render() {
     return <ResizableComponent {...this.props} size={this.state} />;
   }
