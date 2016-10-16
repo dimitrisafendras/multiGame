@@ -23,7 +23,8 @@ const LifeAtAgileActors = () => {
         className={classes.contentWrapper}>
         <FlexContainer fullWidthContainer
                        className={classes.container}
-                       column>
+                       column
+                       center>
           <Container
             container
             className={classes.imagesContainer}>
@@ -31,10 +32,13 @@ const LifeAtAgileActors = () => {
               {...SliderSettings}>
 
               {Images.map((image, index) =>(
-                <div key={`life-at-aa-${index}-item`}
-                     className={classes.imagesWrapper}>
-                  <img src={image}
-                       className={classes.image} />
+                <div style={{position: 'relative'}}>
+                  <div key={`life-at-aa-${index}-item`}
+                       className={classes.imagesWrapper}>
+                    <img src={image}
+                         className={classes.image} />
+                  </div>
+                  <div className={classes.sliderOverlay} />
                 </div>
               ))}
 

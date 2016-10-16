@@ -18,6 +18,13 @@ const styles = {
   title: {
     color: muiTheme.palette.blue700,
   },
+  sliderOverlay :{
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: '0',
+    left: '0',
+  },
   imagesContainer: {
     display: 'block',
     width: '50%',
@@ -39,14 +46,16 @@ const styles = {
       },
     },
   },
+  imagesWrapper: {
+    height: '100%',
+    width: '100%',
+  },
   image: {
     width: '100%',
     height: '100%',
   },
   textWrapper: {
     width: '50%',
-    paddingTop: '9.4%',
-    paddingBottom: '9.4%',
     paddingLeft: '9.4%',
     paddingRight: '9.4%',
     boxSizing: 'border-box',
@@ -61,6 +70,18 @@ const styles = {
     },
     textWrapper: {
       width: '100%',
+
+      '&:before': {
+        content: '""',
+        display: 'block',
+        paddingTop: '9.4%',
+      },
+
+      '&:after': {
+        content: '""',
+        display: 'block',
+        paddingBottom: '9.4%',
+      }
     },
     imagesContainer: {
       width: '100%',
