@@ -1,9 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// The style of the component
-//
-export const style = {
+const styles = {
   outerContainer: {
     backgroundColor: muiTheme.palette.white,
   },
@@ -78,3 +76,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };
