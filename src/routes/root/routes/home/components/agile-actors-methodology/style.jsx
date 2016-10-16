@@ -1,10 +1,8 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
+import { jss } from 'components';
 
-//
-// Define the CSS styles of the components
-//
-export const style = {
+const styles = {
   backgroundLine: {
     backgroundImage: Images.BackgroundLineLarge,
     backgroundRepeat: 'no-repeat',
@@ -118,7 +116,7 @@ export const style = {
       width: '50%',
     },
     itemImage_0: {
-      top: '15px',
+      top: '-45px',
       left: '320px',
     },
     itemText_0: {
@@ -126,7 +124,7 @@ export const style = {
       left: '-220px',
     },
     itemImage_1: {
-      top: '275px',
+      top: '220px',
       left: '45px',
     },
     itemText_1: {
@@ -134,7 +132,7 @@ export const style = {
       left: '92px',
     },
     itemImage_2: {
-      top: '325px',
+      top: '288px',
       left: '325px',
     },
     itemText_2: {
@@ -142,7 +140,7 @@ export const style = {
       left: '-215px',
     },
     itemImage_3: {
-      top: '605px',
+      top: '540px',
       left: '50px',
     },
     itemText_3: {
@@ -175,3 +173,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };
