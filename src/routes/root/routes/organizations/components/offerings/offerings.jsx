@@ -11,6 +11,11 @@ import {
   Link,
 } from 'components';
 
+import {
+  NormalContent,
+  MobileContent,
+} from './partials';
+
 const AgileActorsPractice = ({ size }) => {
 
   const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent />;
