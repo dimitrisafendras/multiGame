@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import { linkAble, contentAble } from 'routes/root/containers';
 
 import {
   useSheet,
@@ -58,11 +57,4 @@ export const FooterMenuBar = ({
   </FlexContainer>
 );
 
-export default connect(
-  ({ content }) => ({ content }),
-  (dispatch) => ({
-    link: (path) => {
-      path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
-    },
-  })
-)(useSheet(FooterMenuBar, style));
+export default contentAble(linkAble(useSheet(FooterMenuBar, style)));

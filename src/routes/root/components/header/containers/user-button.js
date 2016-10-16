@@ -1,16 +1,11 @@
-import { connect } from 'react-redux';
-import { signOut } from 'routes/root/modules/user/user-actions';
+import {
+  userAble,
+  onSignOutAble,
+} from 'routes/root/containers';
 import {
   UserButtonMobile as UserButtonMobileComp,
   UserButton as UserButtonComp,
  } from '../components';
 
-const containerCreator = connect(
-  ({ user }) => ({ user }),
-  (dispatch) => ({
-    onSignOut: () => dispatch(signOut()),
-  }),
-);
-
-export const UserButton = containerCreator(UserButtonComp);
-export const UserButtonMobile = containerCreator(UserButtonMobileComp);
+export const UserButton = userAble(onSignOutAble(UserButtonComp));
+export const UserButtonMobile = userAble(onSignOutAble(UserButtonMobileComp));

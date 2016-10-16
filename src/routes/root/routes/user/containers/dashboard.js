@@ -1,6 +1,4 @@
-import { connect } from 'react-redux';
+import { userAble } from 'routes/root/containers';
 import { Dashboard } from '../components';
 
-export default connect(
-  ({ user }) => ({ user }),
-)(Dashboard);
+export default userAble(Dashboard);
