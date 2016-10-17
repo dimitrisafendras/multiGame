@@ -11,7 +11,11 @@ import {
   Link
 } from 'components/content';
 
-const ValueProposition = ({ link }) => {
+type Props = {
+  link: (pathOrUrl: string) => void,
+};
+
+const ValueProposition = ({ link }: Props) => {
 
   return (
     <article
@@ -20,23 +24,23 @@ const ValueProposition = ({ link }) => {
         container
         className={classes.contentWrapper}>
         <FlexContainer largeContainer
-          className={classes.container}
-          column>
+                       className={classes.container}
+                       column>
           <Content backgroundImage
-            className={classes.backgroundImage} />
+                   className={classes.backgroundImage} />
           <Content largeTitle
-            className={classes.title}>
+                   className={classes.title}>
             {content.title}
           </Content>
           <Content largeSubTitle
-            className={classes.subtitle}>
+                   className={classes.subtitle}>
             {content.subTitle}
           </Content>
           <Content largeText
-            className={classes.text}>
+                   className={classes.text}>
             {content.text}
           </Content>
-          <Button 
+          <Button
             secondary
             className={classes.button}
             onClick={() => link(content.buttonRoute)}>

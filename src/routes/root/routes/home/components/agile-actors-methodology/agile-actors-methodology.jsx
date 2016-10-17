@@ -16,8 +16,11 @@ import {
   MobileContent,
 } from './partials';
 
-const AgileActorsMethodology = ({ size }) => {
+type Props = {
+  size : Object,
+};
 
+const AgileActorsMethodology = ({ size }: Props) => {
   const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent tablet={size.tablet} />;
 
   return (
