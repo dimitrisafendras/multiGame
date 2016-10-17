@@ -1,9 +1,6 @@
 import Images from './images';
 
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'What You will Practice As An Agile Actor',
   practice: [
     {
@@ -46,3 +43,5 @@ export const content = {
   buttonLabel: 'Find out More',
   buttonRoute: '/BecomeAgileActor',
 };
+
+export default content;

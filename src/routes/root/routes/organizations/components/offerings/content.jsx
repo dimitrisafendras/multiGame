@@ -1,7 +1,4 @@
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'What can Agile Actors do for you?',
   offerings: [
     {
@@ -45,3 +42,5 @@ export const content = {
   buttonLabel: 'GET IN TOUCH',
   buttonRoute: '/Contact',
 };
+
+export default content;

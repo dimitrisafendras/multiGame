@@ -1,8 +1,8 @@
 import React from 'react';
-import { style } from './style';
-import { content } from './content';
+import content from './content';
+import { classes } from './style';
+
 import {
-  useSheet,
   Content,
   Container,
   FlexContainer,
@@ -10,11 +10,7 @@ import {
   Link
 } from 'components';
 
-//
-// The component
-//
-const Organizations = ({ sheet }) => {
-  const { classes } = sheet;
+const Organizations = () => {
 
   return (
     <article>
@@ -97,8 +93,4 @@ const Organizations = ({ sheet }) => {
   );
 };
 
-Organizations.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(Organizations, style);
+export default Organizations;

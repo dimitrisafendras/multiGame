@@ -1,6 +1,6 @@
 import React from 'react';
+import content from './content';
 import { classes } from './style';
-import { content } from './content';
 
 import {
   Content,
@@ -26,14 +26,22 @@ const AgileActorsMethodology = ({ size }: Props) => {
   return (
     <article>
       <Container normalContainer>
-        <Content normalTitle className={classes.outerTitle}>
+        <Content
+          normalTitle
+          className={classes.outerTitle}>
           {content.title}
         </Content>
+
         {contentBoxes}
-        <FlexContainer center className={classes.button}>
-        <Button secondary containerElement={<Link to={content.buttonRoute} />}>
-          {content.buttonLabel}
-        </Button>
+
+        <FlexContainer
+          center
+          className={classes.button}>
+          <Button
+            secondary
+            containerElement={<Link to={content.buttonRoute} />} >
+            {content.buttonLabel}
+          </Button>
         </FlexContainer>
       </Container>
     </article>

@@ -1,10 +1,8 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
+import { jss } from 'components';
 
-//
-// The styles of the component
-//
-export const style = {
+const styles = {
   component: {
     display: 'flex',
     justifyContent: 'center',
@@ -15,7 +13,6 @@ export const style = {
   },
   container: {
     backgroundColor: 'inherit',
-    flexDirection: 'row !important',
   },
   backgroundImage: {
     position: 'relative',
@@ -70,3 +67,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };
