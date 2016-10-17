@@ -46,6 +46,6 @@ const AgileActorsMethodology = ({ size }: Props) => {
       </Container>
     </article>
   );
-}
+};
 
 export default Resizable(AgileActorsMethodology);

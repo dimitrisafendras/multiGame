@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { linkAble } from 'routes/root/containers';
+
 import content from './content';
 import { classes } from './style';
 
@@ -8,7 +11,6 @@ import {
   FlexContainer,
   Resizable,
   Button,
-  Link
 } from 'components';
 
 import {
@@ -16,35 +18,37 @@ import {
   MobileContent,
 } from './partials';
 
-const AgileActorsPractice = ({ size }) => {
+const {
+  outerContainer,
+  outerTitle,
+  button,
+} = classes;
 
+type Props = {
+  size: Object,
+  link: (to: string) => void,
+};
+
+const AgileActorsPractice = ({ size, link }: Props) => {
   const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent />;
 
   return (
     <article>
-      <Container
-        normalContainer
-        className={classes.outerContainer}>
-        <Content
-          normalTitle
-          className={classes.outerTitle}>
+      <Container normalContainer className={outerContainer}>
+        <Content normalTitle className={outerTitle}>
           {content.title}
         </Content>
 
         {contentBoxes}
 
-        <FlexContainer
-          center
-          className={classes.button}>
-          <Button
-            secondary
-            containerElement={<Link to={content.buttonRoute} />} >
+        <FlexContainer center className={button}>
+          <Button secondary containerElement={() => link(content.buttonRoute)} >
             {content.buttonLabel}
           </Button>
         </FlexContainer>
       </Container>
     </article>
   );
-}
+};
 
-export default Resizable(AgileActorsPractice);
+export default linkAble(Resizable(AgileActorsPractice));
