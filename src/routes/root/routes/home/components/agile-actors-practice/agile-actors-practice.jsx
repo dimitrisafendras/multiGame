@@ -29,26 +29,25 @@ type Props = {
   link: (to: string) => void,
 };
 
-const AgileActorsPractice = ({ size, link }: Props) => {
-  const contentBoxes = size.mobile ? <MobileContent /> : <NormalContent />;
+const AgileActorsPractice = ({
+  size: {
+    mobile,
+  },
+  link,
+}: Props) => (
+  <Container normalContainer className={outerContainer}>
+    <Content normalTitle className={outerTitle}>
+      {content.title}
+    </Content>
 
-  return (
-    <article>
-      <Container normalContainer className={outerContainer}>
-        <Content normalTitle className={outerTitle}>
-          {content.title}
-        </Content>
+    {mobile ? <MobileContent /> : <NormalContent />}
 
-        {contentBoxes}
-
-        <FlexContainer center className={button}>
-          <Button secondary onClick={() => link(content.buttonRoute)} >
-            {content.buttonLabel}
-          </Button>
-        </FlexContainer>
-      </Container>
-    </article>
-  );
-};
+    <FlexContainer center className={button}>
+      <Button secondary onClick={() => link(content.buttonRoute)} >
+        {content.buttonLabel}
+      </Button>
+    </FlexContainer>
+  </Container>
+);
 
 export default linkAble(Resizable(AgileActorsPractice));
