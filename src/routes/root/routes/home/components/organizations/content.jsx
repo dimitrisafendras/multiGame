@@ -9,14 +9,14 @@ const content = {
       Img: Images.OrganizationLevelUp,
       content: 'Level up your team',
       buttonLabel: 'How we can help you',
-      buttonRoute: '/BecomeAgileActor',
+      buttonRoute: '/Organizations',
     },
     talent: {
       id: 'talent',
       Img: Images.OrganizationTalent,
       content: 'Get the right talent',
       buttonLabel: 'Learn More',
-      buttonRoute: '/BecomeAgileActor',
+      buttonRoute: '/Organizations',
     },
   },
 };

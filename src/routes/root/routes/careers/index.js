@@ -1,6 +1,6 @@
 import Careers from './components/careers';
 
 export default {
-  path: 'careers',
+  path: 'Careers',
   component: Careers,
 };

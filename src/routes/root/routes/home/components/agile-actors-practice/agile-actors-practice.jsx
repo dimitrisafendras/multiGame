@@ -42,7 +42,7 @@ const AgileActorsPractice = ({ size, link }: Props) => {
         {contentBoxes}
 
         <FlexContainer center className={button}>
-          <Button secondary containerElement={() => link(content.buttonRoute)} >
+          <Button secondary onClick={() => link(content.buttonRoute)} >
             {content.buttonLabel}
           </Button>
         </FlexContainer>

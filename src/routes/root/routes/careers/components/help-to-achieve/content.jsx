@@ -8,7 +8,7 @@ const content = {
       title: 'Tools',
       Img: Images.Tools,
       content:
-        `Great work needs great tools. We make sure you have exactly 
+        `Great work needs great tools. We make sure you have exactly
         what you need to get the job done without breaking a sweat.`,
     },
     {
@@ -17,8 +17,8 @@ const content = {
       Img: Images.Development,
       content:
         `No matter how experienced or inexperienced you are, at Agile Actors we
-         care about what you can be and we’re by your side while you’re getting 
-         there. You’ll be working with smart, skilled people, learn from the 
+         care about what you can be and we’re by your side while you’re getting
+         there. You’ll be working with smart, skilled people, learn from the
          best and trained to reach for the stars.`,
     },
     {
@@ -37,13 +37,13 @@ const content = {
       title: 'Respect',
       Img: Images.Respect,
       content:
-        `We are respectful, open-minded and only care about being good at what you do. 
-        Your gender, sexual preferences, skin color, language or family name won’t make 
+        `We are respectful, open-minded and only care about being good at what you do.
+        Your gender, sexual preferences, skin color, language or family name won’t make
         a difference here.`,
     },
   ],
   buttonLabel: 'Find out More',
-  buttonRoute: '/BecomeAgileActor',
+  buttonRoute: '/Careers',
 };
 
 export default content;
