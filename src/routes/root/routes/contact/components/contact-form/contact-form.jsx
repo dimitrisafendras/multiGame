@@ -5,12 +5,18 @@ import { FlexContainer, Button } from 'components/content';
 import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
 import { Snackbar } from 'material-ui';
-import { useSheet } from 'components/jss';
-import {Card} from 'material-ui/Card';
-import { style } from './style';
+import { Card } from 'material-ui/Card';
+import { classes } from './style';
 import { content } from './content';
 
+type Props = {
+  message: string,
+  open: boolean,
+  canSubmit: boolean,
+};
+
 class SubmitValidationForm extends React.Component {
+  props: Props;
 
   constructor(props) {
     super(props);
@@ -36,11 +42,10 @@ class SubmitValidationForm extends React.Component {
 
     createContactMessage(data)
     .then((response) => {
-      if(response.createContactMessage.status === 'ok') {
+      if (response.createContactMessage.status === 'ok') {
         _this.showSuccessToast();
         _this.refs.aaContactForm.reset();
-      }
-      else {
+      } else {
         _this.showErrorToast();
       }
     })
@@ -66,7 +71,6 @@ class SubmitValidationForm extends React.Component {
   render() {
     const { enableButton, disableButton, handleRequestClose } = this;
     const _this = this;
-    const { classes } = this.props.sheet;
     return (
       <FlexContainer largeContainer
         center column className={classes.component}>
@@ -107,11 +111,4 @@ class SubmitValidationForm extends React.Component {
   }
 };
 
-SubmitValidationForm.propTypes = {
-  message: React.PropTypes.string,
-  open: React.PropTypes.bool,
-  sheet: React.PropTypes.object,
-  canSubmit: React.PropTypes.bool,
-};
-
-export default useSheet(SubmitValidationForm, style);
+export default SubmitValidationForm;

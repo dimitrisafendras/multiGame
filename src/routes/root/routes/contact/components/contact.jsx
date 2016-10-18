@@ -11,7 +11,7 @@ class Contact extends React.Component {
         <AgileActorsMap />
         <Introduction />
         <ContactForm />
-        <AgileActorsTransportation/>
+        <AgileActorsTransportation />
       </section>
     );
   }
