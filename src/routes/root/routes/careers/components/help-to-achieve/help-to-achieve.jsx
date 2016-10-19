@@ -8,7 +8,6 @@ import {
   FlexContainer,
   Resizable,
   Button,
-  Link,
 } from 'components';
 
 import { linkAble } from 'routes/root/containers';
