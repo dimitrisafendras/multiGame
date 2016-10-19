@@ -7,36 +7,32 @@ import {
   FlexContainer,
   Container,
   Button,
-  Link,
 } from 'components';
 
-const ValueProposition = () => (
-  <article
-    className={classes.component}>
-    <Container
-      container
-      className={classes.contentWrapper}>
-      <FlexContainer largeContainer
-        className={classes.container}
-        column>
-        <Content backgroundImage
-          className={classes.backgroundImage} />
+import { linkAble } from 'routes/root/containers';
+
+type Props = {
+  link: (to: string) => void,
+}
+const ValueProposition = ({ link }: Props) => (
+  <article className={classes.component}>
+    <Container container className={classes.contentWrapper}>
+      <FlexContainer column largeContainer className={classes.container}>
+        <Content backgroundImage className={classes.backgroundImage} />
         <Content largeTitle
           className={classes.title}>
           {content.title}
         </Content>
-        <Content largeSubTitle
-          className={classes.subtitle}>
+        <Content largeSubTitle className={classes.subtitle}>
           {content.subTitle}
         </Content>
-        <Content largeText
-          className={classes.text}>
+        <Content largeText className={classes.text}>
           {content.text}
         </Content>
         <Button
           secondary
           className={classes.button}
-          containerElement={<Link to={content.buttonRoute} />}>
+          onClick={() => link(content.buttonRoute)}>
           {content.buttonLabel}
         </Button>
       </FlexContainer>
@@ -44,4 +40,4 @@ const ValueProposition = () => (
   </article>
 );
 
-export default ValueProposition;
+export default linkAble(ValueProposition);

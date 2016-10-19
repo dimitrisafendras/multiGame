@@ -5,7 +5,7 @@ const content = {
          From setting meaningful personal goals to getting personal coaching, it helps
          you find your next career dot and deliver value to the real word.`,
   buttonLabel: 'Become an Agile Actor',
-  buttonRoute: '/Carrers',
+  buttonRoute: '/Careers',
 };
 
 export default content;
