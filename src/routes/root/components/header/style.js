@@ -1,6 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-export const style = {
+const styles = {
   mainMenu: {
     position: 'fixed',
     top: '0px',
@@ -137,4 +138,11 @@ export const style = {
       },
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

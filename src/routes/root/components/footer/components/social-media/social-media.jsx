@@ -1,55 +1,47 @@
 import React from 'react';
 import { Logo } from 'routes/root/components';
 import { content } from './content';
-import { style } from './style';
+import { classes } from './style';
 import {
   useSheet,
   Content,
   FlexContainer,
-  Container
+  Container,
 } from 'components';
 
-const SocialMedia = ({ sheet }) => {
-  const { classes } = sheet;
+const SocialMedia = () => (
+  <FlexContainer fullWidthContainer
+    center
+    wrap
+    className={classes.container}>
+    <Content image>
+      <Logo className={classes.logo} />
+    </Content>
+    <div className={classes.socialWrapper}>
 
-  return (
-    <FlexContainer fullWidthContainer
-      center
-      wrap
-      className={classes.container}>
-      <Content image>
-        <Logo className={classes.logo} />
-      </Content>
-      <div className={classes.socialWrapper}>
+      {content.map((social) =>
 
-        {content.map((social) =>
+        (<Container container
+          className={classes.socialContainer}
+          key={`social-${social.id}-item`}>
+          <a href={social.url}
+            className={classes.socialLink}
+            target={'_black'}>
+            <Content image
+              className={classes.socialImage}>
+              {social.Img}
+            </Content>
+            <Content text
+              className={classes.socialText}>
+              {social.text}
+            </Content>
+          </a>
+        </Container>)
 
-          (<Container container
-            className={classes.socialContainer}
-            key={`social-${social.id}-item`}>
-            <a href={social.url}
-              className={classes.socialLink}
-              target={'_black'}>
-              <Content image
-                className={classes.socialImage}>
-                {social.Img}
-              </Content>
-              <Content text
-                className={classes.socialText}>
-                {social.text}
-              </Content>
-            </a>
-          </Container>)
+      )}
 
-        )}
+    </div>
+  </FlexContainer>
+);
 
-      </div>
-    </FlexContainer>
-  );
-};
-
-SocialMedia.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(SocialMedia, style);
+export default SocialMedia;
