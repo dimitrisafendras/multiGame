@@ -11,6 +11,8 @@ import {
   Link,
 } from 'components';
 
+import { linkAble } from 'routes/root/containers';
+
 import {
   NormalContent,
   MobileContent,
@@ -18,9 +20,10 @@ import {
 
 type Props = {
   size: Object,
+  link: (to: string) => void,
 };
 
-const HelpToAchieve = ({ size: { mobile } }: Props) => (
+const HelpToAchieve = ({ size: { mobile }, link }: Props) => (
   <article>
     <Container
       normalContainer
@@ -38,7 +41,7 @@ const HelpToAchieve = ({ size: { mobile } }: Props) => (
         className={classes.button}>
         <Button
           secondary
-          containerElement={<Link to={content.buttonRoute} />} >
+          onClick={() => link(content.buttonRoute)} >
           {content.buttonLabel}
         </Button>
       </FlexContainer>
@@ -46,4 +49,4 @@ const HelpToAchieve = ({ size: { mobile } }: Props) => (
   </article>
 );
 
-export default Resizable(HelpToAchieve);
+export default linkAble(Resizable(HelpToAchieve));

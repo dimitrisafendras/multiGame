@@ -43,7 +43,7 @@ const content = {
     },
   ],
   buttonLabel: 'Find out More',
-  buttonRoute: '/Careers',
+  buttonRoute: 'https://agileactors.workable.com/',
 };
 
 export default content;

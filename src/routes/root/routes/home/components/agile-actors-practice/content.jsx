@@ -41,7 +41,7 @@ const content = {
     },
   ],
   buttonLabel: 'Find out More',
-  buttonRoute: '/Carrers',
+  buttonRoute: '/Careers',
 };
 
 export default content;
