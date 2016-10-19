@@ -50,6 +50,8 @@ export const style = {
   },
   appBarContainer: {},
   appBar: {
+    paddingLeft: '0 !important',
+    paddingRight: '0 !important',
     boxShadow: 'none !important',
     overflow: 'hidden !important',
     height: '100% !important',
