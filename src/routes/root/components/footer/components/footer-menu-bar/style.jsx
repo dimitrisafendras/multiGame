@@ -1,6 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-export const style = {
+const styles = {
   outerContainer: {
     backgroundColor: muiTheme.palette.grey100,
     color: muiTheme.palette.blue700,
@@ -32,4 +33,10 @@ export const style = {
     marginLeft: 'auto',
     marginRight: 'auto',
   },
+};
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

@@ -1,9 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// Define the CSS styles of the component.
-//
-const style = {
+const styles = {
   form: {
     marginBottom: '30px',
   },
@@ -22,8 +20,9 @@ const style = {
   },
 };
 
-export {
-  style,
-};
+const classes = jss.createStyleSheet(styles).attach().classes;
 
-export default style;
+export {
+  styles,
+  classes,
+};

@@ -1,7 +1,4 @@
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'Organizations',
   subTitle: 'Your Business Partner for Software Development',
   text: `From hiring the right tech professionals to untapping your team’s talent,
@@ -9,3 +6,5 @@ export const content = {
    and organizations trust Agile Actors to form teams for successful projects and keep
    their workforce sharp.`,
 };
+
+export default content;

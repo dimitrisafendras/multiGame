@@ -1,27 +1,12 @@
-import { connect } from 'react-redux';
-
 import {
-  signIn,
-  signUp,
-} from 'routes/root/modules/user/user-actions';
+  onSignInAble,
+  onSignUpAble,
+} from 'routes/root/containers';
 
 import {
   AuthProviders as AuthorizationProviders,
   AuthForm as AuthorizationForm,
 } from '../components';
 
-const authConnect = connect(
-  (state) => ({}),
-  (dispatch) => ({
-    signIn: (options) => { // { provider, email, password }
-      dispatch(signIn(options));
-    },
-
-    signUp: (options) => { // { email, password }
-      dispatch(signUp(options));
-    },
-  })
-);
-
-export const AuthProviders = authConnect(AuthorizationProviders);
-export const AuthForm = authConnect(AuthorizationForm);
+export const AuthProviders = onSignInAble(onSignUpAble(AuthorizationProviders));
+export const AuthForm = onSignInAble(onSignUpAble(AuthorizationForm));

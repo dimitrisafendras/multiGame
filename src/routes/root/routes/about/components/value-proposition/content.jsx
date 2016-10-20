@@ -1,7 +1,4 @@
-//
-// The content of the component
-//
-export const content = {
+const content = {
   title: 'About us',
   subTitle: 'What is an Agile Actor?',
   text: `Agile Actors are the tech professionals of today: they solve problems for organizations 
@@ -11,3 +8,5 @@ export const content = {
   buttonLabel: 'CHECK OPENINGS',
   buttonLink: 'https://agileactors.workable.com',
 };
+
+export default content;

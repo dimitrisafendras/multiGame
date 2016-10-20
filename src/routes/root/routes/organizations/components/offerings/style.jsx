@@ -1,9 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// The styles of the components
-//
-export const style = {
+const styles = {
   outerTitle: {
     color: muiTheme.palette.blue700,
     marginBottom: '3%',
@@ -21,7 +19,7 @@ export const style = {
     marginLeft: '57px',
     marginRight: '57px',
     width: '236px',
-    height: '385px',
+    height: '420px',
     paddingTop: '35px',
     paddingBottom: '35px',
     boxSizing: 'border-box',
@@ -34,10 +32,10 @@ export const style = {
   },
   title: {
     color: muiTheme.palette.blue700,
-    fontWeight: '100',
+    fontWeight: '300',
   },
   button: {
-    marginTop: '6.1%',
+    marginTop: '4%',
   },
   '@media (max-width: 1583px)': {
     containerWrapper: {
@@ -65,3 +63,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };

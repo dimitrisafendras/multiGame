@@ -1,56 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-export const style = {
-  mainMenu: {
-    position: 'fixed',
-    top: '0px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '100%',
-    maxWidth: muiTheme.appBar.maxWidth,
-    zIndex: '100',
-  },
-  mainMenuContent: {
-    position: 'absolute',
-    top: '0px',
-    right: '0px',
-    width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
-    height: '100%',
-    zIndex: '1200',
-    display: 'flex',
-    flexWrap: 'no-wrap',
-    justifyContent: 'flex-end',
-  },
-  mainMenuItem: {
-    flexShrink: 1,
-  },
-  mainMenuItemGrow: {
-    flexGrow: 1,
-  },
-  mainMenuItemMobile: {
-    display: 'block',
-  },
-  mainMenuItemTablet: {
-    display: 'none',
-  },
-  mainMenuIconContainer: {
-    borderLeft: `1px solid ${muiTheme.palette.grey300}`,
-  },
-  appBarContainer: {},
-  appBar: {
-    boxShadow: 'none',
-    overflow: 'hidden',
-    height: '100%',
-    alignItems: 'center',
-  },
-  appBarTitleStyle: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'left',
-    overflow: 'hidden',
-    height: 60,
-    maxHeight: 60,
-  },
+const styles = {
   logo: {},
   headerMenuBarButton: {
     height: `${muiTheme.appBar.mobileHeight}px !important`,
@@ -74,10 +25,10 @@ export const style = {
     },
     '&:hover': {
       opacity: 1,
-      '&:after': {
-        transform: 'translateY(-100%)',
-      }
-    }
+    },
+    '&:hover:after': {
+      transform: 'translateY(-100%)',
+    },
   },
   headerMenuBarButtonMenu: {
     borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
@@ -102,7 +53,7 @@ export const style = {
     },
     mainMenuContent: {
       width: `calc(100% - 320px)`,
-      maxWidth: `400px`,
+      maxWidth: `500px`,
     },
     mainMenuItem: {
       height: `${muiTheme.appBar.tabletHeight}px`,
@@ -156,4 +107,11 @@ export const style = {
       },
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

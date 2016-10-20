@@ -1,30 +1,27 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import { push } from 'react-router-redux';
+import { linkAble, contentAble } from 'routes/root/containers';
 
-import { contentData } from './content';
-import { style } from './style';
 import {
-  useSheet,
   Container,
   FlexContainer,
   Content,
   Link,
 } from 'components';
 
+import { contentData } from './content';
+import { classes } from './style';
+
 const linkKey = (link) => `nav-footer--${link.replace(' ', '')}`;
 
 type Props = {
-  content: React.PropTypes.array,
-  link: React.PropTypes.func,
-  sheet: React.PropTypes.object,
+  content: [],
+  link: () => void,
 };
 
-const FooterMenuBar = ({
+export const FooterMenuBar = ({
   content,
   link,
-  sheet: { classes },
 }: Props) => (
   <FlexContainer
     fullWidthContainer
@@ -57,11 +54,4 @@ const FooterMenuBar = ({
   </FlexContainer>
 );
 
-export default connect(
-  ({ content }) => ({ content }),
-  (dispatch) => ({
-    link: (path) => {
-      path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
-    },
-  })
-)(useSheet(FooterMenuBar, style));
+export default contentAble(linkAble(FooterMenuBar));

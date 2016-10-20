@@ -15,6 +15,9 @@ import {
   useSheet,
 } from './jss';
 
+import SliderSettings from './slider-settings';
+import Resizable from './resizable-component';
+
 export {
   Box,
   Container,
@@ -25,4 +28,6 @@ export {
   InlineSvg,
   jss,
   useSheet,
+  SliderSettings,
+  Resizable,
 };

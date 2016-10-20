@@ -1,9 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// The styles of the components
-//
-export const style = {
+const styles = {
   outerContainer: {
     backgroundColor: muiTheme.palette.grey100,
   },
@@ -39,7 +37,6 @@ export const style = {
   },
   imgWrapper: {
     backgroundColor: muiTheme.palette.white,
-    width: '306px',
     height: '180px',
     marginTop: '-35px',
     marginBottom: '0px',
@@ -47,7 +44,6 @@ export const style = {
     marginRight: '-35px',
   },
   img: {
-    height: '90px',
     marginTop: '0px',
     marginBottom: '0px',
     marginLeft: 'auto',
@@ -84,3 +80,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };

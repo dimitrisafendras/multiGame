@@ -1,9 +1,6 @@
-import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// Define the CSS styles of the component.
-//
-export const style = {
+const styles = {
   component: {
     paddingTop: '0px',
     zIndex: '2',
@@ -37,3 +34,7 @@ export const style = {
     },
   },
 };
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export { styles, classes };

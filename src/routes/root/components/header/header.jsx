@@ -5,7 +5,6 @@ import {
   IconButton,
 } from 'material-ui';
 
-import { useSheet } from 'components/jss';
 import { Logo } from 'routes/root/components';
 import {
   HeaderMenuBar,
@@ -13,7 +12,7 @@ import {
   UserButtonMobile,
 } from './containers';
 
-import { style } from './style';
+import { classes, styles as style } from './style';
 
 import { signInEnabled } from './config';
 
@@ -21,14 +20,12 @@ type Props = {
   handleLeftIconButtonTouchTap: () => void,
   toggleAuthentication: () => void,
   activeRoute: string,
-  sheet: Object,
 };
 
 const Header = ({
   handleLeftIconButtonTouchTap,
   toggleAuthentication,
   activeRoute,
-  sheet: { classes },
 }: Props) => (
   <div className={classes.topBar}>
     <div className={classes.mainMenu}>
@@ -89,4 +86,4 @@ const Header = ({
   </div>
 );
 
-export default useSheet(Header, style);
+export default Header;

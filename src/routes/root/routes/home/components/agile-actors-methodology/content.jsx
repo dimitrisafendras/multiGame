@@ -1,9 +1,6 @@
 import Images from './images';
 
-//
-// Define the content of the component
-//
-export const content = {
+const content = {
   title: 'How the Agile Actors Methodology Works',
   methodology: [
     {
@@ -39,5 +36,7 @@ export const content = {
     },
   ],
   buttonLabel: 'Become an Agile Actor',
-  buttonRoute: '/BecomeAgileActor',
+  buttonRoute: '/Careers',
 };
+
+export default content;

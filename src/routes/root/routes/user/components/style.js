@@ -1,7 +1,8 @@
 
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-export const style = {
+const styles = {
   component: {
     backgroundColor: muiTheme.palette.blue600,
     display: 'flex',
@@ -90,4 +91,11 @@ export const style = {
       opacity: '0.2',
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };
