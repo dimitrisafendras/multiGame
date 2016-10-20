@@ -1,7 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
 import { jss } from 'components';
 
-export const styles = {
+const styles = {
   topBar: {
     position: 'fixed',
     top: '0px',
