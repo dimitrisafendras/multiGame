@@ -114,7 +114,7 @@
     "koa-static": "3.0.0",
     "lokka": "1.7.0",
     "lokka-transport-http": "1.4.0",
-    "material-ui": "0.16.0",
+    "material-ui": "0.16.1",
     "node-sass": "3.10.1",
     "normalize.css": "3.0.3",
     "postcss-loader": "0.13.0",
