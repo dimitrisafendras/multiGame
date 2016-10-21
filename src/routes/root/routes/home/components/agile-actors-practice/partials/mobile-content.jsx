@@ -22,7 +22,7 @@ const MobileContent = () => {
     <Slider {...SliderSettings}>
       {content.practice.map((item) => (
         <div key={`aa-practice-${item.id}-item-m`}>
-          <FlexContainer center key={`aa-practice-${item.id}-item-m`}>
+          <FlexContainer center>
             <Container container className={container}>
               <FlexContainer center className={imgWrapper}>
                 <Content image className={img}>
