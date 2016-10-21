@@ -1,21 +1,13 @@
 import React from 'react';
 import Slider from 'react-slick';
 import content from '../content';
-import { classes } from '../style';
 
 import {
-  Content,
-  Container,
   FlexContainer,
   SliderSettings,
 } from 'components';
 
-const {
-  container,
-  imgWrapper,
-  img,
-  title,
-} = classes;
+import ContentItem from './content-item';
 
 const MobileContent = () => {
   return (
@@ -23,19 +15,7 @@ const MobileContent = () => {
       {content.practice.map((item) => (
         <div key={`aa-practice-${item.id}-item-m`}>
           <FlexContainer center>
-            <Container container className={container}>
-              <FlexContainer center className={imgWrapper}>
-                <Content image className={img}>
-                  {item.Img}
-                </Content>
-              </FlexContainer>
-              <Content title className={title}>
-                {item.title}
-              </Content>
-              <Content text>
-                {item.content}
-              </Content>
-            </Container>
+            <ContentItem item={item} />
           </FlexContainer>
         </div>
       ))}
