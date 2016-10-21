@@ -10,29 +10,26 @@ import {
   SliderSettings,
 } from 'components';
 
+const {
+  container,
+  imgWrapper,
+  img,
+  title,
+} = classes;
+
 const MobileContent = () => {
   return (
-    <Slider
-      {...SliderSettings}>
-      {content.practice.map((item) =>
-        (<div key={`aa-practice-${item.id}-item`}>
-          <FlexContainer
-            center>
-            <Container
-              container
-              className={classes.container}>
-              <FlexContainer
-                center
-                className={classes.imgWrapper}>
-                <Content
-                  image
-                  className={classes.img}>
+    <Slider {...SliderSettings}>
+      {content.practice.map((item) => (
+        <div key={`aa-practice-${item.id}-item-m`}>
+          <FlexContainer center key={`aa-practice-${item.id}-item-m`}>
+            <Container container className={container}>
+              <FlexContainer center className={imgWrapper}>
+                <Content image className={img}>
                   {item.Img}
                 </Content>
               </FlexContainer>
-              <Content
-                title
-                className={classes.title}>
+              <Content title className={title}>
                 {item.title}
               </Content>
               <Content text>
@@ -40,8 +37,8 @@ const MobileContent = () => {
               </Content>
             </Container>
           </FlexContainer>
-        </div>)
-      )}
+        </div>
+      ))}
     </Slider>
   );
 };

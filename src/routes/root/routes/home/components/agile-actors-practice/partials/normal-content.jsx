@@ -8,69 +8,46 @@ import {
   FlexContainer,
 } from 'components';
 
-const NormalContent = () => {
-  return (
-    <FlexContainer
-      center
-      wrap>
-      <FlexContainer
-        container
-        className={classes.containerWrapper}>
-        {content.practice.slice(0, 2).map((item) =>
-          (<Container
-            container
-            className={classes.container}
-            key={`aa-practice-${item.id}-item`}>
-            <FlexContainer
-              center
-              className={classes.imgWrapper}>
-              <Content
-                image
-                className={classes.img}>
-                {item.Img}
-              </Content>
-            </FlexContainer>
-            <Content
-              title
-              className={classes.title}>
-              {item.title}
-            </Content>
-            <Content text>
-              {item.content}
-            </Content>
-          </Container>)
-        )}
-      </FlexContainer>
-      <FlexContainer
-        container
-        className={classes.containerWrapper}>
-        {content.practice.slice(2, 4).map((item) =>
-          (<Container
-            container
-            className={classes.container}
-            key={`aa-practice-${item.id}-item`}>
-            <FlexContainer
-              center
-              className={classes.imgWrapper}>
-              <Content
-                image
-                className={classes.img}>
-                {item.Img}
-              </Content>
-            </FlexContainer>
-            <Content
-              title
-              className={classes.title}>
-              {item.title}
-            </Content>
-            <Content text>
-              {item.content}
-            </Content>
-          </Container>)
-        )}
-      </FlexContainer>
-    </FlexContainer>
-  );
+const {
+  containerWrapper,
+  container,
+  imgWrapper,
+  img,
+  title,
+} = classes;
+
+type Props = {
+  rowItems: [ Object ],
 };
+
+const firstRow = content.practice.slice(0, 2);
+const secondRow = content.practice.slice(2, 4);
+
+const ContentRow = ({ rowItems }: Props) => (
+  <FlexContainer container className={containerWrapper}>
+    {rowItems.map((item) => (
+      <Container container className={container} key={`aa-practice-${item.id}-item`}>
+        <FlexContainer center className={imgWrapper}>
+          <Content image className={img}>
+            {item.Img}
+          </Content>
+        </FlexContainer>
+        <Content title className={title}>
+          {item.title}
+        </Content>
+        <Content text>
+          {item.content}
+        </Content>
+      </Container>
+    ))}
+  </FlexContainer>
+);
+
+const NormalContent = () => (
+  <FlexContainer center wrap>
+    <ContentRow rowItems={firstRow} />
+    <ContentRow rowItems={secondRow} />
+  </FlexContainer>
+);
 
 export default NormalContent;
