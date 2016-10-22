@@ -15,6 +15,8 @@ const {
 const firstRow = content.practice.slice(0, 2);
 const secondRow = content.practice.slice(2, 4);
 
+const key = (id) => `aa-practice-${id}-normal`;
+
 type Props = {
   rowItems: [ Object ],
 };
@@ -22,7 +24,7 @@ type Props = {
 const ContentRow = ({ rowItems }: Props) => (
   <FlexContainer container className={containerWrapper}>
     {rowItems.map((item) => (
-      <ContentItem item={item} key={`aa-practice-${item.id}-item`} />
+      <ContentItem item={item} key={key(item.id)} />
     ))}
   </FlexContainer>
 );
