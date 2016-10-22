@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { compose } from 'containers';
+
 import content from './content';
 import { classes } from './style';
 
@@ -51,4 +54,4 @@ const AgileActorsMethodology = ({
   </article>
 );
 
-export default linkAble(Resizable(AgileActorsMethodology));
+export default compose(linkAble, Resizable)(AgileActorsMethodology);
