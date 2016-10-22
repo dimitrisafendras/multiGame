@@ -3,43 +3,37 @@ import content from './content';
 import { classes } from './style';
 
 import {
-  useSheet,
   Content,
   FlexContainer,
   Container,
-  Button,
-  Link 
 } from 'components';
 
-const ValueProposition = () => {
+const {
+  component,
+  contentWrapper,
+  container,
+  backgroundImage,
+  textWrapper,
+  title,
+  text,
+} = classes;
 
-  return (
-    <article
-      className={classes.component}>
-      <Container
-        container
-        className={classes.contentWrapper}>
-        <FlexContainer normalContainer
-          className={classes.container}
-          row>
-          <Content backgroundImage
-            className={classes.backgroundImage} />
-          <Container
-            container
-            className={classes.textWrapper}>
-            <Content normalTitle
-              className={classes.title}>
-              {content.title}
-            </Content>
-            <Content text
-              className={classes.text}>
-              {content.text}
-            </Content>
-          </Container>
-        </FlexContainer>
-      </Container>
-    </article>
-  );
-};
+const ValueProposition = () => (
+  <article className={component}>
+    <Container container className={contentWrapper}>
+      <FlexContainer normalContainer row className={container}>
+        <Content backgroundImage className={backgroundImage} />
+        <Container container className={textWrapper}>
+          <Content normalTitle className={title}>
+            {content.title}
+          </Content>
+          <Content text className={text}>
+            {content.text}
+          </Content>
+        </Container>
+      </FlexContainer>
+    </Container>
+  </article>
+);
 
 export default ValueProposition;

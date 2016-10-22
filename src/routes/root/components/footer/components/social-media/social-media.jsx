@@ -1,13 +1,15 @@
 import React from 'react';
-import { Logo } from 'routes/root/components';
-import { content } from './content';
-import { classes } from './style';
+
 import {
-  useSheet,
   Content,
   FlexContainer,
   Container,
 } from 'components';
+
+import { Logo } from 'routes/root/components';
+
+import { content } from './content';
+import { classes } from './style';
 
 const SocialMedia = () => (
   <FlexContainer fullWidthContainer

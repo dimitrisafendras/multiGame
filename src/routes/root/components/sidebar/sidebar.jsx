@@ -7,7 +7,6 @@ import {
   linkAble,
 } from 'routes/root/containers';
 
-import { useSheet } from 'components/jss';
 import {
   Drawer,
   MenuItem,
@@ -18,7 +17,10 @@ import {
 
 import { Signature } from 'routes/root/components';
 
-import { style } from './style';
+import {
+  styles as style,
+  classes,
+} from './style';
 
 import { signInEnabled } from './config';
 
@@ -28,7 +30,6 @@ type Props = {
   open: boolean,
   toggleSidebar: () => void,
   toggleAuthentication: () => void,
-  sheet: Object,
   user: Object,
   onSignOut: () => void,
 };
@@ -98,9 +99,14 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { props, handleToggle } = this;
-    const { content, link, sheet, user } = props;
-    const { classes } = sheet;
+    const {
+      props: {
+        content,
+        link,
+        user,
+      },
+      handleToggle,
+    } = this;
 
     return (
       <Drawer
@@ -154,7 +160,7 @@ class Sidebar extends Component {
 export default contentAble(
   userAble(
     onSignOutAble(
-      linkAble(useSheet(Sidebar, style))
+      linkAble(Sidebar)
     )
   )
 );

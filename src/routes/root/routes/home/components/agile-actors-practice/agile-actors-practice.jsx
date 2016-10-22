@@ -16,7 +16,7 @@ import {
 import {
   NormalContent,
   MobileContent,
-} from './partials';
+} from './components';
 
 const {
   outerContainer,
