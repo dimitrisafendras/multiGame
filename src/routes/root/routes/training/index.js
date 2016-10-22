@@ -1,4 +1,4 @@
-import { Training } from './components';
+import Training from './components/training';
 
 export default {
   path: 'Training',
