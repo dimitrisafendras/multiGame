@@ -34,8 +34,7 @@ const UserButtonMobile = ({
       style={style.headerMenuBar.button}
       iconStyle={style.headerMenuBar.icon}
       onClick={onSignOut}
-      iconClassName={['material-icons', classes.headerMenuBarButtonUserLoggedIn].join(' ')}
-    >
+      iconClassName={['material-icons', classes.headerMenuBarButtonUserLoggedIn].join(' ')}>
       exit_to_app
     </IconButton>
   )
