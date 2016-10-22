@@ -8,35 +8,33 @@ import {
   Container,
 } from 'components';
 
-const ValueProposition = () => {
+const {
+  component,
+  contentWrapper,
+  container,
+  backgroundImage,
+  title,
+  subtitle,
+  text,
+} = classes;
 
-  return (
-    <article
-      className={classes.component}>
-      <Container
-        container
-        className={classes.contentWrapper}>
-        <FlexContainer largeContainer
-          className={classes.container}
-          column>
-          <Content backgroundImage
-            className={classes.backgroundImage} />
-          <Content largeTitle
-            className={classes.title}>
-            {content.title}
-          </Content>
-          <Content largeSubTitle
-            className={classes.subtitle}>
-            {content.subTitle}
-          </Content>
-          <Content largeText
-            className={classes.text}>
-            {content.text}
-          </Content>
-        </FlexContainer>
-      </Container>
-    </article>
-  );
-};
+const ValueProposition = () => (
+  <article className={component}>
+    <Container container className={contentWrapper}>
+      <FlexContainer column largeContainer className={container}>
+        <Content backgroundImage className={backgroundImage} />
+        <Content largeTitle className={title}>
+          {content.title}
+        </Content>
+        <Content largeSubTitle className={subtitle}>
+          {content.subTitle}
+        </Content>
+        <Content largeText className={text}>
+          {content.text}
+        </Content>
+      </FlexContainer>
+    </Container>
+  </article>
+);
 
 export default ValueProposition;

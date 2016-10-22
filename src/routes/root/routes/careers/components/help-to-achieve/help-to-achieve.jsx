@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { compose } from 'containers';
+
 import content from './content';
 import { classes } from './style';
 
@@ -15,7 +18,13 @@ import { linkAble } from 'routes/root/containers';
 import {
   NormalContent,
   MobileContent,
-} from './partials';
+} from './components';
+
+const {
+  outerContainer,
+  outerTitle,
+  button,
+} = classes;
 
 type Props = {
   size: Object,
@@ -24,23 +33,15 @@ type Props = {
 
 const HelpToAchieve = ({ size: { mobile }, link }: Props) => (
   <article>
-    <Container
-      normalContainer
-      className={classes.outerContainer}>
-      <Content
-        normalTitle
-        className={classes.outerTitle}>
+    <Container normalContainer className={outerContainer}>
+      <Content normalTitle className={outerTitle}>
         {content.title}
       </Content>
 
       {mobile ? <MobileContent /> : <NormalContent />}
 
-      <FlexContainer
-        center
-        className={classes.button}>
-        <Button
-          secondary
-          onClick={() => link(content.buttonRoute)} >
+      <FlexContainer center className={button}>
+        <Button secondary onClick={() => link(content.buttonRoute)} >
           {content.buttonLabel}
         </Button>
       </FlexContainer>
@@ -48,4 +49,4 @@ const HelpToAchieve = ({ size: { mobile }, link }: Props) => (
   </article>
 );
 
-export default linkAble(Resizable(HelpToAchieve));
+export default compose(linkAble, Resizable)(HelpToAchieve);
