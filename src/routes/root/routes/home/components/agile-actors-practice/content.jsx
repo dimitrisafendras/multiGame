@@ -41,7 +41,7 @@ const content = {
     },
   ],
   buttonLabel: 'Find out More',
-  buttonRoute: '/BecomeAgileActor',
+  buttonRoute: '/Careers',
 };
 
 export default content;

@@ -18,7 +18,7 @@ const styles = {
   title: {
     color: muiTheme.palette.blue700,
   },
-  sliderOverlay :{
+  sliderOverlay: {
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -75,7 +75,7 @@ const styles = {
         content: '""',
         display: 'block',
         paddingBottom: '9.4%',
-      }
+      },
     },
     imagesContainer: {
       width: '100%',
@@ -94,7 +94,7 @@ const styles = {
       top: '50%',
       left: '0%',
       transform: 'translate(0%, -50%)',
-    }
+    },
   },
   '@media (max-width: 767px)': {
     imagesContainer: {
@@ -116,4 +116,7 @@ const styles = {
 
 const classes = jss.createStyleSheet(styles).attach().classes;
 
-export { styles, classes };
+export {
+  styles,
+  classes,
+};

@@ -41,7 +41,7 @@ const styles = {
     title: {
       marginBottom: '50px',
     },
-   },
+  },
   '@media (max-width: 1300px)': {
     backgroundImage: {
       backgroundSize: '30%',

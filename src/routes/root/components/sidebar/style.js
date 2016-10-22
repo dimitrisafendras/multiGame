@@ -1,4 +1,5 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
 const {
   cyan400,
@@ -9,7 +10,7 @@ const {
   primary1Color,
 } = muiTheme.palette;
 
-const style = {
+const styles = {
   drawerContainer: {
     width: 320,
   },
@@ -51,6 +52,9 @@ const style = {
   },
 };
 
+const classes = jss.createStyleSheet(styles).attach().classes;
+
 export {
-  style,
+  styles,
+  classes,
 };

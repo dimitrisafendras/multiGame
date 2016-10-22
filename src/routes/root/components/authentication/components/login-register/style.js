@@ -1,6 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-export const style = {
+const styles = {
   formContainer: {
     backgroundColor: muiTheme.palette.white,
     color: muiTheme.palette.grey600,
@@ -82,4 +83,11 @@ export const style = {
       display: 'none !important',
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

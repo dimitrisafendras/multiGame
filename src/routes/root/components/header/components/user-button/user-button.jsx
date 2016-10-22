@@ -5,21 +5,18 @@ import {
   FlatButton,
 } from 'material-ui';
 
-import { useSheet } from 'components/jss';
-import { style } from './style';
+import { classes, styles as style } from './style';
 
 type Props = {
   toggleAuthentication: () => void,
   onSignOut: () => void,
   user: Object,
-  sheet: Object,
 };
 
 const UserButtonSignedIn = ({
   toggleAuthentication,
   onSignOut,
   user,
-  sheet: { classes },
 }: Props) => (
   <div>
     <FlatButton
@@ -60,7 +57,6 @@ const UserButtonSignedOut = ({
   toggleAuthentication,
   onSignOut,
   user,
-  sheet: { classes },
 }: Props) => (
   <FlatButton
     title={'Login / Register'}
@@ -85,4 +81,4 @@ const UserButton = (props: Props) => (
   !(props.user && props.user.email) ? <UserButtonSignedOut {...props} /> : <UserButtonSignedIn {...props} />
 );
 
-export default useSheet(UserButton, style);
+export default UserButton;

@@ -4,12 +4,11 @@ import { presets } from 'react-motion';
 import { Scrollbars } from 'react-custom-scrollbars';
 import classNames from 'classnames';
 
-import { useSheet } from 'components/jss';
 import { Content, FlexContainer } from 'components/content';
 import LoginRegister from '../login-register';
 
 import {
-  style,
+  classes,
   appBarHeight,
 } from './style';
 
@@ -21,7 +20,6 @@ const content = {
 type Props = {
   open: boolean,
   toggleAuthentication: () => void,
-  sheet: Object,
   user: Object,
 };
 
@@ -90,7 +88,6 @@ class Authentication extends Component {
 
   render() {
     const { autoHeightMax, open, mode } = this.state;
-    const { classes } = this.props.sheet;
 
     return (
       <article
@@ -143,4 +140,4 @@ class Authentication extends Component {
   };
 }
 
-export default useSheet(Authentication, style);
+export default Authentication;

@@ -1,6 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-export const style = {
+const styles = {
   logo: {},
   headerMenuBarButton: {
     height: `${muiTheme.appBar.mobileHeight}px !important`,
@@ -106,4 +107,11 @@ export const style = {
       },
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

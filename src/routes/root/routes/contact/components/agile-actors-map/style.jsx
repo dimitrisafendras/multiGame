@@ -1,7 +1,6 @@
-//
-// Define the CSS styles of the component.
-//
-export const style = {
+import { jss } from 'components';
+
+const styles = {
   container: {
     height: '360px',
     width: '100%',
@@ -17,4 +16,11 @@ export const style = {
       height: '240px',
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

@@ -1,9 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// The styles of the components
-//
-export const style = {
+const styles = {
   component: {
     marginBottom: '25px',
     paddingTop: '0px',
@@ -103,4 +101,11 @@ export const style = {
       marginLeft: '-30px',
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };

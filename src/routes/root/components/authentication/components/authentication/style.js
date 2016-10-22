@@ -1,11 +1,12 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
 const {
   palette,
   appBar,
 } = muiTheme;
 
-export const style = {
+const styles = {
   component: {
     position: 'fixed',
     width: '100%',
@@ -47,4 +48,12 @@ export const style = {
   },
 };
 
-export const appBarHeight = parseInt(appBar.height);
+const appBarHeight = parseInt(appBar.height);
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
+  appBarHeight,
+};

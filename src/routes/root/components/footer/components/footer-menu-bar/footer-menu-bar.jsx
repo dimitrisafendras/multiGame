@@ -3,7 +3,6 @@ import React from 'react';
 import { linkAble, contentAble } from 'routes/root/containers';
 
 import {
-  useSheet,
   Container,
   FlexContainer,
   Content,
@@ -11,20 +10,18 @@ import {
 } from 'components';
 
 import { contentData } from './content';
-import { style } from './style';
+import { classes } from './style';
 
 const linkKey = (link) => `nav-footer--${link.replace(' ', '')}`;
 
 type Props = {
   content: [],
   link: () => void,
-  sheet: Object,
 };
 
 export const FooterMenuBar = ({
   content,
   link,
-  sheet: { classes },
 }: Props) => (
   <FlexContainer
     fullWidthContainer
@@ -57,4 +54,4 @@ export const FooterMenuBar = ({
   </FlexContainer>
 );
 
-export default contentAble(linkAble(useSheet(FooterMenuBar, style)));
+export default contentAble(linkAble(FooterMenuBar));

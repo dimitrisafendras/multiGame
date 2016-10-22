@@ -1,10 +1,14 @@
 import React from 'react';
 import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
 import canUseDOM from 'can-use-dom';
-import _ from 'lodash';
-import { triggerEvent } from 'react-google-maps/lib/utils';
-import { useSheet, FlexContainer, Content } from 'components';
-import { style } from './style';
+// import _ from 'lodash';
+// import { triggerEvent } from 'react-google-maps/lib/utils';
+
+import {
+  FlexContainer,
+} from 'components';
+
+import { classes } from './style';
 import { content } from './content';
 
 class SimpleMapPage extends React.Component {
@@ -72,7 +76,7 @@ class SimpleMapPage extends React.Component {
             defaultZoom={16}
             defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}
             draggable={false}>
-            <Marker onClick={this.handleMapClick} {...this.state.markers[0]}/>
+            <Marker onClick={this.handleMapClick} {...this.state.markers[0]} />
           </GoogleMap>
         }
       />
@@ -80,18 +84,10 @@ class SimpleMapPage extends React.Component {
   }
 }
 
-function AgileActorsMap({ sheet }) {
-  const { classes } = sheet;
-  return (
-    <FlexContainer largeContainer
-                   className={classes.container}>
-      <SimpleMapPage />
-    </FlexContainer>
-  );
-};
+const AgileActorsMap = () => (
+  <FlexContainer largeContainer className={classes.container}>
+    <SimpleMapPage />
+  </FlexContainer>
+);
 
-AgileActorsMap.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(AgileActorsMap, style);
+export default AgileActorsMap;

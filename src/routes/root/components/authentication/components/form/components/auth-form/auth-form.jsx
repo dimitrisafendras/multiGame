@@ -2,9 +2,8 @@ import React from 'react';
 import { FlexContainer } from 'components/content';
 import { Form } from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
-import { useSheet } from 'components/jss';
 
-import style from './style';
+import { classes } from './style';
 import content from './content';
 
 type SignInUpProps = {
@@ -14,7 +13,6 @@ type SignInUpProps = {
 };
 
 type Props = {
-  sheet: Object,
   canSubmit?: boolean,
   mode: string,
   signIn: (options: SignInUpProps) => void,
@@ -58,8 +56,7 @@ class AuthForm extends React.Component {
   };
 
   render() {
-    const { mode, sheet } = this.props;
-    const { classes } = sheet;
+    const { mode } = this.props;
     const fields = this.formActiveFields(mode);
     return (
       <div>
@@ -96,4 +93,4 @@ class AuthForm extends React.Component {
   }
 };
 
-export default useSheet(AuthForm, style);
+export default AuthForm;

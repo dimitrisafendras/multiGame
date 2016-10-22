@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { linkAble } from 'routes/root/containers';
+
 import content from './content';
 import { classes } from './style';
 
@@ -7,90 +10,73 @@ import {
   Container,
   FlexContainer,
   Button,
-  Link
 } from 'components';
 
-const Organizations = () => {
+const {
+  levelUp,
+  talent,
+} = content.organisations;
 
-  return (
-    <article>
-      <Container
-        normalContainer
-        center
-        column
-        className={classes.outerContainer}>
-        <Content
-          normalTitle
-          className={classes.outerTitle}>
-          {content.title}
-        </Content>
-        <Content
-          normalSubTitle
-          className={classes.subTitle}>
-          {content.subTitle}
-        </Content>
-        <FlexContainer
-          center
-          wrap>
-          <FlexContainer
-            center
-            column
-            className={classes.container}>
-            <Content
-              image
-              className={classes.img}>
-              {content.organisations[0].Img}
-            </Content>
-            <Content
-              subTitle
-              className={classes.text}>
-              {content.organisations[0].content}
-            </Content>
-            <Button
-              primary
-              containerElement={<Link to={content.organisations[0].buttonRoute} />}
-              className={classes.button}>
-              {content.organisations[0].buttonLabel}
-            </Button>
-          </FlexContainer>
+const {
+  innerTitleWrapper,
+  innerTitle,
+  outerContainer,
+  outerTitle,
+  subTitle,
+  container,
+  img,
+  text,
+  button,
+  divider,
+} = classes;
 
-          <FlexContainer
-            center
-            column
-            className={classes.innerTitleWrapper}>
-            <Content
-              text
-              className={classes.innerTitle}>
-              {content.subTitle}
-            </Content>
-            <div className={classes.divider} />
-          </FlexContainer>
-
-          <FlexContainer
-            center
-            column
-            className={classes.container}>
-            <Content
-              image
-              className={classes.img}>
-              {content.organisations[1].Img}
-            </Content>
-            <Content
-              subTitle
-              className={classes.text}>
-              {content.organisations[1].content}
-            </Content>
-            <Button
-              primary
-              containerElement={<Link to={content.organisations[1].buttonRoute} />}
-              className={classes.button}>
-              {content.organisations[1].buttonLabel}
-            </Button>
-          </FlexContainer>
-        </FlexContainer>
-      </Container>
-    </article>
-  );
+type Props = {
+  link: (to: string) => void,
 };
 
-export default Organizations;
+const Organizations = ({ link }: Props) => (
+  <article>
+    <Container normalContainer className={outerContainer}>
+      <Content normalTitle className={outerTitle}>
+        {content.title}
+      </Content>
+      <Content normalSubTitle className={subTitle}>
+        {content.subTitle}
+      </Content>
+      <FlexContainer center wrap>
+        <FlexContainer center column className={container}>
+          <Content image className={img}>
+            {levelUp.Img}
+          </Content>
+          <Content subTitle className={text}>
+            {levelUp.content}
+          </Content>
+          <Button primary className={button} onClick={() => link(levelUp.buttonRoute)}>
+            {levelUp.buttonLabel}
+          </Button>
+        </FlexContainer>
+
+        <FlexContainer center column className={innerTitleWrapper}>
+          <Content text className={innerTitle}>
+            {content.subTitle}
+          </Content>
+          <div className={divider} />
+        </FlexContainer>
+
+        <FlexContainer center column className={container}>
+          <Content image className={img}>
+            {talent.Img}
+          </Content>
+          <Content subTitle className={text}>
+            {talent.content}
+          </Content>
+          <Button primary className={button} onClick={() => link(talent.buttonRoute)}>
+            {talent.buttonLabel}
+          </Button>
+        </FlexContainer>
+      </FlexContainer>
+    </Container>
+  </article>
+);
+
+export default linkAble(Organizations);
