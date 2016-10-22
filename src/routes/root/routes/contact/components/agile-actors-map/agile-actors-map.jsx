@@ -1,80 +1,107 @@
 import React from 'react';
-import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
-import canUseDOM from 'can-use-dom';
-import _ from 'lodash';
-import { triggerEvent } from 'react-google-maps/lib/utils';
+import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps/lib';
+
 import { useSheet, FlexContainer, Content } from 'components';
 import { style } from './style';
 import { content } from './content';
 
-class SimpleMapPage extends React.Component {
-  // TODO Update callbalck for resize event listener
-  // TODO Add infobox
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      markers: [
-        {
-          position: {
-            lat: 38.0136492,
-            lng: 23.787719,
-          },
-          key: 'AGILE ACTORS',
-          title: 'AGILE ACTORS Ethnikis Antistaseos 62A, Chalandri, 152 31, Attica, Greece',
-          icon: 'images/contact/p-i-n-copy.png',
-        },
-      ],
-    };
 
-    // this.handleWindowResize = _.throttle(::this.handleWindowResize, 500);
+const PopUpInfoWindowGoogleMap = withGoogleMap(props => (
+  <GoogleMap
+    defaultZoom={16}
+    center={props.center}
+    draggable={false}
+    defaultCenter={this.state.center}
+
+  >
+    {props.markers.map((marker, index) => (
+      <Marker
+        key={index}
+        position={marker.position}
+        onClick={() => props.onMarkerClick(marker)}
+        icon={marker.icon}
+      >
+        {marker.showInfo && (
+          <InfoWindow onCloseClick={() => props.onMarkerClose(marker)} onClick={props.handleMarkerFocus}>
+            <div>{marker.infoContent}</div>
+          </InfoWindow>
+        )}
+      </Marker>
+    ))}
+  </GoogleMap>
+));
+
+class PopUpInfoWindow extends React.Component {
+
+  state = {
+    center: content.position,
+    zoom: 16,
+
+    // array of objects of markers
+    markers: [
+      {
+        position: content.position,
+        showInfo: false,
+        title: content.title,
+        icon: content.icon,
+        infoContent: (
+          <div>
+            <a target='_blank'href={content.url}>
+              {content.title}
+              {content.text}
+            </a>
+          </div>
+        ),
+      },
+    ],
+  };
+
+  handleMarkerClick = this.handleMarkerClick.bind(this);
+  handleMarkerClose = this.handleMarkerClose.bind(this);
+
+  // Toggle to 'true' to show InfoWindow and re-renders component
+  handleMarkerClick(targetMarker) {
+    this.setState({
+      markers: this.state.markers.map(marker => {
+        if (marker === targetMarker) {
+          return {
+            ...marker,
+            showInfo: true,
+          };
+        }
+        return marker;
+      }),
+    });
   }
 
-  componentDidMount() {
-    if (!canUseDOM) {
-      return;
-    }
-
-    // window.addEventListener('resize', this.handleWindowResize);
-  }
-
-  componentWillUnmount() {
-    if (!canUseDOM) {
-      return;
-    }
-
-    // window.removeEventListener('resize', this.handleWindowResize);
-  }
-
-  // handleWindowResize() {
-  //  triggerEvent(this._googleMapComponent, 'resize');
-  // }
-
-  handleMapClick(event) {
-    window.open(content.url);
+  handleMarkerClose(targetMarker) {
+    this.setState({
+      markers: this.state.markers.map(marker => {
+        if (marker === targetMarker) {
+          return {
+            ...marker,
+            showInfo: false,
+          };
+        }
+        return marker;
+      }),
+    });
   }
 
   render() {
-    const _this = this;
+    console.log('render', this.state)
     return (
-      <GoogleMapLoader
+      <PopUpInfoWindowGoogleMap
         containerElement={
-          <div
-            {...this.props}
-            style={{ height: '100%', width: '100%' }}
-            />
+          <div style={{ height: `100%`,width: `100%` }} />
         }
-        googleMapElement={
-          <GoogleMap
-            ref={function (map) {
-              _this._googleMapComponent = map;
-            }
-          }
-            defaultZoom={16}
-            defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}
-            draggable={false}>
-            <Marker onClick={this.handleMapClick} {...this.state.markers[0]}/>
-          </GoogleMap>
+        mapElement={
+          <div style={{ height: `100%`,width: `100%` }} />
         }
+        center={this.state.center}
+        markers={this.state.markers}
+        onMarkerClick={this.handleMarkerClick}
+        onMarkerClose={this.handleMarkerClose}
       />
     );
   }
@@ -85,7 +112,7 @@ function AgileActorsMap({ sheet }) {
   return (
     <FlexContainer largeContainer
                    className={classes.container}>
-      <SimpleMapPage />
+      <PopUpInfoWindow />
     </FlexContainer>
   );
 };
