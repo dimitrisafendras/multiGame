@@ -6,6 +6,6 @@ if(screen.width < 3200) {
   imageSize = '@2x'
 }
 
-const Image = require('./image' + imageSize + '.jpeg');
+const Image = require('./image' + imageSize + '.jpg');
 
 export default Image;
