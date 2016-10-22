@@ -1,6 +1,6 @@
 
 const compose = (...containers) => (component) => containers.reduce(
-  (lastComponent, nextPropMaper) => nextPropMaper(lastComponent),
+  (lastComponent, nextContainer) => nextContainer(lastComponent),
   component
 );
 
