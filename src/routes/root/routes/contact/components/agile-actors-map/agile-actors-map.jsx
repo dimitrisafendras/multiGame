@@ -1,8 +1,8 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps/lib';
 
-import { useSheet, FlexContainer, Content } from 'components';
-import { style } from './style';
+import { useSheet, FlexContainer, Container, Content } from 'components';
+import { classes } from './style';
 import { content } from './content';
 
 
@@ -11,10 +11,10 @@ const PopUpInfoWindowGoogleMap = withGoogleMap(props => (
     defaultZoom={16}
     center={props.center}
     draggable={false}
-    defaultCenter={this.state.center}
+    defaultCenter={props.center}
 
   >
-    {props.markers.map((marker, index) => (
+    {props.marker.map((marker, index) => (
       <Marker
         key={index}
         position={marker.position}
@@ -35,22 +35,24 @@ class PopUpInfoWindow extends React.Component {
 
   state = {
     center: content.position,
-    zoom: 16,
 
-    // array of objects of markers
-    markers: [
+    marker: [
       {
         position: content.position,
         showInfo: false,
         title: content.title,
         icon: content.icon,
         infoContent: (
-          <div>
-            <a target='_blank'href={content.url}>
-              {content.title}
-              {content.text}
+          <Container className={classes.textWrapper}>
+            <a target='_blank' href={content.url} className={classes.link}>
+              <Content title className={classes.title}>
+                {content.title}
+              </Content>
+              <Content text className={classes.text}>
+                {content.text}
+              </Content>
             </a>
-          </div>
+          </Container>
         ),
       },
     ],
@@ -62,7 +64,7 @@ class PopUpInfoWindow extends React.Component {
   // Toggle to 'true' to show InfoWindow and re-renders component
   handleMarkerClick(targetMarker) {
     this.setState({
-      markers: this.state.markers.map(marker => {
+      marker: this.state.marker.map(marker => {
         if (marker === targetMarker) {
           return {
             ...marker,
@@ -76,7 +78,7 @@ class PopUpInfoWindow extends React.Component {
 
   handleMarkerClose(targetMarker) {
     this.setState({
-      markers: this.state.markers.map(marker => {
+      marker: this.state.marker.map(marker => {
         if (marker === targetMarker) {
           return {
             ...marker,
@@ -89,7 +91,6 @@ class PopUpInfoWindow extends React.Component {
   }
 
   render() {
-    console.log('render', this.state)
     return (
       <PopUpInfoWindowGoogleMap
         containerElement={
@@ -99,7 +100,7 @@ class PopUpInfoWindow extends React.Component {
           <div style={{ height: `100%`,width: `100%` }} />
         }
         center={this.state.center}
-        markers={this.state.markers}
+        marker={this.state.marker}
         onMarkerClick={this.handleMarkerClick}
         onMarkerClose={this.handleMarkerClose}
       />
@@ -107,8 +108,7 @@ class PopUpInfoWindow extends React.Component {
   }
 }
 
-function AgileActorsMap({ sheet }) {
-  const { classes } = sheet;
+function AgileActorsMap() {
   return (
     <FlexContainer largeContainer
                    className={classes.container}>
@@ -121,4 +121,4 @@ AgileActorsMap.propTypes = {
   sheet: React.PropTypes.object,
 };
 
-export default useSheet(AgileActorsMap, style);
+export default AgileActorsMap;
