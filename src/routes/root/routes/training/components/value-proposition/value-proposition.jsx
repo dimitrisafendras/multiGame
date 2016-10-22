@@ -1,59 +1,36 @@
 import React from 'react';
-import { style } from './style';
-import { content } from './content';
+import content from './content';
+import { classes } from './style';
+
 import {
-  useSheet,
   Content,
   FlexContainer,
   Container,
-  Button,
-  Link 
 } from 'components';
 
-//
-// The component
-//
-const ValueProposition = ({ sheet }) => {
-  const { classes } = sheet;
-
+const ValueProposition = () => {
   return (
     <article
       className={classes.component}>
       <Container
         container
         className={classes.contentWrapper}>
-        <FlexContainer largeContainer
+        <FlexContainer normalContainer
           className={classes.container}
-          column>
-          <Content backgroundImage
-            className={classes.backgroundImage} />
+          column
+          center>
           <Content largeTitle
             className={classes.title}>
             {content.title}
-          </Content>
-          <Content largeSubTitle
-            className={classes.subtitle}>
-            {content.subTitle}
           </Content>
           <Content largeText
             className={classes.text}>
             {content.text}
           </Content>
-          <Button
-            secondary
-            className={classes.button}
-            href={content.buttonLink}
-            target={'_black'}>
-            {content.buttonLabel}
-          </Button>
         </FlexContainer>
       </Container>
     </article>
   );
 };
 
-ValueProposition.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(ValueProposition, style);
+export default ValueProposition;
