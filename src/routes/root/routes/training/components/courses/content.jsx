@@ -1,46 +1,45 @@
 const content = {
-  title: 'What can Agile Actors do for you?',
-  offerings: [
+  sections: [
     {
-      id: 'development',
-      title: 'Get a Tech Dream Team for your very own Development needs',
-      content:
-        `Whether you’re planning too outsource a software development project or thinking
-         about creatng remote development teams, we can get you the best tech professionals.
-         Save time and maintain focus on your line of business, while we define requirements
-         and set up scalable teams with the right mix of skills and experience. `,
+      id: 'into',
+      title: 'into',
+      items:[
+        {
+          id: 'trainings',
+          title: 'Professional Scrum Trainings',
+          content: `Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.`
+        },
+        {
+          id: 'management',
+          title: 'Management 3.0',
+          content: `The Management 3.0 course targets organizations that face the challenge of an agile 
+          model and mindset transformation. <br /><br /> As described by Jurgen Apelo: " The Management 3.0 events 
+          aim at leaders and knowledge workers who are trying to be more agile and lean in their approach 
+          to management. The courses and workshops typically draw a mix of team leaders, development managers, 
+          directors, agile coaches, HR managers, project managers, and creative workers."`
+        },
+      ],
     },
     {
-      id: 'tailorMade',
-      title: 'Set up a Tailor-made Software Development Center',
-      content:
-        `From a few developers to a full-scale, 100+ strong team, Agile Actors can help you
-        set up a software development lab that fits your professional needs. Without interfering
-        with your organization’s management teams or processes, we make sure that your tech squad
-        gets high-level coaching and constant professional development while achieving its objectives.`,
+      id: 'openCourses',
+      title: 'open courses',
+      items:[
+
+      ],
     },
     {
-      id: 'onDemand',
-      title: 'Hire on-demand Tech Professionals',
-      content:
-        `Need a skilled developer for that new product you’re planning to build? Or a seasoned Database
-        Architect to help you organize all those bits and bytes of data your sales team are generating?
-        Agile Actors are here for you. We maintain a vast network of qualified professionals, whose skills
-        are being constantly assessed and evaluated. No matter what your needs are, we can source, prepare
-        and coach the ideal candidate for the task at hand.`,
-    },
-    {
-      id: 'coaching',
-      title: 'Coaching and Development for your entire Organization',
-      content:
-        `Our “state of the art” tools and Agile Methodologies can empower your whole tech team to take their
-        game to the next level. From skills assessment, to personal training and career coaching, using our
-        NextDot personal development methodology, we’re here to provide a learning path for your tech professionals
-        to blossom and reach their full potential.`,
+      id: 'courses',
+      title: 'courses',
+      items:[
+
+      ],
     },
   ],
-  buttonLabel: 'GET IN TOUCH',
-  buttonRoute: '/Contact',
 };
 
 export default content;

@@ -1,5 +1,4 @@
 import React from 'react';
-import content from './content';
 import { classes } from './style';
 
 import {
@@ -33,12 +32,13 @@ const Courses = ({
                className={classes.backgroundImage} />
 
       <Container
-        container>
+        container
+        className={classes.contentWrapper}>
 
         { mobile ? <MobileContent /> : <NormalContent /> }
 
+        <div className={classes.fade}></div>
       </Container>
-
     </Container>
   </article>
 );
