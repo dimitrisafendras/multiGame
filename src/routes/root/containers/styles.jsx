@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from 'styles/customized-mui-theme';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -25,10 +25,12 @@ const style = {
   marginRight: 'auto',
 };
 
+type Props = {
+  children: HTMLElement,
+};
+
 export class Styles extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+  props: Props;
 
   componentWillReceiveProps() {
     if (this.scrollbar) {
@@ -37,13 +39,12 @@ export class Styles extends Component {
   }
 
   render() {
-    const _this = this;
     return (
       <Scrollbars
         autoHide
         autoHideTimeout={1000}
         autoHideDuration={200}
-        ref={function (ref) { _this.scrollbar = ref; }}>
+        ref={(ref) => { this.scrollbar = ref; }}>
 
         <MuiThemeProvider muiTheme={muiTheme}>
           <div style={style}>

@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import muiTheme from 'styles/customized-mui-theme';
 import { jss } from 'components/jss';
 
@@ -30,7 +30,7 @@ const style = {
 const { classes } = jss.createStyleSheet(style).attach();
 
 type Props = {
-  children: PropTypes.element,
+  children: HTMLElement,
   location: Object,
 }
 
