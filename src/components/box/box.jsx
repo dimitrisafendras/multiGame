@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 const styles = {
   flexContainer: {
@@ -64,7 +64,7 @@ type Props = {
   height?: string,
   minHeight?: string,
   maxHeight?: string,
-  children: PropTypes.node,
+  children: HTMLElement,
 };
 
 function Box(props : Props): Component {
