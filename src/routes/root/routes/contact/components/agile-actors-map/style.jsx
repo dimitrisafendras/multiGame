@@ -4,7 +4,7 @@ import { jss } from 'components';
 //
 // Define the CSS styles of the component.
 //
-const style = {
+const styles = {
   container: {
     height: '360px',
     width: '100%',
@@ -66,6 +66,9 @@ const style = {
   },
 };
 
-const classes = jss.createStyleSheet(style).attach().classes;
+const classes = jss.createStyleSheet(styles).attach().classes;
 
-export { style, classes };
+export {
+  styles,
+  classes,
+};

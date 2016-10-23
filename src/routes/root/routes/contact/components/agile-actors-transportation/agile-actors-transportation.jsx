@@ -1,14 +1,33 @@
 import React from 'react';
-import {Tabs, Tab} from 'material-ui/Tabs';
-import Slider from 'react-slick';
-import { useSheet } from 'components/jss';
-import { Content, Container, FlexContainer } from 'components/content';
-import { content } from './content';
-import { style } from './style';
 
-//
-// slider settings
-//
+import {
+  Tabs,
+  Tab,
+} from 'material-ui/Tabs';
+import Slider from 'react-slick';
+
+import {
+  Content,
+  Container,
+  FlexContainer,
+} from 'components/content';
+
+import { content } from './content';
+
+import {
+  classes,
+  styles as style,
+} from './style';
+
+const {
+  container,
+  title,
+  subTitle,
+  text,
+  imgWrapper,
+  img,
+} = classes;
+
 const SliderSettings = {
   dots: true,
   infinite: true,
@@ -18,9 +37,6 @@ const SliderSettings = {
   touchMove: true,
 };
 
-//
-// Define the component.
-//
 class AgileActorsTransportation extends React.Component {
   constructor(props) {
     super(props);
@@ -57,77 +73,71 @@ class AgileActorsTransportation extends React.Component {
     this.mounted = false;
   };
 
-  render() {
-    const { classes } = this.props.sheet;
-    let meanBoxes;
-    if (this.state.slider) {
-      meanBoxes =
-        <FlexContainer center>
-          <Tabs className={classes.container} inkBarStyle={style.inkBar}>
-            {content.means.map((mean) => (
-              <Tab icon={mean.Img} label={mean.title} key={`aa-transportation-${mean.id}`}
-                className={classes.title} disableTouchRipple>
-                <Content largeText className={classes.subTitle}>
+  renderNonSliderContainer() {
+    return (
+      <FlexContainer center>
+        <Tabs className={container} inkBarStyle={style.inkBar}>
+          {content.means.map((mean) => (
+            <Tab
+              key={`aa-trans-ns-${mean.id}`}
+              icon={mean.Img}
+              label={mean.title}
+              className={title} disableTouchRipple>
+              <Content largeText className={subTitle}>
+                {mean.subtitle}
+              </Content>
+              <Content largeText className={text}>
+                {mean.content}
+              </Content>
+            </Tab>
+          ))}
+        </Tabs>
+      </FlexContainer>
+    );
+  }
+
+  renderSliderContainer() {
+    return (
+      <Slider {...SliderSettings}>
+        {content.means.map((mean) => (
+          <div key={`aa-trans-s-${mean.id}`}>
+            <FlexContainer center>
+              <Container container className={container}>
+                <FlexContainer center className={imgWrapper}>
+                  <Content image className={img}>
+                    {mean.ImgMobile}
+                  </Content>
+                </FlexContainer>
+                <Content title className={title}>
+                  {mean.title}
+                </Content>
+                <Content largeText className={subTitle}>
                   {mean.subtitle}
                 </Content>
-                <Content largeText className={classes.text}>
+                <Content largeText className={text}>
                   {mean.content}
                 </Content>
-              </Tab>
-            ))}
-          </Tabs>
-        </FlexContainer>;
-    } else
-    {
-      meanBoxes =
-        <Slider
-          {...SliderSettings}>
-          {content.means.map((mean) =>
-            (
-            <div key={`aa-transportation-${mean.id}`}>
-              <FlexContainer center>
-                <Container
-                  container
-                  className={classes.container}>
-                  <FlexContainer
-                    center
-                    className={classes.imgWrapper}>
-                    <Content
-                      image
-                      className={classes.img}>
-                      {mean.ImgMobile}
-                    </Content>
-                  </FlexContainer>
-                  <Content
-                    title
-                    className={classes.title}>
-                    {mean.title}
-                  </Content>
-                  <Content largeText className={classes.subTitle}>
-                    {mean.subtitle}
-                  </Content>
-                  <Content largeText className={classes.text}>
-                    {mean.content}
-                  </Content>
-                </Container>
-              </FlexContainer>
-            </div>
-            )
-            )}
-        </Slider>;
-    }
+              </Container>
+            </FlexContainer>
+          </div>
+        ))}
+      </Slider>
+    );
+  }
+
+  render() {
     return (
       <article>
         <Container normalContainer className={classes.component}>
-          {meanBoxes}
+          {this.state.slider ? (
+            this.renderNonSliderContainer()
+          ) : (
+            this.renderSliderContainer()
+          )}
         </Container>
       </article>
     );
   };
 };
 
-AgileActorsTransportation.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(AgileActorsTransportation, style);
+export default AgileActorsTransportation;

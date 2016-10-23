@@ -10,9 +10,9 @@ import { classes } from './style';
 import { content } from './content';
 
 type Props = {
-  message: string,
-  open: boolean,
-  canSubmit: boolean,
+  message?: string,
+  open?: boolean,
+  canSubmit?: boolean,
 };
 
 class SubmitValidationForm extends React.Component {

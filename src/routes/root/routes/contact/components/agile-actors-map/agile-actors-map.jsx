@@ -1,7 +1,7 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps/lib';
 
-import { useSheet, FlexContainer, Container, Content } from 'components';
+import { FlexContainer, Container, Content } from 'components';
 import { classes } from './style';
 import { content } from './content';
 
@@ -89,7 +89,7 @@ class PopUpInfoWindow extends React.Component {
       }),
     });
   }
-
+  
   render() {
     return (
       <PopUpInfoWindowGoogleMap
@@ -108,14 +108,12 @@ class PopUpInfoWindow extends React.Component {
   }
 }
 
-function AgileActorsMap() {
-  return (
-    <FlexContainer largeContainer
-                   className={classes.container}>
-      <PopUpInfoWindow />
-    </FlexContainer>
-  );
-};
+const AgileActorsMap = () => (
+  <FlexContainer largeContainer
+   className={classes.container}>
+    <PopUpInfoWindow />
+  </FlexContainer>
+);
 
 AgileActorsMap.propTypes = {
   sheet: React.PropTypes.object,

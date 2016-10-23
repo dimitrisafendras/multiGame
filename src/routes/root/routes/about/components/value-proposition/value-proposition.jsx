@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { linkAble } from 'routes/root/containers';
+
 import content from './content';
 import { classes } from './style';
 
@@ -9,35 +12,37 @@ import {
   Button,
 } from 'components';
 
-const ValueProposition = () => {
+const {
+  component,
+  contentWrapper,
+  container,
+  backgroundImage,
+  title,
+  subtitle,
+  text,
+  button,
+} = classes;
+
+type Props ={
+  link: (to: string) => void,
+};
+
+const ValueProposition = ({ link }: Props) => {
   return (
-    <article
-      className={classes.component}>
-      <Container
-        container
-        className={classes.contentWrapper}>
-        <FlexContainer largeContainer
-          className={classes.container}
-          column>
-          <Content backgroundImage
-            className={classes.backgroundImage} />
-          <Content largeTitle
-            className={classes.title}>
+    <article className={component}>
+      <Container container className={contentWrapper}>
+        <FlexContainer largeContainer column className={container}>
+          <Content backgroundImage className={backgroundImage} />
+          <Content largeTitle className={title}>
             {content.title}
           </Content>
-          <Content largeSubTitle
-            className={classes.subtitle}>
+          <Content largeSubTitle className={subtitle}>
             {content.subTitle}
           </Content>
-          <Content largeText
-            className={classes.text}>
+          <Content largeText className={text}>
             {content.text}
           </Content>
-          <Button
-            secondary
-            className={classes.button}
-            href={content.buttonLink}
-            target={'_black'}>
+          <Button secondary className={button} onTouchTap={() => link(content.buttonLink)}>
             {content.buttonLabel}
           </Button>
         </FlexContainer>
@@ -46,4 +51,4 @@ const ValueProposition = () => {
   );
 };
 
-export default ValueProposition;
+export default linkAble(ValueProposition);
