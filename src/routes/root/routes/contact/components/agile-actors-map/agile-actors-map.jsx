@@ -1,97 +1,101 @@
 import React from 'react';
-import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
-import canUseDOM from 'can-use-dom';
-import _ from 'lodash';
-import { triggerEvent } from 'react-google-maps/lib/utils';
-import { useSheet, FlexContainer, Content } from 'components';
-import { style } from './style';
+import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps/lib';
+
+import { FlexContainer, Container, Content } from 'components';
+import { classes } from './style';
 import { content } from './content';
 
-class SimpleMapPage extends React.Component {
-  // TODO Update callbalck for resize event listener
-  // TODO Add infobox
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      markers: [
-        {
-          position: {
-            lat: 38.0136492,
-            lng: 23.787719,
-          },
-          key: 'AGILE ACTORS',
-          title: 'AGILE ACTORS Ethnikis Antistaseos 62A, Chalandri, 152 31, Attica, Greece',
-          icon: 'images/contact/p-i-n-copy.png',
-        },
-      ],
-    };
 
-    // this.handleWindowResize = _.throttle(::this.handleWindowResize, 500);
+const PopUpInfoWindowGoogleMap = withGoogleMap(props => (
+    <GoogleMap
+      defaultZoom={16}
+      center={props.center}
+      draggable={false}
+      scrollwheel={false}
+    >
+      <Marker
+        position={props.marker.position}
+        onClick={props.onMarkerClick}
+        icon={props.marker.icon}>
+        {props.showInfo && (
+          <InfoWindow onCloseClick={props.onMarkerClose}>
+            <div>{props.marker.infoContent}</div>
+          </InfoWindow>
+        )}
+      </Marker>
+    </GoogleMap>
+  )
+);
+
+
+class PopUpInfoWindow extends React.Component {
+
+  state = {
+    center: content.position,
+    showInfo: false,
+
+    marker:
+    {
+      position: content.position,
+      title: content.title,
+      icon: content.icon,
+      infoContent: (
+        <Container className={classes.textWrapper}>
+          <a target='_blank' href={content.url} className={classes.link}>
+            <Content title className={classes.title}>
+              {content.title}
+            </Content>
+            <Content text className={classes.text}>
+              {content.text}
+            </Content>
+          </a>
+        </Container>
+      ),
+    },
+  };
+
+  handleMarkerClick = this.handleMarkerClick.bind(this);
+  handleMarkerClose = this.handleMarkerClose.bind(this);
+
+  // Toggle to 'true' to show InfoWindow and re-renders component
+  handleMarkerClick() {
+    this.setState({
+      ...this.state,
+      showInfo: true,
+    });
   }
 
-  componentDidMount() {
-    if (!canUseDOM) {
-      return;
-    }
-
-    // window.addEventListener('resize', this.handleWindowResize);
+  handleMarkerClose() {
+    this.setState({
+      ...this.state,
+      showInfo: false,
+    });
   }
-
-  componentWillUnmount() {
-    if (!canUseDOM) {
-      return;
-    }
-
-    // window.removeEventListener('resize', this.handleWindowResize);
-  }
-
-  // handleWindowResize() {
-  //  triggerEvent(this._googleMapComponent, 'resize');
-  // }
-
-  handleMapClick(event) {
-    window.open(content.url);
-  }
-
+  
   render() {
-    const _this = this;
     return (
-      <GoogleMapLoader
+      <PopUpInfoWindowGoogleMap
         containerElement={
-          <div
-            {...this.props}
-            style={{ height: '100%', width: '100%' }}
-            />
+          <div style={{ height: `100%`,width: `100%` }} />
         }
-        googleMapElement={
-          <GoogleMap
-            ref={function (map) {
-              _this._googleMapComponent = map;
-            }
-          }
-            defaultZoom={16}
-            defaultCenter={{ lat: 38.0136492, lng: 23.787719 }}
-            draggable={false}>
-            <Marker onClick={this.handleMapClick} {...this.state.markers[0]}/>
-          </GoogleMap>
+        mapElement={
+          <div style={{ height: `100%`,width: `100%` }} />
         }
+        center={this.state.center}
+        marker={this.state.marker}
+        showInfo={this.state.showInfo}
+        onMarkerClick={this.handleMarkerClick}
+        onMarkerClose={this.handleMarkerClose}
       />
     );
   }
 }
 
-function AgileActorsMap({ sheet }) {
-  const { classes } = sheet;
-  return (
-    <FlexContainer largeContainer
-                   className={classes.container}>
-      <SimpleMapPage />
-    </FlexContainer>
-  );
-};
+const AgileActorsMap = () => (
+  <FlexContainer largeContainer
+   className={classes.container}>
+    <PopUpInfoWindow />
+  </FlexContainer>
+);
 
-AgileActorsMap.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(AgileActorsMap, style);
+export default AgileActorsMap;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { compose } from 'containers';
+
 import {
   contentAble,
   userAble,
@@ -157,10 +159,9 @@ class Sidebar extends Component {
   }
 }
 
-export default contentAble(
-  userAble(
-    onSignOutAble(
-      linkAble(Sidebar)
-    )
-  )
-);
+export default compose(
+  contentAble,
+  userAble,
+  onSignOutAble,
+  linkAble
+)(Sidebar);

@@ -1,9 +1,7 @@
 import muiTheme from 'styles/customized-mui-theme';
+import { jss } from 'components';
 
-//
-// The styles of the components
-//
-export const style = {
+const styles = {
   component: {
     marginBottom: '25px',
     paddingTop: '0px',
@@ -38,7 +36,7 @@ export const style = {
     marginRight: 'auto',
   },
   title: {
-    color: muiTheme.palette.blue700,
+    color: muiTheme.palette.primary1Color,
     textTransform: 'uppercase',
     fontSize: '24px !important',
     marginBottom: '33px !important',
@@ -46,13 +44,13 @@ export const style = {
     height: '110px !important',
   },
   inkBar: {
-    backgroundColor: muiTheme.palette.blue700,
+    backgroundColor: muiTheme.palette.primary1Color,
     height: '4px',
     width: '70px',
     marginLeft: '10%',
   },
   subTitle: {
-    color: muiTheme.palette.blue700,
+    color: muiTheme.palette.primary1Color,
     fontSize: '15px',
     fontWeight: 'bold',
     textTransform: 'uppercase',
@@ -103,4 +101,11 @@ export const style = {
       marginLeft: '-30px',
     },
   },
+};
+
+const classes = jss.createStyleSheet(styles).attach().classes;
+
+export {
+  styles,
+  classes,
 };
