@@ -62,6 +62,9 @@ export const onSignInAndOnSignOut = (dispatch) => {
   });
   userService.setOnUnAuth((user) => {
     dispatch(signedOut({}));
-    dispatch(push('/'));
+    const pathname = window.location.pathname;
+    if (pathname.startsWith('/User')) {
+      dispatch(push('/'));
+    }
   });
 };
