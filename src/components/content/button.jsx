@@ -8,7 +8,7 @@ const defaultStyle = {
 };
 
 type Props = {
-  children?: React.PropTypes.any,
+  children?: HTMLElement,
   style?: Object,
   className?: string,
 };
