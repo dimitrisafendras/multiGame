@@ -11,8 +11,7 @@ const PopUpInfoWindowGoogleMap = withGoogleMap(props => (
     defaultZoom={16}
     center={props.center}
     draggable={false}
-    defaultCenter={props.center}
-
+    scrollwheel={false}
   >
     {props.marker.map((marker, index) => (
       <Marker
@@ -114,9 +113,5 @@ const AgileActorsMap = () => (
     <PopUpInfoWindow />
   </FlexContainer>
 );
-
-AgileActorsMap.propTypes = {
-  sheet: React.PropTypes.object,
-};
 
 export default AgileActorsMap;
