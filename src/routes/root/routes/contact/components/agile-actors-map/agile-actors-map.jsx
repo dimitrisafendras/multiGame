@@ -7,85 +7,68 @@ import { content } from './content';
 
 
 const PopUpInfoWindowGoogleMap = withGoogleMap(props => (
-  <GoogleMap
-    defaultZoom={16}
-    center={props.center}
-    draggable={false}
-    scrollwheel={false}
-  >
-    {props.marker.map((marker, index) => (
+    <GoogleMap
+      defaultZoom={16}
+      center={props.center}
+      draggable={false}
+      scrollwheel={false}
+    >
       <Marker
-        key={index}
-        position={marker.position}
-        onClick={() => props.onMarkerClick(marker)}
-        icon={marker.icon}
-      >
-        {marker.showInfo && (
-          <InfoWindow onCloseClick={() => props.onMarkerClose(marker)} onClick={props.handleMarkerFocus}>
-            <div>{marker.infoContent}</div>
+        position={props.marker.position}
+        onClick={props.onMarkerClick}
+        icon={props.marker.icon}>
+        {props.showInfo && (
+          <InfoWindow onCloseClick={props.onMarkerClose}>
+            <div>{props.marker.infoContent}</div>
           </InfoWindow>
         )}
       </Marker>
-    ))}
-  </GoogleMap>
-));
+    </GoogleMap>
+  )
+);
+
 
 class PopUpInfoWindow extends React.Component {
 
   state = {
     center: content.position,
+    showInfo: false,
 
-    marker: [
-      {
-        position: content.position,
-        showInfo: false,
-        title: content.title,
-        icon: content.icon,
-        infoContent: (
-          <Container className={classes.textWrapper}>
-            <a target='_blank' href={content.url} className={classes.link}>
-              <Content title className={classes.title}>
-                {content.title}
-              </Content>
-              <Content text className={classes.text}>
-                {content.text}
-              </Content>
-            </a>
-          </Container>
-        ),
-      },
-    ],
+    marker:
+    {
+      position: content.position,
+      title: content.title,
+      icon: content.icon,
+      infoContent: (
+        <Container className={classes.textWrapper}>
+          <a target='_blank' href={content.url} className={classes.link}>
+            <Content title className={classes.title}>
+              {content.title}
+            </Content>
+            <Content text className={classes.text}>
+              {content.text}
+            </Content>
+          </a>
+        </Container>
+      ),
+    },
   };
 
   handleMarkerClick = this.handleMarkerClick.bind(this);
   handleMarkerClose = this.handleMarkerClose.bind(this);
 
   // Toggle to 'true' to show InfoWindow and re-renders component
-  handleMarkerClick(targetMarker) {
+  handleMarkerClick() {
     this.setState({
-      marker: this.state.marker.map(marker => {
-        if (marker === targetMarker) {
-          return {
-            ...marker,
-            showInfo: true,
-          };
-        }
-        return marker;
-      }),
+      ...this.state,
+      showInfo: true,
     });
   }
 
-  handleMarkerClose(targetMarker) {
+  handleMarkerClose() {
     this.setState({
-      marker: this.state.marker.map(marker => {
-        if (marker === targetMarker) {
-          return {
-            ...marker,
-            showInfo: false,
-          };
-        }
-        return marker;
-      }),
+      ...this.state,
+      showInfo: false,
     });
   }
   
@@ -100,6 +83,7 @@ class PopUpInfoWindow extends React.Component {
         }
         center={this.state.center}
         marker={this.state.marker}
+        showInfo={this.state.showInfo}
         onMarkerClick={this.handleMarkerClick}
         onMarkerClose={this.handleMarkerClose}
       />
