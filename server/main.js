@@ -3,7 +3,7 @@ import Koa from 'koa';
 import convert from 'koa-convert';
 import webpack from 'webpack';
 import webpackConfig from '../build/webpack.config';
-import historyApiFallback from 'koa-connect-history-api-fallback';
+// import historyApiFallback from 'koa-connect-history-api-fallback';
 import serve from 'koa-static';
 import proxy from 'koa-proxy';
 import _debug from 'debug';
@@ -35,6 +35,13 @@ if (config.proxy && config.proxy.enabled) {
 // rendering, you'll want to remove this middleware.
 // app.use(convert(historyApiFallback({
 //   verbose: false,
+//   disableDotRule: true,
+//   rewrites: [
+//     {
+//       from: /\/Organizations/,
+//       to: '/index.html',
+//     },
+//   ],
 // })));
 
 // ------------------------------------

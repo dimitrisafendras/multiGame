@@ -36,7 +36,7 @@ const styles = {
     marginRight: 'auto',
   },
   title: {
-    color: muiTheme.palette.blue700,
+    color: muiTheme.palette.primary1Color,
     textTransform: 'uppercase',
     fontSize: '24px !important',
     marginBottom: '33px !important',
@@ -44,13 +44,13 @@ const styles = {
     height: '110px !important',
   },
   inkBar: {
-    backgroundColor: muiTheme.palette.blue700,
+    backgroundColor: muiTheme.palette.primary1Color,
     height: '4px',
     width: '70px',
     marginLeft: '10%',
   },
   subTitle: {
-    color: muiTheme.palette.blue700,
+    color: muiTheme.palette.primary1Color,
     fontSize: '15px',
     fontWeight: 'bold',
     textTransform: 'uppercase',
