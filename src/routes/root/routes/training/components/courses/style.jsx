@@ -8,37 +8,134 @@ const styles = {
     overflow: 'visible',
     color: muiTheme.palette.grey600,
   },
+  coursesContainer: {
+    margin: '0 auto',
+    position: 'relative',
+
+    '& > div:first-child': {
+      width: '100%',
+    },
+    '& > div:first-child > div:nth-child(2)': {
+      margin: '0 auto',
+    },
+  },
+  tabs: {
+    width: '580px',
+    margin: '0 auto'
+  },
+  divider: {
+    width: '85%',
+    minWidth: '605px',
+    margin: '0 auto',
+    position: 'relative',
+    top: '116px',
+    borderBottom: '1px solid' + muiTheme.palette.grey300,
+  },
   backgroundImage: {
     background: `url(${Image}) no-repeat center 100%`,
     backgroundSize: 'cover',
   },
+  scrollableContent: {
+    height: '785px',
+    maxWidth: '580px',
+    margin: '0 auto',
+  },
   contentWrapper: {
     backgroundColor: muiTheme.palette.white,
+    boxShadow: '0px 0px 40px 0px rgba(0, 0, 0, 0.3)',
     width: '80%',
     height: '900px',
     margin: '0 auto',
     zIndex: '10',
     top: '-50px',
   },
-  container: {
-    padding: '25px',
-  },
   sectionTitleWrapper: {
     color: muiTheme.palette.blue700,
     textTransform: 'uppercase',
     textAlign: 'center',
     borderBottom: `1px solid ${muiTheme.palette.grey300}`,
-    padding: '15px 0 30px',
+    marginBottom: '0px',
+    fontSize: '24px !important',
+    fontWeight: '500 !important',
+    padding: '50px 0 15px !important',
+
+    '&.active': {
+      fontWeight: '500 !important',
+    },
+
+    '&.inactive': {
+      fontWeight: '100 !important',
+    },
   },
   sectionTitle: {
     borderBottom: `4px solid ${muiTheme.palette.blue700}`,
     paddingBottom: '27px',
     display: 'inline',
   },
+  textWrapper: {
+    paddingRight: '25px',
+    paddingTop: '30px',
+
+    '&:last-child': {
+      paddingBottom: '85px',
+    },
+  },
   title: {
     color: muiTheme.palette.blue700,
     marginTop: '25px',
     marginBottom: '15px',
+  },
+  inkBar: {
+    backgroundColor: muiTheme.palette.blue700,
+    height: '4px',
+  },
+  fade: {
+    width: '95%',
+    height: '100px',
+    position: 'absolute',
+    bottom: '-1px',
+    left: '0px',
+    zIndex: '10',
+    background: `-moz-linear-gradient(top, 
+      rgba(255,255,255,0) 0%, 
+      rgba(255,255,255,0.01) 2%, 
+      rgba(255,255,255,0.06) 4%, rgba(255,255,255,0.69) 28%, rgba(255,255,255,1) 88%, 
+      rgba(255,255,255,1) 100%, rgba(255,255,255,0.1) 101%)`,
+    background: `-webkit-linear-gradient(top, 
+      rgba(255,255,255,0) 0%,rgba(255,255,255,0.01) 2%,
+      rgba(255,255,255,0.06) 4%,rgba(255,255,255,0.69) 28%,rgba(255,255,255,1) 88%,
+      rgba(255,255,255,1) 100%,rgba(255,255,255,0.1) 101%)`,
+    background: `linear-gradient(to bottom, 
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.01) 2%,rgba(255,255,255,0.06) 4%,
+      rgba(255,255,255,0.69) 28%,rgba(255,255,255,1) 88%,
+      rgba(255,255,255,1) 100%,rgba(255,255,255,0.1) 101%)`,
+    filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1affffff',GradientType=0 )`,
+  },
+  courses: {
+    '&.scrollableContent': {
+      maxWidth: '885px',
+    },
+    '& .tabWrapper': {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '20px 0px',
+    },
+    '& .title': {
+      marginTop: '0px'
+    },
+    '& .textWrapper': {
+      background:  muiTheme.palette.grey300,
+      width: '275px',
+      height: '240px',
+      overflow: 'hidden',
+      padding: '25px 20px',
+      margin: '10px',
+      boxSizing: 'border-box',
+      // textOverflow: 'ellipsis',
+    }
   },
   '@media (max-width: 767px)': {
     outerContainer: {
@@ -49,33 +146,23 @@ const styles = {
     },
     contentWrapper: {
       height: '615px',
-    },
-    textWrapper: {
-      '&:last-child': {
-        paddingBottom: '100px',
+      overflow: 'visible',
+
+      '& .slick-dots': {
+        bottom: '-70px',
+      },
+
+      '& .slick-dots button:before': {
+        color: muiTheme.palette.blue700 + ' !important',
       },
     },
-    fade: {
-      width: '100%',
-      height: '100px',
-      position: 'absolute',
-      bottom: '0px',
-      zIndex: '10',
-      background: `-moz-linear-gradient(top, 
-      rgba(255,255,255,0) 0%, 
-      rgba(255,255,255,0.01) 2%, 
-      rgba(255,255,255,0.06) 4%, rgba(255,255,255,0.69) 28%, rgba(255,255,255,1) 88%, 
-      rgba(255,255,255,1) 100%, rgba(255,255,255,0.1) 101%)`,
-      background: `-webkit-linear-gradient(top, 
-      rgba(255,255,255,0) 0%,rgba(255,255,255,0.01) 2%,
-      rgba(255,255,255,0.06) 4%,rgba(255,255,255,0.69) 28%,rgba(255,255,255,1) 88%,
-      rgba(255,255,255,1) 100%,rgba(255,255,255,0.1) 101%)`,
-      background: `linear-gradient(to bottom, 
-      rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0.01) 2%,rgba(255,255,255,0.06) 4%,
-      rgba(255,255,255,0.69) 28%,rgba(255,255,255,1) 88%,
-      rgba(255,255,255,1) 100%,rgba(255,255,255,0.1) 101%)`,
-      filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1affffff',GradientType=0 )`,
+    sectionTitleWrapper: {
+      padding: '35px 0 30px !important',
+      margin: '0 25px',
+    },
+    textWrapper: {
+      paddingLeft: '25px',
+      paddingTop: '0px',
     },
   },
 };

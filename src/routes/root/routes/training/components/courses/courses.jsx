@@ -36,8 +36,7 @@ const Courses = ({
         className={classes.contentWrapper}>
 
         { mobile ? <MobileContent /> : <NormalContent /> }
-
-        <div className={classes.fade}></div>
+        
       </Container>
     </Container>
   </article>

@@ -13,10 +13,10 @@ import {
 } from 'components';
 
 const {
-  container,
   sectionTitleWrapper,
   sectionTitle,
   scrollableContent,
+  tabWrapper,
   textWrapper,
   title,
   text,
@@ -32,36 +32,38 @@ const MobileContent = () => (
     {content.sections.map((section) => (
 
       <div key={sectionsKey(section.id)}>
-        <Container container className={container}>
+        <Container container>
           <Content title className={sectionTitleWrapper}>
                  <span className={sectionTitle}>
                    {section.title}
                  </span>
           </Content>
-          <Container container className={scrollableContent}>
+          <Container container className={classNames(scrollableContent, classes[section.class])}>
             <Scrollbars
               autoHide
               autoHideTimeout={1000}
-              autoHideDuration={200}
-              style={{zIndex: '2'}}>
+              autoHideDuration={200}>
+              <div className={'tab-wrapper'}>
 
-              {section.items.map((item) => (
+                {section.items.map((item) => (
 
-                <div key={sectionKey(item.id)} className={textWrapper}>
+                  <div key={sectionKey(item.id)} className={classNames('text-wrapper', textWrapper)}>
 
-                  <FlexContainer column>
-                    <Content title className={title}>
-                      {item.title}
-                    </Content>
-                    <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}} />
-                  </FlexContainer>
+                    <FlexContainer column>
+                      <Content title className={title}>
+                        {item.title}
+                      </Content>
+                      <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}} />
+                    </FlexContainer>
 
-                </div>
+                  </div>
 
-              ))}
+                ))}
 
+              </div>
             </Scrollbars>
           </Container>
+          <div className={classes.fade}></div>
         </Container>
       </div>
 
