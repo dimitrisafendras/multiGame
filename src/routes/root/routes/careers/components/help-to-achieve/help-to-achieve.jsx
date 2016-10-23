@@ -1,19 +1,16 @@
 import React from 'react';
-
-import { compose } from 'containers';
-
 import content from './content';
+import { compose } from 'containers';
 import { classes } from './style';
+import { linkAble } from 'routes/root/containers';
 
 import {
-  Content,
-  Container,
-  FlexContainer,
-  Resizable,
-  Button,
+Content,
+Container,
+FlexContainer,
+Resizable,
+Button,
 } from 'components';
-
-import { linkAble } from 'routes/root/containers';
 
 import {
   NormalContent,

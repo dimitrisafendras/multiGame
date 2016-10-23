@@ -5,6 +5,11 @@ const navigationContents = {
       link: '/Organizations',
       order: 1,
     },
+    training: {
+      title: 'Training',
+      link: '/Training',
+      order: 1,
+    },
     careers: {
       title: 'Careers',
       link: '/Careers',

@@ -5,6 +5,7 @@ import {
   CareersRoute,
   AboutRoute,
   ContactRoute,
+  TrainingRoute,
   UserRoute,
 } from './routes';
 
@@ -46,6 +47,7 @@ export const rootRoute = (store) => {
       CareersRoute,
       AboutRoute,
       ContactRoute,
+      TrainingRoute,
       UserRoute(store),
     ],
   };
