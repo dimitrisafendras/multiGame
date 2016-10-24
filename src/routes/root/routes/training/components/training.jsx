@@ -1,17 +1,17 @@
 import React from 'react';
 import ValueProposition from './value-proposition/value-proposition';
-import AgileActorsVision from './agile-actors-vision/agile-actors-vision';
-// import LifeAtAgileActors from './life-at-agile-actors';
+import Courses from './courses/courses';
 
-class About extends React.Component {
+class Training extends React.Component {
   render() {
     return (
       <section>
         <ValueProposition />
-        <AgileActorsVision />
+        <Courses />
       </section>
     );
   }
 };
 
-export default About;
+
+export default Training;

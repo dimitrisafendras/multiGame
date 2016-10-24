@@ -14,8 +14,8 @@ const style = {
     minWidth: '300px',
     height: 'auto',
     minHeight: '490px',
-    paddingTop: '9.4%',
-    paddingBottom: '9.4%',
+    paddingTop: '5%',
+    paddingBottom: '5%',
     paddingLeft: '9.4%',
     paddingRight: '9.4%',
     boxSizing: 'border-box',
@@ -67,7 +67,6 @@ const style = {
   },
   largeText: {
     fontSize: '17px',
-    fontWeight: 700,
     lineHeight: '27px',
     zIndex: '3',
   },
