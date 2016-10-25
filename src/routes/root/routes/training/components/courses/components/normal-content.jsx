@@ -7,7 +7,7 @@ import { classes, styles } from '../style';
 import {
   Tabs,
   Tab,
-} from 'material-ui/Tabs';
+} from 'material-ui';
 
 import {
   Content,
@@ -57,17 +57,17 @@ class NormalContent extends Component {
                 key={sectionsKey(section.id)}
                 label={section.title}
                 disableTouchRipple
-                onActive={this.setActiveTab.bind(this)}
+                onActive={() => this.setActiveTab()}
                 className={classNames(
-                sectionTitleWrapper,
-                {
-                  'active': index === active,
-                  'inactive': index !== active,
-                })}>
+                  sectionTitleWrapper,
+                  {
+                    'active': index === active,
+                    'inactive': index !== active,
+                  })}>
 
                 <Container
                   container
-                  className={classNames('scrollable-content', scrollableContent,  classes[section.class])}>
+                  className={classNames('scrollable-content', scrollableContent, classes[section.class])}>
                   <Scrollbars
                     autoHide
                     autoHideTimeout={1000}
@@ -81,7 +81,7 @@ class NormalContent extends Component {
                             <Content title className={classNames('title', title)}>
                               {item.title}
                             </Content>
-                            <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}}/>
+                            <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}} />
                           </FlexContainer>
                         </div>
 
@@ -95,7 +95,7 @@ class NormalContent extends Component {
             ))}
 
           </Tabs>
-          <div className={classes.fade}></div>
+          <div className={classes.fade} />
         </FlexContainer>
       </div>
     );
