@@ -90,6 +90,8 @@ class SubmitValidationForm extends React.Component {
                   key={`aa-careers-form-contact-${field.name}`}
                   className={classes.label}
                   multiLine={field.multiLine} rows={field.rows}
+                  inputStyle={{boxShadow : 'none'}}
+                  textareaStyle = {{boxShadow : 'none'}}
                 />
             ))}
               <Button className={classes.button}
