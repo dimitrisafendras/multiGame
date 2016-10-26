@@ -8,6 +8,14 @@ import { Snackbar } from 'material-ui';
 import { classes, styles } from './style';
 import { content } from './content';
 
+const {
+  container,
+  form,
+  label,
+  button,
+  toast,
+} = classes;
+
 type Props = {
   message?: string,
   open?: boolean,
@@ -71,8 +79,8 @@ class SubmitValidationForm extends React.Component {
     const { enableButton, disableButton, handleRequestClose } = this;
     const _this = this;
     return (
-      <Container container className={classes.container}>
-        <Formsy.Form className={classes.form} ref={'aaContactForm'}
+      <Container container className={container}>
+        <Formsy.Form className={form} ref={'aaContactForm'}
           onValid={enableButton}
           onInvalid={disableButton}
           onValidSubmit={_this.submitForm}
@@ -85,13 +93,13 @@ class SubmitValidationForm extends React.Component {
                 validationError={field.error}
                 required floatingLabelText={field.label}
                 key={`aa-careers-form-contact-${field.name}`}
-                className={classes.label}
+                className={label}
                 multiLine={field.multiLine} rows={field.rows}
                 inputStyle={styles.textField}
                 textareaStyle = {styles.textField}
               />
           ))}
-            <Button className={classes.button}
+            <Button className={button}
               type={'submit'} secondary
               disabled={!this.state.canSubmit}>
               {content.button}
@@ -103,7 +111,7 @@ class SubmitValidationForm extends React.Component {
           message={this.state.message}
           autoHideDuration={4000}
           onRequestClose={handleRequestClose}
-          className={classes.toast} />
+          className={toast} />
       </Container>
     );
   }
