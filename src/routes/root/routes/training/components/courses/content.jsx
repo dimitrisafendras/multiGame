@@ -13,6 +13,27 @@ const content = {
           The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
           <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
           Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.
+          
+          Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.
+          
+          Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.
+          
+          Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
           by the Scrum.org upon the successful completion of the appropriate online tests.`
         },
         {
@@ -43,6 +64,28 @@ const content = {
           id: '1',
           title: 'Professional Scrum Trainings',
           content: `Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.
+          
+          Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.
+          
+          Regarding the Agile Software Development our trainings include the Scrum framework, 
+          which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
+          The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
+          <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>
+          Our instructors are senior Scrum.org certified trainers and the certifications are also provided 
+          by the Scrum.org upon the successful completion of the appropriate online tests.
+          
+          
+          Regarding the Agile Software Development our trainings include the Scrum framework, 
           which is currently the most widely adopted Agile Framework for developing complex projects. <br /><br />
           The following Professional Scrum Courses are available: <ul><li>Professional Scrum Foundations (PSF)</li>
           <li>Professional Scrum Master (PSM)</li><li>Professional Scrum Product Owner (PSPO)</li></ul>

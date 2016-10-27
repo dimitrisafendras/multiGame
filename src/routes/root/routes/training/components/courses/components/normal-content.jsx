@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Dialog from 'material-ui/Dialog';
 import content from '../content';
 import classNames from 'classnames';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -13,6 +14,7 @@ import {
   Content,
   Container,
   FlexContainer,
+  Button,
 } from 'components';
 
 const {
@@ -24,16 +26,22 @@ const {
   textWrapper,
   title,
   text,
+  fade,
+  more,
 } = classes;
 
 const sectionsKey = (id) => `aa-courses-sections-${id}`;
 const sectionKey = (id) => `aa-courses-item-${id}`;
 
 class NormalContent extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       activeTab: 0,
+      dialogOpen: false,
+      dialogTitle: null,
+      dialogText: null,
     };
   }
 
@@ -41,8 +49,39 @@ class NormalContent extends Component {
     this.setState({ activeTab: tab.props.index });
   }
 
+  handleOpen = (data, tab) => {
+    if(tab !== 'courses') {
+      return;
+    }
+
+    this.setState({
+      dialogOpen: true,
+      dialogTitle: data.title,
+      dialogText: data.content,
+    });
+  };
+
+  handleClose = () => {
+    this.setState({dialogOpen: false});
+  };
+
   render() {
     const active = this.state.activeTab;
+    const learnMore = <div className={more} />;
+    const closeBtn = <Button secondary onTouchTap={this.handleClose} label="close" />;
+    const fading = <div className={fade}></div>;
+
+    const dialog = <Dialog
+      title={this.state.dialogTitle}
+      actions={closeBtn}
+      modal={false}
+      open={this.state.dialogOpen}
+      onRequestClose={this.handleClose}
+      autoScrollBodyContent={true}
+      titleStyle={{color: '#1976d2'}} >
+      <div style={{paddingTop: '24px'}} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
+    </Dialog>;
+
 
     return (
       <div>
@@ -76,30 +115,47 @@ class NormalContent extends Component {
 
                       {section.items.map((item) => (
 
-                        <div key={sectionKey(item.id)} className={classNames('text-wrapper', textWrapper)}>
+                        <div key={sectionKey(item.id)} className={classNames('text-wrapper', textWrapper)}
+                             onTouchTap={this.handleOpen.bind(null, item, section.class)}>
                           <FlexContainer column>
                             <Content title className={classNames('title', title)}>
                               {item.title}
                             </Content>
                             <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}}/>
                           </FlexContainer>
+
+                          {section.class === 'courses' && learnMore}
+
                         </div>
 
                       ))}
 
+                      {section.class === 'courses' && dialog}
+
                     </div>
                   </Scrollbars>
+
+                  {section.class !== 'courses' && fading}
+
                 </Container>
               </Tab>
 
-            ))}
+            ))};
 
           </Tabs>
-          <div className={classes.fade}></div>
         </FlexContainer>
       </div>
     );
-  }
+  };
 };
+
+// TODO: add the load more button
+// {section.class === 'courses' && loadMore}
+//
+// const loadMore =   <FlexContainer center className={button}>
+//   <Button secondary onTouchTap={() => 'test'} >
+//     {'load more'}
+//   </Button>
+// </FlexContainer>;
 
 export default NormalContent;
