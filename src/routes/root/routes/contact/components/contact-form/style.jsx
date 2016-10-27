@@ -1,29 +1,35 @@
+import muiTheme from 'styles/customized-mui-theme';
 import { jss } from 'components';
 
 const styles = {
-  component: {
-    paddingTop: '0px',
-    zIndex: '2',
-    overflow: 'visible',
-  },
   container: {
-    width: '100%',
-    minWidth: '280px',
+    backgroundColor: muiTheme.palette.white,
+    boxShadow: '0px 0px 40px 0px rgba(0, 0, 0, 0.3)',
+    width: '80%',
+    height: '558px',
+    margin: '0 auto',
+    zIndex: '10',
+    top: '-50px',
+    padding: '0px',
     maxWidth: '640px',
-    marginTop: '-70px',
+    minWidth:'280px'
   },
   form: {
     paddingTop: '40px',
   },
   label: {
-    width: '80% !important',
+    width: '71% !important',
     display: 'block !important',
+    minWidth: '260px',
+  },
+  textField: {
+    boxShadow : 'none'
   },
   button: {
     height: '40px',
     width: '260px',
-    marginBottom: '50px',
-    marginTop: '50px',
+    marginBottom: '60px',
+    marginTop: '60px',
   },
   toast: {
     textAlign: 'center',
@@ -31,6 +37,15 @@ const styles = {
   '@media (max-width: 767px)': {
     form: {
       paddingTop: '10px',
+    },
+  },
+  '@media (max-width: 496px)': {
+    container: {
+      height: '484px',
+    },
+    button: {
+      marginBottom: '30px',
+      marginTop: '30px',
     },
   },
 };

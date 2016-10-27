@@ -16,7 +16,6 @@ const {
   sectionTitleWrapper,
   sectionTitle,
   scrollableContent,
-  tabWrapper,
   textWrapper,
   title,
   text,
@@ -26,17 +25,15 @@ const sectionsKey = (id) => `aa-courses-sections-${id}`;
 const sectionKey = (id) => `aa-courses-item-${id}`;
 
 const MobileContent = () => (
-
   <Slider {...SliderSettings}>
 
     {content.sections.map((section) => (
-
       <div key={sectionsKey(section.id)}>
         <Container container>
           <Content title className={sectionTitleWrapper}>
-                 <span className={sectionTitle}>
-                   {section.title}
-                 </span>
+            <span className={sectionTitle}>
+              {section.title}
+            </span>
           </Content>
           <Container container className={classNames(scrollableContent, classes[section.class])}>
             <Scrollbars
@@ -63,14 +60,12 @@ const MobileContent = () => (
               </div>
             </Scrollbars>
           </Container>
-          <div className={classes.fade}></div>
+          <div className={classes.fade} />
         </Container>
       </div>
-
     ))}
 
   </Slider>
-
 );
 
 export default MobileContent;
