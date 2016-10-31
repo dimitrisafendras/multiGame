@@ -1,28 +1,31 @@
 import React from 'react';
 
 const Resizable = (ResizableComponent) => class extends React.Component {
+  state: {
+    tablet: boolean,
+    mobile: boolean,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
-      mqTablet: window.matchMedia('(max-width: 1581px)'),
-      mqMobile: window.matchMedia('(max-width: 767px)'),
+      tablet: window.matchMedia('(max-width: 1581px)').matches,
+      mobile: window.matchMedia('(max-width: 767px)').matches,
     };
   }
 
   // Debounce window resize event for performance
   updateDimensions() {
-    const that = this;
-
     clearTimeout(this.resizeTimer);
 
-    this.resizeTimer = setTimeout(function () {
+    this.resizeTimer = setTimeout(() => {
       // Resize finished
-      if (that.mounted) { // Check if component unmounted in the meantime
-        const mediaQueryTablet = window.matchMedia('(max-width: 1581px)');
-        const mediaQueryMobile = window.matchMedia('(max-width: 767px)');
+      if (this.mounted) { // Check if component unmounted in the meantime
+        const tablet = window.matchMedia('(max-width: 1581px)').matches;
+        const mobile = window.matchMedia('(max-width: 767px)').matches;
 
-        (mediaQueryTablet.matches !== that.state.mqTablet) && that.setState({tablet: mediaQueryTablet.matches});
-        (mediaQueryMobile.matches !== that.state.mqMobile) && that.setState({mobile: mediaQueryMobile.matches});
+        (tablet !== this.state.tablet) && this.setState({ tablet });
+        (mobile !== this.state.mobile) && this.setState({ mobile });
       }
     });
   }
