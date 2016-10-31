@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { compose } from 'containers';
+
 import { linkAble } from 'routes/root/containers';
 
 import content from './content';
@@ -16,7 +18,7 @@ import {
 import {
   NormalContent,
   MobileContent,
-} from './partials';
+} from './components';
 
 const {
   outerContainer,
@@ -50,4 +52,4 @@ const AgileActorsPractice = ({
   </Container>
 );
 
-export default linkAble(Resizable(AgileActorsPractice));
+export default compose(linkAble, Resizable)(AgileActorsPractice);

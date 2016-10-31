@@ -5,9 +5,6 @@ import Box from 'components/box';
 import classNames from 'classnames';
 import muiTheme from 'styles/customized-mui-theme';
 
-//
-// Define the default styles of the components
-//
 const defaultStyle = {
   largeContainer: {
     backgroundColor: muiTheme.palette.white,
@@ -17,8 +14,8 @@ const defaultStyle = {
     minWidth: '300px',
     height: 'auto',
     minHeight: '490px',
-    paddingTop: '9.4%',
-    paddingBottom: '9.4%',
+    paddingTop: '5%',
+    paddingBottom: '5%',
     paddingLeft: '9.4%',
     paddingRight: '9.4%',
     boxSizing: 'border-box',
@@ -70,7 +67,6 @@ const defaultStyle = {
   },
   largeText: {
     fontSize: '17px',
-    fontWeight: 700,
     lineHeight: '27px',
     zIndex: '3',
   },
@@ -162,45 +158,23 @@ const makeClassesFromProps = (props, classes) => classNames(
 const defaultStyleKeys = Object.keys(defaultStyle);
 const cleanProps = (props) => _.omit(props, defaultStyleKeys);
 
-// Define the components
-export const Container = ({ className, ...rest }) => (
+type Props = {
+  className?: string,
+  style?: Object,
+  onClick?: () => void,
+  children?: HTMLElement,
+};
+
+export const Container = ({ className, ...rest }: Props) => (
   <div
     {...cleanProps(rest)}
     className={makeClassesFromProps({ className, ...rest }, classes)} />
 );
 
-Container.propTypes = {
-  className: React.PropTypes.string,
-  style: React.PropTypes.string,
-  onClick: React.PropTypes.func,
-  children: React.PropTypes.any,
-};
+export const Content = Container;
 
-Container.displayName = 'Container';
-
-export const FlexContainer = ({ className, ...rest }) => (
+export const FlexContainer = ({ className, ...rest }: Props) => (
   <Box
     {...cleanProps(rest)}
     className={makeClassesFromProps({ className, ...rest }, classes)} />
 );
-
-FlexContainer.propTypes = {
-  className: React.PropTypes.string,
-};
-
-FlexContainer.displayName = 'FlexContainer';
-
-export const Content = ({ className, ...rest }) => (
-  <div
-    className={makeClassesFromProps({ className, ...rest }, classes)}
-    {...cleanProps(rest)} />
-);
-
-Content.propTypes = {
-  className: React.PropTypes.string,
-  style: React.PropTypes.string,
-  onClick: React.PropTypes.func,
-  children: React.PropTypes.any,
-};
-
-Content.displayName = 'Content';

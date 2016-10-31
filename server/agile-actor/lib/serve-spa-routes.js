@@ -4,7 +4,9 @@ const { sapRoutes } = config;
 
 export default (app) => {
   app.use(async (ctx, next) => {
-    if (!sapRoutes.includes(ctx.url)) return next();
-    ctx.redirect('/', ctx.url);
+    if (sapRoutes.includes(ctx.url)) {
+      ctx.req.url = '/';
+    }
+    return next();
   });
 };

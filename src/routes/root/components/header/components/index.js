@@ -1,6 +1,8 @@
 import HeaderMenuBar from './header-menu-bar';
-import UserButton from './user-button';
-import UserButtonMobile from './user-button-mobile';
+import {
+  UserButton,
+  UserButtonMobile,
+} from './user-button';
 
 export {
   HeaderMenuBar,

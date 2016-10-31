@@ -1,52 +1,46 @@
 import React from 'react';
-import { style } from './style';
-import { content } from './content';
+import { classes } from './style';
+
 import {
-  useSheet,
   Content,
-  FlexContainer,
   Container,
-  Button,
-  Link 
+  Resizable,
 } from 'components';
 
-//
-// The component
-//
-const ValueProposition = ({ sheet }) => {
-  const { classes } = sheet;
+import {
+  NormalContent,
+  MobileContent,
+} from './components';
 
-  return (
-    <article
-      className={classes.component}>
+type Props = {
+  size: {
+    mobile?: boolean,
+    tablet?: boolean,
+  }
+};
+
+const Courses = ({
+  size: {
+    mobile,
+    tablet,
+  },
+}: Props) => (
+  <article>
+    <Container
+      fullWidthContainer
+      className={classes.outerContainer}>
+      <Content backgroundImage
+        className={classes.backgroundImage} />
+
       <Container
         container
         className={classes.contentWrapper}>
-        <FlexContainer normalContainer
-          className={classes.container}
-          column>
-          <Content backgroundImage
-            className={classes.backgroundImage} />
-          <Container
-            container
-            className={classes.textWrapper}>
-            <Content normalTitle
-              className={classes.title}>
-              {content.title}
-            </Content>
-            <Content text
-              className={classes.text}>
-              {content.text}
-            </Content>
-          </Container>
-        </FlexContainer>
+
+        { mobile ? <MobileContent /> : <NormalContent /> }
+
       </Container>
-    </article>
-  );
-};
+    </Container>
+  </article>
+);
 
-ValueProposition.propTypes = {
-  sheet: React.PropTypes.object,
-};
-
-export default useSheet(ValueProposition, style);
+export default Resizable(Courses);

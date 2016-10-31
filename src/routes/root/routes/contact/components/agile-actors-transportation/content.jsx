@@ -12,8 +12,8 @@ export const content = {
       Img: Images.Tube,
       ImgMobile: Images.TubeActive,
       content:
-        `Tube: Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. tube Ligula integer occaecati
-         eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
+        `Tube: Blue line, Cholargos station.
+        15 minutes on foot from Cholargos station.`,
     },
     {
       id: 'bus',
@@ -22,8 +22,10 @@ export const content = {
       Img: Images.Bus,
       ImgMobile: Images.BusActive,
       content:
-        `Bus Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. bus Ligula integer occaecati
-         eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
+        `Trolley: number 10 or 18, Marouda Station, right in front
+         Agile Actors entrance.
+         Bus: number 550 or A7, College Station on Kifisias avenue.
+         5 minutes walk from College Station.`,
     },
     {
       id: 'taxi',
@@ -32,8 +34,7 @@ export const content = {
       Img: Images.Taxi,
       ImgMobile: Images.TaxiActive,
       content:
-        `Taxi: Facilisi tempora excepturi dolorum platea pariatur. Cupidatat. taxi Ligula integer occaecati
-         eum neque excepturi. Rem nec blandit ante ultricies tempore quis? Dapibus laboris`,
+        `Taxi: in Athens taxis are easy to hire and modestly priced.`,
     },
   ],
 };

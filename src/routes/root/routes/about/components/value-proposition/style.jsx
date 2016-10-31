@@ -60,7 +60,8 @@ const styles = {
     backgroundImage: {
       opacity: '0.2',
       backgroundSize: '81.8%',
-      backgroundPosition: 'center',    },
+      backgroundPosition: 'center',
+    },
     title: {
       width: '100%',
       marginBottom: '30px',

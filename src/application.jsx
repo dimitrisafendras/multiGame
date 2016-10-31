@@ -1,13 +1,15 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 
+type Props = {
+  history: Object,
+  routes: Object,
+  store: Object,
+};
+
 class Application extends Component {
-  static propTypes = {
-    history: PropTypes.object.isRequired,
-    routes: PropTypes.object.isRequired,
-    store: PropTypes.object.isRequired,
-  };
+  props: Props;
 
   render() {
     const { history, routes, store } = this.props;

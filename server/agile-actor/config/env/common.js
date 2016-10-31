@@ -6,5 +6,6 @@ export default {
     '/About',
     '/Contact',
     '/User',
+    '/Training',
   ],
 };

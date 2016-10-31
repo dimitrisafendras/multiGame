@@ -3,7 +3,6 @@ import React from 'react';
 import {
   FlexContainer,
   Content,
-  useSheet,
 } from 'components';
 
 import {
@@ -11,39 +10,22 @@ import {
   AuthForm,
 } from './containers';
 
-//
-// Define the content of the component.
-//
+import { classes } from './style';
+
 const content = 'or with your agile actors account';
 
-//
-// Define the CSS styles of the component.
-//
-const style = {
-  text: {
-    textTransform: 'uppercase',
-  },
+type Props = {
+  mode: string,
 };
 
-//
-// Define the component.
-//
-function Form({ sheet, mode }) {
-  const { classes } = sheet;
-  return (
-    <FlexContainer column center>
-      <AuthProviders mode={mode} />
-      <Content text className={classes.text}>
-        {content}
-      </Content>
-      <AuthForm mode={mode} />
-    </FlexContainer>
-  );
-};
+const Form = ({ mode }: Props) => (
+  <FlexContainer column center>
+    <AuthProviders mode={mode} />
+    <Content text className={classes.text}>
+      {content}
+    </Content>
+    <AuthForm mode={mode} />
+  </FlexContainer>
+);
 
-Form.propTypes = {
-  sheet: React.PropTypes.object,
-  mode: React.PropTypes.string,
-};
-
-export default useSheet(Form, style);
+export default Form;

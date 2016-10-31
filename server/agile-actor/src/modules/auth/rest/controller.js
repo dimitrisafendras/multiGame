@@ -7,8 +7,12 @@ const updateCtx = (ctx, user, body) => {
 
   const { currentLoginAttempt } = user;
   const ctxUser = ctx.session.user;
-  currentLoginAttempt.count =
-  ctxUser && ctxUser.currentLoginAttempt ? ctxUser.currentLoginAttempt.count + 1 : 1;
+  const numOfLoginAttempts = ((
+    ctxUser
+    && ctxUser.currentLoginAttempt
+    && ctxUser.currentLoginAttempt.count
+  ) || 0);
+  currentLoginAttempt.count = numOfLoginAttempts + 1;
 
   ctx.session.user = {
     ...user,
@@ -98,7 +102,7 @@ export async function authUser(ctx, next) {
   return passport.authenticate('local', (user) => {
     updateCtx(ctx, user, { user });
   })(ctx, next);
-};
+}
 
 /**
  * @api {get} /auth/unAuth UnAuthenticate/Logout user
@@ -112,8 +116,8 @@ export async function unAuthUser(ctx) {
     user: null,
   });
   ctx.req.logout();
-  ctx.redirect('/');
-};
+  // ctx.redirect('/');
+}
 
 /**
  * @api {get} /auth/checkAuthUser UnAuthenticate/Logout user
@@ -126,7 +130,7 @@ export async function checkAuthUser(ctx) {
   ctx.body = {
     user,
   };
-};
+}
 
 /**
  * @api {get} /auth/google Authenticate google user OIDC
@@ -146,7 +150,7 @@ export async function authUserGoogle(ctx, next) {
   return passport.authenticate('google-openidconnect', {
     scope: ['email'],
   })(ctx, next);
-};
+}
 
 /**
  * @api {get} /auth/google/callback Authenticate google user OIDC
@@ -185,10 +189,10 @@ export async function authUserGoogle(ctx, next) {
  * }
  */
 export async function authUserGoogleCallback(ctx, next) {
-  return passport.authenticate('google-openidconnect', (user, info, status) => {
+  return passport.authenticate('google-openidconnect', (user) => {
     updateCtxCloseClientWindow(ctx, user);
   })(ctx, next);
-};
+}
 
 /**
  * @api {get} /auth/github Authenticate github user auth2
@@ -250,10 +254,10 @@ export const authUserGithub = passport.authenticate('github', {
  * }
  */
 export async function authUserGithubCallback(ctx, next) {
-  return passport.authenticate('github', (user, info, status) => {
+  return passport.authenticate('github', (user) => {
     updateCtxCloseClientWindow(ctx, user);
   })(ctx, next);
-};
+}
 
 /**
  * @api {get} /auth/linkedin Authenticate linkedin user auth2
@@ -273,7 +277,7 @@ export async function authUserLinkedin(ctx, next) {
   return passport.authenticate('linkedin', {
     scope: ['email'],
   })(ctx, next);
-};
+}
 
 /**
  * @api {get} /auth/linkedin/callback Authenticate linkedin user auth2
@@ -309,7 +313,7 @@ export async function authUserLinkedin(ctx, next) {
  * }
  */
 export async function authUserLinkedinCallback(ctx, next) {
-  return passport.authenticate('linkedin', (user, info, status) => {
+  return passport.authenticate('linkedin', (user) => {
     updateCtxCloseClientWindow(ctx, user);
   })(ctx, next);
-};
+}
