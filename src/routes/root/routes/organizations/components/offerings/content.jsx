@@ -6,7 +6,7 @@ const content = {
       title: 'Get a Tech Dream Team for your very own Development needs',
       content:
         `Whether you’re planning too outsource a software development project or thinking
-         about creatng remote development teams, we can get you the best tech professionals.
+         about creating remote development teams, we can get you the best tech professionals.
          Save time and maintain focus on your line of business, while we define requirements
          and set up scalable teams with the right mix of skills and experience. `,
     },

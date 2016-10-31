@@ -35,6 +35,11 @@ const styles = {
     marginLeft: 'auto',
     marginRight: 'auto',
   },
+  titleWrapper:{
+    textAlign: 'center',
+    borderBottom: `1px solid ${muiTheme.palette.borderColor}`,
+    paddingBottom: '20px',
+  },
   title: {
     color: muiTheme.palette.primary1Color,
     textTransform: 'uppercase',
@@ -42,12 +47,21 @@ const styles = {
     marginBottom: '33px !important',
     backgroundColor: 'transparent !important',
     height: '110px !important',
+    borderBottom: `4px solid ${muiTheme.palette.primary1Color}`,
   },
   inkBar: {
     backgroundColor: muiTheme.palette.primary1Color,
     height: '4px',
     width: '70px',
     marginLeft: '10%',
+  },
+  divider: {
+    width: '90%',
+    minWidth: '605px',
+    margin: '0 auto',
+    position: 'relative',
+    top: '189px',
+    borderBottom: '2px solid' + muiTheme.palette.grey300,
   },
   subTitle: {
     color: muiTheme.palette.primary1Color,
@@ -75,9 +89,11 @@ const styles = {
       height: '420px',
     },
     title: {
-      textAlign: 'center',
       marginBottom: '20px !important',
       height: 'auto !important',
+      paddingBottom: '16px',
+      paddingLeft: '5px',
+      paddingRight: '5px',
     },
     subTitle: {
       textAlign: 'center',
@@ -92,13 +108,26 @@ const styles = {
       marginBottom: '25px',
       textAlign: 'center',
     },
+    component: {
+      '& .slick-dots': {
+        bottom: '-10px',
+      },
+      '& .slick-dots button:before': {
+        color: muiTheme.palette.blue700 + ' !important',
+      },
+    },
   },
-  '@media (max-width: 320px)': {
+  '@media (max-width: 496px)': {
     component: {
       paddingBottom: '8%',
     },
     imgWrapper: {
-      marginLeft: '-30px',
+      marginLeft: '-20px',
+    },
+  },
+  '@media (max-width: 320px)': {
+    imgWrapper: {
+      marginLeft: '-31px',
     },
   },
 };

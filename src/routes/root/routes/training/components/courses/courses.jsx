@@ -4,7 +4,6 @@ import { classes } from './style';
 import {
   Content,
   Container,
-  FlexContainer,
   Resizable,
 } from 'components';
 
@@ -14,11 +13,13 @@ import {
 } from './components';
 
 type Props = {
-  size : Object
+  size: {
+    mobile?: boolean,
+    tablet?: boolean,
+  }
 };
 
 const Courses = ({
-  link,
   size: {
     mobile,
     tablet,
@@ -29,14 +30,14 @@ const Courses = ({
       fullWidthContainer
       className={classes.outerContainer}>
       <Content backgroundImage
-               className={classes.backgroundImage} />
+        className={classes.backgroundImage} />
 
       <Container
         container
         className={classes.contentWrapper}>
 
         { mobile ? <MobileContent /> : <NormalContent /> }
-        
+
       </Container>
     </Container>
   </article>
