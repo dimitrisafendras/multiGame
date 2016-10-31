@@ -51,8 +51,6 @@ const styles = {
   },
   appBarContainer: {},
   appBar: {
-    paddingLeft: '0 !important',
-    paddingRight: '0 !important',
     boxShadow: 'none !important',
     overflow: 'hidden !important',
     height: '100% !important',
@@ -136,9 +134,6 @@ const styles = {
       maxHeight: `${muiTheme.appBar.tabletHeight}px`,
     },
     logo: {},
-    appBar: {
-      padding: '0 !important',
-    },
   },
   '@media (min-width: 1200px)': {
     mainMenuContent: {
