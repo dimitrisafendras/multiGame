@@ -33,7 +33,7 @@ const Header = ({
         <div className={classes.appBarContainer}>
           <AppBar
             className={classes.appBar}
-            title={<Logo className={classes.logo}  resizable={true} />}
+            title={<Logo className={classes.logo} resizable />}
             titleStyle={style.appBarTitleStyle}
             showMenuIconButton={false}
           />
