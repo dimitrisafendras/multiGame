@@ -61,19 +61,22 @@ class SubmitValidationForm extends React.Component {
   });
   };
 
-  showSuccessToast = () => this.setState({ ...this.state,
-      open: true,
-      message: content.successText,
-    });
+  showSuccessToast = () => this.setState({
+    ...this.state,
+    open: true,
+    message: content.successText,
+  });
 
-  showErrorToast = () => this.setState({ ...this.state,
-      open: true,
-      message: content.errorText,
-    });
+  showErrorToast = () => this.setState({
+    ...this.state,
+    open: true,
+    message: content.errorText,
+  });
 
-  handleRequestClose = () => this.setState({ ...this.state,
-      open: false,
-    });
+  handleRequestClose = () => this.setState({
+    ...this.state,
+    open: false,
+  });
 
   render() {
     const { enableButton, disableButton, handleRequestClose } = this;
@@ -96,8 +99,7 @@ class SubmitValidationForm extends React.Component {
                 className={label}
                 multiLine={field.multiLine} rows={field.rows}
                 inputStyle={styles.textField}
-                textareaStyle = {styles.textField}
-              />
+                textareaStyle={styles.textField} />
           ))}
             <Button className={button}
               type={'submit'} secondary
