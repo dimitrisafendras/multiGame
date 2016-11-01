@@ -1,27 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router';
-
 import classNames from 'classnames';
-
-import { Content } from 'components';
-
-import { AgileActorsLogo } from './images';
+import { Link } from 'components/content';
 import { img } from './style';
+
+import {
+  Content,
+  Resizable
+} from 'components';
+
+import {
+  AgileActorsLogo,
+  AgileActorsLogoIcon
+} from './images';
 
 type Props = {
   className?: string,
+  size: object
 };
 
-const Logo = ({ className } : Props) => (
-  <Link to={'/'}>
-    <Content className={classNames(img, className)}>
-      <AgileActorsLogo />
-    </Content>
-  </Link>
-);
+const Logo = ({ className, size, resizable } : Props) => {
+  const logo = (resizable && size.mobile) ? <AgileActorsLogoIcon /> : <AgileActorsLogo />;
 
-export {
-  Logo,
-};
+  return (
+    <Link to={'/'}>
+      <Content className={classNames(img, className)}>
+        {logo}
+      </Content>
+    </Link>
+  );
+}
 
-export default Logo;
+export default Resizable(Logo);

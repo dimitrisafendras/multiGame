@@ -1,9 +1,9 @@
 import { InlineSvg } from 'components/inline-svg';
 
-export const AgileActorsLogo = InlineSvg(require('!!raw!./image-agile-actors-logo'));
-export const AgileActorsLogoIcon = InlineSvg(require('!!raw!./icon-agile-actors-logo'));
+const AgileActorsLogo = InlineSvg(require('!!raw!./image-agile-actors-logo'));
+const AgileActorsLogoIcon = InlineSvg(require('!!raw!./icon-agile-actors-logo'));
 
-export default {
+export {
   AgileActorsLogo,
-  AgileActorsLogoIcon,
+  AgileActorsLogoIcon
 };

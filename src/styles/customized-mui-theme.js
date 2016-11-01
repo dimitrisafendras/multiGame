@@ -76,8 +76,7 @@ export default getMuiTheme({
     maxWidth: '1600px',
     titleFontWeight: 400,
     textColor: blue600,
-    paddingLeft: '9.4%',
-    paddingRight: '9.4%',
+    padding: 0,
     get paddingTop() {
       return (parseInt(this.mobileHeight) - parseInt(this.logoHeight)) / 2 + 'px';
     },

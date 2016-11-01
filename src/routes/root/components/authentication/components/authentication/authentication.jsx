@@ -23,8 +23,15 @@ type Props = {
   user: Object,
 };
 
+type State = {
+  open: boolean,
+  mode: 'login' | 'register',
+  autoHeightMax: number,
+};
+
 class Authentication extends Component {
   props: Props;
+  state: State;
 
   constructor(props) {
     super(props);
