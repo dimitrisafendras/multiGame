@@ -2,14 +2,26 @@ import muiTheme from 'styles/customized-mui-theme';
 import { jss } from 'components';
 
 const styles = {
-  mainMenu: {
+  topBar: {
     position: 'fixed',
     top: '0px',
     left: '50%',
     transform: 'translateX(-50%)',
     width: '100%',
-    maxWidth: muiTheme.appBar.maxWidth,
     zIndex: '100',
+    background: muiTheme.palette.white,
+  },
+  mainMenu: {
+    width: '100%',
+    maxWidth: muiTheme.appBar.maxWidth,
+    margin: '0 auto',
+  },
+  mainMenuHolder: {
+    paddingLeft: '9.4%',
+    paddingRight: '9.4%',
+    boxSizing: 'border-box',
+    position: 'relative',
+    width: '100%',
   },
   mainMenuContent: {
     position: 'absolute',
@@ -39,10 +51,10 @@ const styles = {
   },
   appBarContainer: {},
   appBar: {
-    boxShadow: 'none',
-    overflow: 'hidden',
-    height: '100%',
-    alignItems: 'center',
+    boxShadow: 'none !important',
+    overflow: 'hidden !important',
+    height: '100% !important',
+    alignItems: 'center !important',
   },
   appBarTitleStyle: {
     display: 'flex',
@@ -122,20 +134,10 @@ const styles = {
       maxHeight: `${muiTheme.appBar.tabletHeight}px`,
     },
     logo: {},
-    appBar: {
-      iconStyleRight: {
-        display: 'none !important',
-      },
-    },
   },
   '@media (min-width: 1200px)': {
     mainMenuContent: {
       maxWidth: `400px`,
-    },
-    appBar: {
-      container: {
-        maxHeight: 78,
-      },
     },
   },
 };
