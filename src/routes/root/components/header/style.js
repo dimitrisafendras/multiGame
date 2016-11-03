@@ -2,19 +2,28 @@ import muiTheme from 'styles/customized-mui-theme';
 import { jss } from 'components';
 
 const styles = {
-  mainMenu: {
+  topBar: {
     position: 'fixed',
     top: '0px',
     left: '50%',
     transform: 'translateX(-50%)',
     width: '100%',
-    maxWidth: muiTheme.appBar.maxWidth,
     zIndex: '100',
+    background: muiTheme.palette.white,
+  },
+  mainMenu: {
+    width: '100%',
+    maxWidth: muiTheme.appBar.maxWidth,
+    margin: '0 auto',
+  },
+  mainMenuHolder: {
+    paddingLeft: '20px',
+    boxSizing: 'border-box',
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
   },
   mainMenuContent: {
-    position: 'absolute',
-    top: '0px',
-    right: '0px',
     width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
     height: '100%',
     zIndex: '1200',
@@ -37,12 +46,14 @@ const styles = {
   mainMenuIconContainer: {
     borderLeft: `1px solid ${muiTheme.palette.grey300}`,
   },
-  appBarContainer: {},
+  appBarContainer: {
+    flexGrow: 1,
+  },
   appBar: {
-    boxShadow: 'none',
-    overflow: 'hidden',
-    height: '100%',
-    alignItems: 'center',
+    boxShadow: 'none !important',
+    overflow: 'hidden !important',
+    height: '100% !important',
+    alignItems: 'center !important',
   },
   appBarTitleStyle: {
     display: 'flex',
@@ -82,9 +93,13 @@ const styles = {
     mainMenu: {
       height: `${muiTheme.appBar.tabletHeight}px`,
     },
+    mainMenuHolder: {
+      paddingLeft: '9.4%',
+      paddingRight: '9.4%',
+    },
     mainMenuContent: {
-      width: `calc(100% - 320px)`,
-      maxWidth: `500px`,
+      width: `calc(100% - 280px)`,
+      maxWidth: `600px`,
     },
     mainMenuItem: {
       height: `${muiTheme.appBar.tabletHeight}px`,
@@ -115,6 +130,7 @@ const styles = {
       borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
     },
     appBarContainer: {
+      width: '280px',
       height: `${muiTheme.appBar.tabletHeight}px`,
     },
     appBarTitleStyle: {
@@ -122,20 +138,10 @@ const styles = {
       maxHeight: `${muiTheme.appBar.tabletHeight}px`,
     },
     logo: {},
-    appBar: {
-      iconStyleRight: {
-        display: 'none !important',
-      },
-    },
   },
   '@media (min-width: 1200px)': {
     mainMenuContent: {
-      maxWidth: `400px`,
-    },
-    appBar: {
-      container: {
-        maxHeight: 78,
-      },
+      maxWidth: `500px`,
     },
   },
 };

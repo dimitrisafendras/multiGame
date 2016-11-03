@@ -21,7 +21,7 @@ const styles = {
   },
   tabs: {
     width: '580px',
-    margin: '0 auto',
+    margin: '0 auto'
   },
   divider: {
     width: '85%',
@@ -77,7 +77,7 @@ const styles = {
     paddingTop: '30px',
 
     '&:last-child': {
-      paddingBottom: '85px',
+      marginBottom: '85px',
     },
   },
   title: {
@@ -87,7 +87,7 @@ const styles = {
   },
   inkBar: {
     backgroundColor: muiTheme.palette.blue700,
-    height: '1px',
+    height: '4px',
   },
   fade: {
     width: '95%',
@@ -96,22 +96,53 @@ const styles = {
     bottom: '-1px',
     left: '0px',
     zIndex: '10',
-    background: `-moz-linear-gradient(top,
-      rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0.01) 2%,
-      rgba(255,255,255,0.06) 4%, rgba(255,255,255,0.69) 28%, rgba(255,255,255,1) 88%,
+    background: `-moz-linear-gradient(top, 
+      rgba(255,255,255,0) 0%, 
+      rgba(255,255,255,0.01) 2%, 
+      rgba(255,255,255,0.06) 4%, rgba(255,255,255,0.69) 28%, rgba(255,255,255,1) 88%, 
       rgba(255,255,255,1) 100%, rgba(255,255,255,0.1) 101%)`,
-    background: `-webkit-linear-gradient(top,
+    background: `-webkit-linear-gradient(top, 
       rgba(255,255,255,0) 0%,rgba(255,255,255,0.01) 2%,
       rgba(255,255,255,0.06) 4%,rgba(255,255,255,0.69) 28%,rgba(255,255,255,1) 88%,
       rgba(255,255,255,1) 100%,rgba(255,255,255,0.1) 101%)`,
-    background: `linear-gradient(to bottom,
+    background: `linear-gradient(to bottom, 
       rgba(255,255,255,0) 0%,
       rgba(255,255,255,0.01) 2%,rgba(255,255,255,0.06) 4%,
       rgba(255,255,255,0.69) 28%,rgba(255,255,255,1) 88%,
       rgba(255,255,255,1) 100%,rgba(255,255,255,0.1) 101%)`,
-    filter:
-      `progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1affffff',GradientType=0 )`,
+    filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1affffff',GradientType=0 )`,
+  },
+  more: {
+    width: '100%',
+    height: '100px',
+    position: 'absolute',
+    textAlign: 'center',
+    color: 'rgba(25, 118, 210, .7)',
+    fontSize: '14px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    bottom: '0px',
+    left: '0px',
+    zIndex: '10',
+    background: `-moz-linear-gradient(top, 
+      rgba(224,224,224,0) 0%, 
+      rgba(224,224,224,0.01) 2%, 
+      rgba(224,224,224,0.06) 4%, rgba(224,224,224,0.69) 28%, rgba(224,224,224,1) 88%, 
+      rgba(224,224,224,1) 100%, rgba(224,224,224,0.1) 101%)`,
+    background: `-webkit-linear-gradient(top, 
+      rgba(224,224,224,0) 0%,rgba(224,224,224,0.01) 2%,
+      rgba(224,224,224,0.06) 4%,rgba(224,224,224,0.69) 28%,rgba(224,224,224,1) 88%,
+      rgba(224,224,224,1) 100%,rgba(224,224,224,0.1) 101%)`,
+    background: `linear-gradient(to bottom, 
+      rgba(224,224,224,0) 0%,
+      rgba(224,224,224,0.01) 2%,rgba(224,224,224,0.06) 4%,
+      rgba(224,224,224,0.69) 28%,rgba(224,224,224,1) 88%,
+      rgba(224,224,224,1) 100%,rgba(224,224,224,0.1) 101%)`,
+    filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e0e0e0', endColorstr='#1ae0e0e0',GradientType=0 )`,
+  },
+  button: {
+    marginTop: '4%',
   },
   courses: {
     '&.scrollableContent': {
@@ -123,19 +154,20 @@ const styles = {
       justifyContent: 'center',
       alignItems: 'center',
       padding: '20px 0px',
+      cursor: 'pointer',
     },
     '& .title': {
-      marginTop: '0px',
+      marginTop: '0px'
     },
     '& .textWrapper': {
-      background: muiTheme.palette.grey300,
+      background:  muiTheme.palette.grey300,
       width: '275px',
       height: '240px',
       overflow: 'hidden',
       padding: '25px 20px',
       margin: '10px',
       boxSizing: 'border-box',
-      // textOverflow: 'ellipsis',
+      position:'relative',
     },
   },
   '@media (max-width: 767px)': {
