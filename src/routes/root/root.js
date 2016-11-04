@@ -45,13 +45,12 @@ export const rootRoute = (store) => {
   //
   // Subscribe each page view to google analytics
   //
-  let pathname = '';
+  let currentPathname = '';
   store.subscribe(() => {
-    let previousPathname = pathname;
-    const { router } = store.getState();
-    pathname = router.locationBeforeTransitions.pathname;
-    if (previousPathname !== pathname) {
-      ReactGA.pageview(pathname);
+    const { router: { locationBeforeTransitions: { pathname } } } = store.getState();
+    if (currentPathname !== pathname) {
+      currentPathname = pathname;
+      ReactGA.pageview(currentPathname);
     }
   });
 
