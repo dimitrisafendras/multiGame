@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Router } from 'react-router';
 import { Provider } from 'react-redux';
-import ReactGA from 'react-ga';
 
 type Props = {
   history: Object,
@@ -9,11 +8,6 @@ type Props = {
   store: Object,
 };
 
-ReactGA.initialize('UA-86819304-1');
-
-const fireTracking = () => {
-  ReactGA.pageview(window.location.pathname);
-};
 
 class Application extends Component {
   props: Props;
@@ -23,7 +17,7 @@ class Application extends Component {
 
     return (
       <Provider store={store}>
-        <Router history={history} children={routes} onUpdate={fireTracking}/>
+        <Router history={history} children={routes} />
       </Provider>
     );
   }

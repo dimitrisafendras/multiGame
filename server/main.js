@@ -15,7 +15,7 @@ import {
   appSetup,
   serveSpaRoutes,
   appModules,
-} from './agile-actor/lib';
+} from 'agile-actor';
 
 const debug = _debug('app:server');
 const paths = config.utils_paths;
@@ -29,20 +29,6 @@ serveSpaRoutes(app);
 if (config.proxy && config.proxy.enabled) {
   app.use(convert(proxy(config.proxy.options)));
 }
-
-// This rewrites all routes requests to the root /index.html file
-// (ignoring file requests). If you want to implement isomorphic
-// rendering, you'll want to remove this middleware.
-// app.use(convert(historyApiFallback({
-//   verbose: false,
-//   disableDotRule: true,
-//   rewrites: [
-//     {
-//       from: /\/Organizations/,
-//       to: '/index.html',
-//     },
-//   ],
-// })));
 
 // ------------------------------------
 // Apply Webpack HMR Middleware
