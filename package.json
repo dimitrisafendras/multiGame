@@ -149,6 +149,7 @@
     "yargs": "6.3.0"
   },
   "devDependencies": {
+    "agile-actor": "https://github.com/agileactors/agile-actor.git",
     "babel-eslint": "7.1.0",
     "babel-plugin-flow-react-proptypes": "0.15.0",
     "chai": "3.5.0",
