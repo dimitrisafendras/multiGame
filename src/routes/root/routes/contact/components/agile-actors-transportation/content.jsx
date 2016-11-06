@@ -10,7 +10,7 @@ export const content = {
       title: 'tube',
       subtitle: 'holargos station',
       Img: Images.Tube,
-      ImgMobile: Images.TubeActive,
+      ImgActive: Images.TubeActive,
       content:
         `Tube: Blue line, Cholargos station.
         15 minutes on foot from Cholargos station.`,
@@ -20,7 +20,7 @@ export const content = {
       title: 'bus',
       subtitle: 'bus station',
       Img: Images.Bus,
-      ImgMobile: Images.BusActive,
+      ImgActive: Images.BusActive,
       content:
         `Trolley: number 10 or 18, Marouda Station, right in front
          Agile Actors entrance.
@@ -32,7 +32,7 @@ export const content = {
       title: 'taxi',
       subtitle: 'find taxi',
       Img: Images.Taxi,
-      ImgMobile: Images.TaxiActive,
+      ImgActive: Images.TaxiActive,
       content:
         `Taxi: in Athens taxis are easy to hire and modestly priced.`,
     },

@@ -6,7 +6,7 @@
     <defs>
         	<style>
         		#bus_img {
-        			opacity:0.7;
+        			opacity:0.8;
         		}
     				#bus_img:hover {
     					opacity:1;

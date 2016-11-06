@@ -6,7 +6,7 @@
     <defs>
 			<style>
 				#tube_img {
-					opacity:0.7;
+					opacity:0.8;
 				}
 				#tube_img:hover{
 					opacity:1;
