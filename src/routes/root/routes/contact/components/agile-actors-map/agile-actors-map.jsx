@@ -7,6 +7,10 @@ import {
   Marker,
 } from 'react-google-maps/lib';
 
+import withScriptjs from 'react-google-maps/lib/async/withScriptjs';
+
+import GoogleMapsKey from './config';
+
 import {
   FlexContainer,
   Container,
@@ -16,34 +20,39 @@ import {
 import { classes } from './style';
 import { content } from './content';
 
-const PopUpInfoWindowGoogleMap = withGoogleMap(({
-  center,
-  marker: {
-    position,
-    icon,
-    infoContent,
-  },
-  showInfo,
-  onMarkerClick,
-  onMarkerClose,
-}) => (
-  <GoogleMap
-    defaultZoom={16}
-    center={center}
-    draggable={false}
-    scrollwheel={false}>
-    <Marker
-      position={position}
-      onClick={onMarkerClick}
-      icon={icon}>
-      {showInfo && (
-        <InfoWindow onCloseClick={onMarkerClose}>
-          <div>{infoContent}</div>
-        </InfoWindow>
-      )}
-    </Marker>
-  </GoogleMap>
-));
+// googleMapURL
+
+const PopUpInfoWindowGoogleMap = withScriptjs(
+  withGoogleMap(({
+    center,
+    marker: {
+      position,
+      icon,
+      infoContent,
+    },
+    showInfo,
+    onMarkerClick,
+    onMarkerClose,
+  }) => (
+    <GoogleMap
+      defaultZoom={16}
+      center={center}
+      draggable={false}
+      scrollwheel={false}
+      >
+      <Marker
+        position={position}
+        onClick={onMarkerClick}
+        icon={icon}>
+        {showInfo && (
+          <InfoWindow onCloseClick={onMarkerClose}>
+            <div>{infoContent}</div>
+          </InfoWindow>
+        )}
+      </Marker>
+    </GoogleMap>
+  ))
+);
 
 class PopUpInfoWindow extends React.Component {
   state = {
@@ -88,14 +97,14 @@ class PopUpInfoWindow extends React.Component {
   }
 
   render() {
+    const node = <div style={{ height: `100%`, width: `100%` }} />;
+
     return (
       <PopUpInfoWindowGoogleMap
-        containerElement={
-          <div style={{ height: `100%`, width: `100%` }} />
-        }
-        mapElement={
-          <div style={{ height: `100%`, width: `100%` }} />
-        }
+        containerElement={node}
+        mapElement={node}
+        loadingElement={node}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js${GoogleMapsKey}`}
         center={this.state.center}
         marker={this.state.marker}
         showInfo={this.state.showInfo}
