@@ -47,11 +47,13 @@ export const rootRoute = (store) => {
   //
   let currentPathname = '';
   store.subscribe(() => {
-    const { router: { locationBeforeTransitions: { pathname } } } = store.getState();
-    if (currentPathname !== pathname) {
-      currentPathname = pathname;
-      ReactGA.pageview(currentPathname);
-    }
+    const { router: { locationBeforeTransitions } } = store.getState();
+    if (locationBeforeTransitions === null) return;
+    const { pathname } = locationBeforeTransitions;
+    if (currentPathname === pathname) return;
+
+    currentPathname = pathname;
+    ReactGA.pageview(currentPathname);
   });
 
   return {
