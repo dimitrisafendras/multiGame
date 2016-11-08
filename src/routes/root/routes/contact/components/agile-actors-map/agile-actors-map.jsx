@@ -20,8 +20,6 @@ import {
 import { classes } from './style';
 import { content } from './content';
 
-// googleMapURL
-
 const PopUpInfoWindowGoogleMap = withScriptjs(
   withGoogleMap(({
     center,
