@@ -90,7 +90,7 @@ function Box(props : Props): Component {
     height,
     minHeight,
     maxHeight,
-    ...restAfterBoxProps,
+    ...restAfterBoxProps
   } = props; // filter out flex-box related props
 
   const boxProps = {
