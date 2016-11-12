@@ -8,6 +8,7 @@ type Props = {
   store: Object,
 };
 
+
 class Application extends Component {
   props: Props;
 

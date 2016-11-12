@@ -13,5 +13,4 @@ class Training extends React.Component {
   }
 };
 
-
 export default Training;

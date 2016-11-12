@@ -17,16 +17,13 @@ const styles = {
     margin: '0 auto',
   },
   mainMenuHolder: {
-    paddingLeft: '9.4%',
-    paddingRight: '9.4%',
+    paddingLeft: '20px',
     boxSizing: 'border-box',
     position: 'relative',
     width: '100%',
+    display: 'flex',
   },
   mainMenuContent: {
-    position: 'absolute',
-    top: '0px',
-    right: '0px',
     width: `calc(100% - ${muiTheme.appBar.logoWidth})`,
     height: '100%',
     zIndex: '1200',
@@ -49,7 +46,9 @@ const styles = {
   mainMenuIconContainer: {
     borderLeft: `1px solid ${muiTheme.palette.grey300}`,
   },
-  appBarContainer: {},
+  appBarContainer: {
+    flexGrow: 1,
+  },
   appBar: {
     boxShadow: 'none !important',
     overflow: 'hidden !important',
@@ -94,9 +93,13 @@ const styles = {
     mainMenu: {
       height: `${muiTheme.appBar.tabletHeight}px`,
     },
+    mainMenuHolder: {
+      paddingLeft: '9.4%',
+      paddingRight: '9.4%',
+    },
     mainMenuContent: {
-      width: `calc(100% - 320px)`,
-      maxWidth: `500px`,
+      width: `calc(100% - 280px)`,
+      maxWidth: `600px`,
     },
     mainMenuItem: {
       height: `${muiTheme.appBar.tabletHeight}px`,
@@ -127,6 +130,7 @@ const styles = {
       borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
     },
     appBarContainer: {
+      width: '280px',
       height: `${muiTheme.appBar.tabletHeight}px`,
     },
     appBarTitleStyle: {
@@ -137,7 +141,7 @@ const styles = {
   },
   '@media (min-width: 1200px)': {
     mainMenuContent: {
-      maxWidth: `400px`,
+      maxWidth: `500px`,
     },
   },
 };
