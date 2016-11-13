@@ -22,6 +22,7 @@ import {
 
 
 const {
+  outerContainer,
   outerTitle,
   button,
 } = classes;
@@ -39,7 +40,7 @@ const AgileActorsMethodology = ({
   },
 }: Props) => (
   <article>
-    <Container outerContainer>
+    <Container outerContainer className={outerContainer}>
       <Content normalTitle className={outerTitle}>
         {content.title}
       </Content>

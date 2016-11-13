@@ -76,6 +76,14 @@ const styles = {
     },
   },
   '@media (max-width: 767px)': {
+    outerContainer : {
+      '& .slick-arrow': {
+        display: 'none  !important',
+      },
+      '& .slick-dots button:before': {
+        color: muiTheme.palette.blue700 + ' !important',
+      },
+    },
     container: {
       marginLeft: '0px !important',
       marginRight: '0px !important',

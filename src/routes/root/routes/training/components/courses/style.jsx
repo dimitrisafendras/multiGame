@@ -188,6 +188,10 @@ const styles = {
       '& .slick-dots button:before': {
         color: muiTheme.palette.blue700 + ' !important',
       },
+
+      // '& .slick-arrow:before': {
+      //   color:  muiTheme.palette.grey200 + ' !important',
+      // },
     },
     sectionTitleWrapper: {
       padding: '35px 0 30px !important',
