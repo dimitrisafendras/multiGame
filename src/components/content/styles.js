@@ -10,30 +10,13 @@ const makeClassesFromProps = (props, classes) => classNames(
 );
 
 const styles = {
-  largeContainer: {
+  outerContainer: {
     backgroundColor: muiTheme.palette.white,
     color: muiTheme.palette.grey600,
     position: 'relative',
     width: '100%',
     minWidth: '300px',
     height: 'auto',
-    minHeight: '490px',
-    paddingTop: '5%',
-    paddingBottom: '5%',
-    paddingLeft: '9.4%',
-    paddingRight: '9.4%',
-    boxSizing: 'border-box',
-    zIndex: '1',
-    overflow: 'hidden',
-  },
-  normalContainer: {
-    backgroundColor: muiTheme.palette.white,
-    color: muiTheme.palette.grey600,
-    position: 'relative',
-    width: '100%',
-    minWidth: '300px',
-    height: 'auto',
-    minHeight: '300px',
     paddingTop: '5%',
     paddingBottom: '5%',
     paddingLeft: '9.4%',

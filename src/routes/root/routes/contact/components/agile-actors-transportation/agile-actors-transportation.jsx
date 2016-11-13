@@ -25,7 +25,7 @@ const AgileActorsTransportation = ({
   },
 }: Props) => (
     <article>
-      <Container normalContainer className={component}>
+      <Container outerContainer className={component}>
         { mobile ? <MobileTransportation /> : <NormalTransportation /> }
       </Container>
     </article>

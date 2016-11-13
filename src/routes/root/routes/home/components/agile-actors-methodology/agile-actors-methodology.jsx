@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { compose } from 'containers';
+import { linkAble } from 'routes/root/containers';
+
 
 import content from './content';
 import { classes } from './style';
@@ -18,7 +20,6 @@ import {
   MobileContent,
 } from './components';
 
-import { linkAble } from 'routes/root/containers';
 
 const {
   outerTitle,
@@ -38,7 +39,7 @@ const AgileActorsMethodology = ({
   },
 }: Props) => (
   <article>
-    <Container normalContainer>
+    <Container outerContainer>
       <Content normalTitle className={outerTitle}>
         {content.title}
       </Content>

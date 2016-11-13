@@ -59,7 +59,7 @@ const styles = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '81.8%',
+      backgroundSize: '81.8% 81.8%',
       backgroundPosition: 'center',
     },
     title: {
@@ -73,6 +73,9 @@ const styles = {
       width: '100%',
       maxWidth: '100%',
       marginTop: '15px',
+    },
+    button: {
+      justifyContent: 'center',
     },
   },
 };

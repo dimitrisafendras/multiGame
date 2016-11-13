@@ -10,6 +10,8 @@ const styles = {
     textAlign: 'center',
   },
   containerWrapper: {
+    overflow: 'visible',
+
     '&:first-child': {
       marginRight: '10px',
     },
@@ -28,6 +30,9 @@ const styles = {
     paddingLeft: '35px',
     paddingRight: '35px',
     boxSizing: 'border-box',
+    '&:hover': {
+      boxShadow: '0px 0px 40px 0px rgba(0, 0, 0, 0.3)',
+    },
     '&:first-child': {
       marginLeft: '0px',
     },
@@ -74,6 +79,10 @@ const styles = {
     container: {
       marginLeft: '0px !important',
       marginRight: '0px !important',
+
+      '&:hover': {
+        boxShadow: 'none',
+      },
     },
     button: {
       marginTop: 'calc(6.1% + 20px)',

@@ -21,7 +21,7 @@ const {
 const ValueProposition = () => (
   <article className={component}>
     <Container container className={contentWrapper}>
-      <FlexContainer column largeContainer className={container}>
+      <FlexContainer column outerContainer className={container}>
         <Content backgroundImage className={backgroundImage} />
         <Content largeTitle className={title}>
           {content.title}

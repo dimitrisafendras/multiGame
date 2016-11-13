@@ -113,7 +113,7 @@ class PopUpInfoWindow extends React.Component {
 }
 
 const AgileActorsMap = () => (
-  <FlexContainer largeContainer className={classes.container}>
+  <FlexContainer outerContainer className={classes.container}>
     <PopUpInfoWindow />
   </FlexContainer>
 );

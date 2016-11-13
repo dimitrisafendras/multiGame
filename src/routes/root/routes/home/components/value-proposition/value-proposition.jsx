@@ -17,7 +17,7 @@ type Props = {
 const ValueProposition = ({ link }: Props) => (
   <article className={classes.component}>
     <Container container className={classes.contentWrapper}>
-      <FlexContainer column largeContainer className={classes.container}>
+      <FlexContainer column outerContainer className={classes.container}>
         <Content backgroundImage className={classes.backgroundImage} />
         <Content largeTitle
           className={classes.title}>
@@ -29,12 +29,13 @@ const ValueProposition = ({ link }: Props) => (
         <Content largeText className={classes.text}>
           {content.text}
         </Content>
-        <Button
-          secondary
-          className={classes.button}
-          onClick={() => link(content.buttonRoute)}>
-          {content.buttonLabel}
-        </Button>
+        <FlexContainer className={classes.button}>
+          <Button
+            secondary
+            onClick={() => link(content.buttonRoute)}>
+            {content.buttonLabel}
+          </Button>
+        </FlexContainer>
       </FlexContainer>
     </Container>
   </article>

@@ -32,7 +32,7 @@ type Props = {
 
 const Offerings = ({ size: { mobile }, link }: Props) => (
   <article>
-    <Container normalContainer className={outerContainer}>
+    <Container outerContainer className={outerContainer}>
       <Content normalTitle className={outerTitle}>
         {content.title}
       </Content>

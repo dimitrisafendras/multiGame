@@ -14,6 +14,7 @@ const styles = {
   container: {
     color: muiTheme.palette.white,
     backgroundColor: 'inherit',
+    minHeight: '300px',
   },
   title: {
     marginTop: '-50px',
