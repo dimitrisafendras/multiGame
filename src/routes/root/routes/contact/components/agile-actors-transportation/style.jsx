@@ -96,6 +96,8 @@ const styles = {
       height: '420px',
     },
     title: {
+      opacity: '1',
+      fontWeight: 'normal !important',
       marginBottom: '20px !important',
       height: 'auto !important',
       paddingBottom: '16px',
