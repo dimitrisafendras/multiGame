@@ -53,7 +53,7 @@ const styles = {
       fontWeight: 'normal !important',
     },
     '& div': {
-      height: '124px !important',
+      height: '125px !important',
     },
   },
   inkBar: {
