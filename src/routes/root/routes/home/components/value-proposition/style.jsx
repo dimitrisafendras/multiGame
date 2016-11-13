@@ -33,6 +33,7 @@ const styles = {
     width: '60%',
     marginTop: '20px',
     maxWidth: '624px',
+    fontWeight: 'normal',
   },
   button: {
     marginTop: '50px',
