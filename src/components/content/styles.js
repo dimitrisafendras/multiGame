@@ -2,10 +2,14 @@ import classNames from 'classnames';
 import { jss } from 'components/jss';
 import muiTheme from 'styles/customized-mui-theme';
 
-//
-// Define the default styles of the components
-//
-const style = {
+// Combine default and instance specific classes of a component
+const makeClassesFromProps = (props, classes) => classNames(
+  ...Object.entries(classes).map(
+    ([contentType, typeClass]) => ({ [typeClass]: !!props[contentType] })
+  ), props.className
+);
+
+const styles = {
   largeContainer: {
     backgroundColor: muiTheme.palette.white,
     color: muiTheme.palette.grey600,
@@ -95,7 +99,7 @@ const style = {
   },
   text: {
     fontSize: '15px',
-    lineHeight: '19px',
+    lineHeight: '20px',
     zIndex: '3',
   },
   backgroundImage: {
@@ -145,14 +149,6 @@ const style = {
   },
 };
 
-const { classes } = jss.createStyleSheet(style).attach();
+const { classes } = jss.createStyleSheet(styles).attach();
 
-export { classes };
-
-// Combine default and instance specific classes of a component
-export const makeClassesFromProps = (props, classes) => classNames(
-  ...Object.entries(classes).map(
-    ([contentType, typeClass]) => ({ [typeClass]: !!props[contentType] })
-  ),
-  props.className
-);
+export { classes, styles, makeClassesFromProps };
