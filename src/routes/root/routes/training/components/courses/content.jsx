@@ -92,7 +92,7 @@ const content = {
           id: '1',
           title: 'The Courses of the Week',
           content: `There are not any open courses this week.
-          Please check our courses catlogue and contuct us for
+          Please check our courses catalogue and contact us for
           registration information.`,
         },
       ],
@@ -106,7 +106,6 @@ const content = {
           id: '1',
           title: 'Professional Scrum Foundations',
           content: `
-          <h3>Overview</h3>
           <p>
           The Professional Scrum Foundations (PSF) course is a 2-day
           course that teaches Scrum in a highly practical way.
@@ -141,7 +140,6 @@ const content = {
           id: '2',
           title: 'Professional Scrum Master',
           content: `
-          <h3>Overview</h3>
           <p>
           The Professional Scrum Master (PSM) course is a 2-day course that
           covers the principles and (empirical) process theory underpinning
@@ -180,7 +178,6 @@ const content = {
           id: '3',
           title: 'Professional Scrum Product Owner',
           content: `
-            <h3>Overview</h3>
             <p>
             The Professional Scrum Product Owner (PSPO) course is a 2-day course on how
             to maximize the value of software products and systems.
