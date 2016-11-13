@@ -72,9 +72,9 @@ class Layout extends Component {
           activeRoute={location.pathname}
           handleLeftIconButtonTouchTap={this.toggleSidebar}
           toggleAuthentication={this.toggleAuthentication} />
-        /* <Authentication
+        <Authentication
           toggleAuthentication={this.toggleAuthentication}
-          open={this.state.authenticationOpen} /> */
+          open={this.state.authenticationOpen} />
         <Sidebar
           toggleAuthentication={this.toggleAuthentication}
           toggleSidebar={this.toggleSidebar}
