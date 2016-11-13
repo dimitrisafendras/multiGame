@@ -18,16 +18,17 @@ import {
   Content,
 } from 'components';
 
-import { classes } from './style';
+import { classes, styles } from './style';
 import { content } from './content';
 
-const PopUpInfoWindowGoogleMap = withScriptjs(
+const InfoBoxGoogleMap = withScriptjs(
   withGoogleMap(({
     center,
     marker: {
       position,
       icon,
     },
+    showInfo,
     onMarkerClick,
     onClickFromChildrenOfInfoBox,
   }) => (
@@ -45,8 +46,9 @@ const PopUpInfoWindowGoogleMap = withScriptjs(
         position={position}
         onClick={onMarkerClick}
         icon={icon} />
+      {showInfo && (
       <InfoBox
-        defaultPosition={new google.maps.LatLng(content.infoBox.lat, content.infoBox.lng)}
+        defaultPosition={new google.maps.LatLng(center.lat, center.lng)}
         options={{ closeBoxURL: ``, enableEventPropagation: true }}>
         <Container className={classes.textWrapper} onClick={onClickFromChildrenOfInfoBox}>
           <Content title className={classes.title}>
@@ -57,6 +59,7 @@ const PopUpInfoWindowGoogleMap = withScriptjs(
           </Content>
         </Container>
       </InfoBox>
+     )}
     </GoogleMap>
   ))
 );
@@ -73,24 +76,33 @@ class AgileActorsMap extends Component {
     },
   };
 
-  handleMarkerClick = this.handleMarkerClick.bind(this);
+  toggleInfoBox = this.toggleInfoBox.bind(this);
+  goToGoogleMaps = this.goToGoogleMaps.bind(this);
 
-  handleMarkerClick() {
+  toggleInfoBox() {
+    this.setState({
+      ...this.state,
+      showInfo: !this.state.showInfo,
+    });
+  }
+  goToGoogleMaps() {
     window.open(content.url);
   }
+
   render() {
-    const node = <div style={{ height: `100%`, width: `100%` }} />;
+    const node = <div style={styles.mapElement} />;
     return (
       <FlexContainer largeContainer className={classes.container}>
-        <PopUpInfoWindowGoogleMap
+        <InfoBoxGoogleMap
           containerElement={node}
           mapElement={node}
           loadingElement={node}
           googleMapURL={`https://maps.googleapis.com/maps/api/js${GoogleMapsKey}`}
           center={this.state.center}
           marker={this.state.marker}
-          onMarkerClick={this.handleMarkerClick}
-          onClickFromChildrenOfInfoBox={this.handleMarkerClick}
+          showInfo={this.state.showInfo}
+          onMarkerClick={this.toggleInfoBox}
+          onClickFromChildrenOfInfoBox={this.goToGoogleMaps}
         />
       </FlexContainer>
     );
