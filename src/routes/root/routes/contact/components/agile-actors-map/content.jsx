@@ -14,4 +14,8 @@ export const content = {
     lat: 38.012577,
     lng: 23.786774,
   },
+  infoBox: {
+    lat: 38.013772,
+    lng: 23.787774,
+  }
 };

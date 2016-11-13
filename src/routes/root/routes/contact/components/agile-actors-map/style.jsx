@@ -7,19 +7,14 @@ const styles = {
     width: '100%',
     padding: '0px',
     minHeight: '240px',
-
   },
   textWrapper: {
     width: '240px',
     height: '60px',
-    opacity: '0.8',
     backgroundColor: muiTheme.palette.white,
     boxShadow: '0 2px 11px 0 rgba(0, 0, 0, 0.25)',
     padding: '9px 20px 17px 20px',
-  },
-  link: {
-    textDecoration: 'none',
-    color: muiTheme.palette.textColor,
+    opacity: '0.8',
   },
   title: {
     color: muiTheme.palette.primary1Color,
@@ -52,7 +47,7 @@ const styles = {
     textWrapper: {
       width: '165px',
       height: '106x',
-      padding: '5px 0 5px 0',
+      padding: '7px',
     },
     title: {
       lineHeight: '1',
