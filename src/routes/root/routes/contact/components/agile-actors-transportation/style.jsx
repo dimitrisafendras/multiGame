@@ -10,8 +10,7 @@ const styles = {
     width: '640px',
     marginLeft: '10px',
     marginRight: '10px',
-    height: '380px',
-    paddingTop: '35px',
+    paddingTop: '20px',
     paddingBottom: '20px',
     paddingLeft: '35px',
     paddingRight: '35px',
@@ -47,12 +46,14 @@ const styles = {
     fontWeight: 'lighter !important',
     marginBottom: '33px !important',
     backgroundColor: 'transparent !important',
-    height: '110px !important',
     borderBottom: `4px solid ${muiTheme.palette.primary1Color}`,
     opacity: '0.7',
     '&.active': {
       opacity: '1',
       fontWeight: 'normal !important',
+    },
+    '& div': {
+      height: '124px !important',
     },
   },
   inkBar: {
