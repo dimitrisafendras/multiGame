@@ -15,7 +15,7 @@ const ValueProposition = () => {
       <Container
         container
         className={classes.contentWrapper}>
-        <FlexContainer normalContainer
+        <FlexContainer outerContainer
           className={classes.container}
           column
           center>

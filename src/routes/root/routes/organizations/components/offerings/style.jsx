@@ -35,7 +35,7 @@ const styles = {
     fontWeight: '300',
   },
   button: {
-    marginTop: '4%',
+    marginTop: '6.1%',
   },
   '@media (max-width: 1583px)': {
     containerWrapper: {
@@ -51,6 +51,14 @@ const styles = {
     },
   },
   '@media (max-width: 767px)': {
+    outerContainer : {
+      '& .slick-arrow': {
+        display: 'none !important',
+      },
+      '& .slick-dots button:before': {
+        color: muiTheme.palette.blue700 + ' !important',
+      },
+    },
     container: {
       marginLeft: '0px !important',
       marginRight: '0px !important',

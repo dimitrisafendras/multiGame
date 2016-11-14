@@ -23,12 +23,6 @@ import {
   getMuiTheme,
 } from 'material-ui/styles';
 
-// Needed for onTouchTap
-// Check this repo:
-// https://github.com/zilverline/react-tap-event-plugin
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
 export default getMuiTheme({
   spacing,
   zIndex,
@@ -102,5 +96,12 @@ export default getMuiTheme({
     mobile: '',
     tablet: 'min-width: 768px',
     desktop: 'min-width: 1200px',
+  },
+  button: {
+    minWidth: 225,
+    height: 42,
+  },
+  raisedButton: {
+    fontSize: 13,
   },
 });

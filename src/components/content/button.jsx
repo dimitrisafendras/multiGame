@@ -1,11 +1,6 @@
 import React from 'react';
 import { RaisedButton } from 'material-ui';
-
-const defaultStyle = {
-  zIndex: 3,
-  boxShadow: 'none',
-  display: 'inline-table',
-};
+import { styles } from './styles';
 
 type Props = {
   children?: HTMLElement,
@@ -21,9 +16,8 @@ export const Button = ({
 } : Props) => (
   <RaisedButton
     className={className}
-    style={{ ...defaultStyle, ...style }}
+    style={{ ...style, ...styles.button }}
     label={children}
-    labelStyle={defaultStyle.button}
     {...rest} />
 );
 

@@ -5,7 +5,7 @@ import { content } from './content';
 
 const Introduction = () => (
   <article>
-    <FlexContainer normalContainer column
+    <FlexContainer outerContainer column
       center className={classes.container} >
       <Content largeTitle
         className={classes.title}>
