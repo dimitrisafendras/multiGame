@@ -20,7 +20,7 @@ const styles = {
     backgroundImage: Images.HeroImage,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.6% center',
-    backgroundSize: '40%',
+    backgroundSize: '38%',
     top: '40px',
   },
   title: {
@@ -38,9 +38,10 @@ const styles = {
   button: {
     marginTop: '50px',
   },
-  '@media (max-width: 1250px)': {
+  '@media (max-width: 1300px)': {
     backgroundImage: {
-      top: '105px',
+      backgroundSize: '36%',
+      top: '70px',
     },
     title: {
       marginBottom: '50px',
@@ -49,7 +50,7 @@ const styles = {
   '@media (max-width: 1024px)': {
     backgroundImage: {
       backgroundSize: '43%',
-      top: '130px',
+      top: '90px',
     },
     title: {
       width: '60%',
@@ -65,7 +66,7 @@ const styles = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '81.8%',
+      backgroundSize: '81.8% 81.8%',
       backgroundPosition: 'center',
       marginBottom: '40px',
       top: '0px',

@@ -32,6 +32,7 @@ const styles = {
     marginBottom: '0px',
   },
   text: {
+    color: muiTheme.palette.textColor,
     fontSize: '15px',
     fontWeight: 'normal',
     lineHeight: '1.2',

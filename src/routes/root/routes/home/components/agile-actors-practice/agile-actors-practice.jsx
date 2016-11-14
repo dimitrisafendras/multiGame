@@ -37,19 +37,21 @@ const AgileActorsPractice = ({
   },
   link,
 }: Props) => (
-  <Container normalContainer className={outerContainer}>
-    <Content normalTitle className={outerTitle}>
-      {content.title}
-    </Content>
+  <article>
+    <Container outerContainer className={outerContainer}>
+      <Content normalTitle className={outerTitle}>
+        {content.title}
+      </Content>
 
-    {mobile ? <MobileContent /> : <NormalContent />}
+      {mobile ? <MobileContent /> : <NormalContent />}
 
-    <FlexContainer center className={button}>
-      <Button secondary onClick={() => link(content.buttonRoute)} >
-        {content.buttonLabel}
-      </Button>
-    </FlexContainer>
-  </Container>
+      <FlexContainer center className={button}>
+        <Button secondary onClick={() => link(content.buttonRoute)} >
+          {content.buttonLabel}
+        </Button>
+      </FlexContainer>
+    </Container>
+  </article>
 );
 
 export default compose(linkAble, Resizable)(AgileActorsPractice);

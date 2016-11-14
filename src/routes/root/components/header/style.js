@@ -10,6 +10,7 @@ const styles = {
     width: '100%',
     zIndex: '100',
     background: muiTheme.palette.white,
+    boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.2)',
   },
   mainMenu: {
     width: '100%',

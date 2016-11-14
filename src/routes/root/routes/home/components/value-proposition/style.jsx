@@ -64,9 +64,12 @@ const styles = {
     },
   },
   '@media (max-width: 767px)': {
+    component: {
+      textAlign: 'center',
+    },
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '70%',
+      backgroundSize: '70% 70%',
       backgroundPosition: 'center',
       marginBottom: '40px',
     },
@@ -81,6 +84,9 @@ const styles = {
       width: '100%',
       maxWidth: '100%',
       marginTop: '15px',
+    },
+    button: {
+      justifyContent: 'center',
     },
   },
   '@media (max-width: 600px)': {
