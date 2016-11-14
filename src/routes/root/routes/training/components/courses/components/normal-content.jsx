@@ -8,7 +8,8 @@ import { classes, styles } from '../style';
 import {
   Tabs,
   Tab,
-} from 'material-ui/Tabs';
+  IconButton,
+} from 'material-ui';
 
 import {
   Content,
@@ -45,12 +46,12 @@ class NormalContent extends Component {
     };
   }
 
-  setActiveTab(tab) {
+  setActiveTab = (tab) => {
     this.setState({ activeTab: tab.props.index });
-  }
+  };
 
   handleOpen = (data, tab) => {
-    if(tab !== 'courses') {
+    if (tab !== 'courses') {
       return;
     }
 
@@ -68,20 +69,29 @@ class NormalContent extends Component {
   render() {
     const active = this.state.activeTab;
     const learnMore = <div className={more} />;
-    const closeBtn = <Button secondary onTouchTap={this.handleClose} label="close" />;
-    const fading = <div className={fade}></div>;
+    const closeBtn = <Button secondary onTouchTap={this.handleClose} label={'close'} />;
+    const fading = <div className={fade} />;
+    const title = false ? (
+      <FlexContainer container justifyContent={'space-between'}>
+        <div>{this.state.dialogTitle}</div>
+        <IconButton touch onClick={this.handleClose} iconClassName={'material-icons'}>
+          close
+        </IconButton>
+      </FlexContainer>
+    ) : this.state.dialogTitle;
 
-    const dialog = <Dialog
-      title={this.state.dialogTitle}
-      actions={closeBtn}
-      modal={false}
-      open={this.state.dialogOpen}
-      onRequestClose={this.handleClose}
-      autoScrollBodyContent={true}
-      titleStyle={{color: '#1976d2'}} >
-      <div style={{paddingTop: '24px'}} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
-    </Dialog>;
-
+    const dialog = (
+      <Dialog
+        title={title}
+        actions={closeBtn}
+        modal={false}
+        open={this.state.dialogOpen}
+        onRequestClose={this.handleClose}
+        autoScrollBodyContent
+        titleStyle={{color: '#1976d2'}} >
+        <div style={{paddingTop: '24px'}} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
+      </Dialog>
+    );
 
     return (
       <div>
@@ -96,17 +106,17 @@ class NormalContent extends Component {
                 key={sectionsKey(section.id)}
                 label={section.title}
                 disableTouchRipple
-                onActive={this.setActiveTab.bind(this)}
+                onActive={this.setActiveTab}
                 className={classNames(
-                sectionTitleWrapper,
-                {
-                  'active': index === active,
-                  'inactive': index !== active,
-                })}>
+                  sectionTitleWrapper,
+                  {
+                    active: index === active,
+                    inactive: index !== active,
+                  })}>
 
                 <Container
                   container
-                  className={classNames('scrollable-content', scrollableContent,  classes[section.class])}>
+                  className={classNames('scrollable-content', scrollableContent, classes[section.class])}>
                   <Scrollbars
                     autoHide
                     autoHideTimeout={1000}
@@ -116,12 +126,12 @@ class NormalContent extends Component {
                       {section.items.map((item) => (
 
                         <div key={sectionKey(item.id)} className={classNames('text-wrapper', textWrapper)}
-                             onTouchTap={this.handleOpen.bind(null, item, section.class)}>
+                          onTouchTap={() => this.handleOpen(item, section.class)}>
                           <FlexContainer column>
                             <Content title className={classNames('title', title)}>
                               {item.title}
                             </Content>
-                            <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}}/>
+                            <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}} />
                           </FlexContainer>
 
                           {section.class === 'courses' && learnMore}
