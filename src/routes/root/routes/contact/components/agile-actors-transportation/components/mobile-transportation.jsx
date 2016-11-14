@@ -32,7 +32,7 @@ const MobileTransportation = () => (
 					<Container container className={container}>
 						<FlexContainer center className={imgWrapper}>
 							<Content image className={img}>
-								{mean.ImgMobile}
+								{mean.ImgActive}
 							</Content>
 						</FlexContainer>
 						<Content title className={titleWrapper}>

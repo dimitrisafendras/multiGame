@@ -33,7 +33,7 @@ export const content = {
       pattern: 'minLength:3,maxLength:400',
       error: 'Please write us something more',
       multiLine: true,
-      rows: 3,
+      rows: 2,
     },
   ],
   button: 'send',

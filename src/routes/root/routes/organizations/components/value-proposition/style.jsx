@@ -4,7 +4,7 @@ import { jss } from 'components';
 
 const styles = {
   component: {
-    backgroundColor: muiTheme.palette.blue600,
+    backgroundColor: muiTheme.palette.accent1Color,
     display: 'flex',
     justifyContent: 'center',
   },

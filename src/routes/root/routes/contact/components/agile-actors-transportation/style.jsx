@@ -10,8 +10,7 @@ const styles = {
     width: '640px',
     marginLeft: '10px',
     marginRight: '10px',
-    height: '380px',
-    paddingTop: '35px',
+    paddingTop: '20px',
     paddingBottom: '20px',
     paddingLeft: '35px',
     paddingRight: '35px',
@@ -35,7 +34,7 @@ const styles = {
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  titleWrapper:{
+  titleWrapper: {
     textAlign: 'center',
     borderBottom: `1px solid ${muiTheme.palette.borderColor}`,
     paddingBottom: '20px',
@@ -44,10 +43,18 @@ const styles = {
     color: muiTheme.palette.primary1Color,
     textTransform: 'uppercase',
     fontSize: '24px !important',
+    fontWeight: 'lighter !important',
     marginBottom: '33px !important',
     backgroundColor: 'transparent !important',
-    height: '110px !important',
     borderBottom: `4px solid ${muiTheme.palette.primary1Color}`,
+    opacity: '0.7',
+    '&.active': {
+      opacity: '1',
+      fontWeight: 'normal !important',
+    },
+    '& div': {
+      height: '125px !important',
+    },
   },
   inkBar: {
     backgroundColor: muiTheme.palette.primary1Color,
@@ -58,6 +65,7 @@ const styles = {
   divider: {
     width: '90%',
     minWidth: '605px',
+    maxWidth: '1003.5px',
     margin: '0 auto',
     position: 'relative',
     top: '189px',
@@ -89,6 +97,8 @@ const styles = {
       height: '420px',
     },
     title: {
+      opacity: '1',
+      fontWeight: 'normal !important',
       marginBottom: '20px !important',
       height: 'auto !important',
       paddingBottom: '16px',
