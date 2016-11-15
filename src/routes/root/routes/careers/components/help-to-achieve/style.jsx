@@ -58,6 +58,11 @@ const styles = {
   button: {
     marginTop: '6.1%',
   },
+  outerContainer: {
+    '& .slick-dots button:before': {
+      color: muiTheme.palette.blue700 + ' !important',
+    },
+  },
   '@media (max-width: 1581px)': {
     containerWrapper: {
       '&:first-child': {
