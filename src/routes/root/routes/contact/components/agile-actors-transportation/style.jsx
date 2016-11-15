@@ -44,7 +44,6 @@ const styles = {
     textTransform: 'uppercase',
     fontSize: '24px !important',
     fontWeight: 'lighter !important',
-    marginBottom: '33px !important',
     backgroundColor: 'transparent !important',
     borderBottom: `4px solid ${muiTheme.palette.primary1Color}`,
     opacity: '0.7',
@@ -53,14 +52,13 @@ const styles = {
       fontWeight: 'normal !important',
     },
     '& div': {
-      height: '125px !important',
+      height: '159px !important',
     },
   },
   inkBar: {
     backgroundColor: muiTheme.palette.primary1Color,
     height: '4px',
-    width: '70px',
-    marginLeft: '10%',
+    width: '33.3333%',
   },
   divider: {
     width: '90%',
