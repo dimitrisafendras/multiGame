@@ -2,9 +2,11 @@ import muiTheme from 'styles/customized-mui-theme';
 import { jss } from 'components';
 
 const {
+  blue200,
   cyan400,
   cyan500,
   grey400,
+  grey200,
   white,
   primary2Color,
   primary1Color,
@@ -40,9 +42,14 @@ const styles = {
     icon: {
       color: primary2Color,
     },
+    borderLeft: `1px solid ${blue200}`,
+  },
+  logo:{
+    padding: '12px 6px 0px 6px',
+    boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
   },
   divider: {
-    borderBottom: '1px solid ' + grey400,
+    borderBottom: '1px solid ' + grey200,
   },
   menuItem: {
     padding: '10px 20px',
