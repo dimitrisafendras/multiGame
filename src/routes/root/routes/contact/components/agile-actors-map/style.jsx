@@ -22,6 +22,7 @@ const styles = {
     position: 'absolute',
     top: '-70px',
     left: '30px',
+    cursor: 'pointer',
   },
   title: {
     color: muiTheme.palette.primary1Color,
