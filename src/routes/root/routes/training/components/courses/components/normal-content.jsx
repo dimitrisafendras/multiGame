@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import content from '../content';
 import classNames from 'classnames';
+
 import { Scrollbars } from 'react-custom-scrollbars';
 import { classes, styles } from '../style';
 
@@ -25,7 +26,7 @@ const {
   scrollableContent,
   tabWrapper,
   textWrapper,
-  title,
+  dialog,
   text,
   fade,
   more,
@@ -89,7 +90,14 @@ class NormalContent extends Component {
         onRequestClose={this.handleClose}
         autoScrollBodyContent
         titleStyle={{color: '#1976d2'}} >
-        <div style={{paddingTop: '24px'}} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
+        <Scrollbars
+          autoHeight
+          autoHide
+          autoHeightMax={500}
+          autoHideTimeout={1000}
+          autoHideDuration={200}>
+          <div className={classes.dialog} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
+        </Scrollbars>
       </Dialog>
     );
 
