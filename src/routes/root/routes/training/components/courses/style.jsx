@@ -48,6 +48,22 @@ const styles = {
     margin: '0 auto',
     zIndex: '10',
     top: '-50px',
+
+    '& a:link': {
+      color: muiTheme.palette.blue700,
+    },
+
+    '& a:visited': {
+      color: muiTheme.palette.cyan500,
+    },
+
+    '& a:hover': {
+      color: muiTheme.palette.blue600,
+    },
+
+    '& a:active': {
+      color: muiTheme.palette.blue200,
+    },
   },
   sectionTitleWrapper: {
     color: muiTheme.palette.blue700,
@@ -143,6 +159,23 @@ const styles = {
   },
   button: {
     marginTop: '4%',
+  },
+  dialog: {
+    '& a:link': {
+      color: muiTheme.palette.blue700,
+    },
+
+    '& a:visited': {
+      color: muiTheme.palette.cyan500,
+    },
+
+    '& a:hover': {
+      color: muiTheme.palette.blue600,
+    },
+
+    '& a:active': {
+      color: muiTheme.palette.blue200,
+    },
   },
   courses: {
     '&.scrollableContent': {

@@ -32,16 +32,7 @@ const InfoBoxGoogleMap = withScriptjs(
     onMarkerClick,
     onClickFromChildrenOfInfoBox,
   }) => (
-    <GoogleMap
-      defaultZoom={16}
-      center={center}
-      draggable={false}
-      scrollwheel={false}
-      zoomable={false}
-      navigationControl={false}
-      mapTypeControl={false}
-      scaleControl={false}
-      >
+    <GoogleMap defaultZoom={16} center={center}>
       <Marker
         position={position}
         onClick={onMarkerClick}
@@ -110,4 +101,3 @@ class AgileActorsMap extends Component {
 }
 
 export default AgileActorsMap;
-
