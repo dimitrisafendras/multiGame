@@ -13,23 +13,3 @@ html, body {
 input::-ms-clear {
   display: none !important;
 }
-
-/* unvisited link */
-a:link {
-  color: #1976d2;
-}
-
-/* visited link */
-a:visited {
-  color: #00bcd4;
-}
-
-/* mouse over link */
-a:hover {
-  color: #1e88e5;
-}
-
-/* selected link */
-a:active {
-  color: #90caf9;
-}

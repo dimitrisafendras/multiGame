@@ -26,7 +26,7 @@ const {
   scrollableContent,
   tabWrapper,
   textWrapper,
-  title,
+  dialog,
   text,
   fade,
   more,
@@ -96,7 +96,7 @@ class NormalContent extends Component {
           autoHeightMax={500}
           autoHideTimeout={1000}
           autoHideDuration={200}>
-          <div dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
+          <div className={classes.dialog} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
         </Scrollbars>
       </Dialog>
     );
