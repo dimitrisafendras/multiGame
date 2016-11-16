@@ -60,27 +60,27 @@ const styles = {
     fontWeight: '300',
   },
   itemImage_0: {
-    top: '21px',
-    left: '380px',
+    top: '5px',
+    left: '350px',
   },
   itemText_0: {
-    top: '0px',
-    left: '10px',
+    top: '-15px',
+    left: '0px',
   },
   itemImage_1: {
     top: '455px',
-    left: '-210px',
+    left: '-260px',
   },
   itemText_1: {
-    top: '290px',
-    left: '-12px',
+    top: '295px',
+    left: '-20px',
   },
   itemImage_2: {
-    top: '163px',
+    top: '139px',
     left: '356px',
   },
   itemText_2: {
-    top: '155px',
+    top: '110px',
     left: '-25px',
   },
   itemImage_3: {
@@ -88,8 +88,8 @@ const styles = {
     left: '-120px',
   },
   itemText_3: {
-    top: '203px',
-    left: '10px',
+    top: '210px',
+    left: '30px',
   },
   button: {
     marginTop: '6.1%',
@@ -116,20 +116,20 @@ const styles = {
       width: '50%',
     },
     itemImage_0: {
-      top: '-45px',
-      left: '320px',
+      top: '10px',
+      left: '290px',
     },
     itemText_0: {
       top: '115px',
       left: '-220px',
     },
     itemImage_1: {
-      top: '220px',
-      left: '45px',
+      top: '290px',
+      left: '5px',
     },
     itemText_1: {
       top: '215px',
-      left: '92px',
+      left: '95px',
     },
     itemImage_2: {
       top: '288px',
@@ -140,12 +140,12 @@ const styles = {
       left: '-215px',
     },
     itemImage_3: {
-      top: '540px',
-      left: '50px',
+      top: '565px',
+      left: '5px',
     },
     itemText_3: {
-      top: '490px',
-      left: '165px',
+      top: '450px',
+      left: '160px',
     },
   },
   '@media (max-width: 767px)': {
@@ -168,8 +168,8 @@ const styles = {
       left: '0px !important',
       width: '306px',
       height: '150px',
-      marginTop: '6.1%',
-      marginBottom: '6.1%',
+      marginTop: '10px',
+      marginBottom: '30px',
     },
     textWrapper: {
       width: '80% !important',
