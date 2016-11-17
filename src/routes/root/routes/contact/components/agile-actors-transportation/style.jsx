@@ -66,7 +66,7 @@ const styles = {
     maxWidth: '1003.5px',
     margin: '0 auto',
     position: 'relative',
-    top: '186px',
+    top: '183px',
     borderBottom: '2px solid' + muiTheme.palette.grey300,
   },
   subTitle: {
