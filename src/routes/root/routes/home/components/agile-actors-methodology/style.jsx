@@ -158,8 +158,10 @@ const styles = {
       },
     },
     container: {
-      marginLeft: '0px !important',
-      marginRight: '0px !important',
+      paddingLeft: '30px !important',
+      paddingRight: '30px !important',
+      marginLeft: '5px !important',
+      marginRight: '5px !important',
       textAlign: 'center !important',
       width: '100% !important',
     },

@@ -24,7 +24,7 @@ const styles = {
     marginLeft: '10px',
     marginRight: '10px',
     width: '306px',
-    height: '460px',
+    height: '515px',
     paddingTop: '35px',
     paddingBottom: '35px',
     paddingLeft: '35px',
@@ -85,8 +85,10 @@ const styles = {
       },
     },
     container: {
-      marginLeft: '0px !important',
-      marginRight: '0px !important',
+      paddingLeft: '30px !important',
+      paddingRight: '30px !important',
+      marginLeft: '5px !important',
+      marginRight: '5px !important',
 
       '&:hover': {
         boxShadow: 'none',
