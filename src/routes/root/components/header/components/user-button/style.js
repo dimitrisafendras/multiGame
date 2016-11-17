@@ -14,7 +14,7 @@ const styles = {
   headerMenuBarButtonLogin: {
     opacity: 0.75,
     '&:after': {
-      content: '    ',
+      content: '"    "',
       display: 'block',
       position: 'absolute',
       top: '100%',
