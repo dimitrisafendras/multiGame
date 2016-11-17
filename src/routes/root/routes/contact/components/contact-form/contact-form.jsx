@@ -97,7 +97,7 @@ class SubmitValidationForm extends React.Component {
                 required floatingLabelText={field.label}
                 key={`aa-careers-form-contact-${field.name}`}
                 className={label}
-                multiLine={field.multiLine} rows={field.rows}
+                multiLine={field.multiLine} rows={field.rows} rowsMax={field.rowsMax}
                 inputStyle={styles.textField}
                 textareaStyle={styles.textField} />
           ))}

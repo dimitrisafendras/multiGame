@@ -34,6 +34,7 @@ export const content = {
       error: 'Please write us something more',
       multiLine: true,
       rows: 2,
+      rowsMax: 5,
     },
   ],
   button: 'send',
