@@ -1,3 +1,4 @@
+console.log('.......Starting SPA.........');
 import 'babel-polyfill';
 
 import React from 'react';
@@ -89,3 +90,5 @@ if (__DEV__) {
 // Go!
 // ========================================================
 render();
+
+console.log('.......SPA STARTED.........');
