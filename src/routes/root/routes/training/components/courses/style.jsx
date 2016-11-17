@@ -187,7 +187,6 @@ const styles = {
       justifyContent: 'center',
       alignItems: 'center',
       padding: '20px 0px',
-      cursor: 'pointer',
     },
     '& .title': {
       marginTop: '0px'
@@ -201,6 +200,7 @@ const styles = {
       margin: '10px',
       boxSizing: 'border-box',
       position:'relative',
+      cursor: 'pointer',
     },
   },
   '@media (max-width: 767px)': {
