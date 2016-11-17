@@ -22,8 +22,6 @@ const styles = {
     backgroundPosition: '90.6% center',
     backgroundSize: '38%',
     top: '40px',
-    width: '100%',
-    height: '100%',
   },
   title: {
     width: '70%',

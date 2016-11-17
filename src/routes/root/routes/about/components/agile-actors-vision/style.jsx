@@ -23,8 +23,6 @@ const styles = {
     backgroundImage: Images.Vision,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    width: '100%',
-    height: '100%',
   },
   title: {
     color: muiTheme.palette.blue700,
