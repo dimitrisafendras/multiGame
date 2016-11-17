@@ -10,8 +10,6 @@ const styles = {
     backgroundPosition: 'center',
     position: 'relative',
     height: '620px',
-    width: '100%',
-    height: '100%',
   },
   outerTitle: {
     color: muiTheme.palette.blue700,

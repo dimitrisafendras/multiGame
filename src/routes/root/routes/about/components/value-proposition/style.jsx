@@ -21,8 +21,6 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.4% center',
     backgroundSize: '35%',
-    width: '100%',
-    height: '100%',
   },
   title: {
     width: '70%',
