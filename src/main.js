@@ -1,6 +1,3 @@
-// import 'babel-polyfill';
-// import 'event-source-polyfill';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createBrowserHistory from 'history/lib/createBrowserHistory';

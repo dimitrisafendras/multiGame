@@ -128,7 +128,7 @@ webpackConfig.module.loaders = [
     loader: 'babel',
     query: {
       cacheDirectory: true,
-      plugins: ['transform-runtime', 'flow-react-proptypes', 'array-includes'],
+      plugins: ['transform-runtime', 'flow-react-proptypes'],
       presets: ['es2015', 'react', 'stage-0'],
     },
   },
