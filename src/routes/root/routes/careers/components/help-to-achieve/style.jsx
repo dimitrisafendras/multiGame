@@ -25,7 +25,7 @@ const styles = {
     marginLeft: '10px',
     marginRight: '10px',
     width: '306px',
-    height: '550px',
+    height: '520px',
     paddingTop: '35px',
     paddingBottom: '35px',
     paddingLeft: '35px',
