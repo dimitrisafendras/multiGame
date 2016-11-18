@@ -57,7 +57,7 @@ const styles = {
       lineHeight: '1.1',
     },
   },
-  '@media (max-width: 320px)': {
+  '@media (max-width: 600px)': {
     container: {
       height: '240px',
     },
@@ -65,6 +65,8 @@ const styles = {
       width: '137px',
       height: '71px',
       padding: '15px 14px 20px 14px',
+      top: '0px',
+      left: '-60px',
     },
     title: {
       lineHeight: '1.5',
