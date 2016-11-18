@@ -8,7 +8,7 @@ import {
 import {
   MobileTransportation,
   NormalTransportation,
-} from './components'
+} from './components';
 
 import {
   classes,
@@ -18,17 +18,22 @@ const {
   component,
 } = classes;
 
+type Props = {
+  size: Object,
+  mobile: boolean,
+}
+
 const AgileActorsTransportation = ({
   size: {
     mobile,
     tablet,
   },
 }: Props) => (
-    <article>
-      <Container outerContainer className={component}>
-        { mobile ? <MobileTransportation /> : <NormalTransportation /> }
-      </Container>
-    </article>
+  <article>
+    <Container outerContainer className={component}>
+      { mobile ? <MobileTransportation /> : <NormalTransportation /> }
+    </Container>
+  </article>
   );
 
 export default Resizable(AgileActorsTransportation);
