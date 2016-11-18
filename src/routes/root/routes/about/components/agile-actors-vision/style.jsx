@@ -1,6 +1,6 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
-import { jss } from 'components';
+import { jss, isIE11 } from 'components';
 
 const styles = {
   component: {
@@ -20,7 +20,7 @@ const styles = {
     height: '250px',
     width: '50%',
     marginRight: '5%',
-    backgroundImage: Images.Vision,
+    backgroundImage: isIE11 ? "url('images/about/vision.png')" : Images.Vision,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
   },

@@ -1,10 +1,10 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
-import { jss } from 'components';
+import { jss, isIE11 } from 'components';
 
 const styles = {
   backgroundLine: {
-    backgroundImage: Images.BackgroundLineLarge,
+    backgroundImage: isIE11 ? "url('images/home/backgroundLineLarge.png')" : Images.BackgroundLineLarge,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center',
@@ -96,7 +96,7 @@ const styles = {
   },
   '@media (max-width: 1581px)': {
     backgroundLine: {
-      backgroundImage: Images.BackgroundLineSmall,
+      backgroundImage: isIE11 ? "url('images/home/backgroundLineSmall.png')" : Images.BackgroundLineSmall,
       backgroundSize: 'auto 100%',
       height: '1300px',
       marginTop: '0px',
