@@ -33,6 +33,11 @@ const styles = {
     width: '60%',
     marginTop: '20px',
     maxWidth: '624px',
+    fontWeight: '300',
+
+    '& strong': {
+      fontWeight: '500',
+    },
   },
   button: {
     marginTop: '50px',

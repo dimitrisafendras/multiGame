@@ -23,10 +23,7 @@ const ValueProposition = () => {
             className={classes.title}>
             {content.title}
           </Content>
-          <Content largeText
-            className={classes.text}>
-            {content.text}
-          </Content>
+          <Content largeText className={classes.text} dangerouslySetInnerHTML={{__html: content.text}}/>
         </FlexContainer>
       </Container>
     </article>
