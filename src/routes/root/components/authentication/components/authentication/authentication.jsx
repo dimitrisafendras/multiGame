@@ -58,12 +58,13 @@ class Authentication extends Component {
     }, 50);
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', () => {
-      this.updateDimensions();
-    });
-    this.updateDimensions();
-  }
+  //TODO: uncomment when used and use Resizable component
+  // componentDidMount() {
+  //   window.addEventListener('resize', () => {
+  //     this.updateDimensions();
+  //   });
+  //   this.updateDimensions();
+  // }
 
   componentWillUnmount() {
     if (this.resizeTimer) {

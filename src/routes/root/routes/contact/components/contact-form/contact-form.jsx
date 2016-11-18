@@ -44,7 +44,7 @@ class SubmitValidationForm extends React.Component {
   submitForm = (data) => {
     const _this = this;
     for (const key of Object.keys(data)) {
-      data[key] = escape(data[key]);
+      data[key] = escape(data[key]).replace(/\n/g, '');
     }
 
     createContactMessage(data)
@@ -97,7 +97,7 @@ class SubmitValidationForm extends React.Component {
                 required floatingLabelText={field.label}
                 key={`aa-careers-form-contact-${field.name}`}
                 className={label}
-                multiLine={field.multiLine} rows={field.rows}
+                multiLine={field.multiLine} rows={field.rows} rowsMax={field.rowsMax}
                 inputStyle={styles.textField}
                 textareaStyle={styles.textField} />
           ))}

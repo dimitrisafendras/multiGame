@@ -68,7 +68,14 @@ class MobileContent extends Component {
       onRequestClose={this.handleClose}
       autoScrollBodyContent={true}
       titleStyle={{color: '#1976d2'}}>
-      <div style={{paddingTop: '24px'}} dangerouslySetInnerHTML={{__html: this.state.dialogText}}/>
+      <Scrollbars
+        autoHeight
+        autoHide
+        autoHeightMax={500}
+        autoHideTimeout={1000}
+        autoHideDuration={200}>
+        <div className={classes.dialog} dangerouslySetInnerHTML={{__html: this.state.dialogText}}/>
+      </Scrollbars>
     </Dialog>;
 
     return (

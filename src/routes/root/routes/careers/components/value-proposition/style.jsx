@@ -1,6 +1,6 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
-import { jss } from 'components';
+import { jss, isIE11 } from 'components';
 
 const styles = {
   component: {
@@ -17,10 +17,10 @@ const styles = {
     backgroundColor: 'inherit',
   },
   backgroundImage: {
-    backgroundImage: Images.HeroImage,
+    backgroundImage: isIE11 ? "url('images/careers/hero.png')" : Images.HeroImage,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.4% center',
-    backgroundSize: '50%',
+    backgroundSize: '40%',
   },
   title: {
     width: '70%',
@@ -30,14 +30,17 @@ const styles = {
     width: '60%',
   },
   text: {
-    width: '38%',
+    width: '60%',
     marginTop: '20px',
     maxWidth: '624px',
   },
   button: {
     marginTop: '50px',
   },
-  '@media (max-width: 1250px)': {
+  '@media (max-width: 1300px)': {
+    backgroundImage: {
+      backgroundSize: '35%',
+    },
     title: {
       marginBottom: '50px',
     },
@@ -60,7 +63,7 @@ const styles = {
   '@media (max-width: 767px)': {
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '81.8%',
+      backgroundSize: '81.8% 81.8%',
       backgroundPosition: 'center',
     },
     title: {
@@ -73,7 +76,10 @@ const styles = {
     text: {
       width: '100%',
       maxWidth: '100%',
-      marginTop: '11%',
+      marginTop: '15px',
+    },
+    button: {
+      justifyContent: 'center',
     },
   },
   '@media (max-width: 600px)': {

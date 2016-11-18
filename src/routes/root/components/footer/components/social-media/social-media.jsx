@@ -29,8 +29,7 @@ const SocialMedia = () => (
           <a href={social.url}
             className={classes.socialLink}
             target={'_black'}>
-            <Content image
-              className={classes.socialImage}>
+            <Content image>
               {social.Img}
             </Content>
             <Content text

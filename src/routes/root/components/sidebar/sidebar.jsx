@@ -9,6 +9,8 @@ import {
   linkAble,
 } from 'routes/root/containers';
 
+import { Logo } from 'routes/root/components';
+
 import {
   Drawer,
   MenuItem,
@@ -137,9 +139,9 @@ class Sidebar extends Component {
           iconClassName={'material-icons'}>
           close
         </IconButton>
-
+        <Logo className={classes.logo}  resizable/>
         <div className={classes.divider}>
-          {content.filter((item) => (item.order <= 2)).map((item) => (
+          {content.map((item) => (
             <MenuItem
               innerDivStyle={style.menuItem}
               key={this.linkKey(item.link)}

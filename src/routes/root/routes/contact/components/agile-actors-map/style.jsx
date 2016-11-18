@@ -21,7 +21,8 @@ const styles = {
     opacity: '0.8',
     position: 'absolute',
     top: '-70px',
-    left: '30px',
+    left: '50px',
+    cursor: 'pointer',
   },
   title: {
     color: muiTheme.palette.primary1Color,
@@ -32,6 +33,7 @@ const styles = {
     marginBottom: '0px',
   },
   text: {
+    color: muiTheme.palette.textColor,
     fontSize: '15px',
     fontWeight: 'normal',
     lineHeight: '1.2',

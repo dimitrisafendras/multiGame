@@ -16,6 +16,7 @@ import {
 } from './jss';
 
 import SliderSettings from './slider-settings';
+import isIE11 from './isIE11';
 import Resizable from './resizable-component';
 
 export {
@@ -29,5 +30,6 @@ export {
   jss,
   useSheet,
   SliderSettings,
+  isIE11,
   Resizable,
 };

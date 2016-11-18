@@ -11,6 +11,8 @@ const styles = {
     textAlign: 'center',
   },
   containerWrapper: {
+    overflow: 'visible',
+
     '&:first-child': {
       marginRight: '10px',
     },
@@ -23,13 +25,16 @@ const styles = {
     marginLeft: '10px',
     marginRight: '10px',
     width: '306px',
-    height: '460px',
+    height: '520px',
     paddingTop: '35px',
     paddingBottom: '35px',
     paddingLeft: '35px',
     paddingRight: '35px',
     boxSizing: 'border-box',
     border: '2px solid #eee',
+    '&:hover': {
+      boxShadow: '0px 0px 40px 0px rgba(0, 0, 0, 0.3)',
+    },
     '&:first-child': {
       marginLeft: '0px',
     },
@@ -53,6 +58,11 @@ const styles = {
   button: {
     marginTop: '6.1%',
   },
+  outerContainer: {
+    '& .slick-dots button:before': {
+      color: muiTheme.palette.blue700 + ' !important',
+    },
+  },
   '@media (max-width: 1581px)': {
     containerWrapper: {
       '&:first-child': {
@@ -68,8 +78,14 @@ const styles = {
   },
   '@media (max-width: 767px)': {
     container: {
-      marginLeft: '0px !important',
-      marginRight: '0px !important',
+      paddingLeft: '30px !important',
+      paddingRight: '30px !important',
+      marginLeft: '5px !important',
+      marginRight: '5px !important',
+
+      '&:hover': {
+        boxShadow: 'none',
+      },
     },
     button: {
       marginTop: 'calc(6.1% + 20px)',

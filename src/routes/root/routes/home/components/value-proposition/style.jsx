@@ -1,6 +1,6 @@
 import muiTheme from 'styles/customized-mui-theme';
 import Images from './images';
-import { jss } from 'components';
+import { jss, isIE11 } from 'components';
 
 const styles = {
   component: {
@@ -17,7 +17,7 @@ const styles = {
     backgroundColor: 'inherit',
   },
   backgroundImage: {
-    backgroundImage: Images.HeroImage,
+    backgroundImage: isIE11 ? "url('images/home/hero.png')" : Images.HeroImage,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '90.4% center',
     backgroundSize: '25%',
@@ -33,6 +33,7 @@ const styles = {
     width: '60%',
     marginTop: '20px',
     maxWidth: '624px',
+    fontWeight: 'normal',
   },
   button: {
     marginTop: '50px',
@@ -63,9 +64,12 @@ const styles = {
     },
   },
   '@media (max-width: 767px)': {
+    component: {
+      textAlign: 'center',
+    },
     backgroundImage: {
       opacity: '0.2',
-      backgroundSize: '70%',
+      backgroundSize: '70% 70%',
       backgroundPosition: 'center',
       marginBottom: '40px',
     },
@@ -80,6 +84,9 @@ const styles = {
       width: '100%',
       maxWidth: '100%',
       marginTop: '15px',
+    },
+    button: {
+      justifyContent: 'center',
     },
   },
   '@media (max-width: 600px)': {

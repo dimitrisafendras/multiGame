@@ -48,6 +48,22 @@ const styles = {
     margin: '0 auto',
     zIndex: '10',
     top: '-50px',
+
+    '& a:link': {
+      color: muiTheme.palette.blue700,
+    },
+
+    '& a:visited': {
+      color: muiTheme.palette.cyan500,
+    },
+
+    '& a:hover': {
+      color: muiTheme.palette.blue600,
+    },
+
+    '& a:active': {
+      color: muiTheme.palette.blue200,
+    },
   },
   sectionTitleWrapper: {
     color: muiTheme.palette.blue700,
@@ -144,6 +160,23 @@ const styles = {
   button: {
     marginTop: '4%',
   },
+  dialog: {
+    '& a:link': {
+      color: muiTheme.palette.blue700,
+    },
+
+    '& a:visited': {
+      color: muiTheme.palette.cyan500,
+    },
+
+    '& a:hover': {
+      color: muiTheme.palette.blue600,
+    },
+
+    '& a:active': {
+      color: muiTheme.palette.blue200,
+    },
+  },
   courses: {
     '&.scrollableContent': {
       maxWidth: '885px',
@@ -154,7 +187,6 @@ const styles = {
       justifyContent: 'center',
       alignItems: 'center',
       padding: '20px 0px',
-      cursor: 'pointer',
     },
     '& .title': {
       marginTop: '0px'
@@ -168,6 +200,7 @@ const styles = {
       margin: '10px',
       boxSizing: 'border-box',
       position:'relative',
+      cursor: 'pointer',
     },
   },
   '@media (max-width: 767px)': {
@@ -188,6 +221,10 @@ const styles = {
       '& .slick-dots button:before': {
         color: muiTheme.palette.blue700 + ' !important',
       },
+
+      // '& .slick-arrow:before': {
+      //   color:  muiTheme.palette.grey200 + ' !important',
+      // },
     },
     sectionTitleWrapper: {
       padding: '35px 0 30px !important',

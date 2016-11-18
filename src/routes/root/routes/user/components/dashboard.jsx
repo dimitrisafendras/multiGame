@@ -28,7 +28,7 @@ export const Dashboard = ({
       className={classes.contentWrapper}>
       <FlexContainer
         column
-        largeContainer
+        outerContainer
         className={classes.container}>
         <Content
           largeSubTitle
