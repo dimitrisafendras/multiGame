@@ -31,7 +31,7 @@ const styles = {
     },
   },
   closeButton: {
-    position: 'fixed',
+    position: 'absolute',
     top: 0,
     right: 0,
     zIndex: 500,
