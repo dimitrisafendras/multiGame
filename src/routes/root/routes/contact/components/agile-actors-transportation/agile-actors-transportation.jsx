@@ -20,7 +20,7 @@ const {
 
 type Props = {
   size: Object,
-  mobile: boolean,
+  mobile?: boolean,
 }
 
 const AgileActorsTransportation = ({

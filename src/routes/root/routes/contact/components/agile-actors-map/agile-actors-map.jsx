@@ -21,6 +21,13 @@ import {
 import { classes, styles } from './style';
 import { content } from './content';
 
+const {
+  container,
+  textWrapper,
+  title,
+  text,
+  } = classes;
+
 const InfoBoxGoogleMap = withScriptjs(
   withGoogleMap(({
     center,
@@ -40,11 +47,11 @@ const InfoBoxGoogleMap = withScriptjs(
         {showInfo && (
           <InfoBox
             options={{ closeBoxURL: ``, enableEventPropagation: true }}>
-            <Container className={classes.textWrapper} onClick={onClickFromChildrenOfInfoBox}>
-              <Content title className={classes.title}>
+            <Container className={textWrapper} onClick={onClickFromChildrenOfInfoBox}>
+              <Content title className={title}>
                 {content.title}
               </Content>
-              <Content text className={classes.text}>
+              <Content text className={text}>
                 {content.text}
               </Content>
             </Container>
@@ -83,7 +90,7 @@ class AgileActorsMap extends Component {
   render() {
     const node = <div style={styles.mapElement} />;
     return (
-      <FlexContainer largeContainer className={classes.container}>
+      <FlexContainer largeContainer className={container}>
 
         <InfoBoxGoogleMap
           containerElement={node}
