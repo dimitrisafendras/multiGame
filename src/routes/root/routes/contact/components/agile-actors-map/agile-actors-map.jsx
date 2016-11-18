@@ -39,7 +39,6 @@ const InfoBoxGoogleMap = withScriptjs(
         icon={icon} />
       {showInfo && (
       <InfoBox
-        defaultPosition={new google.maps.LatLng(center.lat, center.lng)}
         options={{ closeBoxURL: ``, enableEventPropagation: true }}>
         <Container className={classes.textWrapper} onClick={onClickFromChildrenOfInfoBox}>
           <Content title className={classes.title}>
@@ -54,6 +53,36 @@ const InfoBoxGoogleMap = withScriptjs(
     </GoogleMap>
   ))
 );
+
+class CoverLayer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      removed: false,
+    };
+  }
+
+  render() {
+    return (
+      this.state.removed ? (
+        <span style={{ width: '0px', height: '0px' }} />
+      ) : (
+        <div
+          style={{
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '100%',
+            height: '100%',
+            zIndex: 999,
+          }}
+
+          onClick={() => this.setState({ removed: true })}
+        />
+      )
+    );
+  }
+}
 
 class AgileActorsMap extends Component {
   state = {
@@ -84,6 +113,8 @@ class AgileActorsMap extends Component {
     const node = <div style={styles.mapElement} />;
     return (
       <FlexContainer largeContainer className={classes.container}>
+        <CoverLayer />
+
         <InfoBoxGoogleMap
           containerElement={node}
           mapElement={node}
