@@ -32,57 +32,28 @@ const InfoBoxGoogleMap = withScriptjs(
     onMarkerClick,
     onClickFromChildrenOfInfoBox,
   }) => (
-    <GoogleMap defaultZoom={16} center={center}>
+    <GoogleMap defaultZoom={16} center={center} options={{scrollwheel: false}}>
       <Marker
         position={position}
         onClick={onMarkerClick}
-        icon={icon} />
-      {showInfo && (
-      <InfoBox
-        options={{ closeBoxURL: ``, enableEventPropagation: true }}>
-        <Container className={classes.textWrapper} onClick={onClickFromChildrenOfInfoBox}>
-          <Content title className={classes.title}>
-            {content.title}
-          </Content>
-          <Content text className={classes.text}>
-            {content.text}
-          </Content>
-        </Container>
-      </InfoBox>
-     )}
+        icon={icon} >
+        {showInfo && (
+          <InfoBox
+            options={{ closeBoxURL: ``, enableEventPropagation: true }}>
+            <Container className={classes.textWrapper} onClick={onClickFromChildrenOfInfoBox}>
+              <Content title className={classes.title}>
+                {content.title}
+              </Content>
+              <Content text className={classes.text}>
+                {content.text}
+              </Content>
+            </Container>
+          </InfoBox>
+        )}
+      </Marker>
     </GoogleMap>
   ))
 );
-
-class CoverLayer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      removed: false,
-    };
-  }
-
-  render() {
-    return (
-      this.state.removed ? (
-        <span style={{ width: '0px', height: '0px' }} />
-      ) : (
-        <div
-          style={{
-            position: 'absolute',
-            left: '0px',
-            top: '0px',
-            width: '100%',
-            height: '100%',
-            zIndex: 999,
-          }}
-
-          onClick={() => this.setState({ removed: true })}
-        />
-      )
-    );
-  }
-}
 
 class AgileActorsMap extends Component {
   state = {
@@ -113,7 +84,6 @@ class AgileActorsMap extends Component {
     const node = <div style={styles.mapElement} />;
     return (
       <FlexContainer largeContainer className={classes.container}>
-        <CoverLayer />
 
         <InfoBoxGoogleMap
           containerElement={node}
