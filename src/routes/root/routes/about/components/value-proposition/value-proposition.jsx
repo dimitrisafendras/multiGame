@@ -39,9 +39,7 @@ const ValueProposition = ({ link }: Props) => {
           <Content largeSubTitle className={subtitle}>
             {content.subTitle}
           </Content>
-          <Content largeText className={text}>
-            {content.text}
-          </Content>
+          <Content largeText className={classes.text} dangerouslySetInnerHTML={{__html: content.text}}/>
           <FlexContainer className={button}>
             <Button secondary onTouchTap={() => link(content.buttonLink)}>
               {content.buttonLabel}

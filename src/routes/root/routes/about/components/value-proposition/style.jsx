@@ -32,6 +32,11 @@ const styles = {
   text: {
     width: '55%',
     marginTop: '20px',
+    fontWeight: '300',
+
+    '& strong': {
+      fontWeight: '500',
+    },
   },
   button: {
     marginTop: '50px',

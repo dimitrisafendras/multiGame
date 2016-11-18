@@ -23,6 +23,11 @@ const styles = {
     marginTop: '-5px',
     textAlign: 'center',
     maxWidth: '750px',
+    fontWeight: '300',
+
+    '& strong': {
+      fontWeight: '500',
+    },
   },
 };
 
