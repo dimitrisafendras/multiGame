@@ -53,13 +53,15 @@
       "command": "npm run deploy",
       "env": {
         "NODE_ENV": "production",
-        "DEBUG": "app:*"
+        "DEBUG": "app:*",
+        "USER_ENABLED": "false"
       }
     },
     "start": {
       "command": "babel-node bin/server",
       "env": {
-        "DEBUG": "app:*"
+        "DEBUG": "app:*",
+        "USER_ENABLED": "false"
       }
     },
     "test": {
