@@ -149,7 +149,6 @@
     "socket.io-client": "1.6.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webfontloader": "1.6.26",
     "webpack": "1.13.3",
     "yargs": "6.4.0"
   },
