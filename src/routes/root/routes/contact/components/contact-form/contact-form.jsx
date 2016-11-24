@@ -25,24 +25,20 @@ type Props = {
 class SubmitValidationForm extends React.Component {
   props: Props;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-      message: content.successText,
-    };
-  }
+  state = {
+    open: false,
+    message: content.successText,
+  };
 
   enableButton = () => this.setState({ ...this.state,
     canSubmit: true,
   });
 
-  disableButton= () => this.setState({ ...this.state,
+  disableButton = () => this.setState({ ...this.state,
     canSubmit: false,
   });
 
   submitForm = (data) => {
-    const _this = this;
     for (const key of Object.keys(data)) {
       data[key] = escape(data[key]).replace(/\n/g, '');
     }
@@ -50,14 +46,14 @@ class SubmitValidationForm extends React.Component {
     createContactMessage(data)
     .then((response) => {
       if (response.createContactMessage.status === 'ok') {
-        _this.showSuccessToast();
-        _this.refs.aaContactForm.reset();
+        this.showSuccessToast();
+        this.refs.aaContactForm.reset();
       } else {
-        _this.showErrorToast();
+        this.showErrorToast();
       }
     })
   .catch((response) => {
-    _this.showErrorToast();
+    this.showErrorToast();
   });
   };
 
@@ -80,13 +76,12 @@ class SubmitValidationForm extends React.Component {
 
   render() {
     const { enableButton, disableButton, handleRequestClose } = this;
-    const _this = this;
     return (
       <Container container className={container}>
         <Formsy.Form className={form} ref={'aaContactForm'}
           onValid={enableButton}
           onInvalid={disableButton}
-          onValidSubmit={_this.submitForm}
+          onValidSubmit={this.submitForm}
           autoComplete='off'>
           <FlexContainer column center>
             {content.fields.map((field) => (
