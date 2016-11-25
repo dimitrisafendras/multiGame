@@ -116,7 +116,7 @@ class NormalContent extends Component {
                 disableTouchRipple
                 onActive={this.setActiveTab}
                 className={classNames(
-                  sectionTitleWrapper,
+                     sectionTitleWrapper,
                   {
                     active: index === active,
                     inactive: index !== active,
