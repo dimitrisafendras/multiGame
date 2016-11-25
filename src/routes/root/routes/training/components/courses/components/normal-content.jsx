@@ -3,7 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import content from '../content';
 import classNames from 'classnames';
 
-import { Scrollbars } from 'react-custom-scrollbars';
+import { Scrollbars } from    'react-custom-scrollbars';
 import { classes, styles } from '../style';
 
 import {
