@@ -53,7 +53,9 @@ export const rootRoute = (store) => {
     if (currentPathname === pathname) return;
 
     currentPathname = pathname;
-    ReactGA.pageview(currentPathname);
+    ReactGA.set({ page: currentPathname });
+    ReactGA.ga('send', 'pageview', currentPathname);
+    // ReactGA.pageview(currentPathname);
   });
 
   return {
