@@ -9,7 +9,7 @@ import {
   linkAble,
 } from 'routes/root/containers';
 
-import { Logo } from 'routes/root/components';
+import { Logo, Signature } from 'routes/root/components';
 
 import {
   Drawer,
@@ -18,8 +18,6 @@ import {
   FlatButton,
   FontIcon,
 } from 'material-ui';
-
-import { Signature } from 'routes/root/components';
 
 import {
   styles as style,
@@ -139,7 +137,7 @@ class Sidebar extends Component {
           iconClassName={'material-icons'}>
           close
         </IconButton>
-        <Logo className={classes.logo}  resizable/>
+        <Logo className={classes.logo} resizable />
         <div className={classes.divider}>
           {content.map((item) => (
             <MenuItem
