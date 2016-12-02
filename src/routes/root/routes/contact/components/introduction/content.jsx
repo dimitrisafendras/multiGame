@@ -3,8 +3,8 @@
 //
 export const content = {
   title: 'Get in touch',
-  text: `Feel in the form here. We’ll do our best to reach out within 24 hours.
+  text: `Fill in the form here. We’ll do our best to reach out within 24 hours.
           Feel free to give us a call at `,
   phone: '+302146873500',
-	phoneDisplay: '(+30) 214 687 3500.',
+  phoneDisplay: '(+30) 214 687 3500.',
 };

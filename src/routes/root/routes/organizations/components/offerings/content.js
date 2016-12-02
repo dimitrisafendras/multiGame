@@ -5,7 +5,7 @@ const content = {
       id: 'development',
       title: 'Get a Tech Dream Team for your very own Development needs',
       content:
-        `Whether you’re planning too outsource a software development project or thinking
+        `Whether you’re planning to outsource a software development project or thinking
          about creating remote development teams, we can get you the best tech professionals.
          Save time and maintain focus on your line of business, while we define requirements
          and set up scalable teams with the right mix of skills and experience. `,
