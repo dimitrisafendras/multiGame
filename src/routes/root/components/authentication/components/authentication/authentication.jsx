@@ -58,7 +58,7 @@ class Authentication extends Component {
     }, 50);
   }
 
-  //TODO: uncomment when used and use Resizable component
+  // TODO: uncomment when used and use Resizable component
   // componentDidMount() {
   //   window.addEventListener('resize', () => {
   //     this.updateDimensions();
