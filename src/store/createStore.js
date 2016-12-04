@@ -5,11 +5,6 @@ import makeRootReducer from './reducers';
 
 export default (initialState = {}, history) => {
   // ======================================================
-  // Middleware Configuration
-  // ======================================================
-  const middleware = [thunk, routerMiddleware(history)];
-
-  // ======================================================
   // Store Enhancers
   // ======================================================
   const enhancers = [];
@@ -19,6 +14,14 @@ export default (initialState = {}, history) => {
       enhancers.push(devToolsExtension());
     }
   }
+
+  // ======================================================
+  // Middleware Configuration
+  // ======================================================
+  const middleware = [
+    thunk,
+    routerMiddleware(history),
+  ];
 
   // ======================================================
   // Store Instantiation and HMR Setup
