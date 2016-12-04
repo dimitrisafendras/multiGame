@@ -23,6 +23,12 @@ import {
   getMuiTheme,
 } from 'material-ui/styles';
 
+// Needed for onTouchTap
+// Check this repo:
+// https://github.com/zilverline/react-tap-event-plugin
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 export default getMuiTheme({
   spacing,
   zIndex,

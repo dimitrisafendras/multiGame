@@ -3,7 +3,7 @@ import axios from 'axios';
 //
 // authUserLocalProvider example:
 //
-// const authorizeUserr = authUser({ email, password })
+// const authorizeUser = authUserLocalProvider({ email, password })
 // .then((user) => {
 //   onSuccess(user);
 // })
@@ -14,7 +14,7 @@ import axios from 'axios';
 export const authUserLocalProvider = ({ email, password }) => (
   axios
   .post('/auth', { email, password })
-  .then((response) => (response.data.user)) // .then(onSuccess).catch(onError);
+  .then(({ data: { user } }) => user)
 );
 
 export const authUserExternalProvider = (provider) => {
@@ -28,11 +28,11 @@ export const authUserExternalProvider = (provider) => {
 export const checkAuth = () => (
   axios
   .get('/auth/checkAuth')
-  .then((response) => response.data.user)
+  .then(({ data: { user } }) => user)
 );
 
 export const unAuth = () => (
   axios
   .get('/auth/unAuth')
-  .then((response) => (response.data.user))
+  .then(({ data: { user } }) => user)
 );

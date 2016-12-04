@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import Box from 'components/box';
-import { classes, styles, makeClassesFromProps } from './styles'
+import { classes, styles, makeClassesFromProps } from './styles';
 
 const defaultStyleKeys = Object.keys(styles);
 const cleanProps = (props) => _.omit(props, defaultStyleKeys);
