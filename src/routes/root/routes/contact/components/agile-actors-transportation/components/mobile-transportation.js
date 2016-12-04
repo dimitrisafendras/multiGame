@@ -2,26 +2,26 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import {
-	Content,
-	Container,
-	FlexContainer,
-	SliderSettings,
+  Content,
+  Container,
+  FlexContainer,
+  SliderSettings,
 } from 'components';
 
 import { content } from '../content';
 
 import {
-	classes,
+  classes,
 } from '../style';
 
 const {
-	container,
-	titleWrapper,
-	title,
-	subTitle,
-	text,
-	imgWrapper,
-	img,
+  container,
+  titleWrapper,
+  title,
+  subTitle,
+  text,
+  imgWrapper,
+  img,
 } = classes;
 
 const MobileTransportation = () => (
@@ -49,7 +49,7 @@ const MobileTransportation = () => (
           </Container>
         </FlexContainer>
       </div>
-		))}
+    ))}
   </Slider>
 );
 export default MobileTransportation;

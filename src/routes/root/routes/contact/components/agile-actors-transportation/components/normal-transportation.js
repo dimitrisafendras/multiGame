@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {
-	Tabs,
-	Tab,
+  Tabs,
+  Tab,
 } from 'material-ui/Tabs';
 
 import {
-	Content,
-	FlexContainer,
+  Content,
+  FlexContainer,
 } from 'components';
 
 import { content } from '../content';
@@ -15,16 +15,16 @@ import { content } from '../content';
 import classNames from 'classnames';
 
 import {
-	classes,
-	styles as style,
+  classes,
+  styles as style,
 } from '../style';
 
 const {
-	container,
-	divider,
-	title,
-	subTitle,
-	text,
+  container,
+  divider,
+  title,
+  subTitle,
+  text,
 } = classes;
 
 class NormalTransportation extends React.Component {
@@ -60,7 +60,7 @@ class NormalTransportation extends React.Component {
               label={mean.title}
               className={classNames(title, getActiveClass(index))} disableTouchRipple
               onActive={this.setActiveTab}
-						>
+              >
               <Content largeText className={subTitle}>
                 {mean.subtitle}
               </Content>
@@ -68,7 +68,7 @@ class NormalTransportation extends React.Component {
                 {mean.content}
               </Content>
             </Tab>
-					))}
+          ))}
         </Tabs>
       </FlexContainer>
     );
