@@ -1,0 +1,1 @@
+find . -name "*.jsx" -type f -print0 | xargs -0 -I {} sh -c 'mv "{}" "$(dirname "{}")/`echo $(basename "{}") | sed 's/^jsx/js/g'`"'
