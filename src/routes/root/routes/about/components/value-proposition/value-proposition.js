@@ -19,7 +19,6 @@ const {
   backgroundImage,
   title,
   subtitle,
-  text,
   button,
 } = classes;
 

@@ -26,7 +26,6 @@ const {
   scrollableContent,
   tabWrapper,
   textWrapper,
-  dialog,
   text,
   fade,
   more,
@@ -72,7 +71,8 @@ class NormalContent extends Component {
     const learnMore = <div className={more} />;
     const closeBtn = <Button secondary onTouchTap={this.handleClose} label={'close'} />;
     const fading = <div className={fade} />;
-    const title = false ? (
+    const closeX = false;
+    const title = closeX ? (
       <FlexContainer container justifyContent={'space-between'}>
         <div>{this.state.dialogTitle}</div>
         <IconButton touch onClick={this.handleClose} iconClassName={'material-icons'}>

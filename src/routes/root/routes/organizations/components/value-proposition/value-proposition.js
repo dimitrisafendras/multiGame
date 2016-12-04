@@ -15,7 +15,6 @@ const {
   backgroundImage,
   title,
   subtitle,
-  text,
 } = classes;
 
 const ValueProposition = () => (

@@ -15,7 +15,8 @@ import {
 
 type Props = {
   className?: string,
-  size: object
+  size: Object,
+  resizable?: boolean,
 };
 
 const Logo = ({ className, size, resizable } : Props) => {
