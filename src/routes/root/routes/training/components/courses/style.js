@@ -21,7 +21,7 @@ const styles = {
   },
   tabs: {
     width: '580px',
-    margin: '0 auto'
+    margin: '0 auto',
   },
   divider: {
     width: '85%',
@@ -189,17 +189,17 @@ const styles = {
       padding: '20px 0px',
     },
     '& .title': {
-      marginTop: '0px'
+      marginTop: '0px',
     },
     '& .textWrapper': {
-      background:  muiTheme.palette.grey300,
+      background: muiTheme.palette.grey300,
       width: '275px',
       height: '240px',
       overflow: 'hidden',
       padding: '25px 20px',
       margin: '10px',
       boxSizing: 'border-box',
-      position:'relative',
+      position: 'relative',
       cursor: 'pointer',
     },
   },

@@ -51,7 +51,7 @@ const styles = {
     },
   },
   '@media (max-width: 767px)': {
-    outerContainer : {
+    outerContainer: {
       '& .slick-arrow': {
         display: 'none !important',
       },

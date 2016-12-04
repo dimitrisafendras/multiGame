@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import Slider from 'react-slick';
 import classNames from 'classnames';
@@ -57,8 +57,8 @@ class MobileContent extends Component {
 
   render() {
     const learnMore = <div className={more} />;
-    const closeBtn = <Button secondary onTouchTap={this.handleClose} label="close"/>;
-    const fading = <div className={fade}></div>;
+    const closeBtn = <Button secondary onTouchTap={this.handleClose} label='close' />;
+    const fading = <div className={fade} />;
 
     const dialog = <Dialog
       title={this.state.dialogTitle}
@@ -66,7 +66,7 @@ class MobileContent extends Component {
       modal={false}
       open={this.state.dialogOpen}
       onRequestClose={this.handleClose}
-      autoScrollBodyContent={true}
+      autoScrollBodyContent
       titleStyle={{color: '#1976d2'}}>
       <Scrollbars
         autoHeight
@@ -74,7 +74,7 @@ class MobileContent extends Component {
         autoHeightMax={500}
         autoHideTimeout={1000}
         autoHideDuration={200}>
-        <div className={classes.dialog} dangerouslySetInnerHTML={{__html: this.state.dialogText}}/>
+        <div className={classes.dialog} dangerouslySetInnerHTML={{__html: this.state.dialogText}} />
       </Scrollbars>
     </Dialog>;
 
@@ -86,9 +86,9 @@ class MobileContent extends Component {
           <div key={sectionsKey(section.id)}>
             <Container container>
               <Content title className={sectionTitleWrapper}>
-                 <span className={sectionTitle}>
-                   {section.title}
-                 </span>
+                <span className={sectionTitle}>
+                  {section.title}
+                </span>
               </Content>
               <Container container className={classNames(scrollableContent, classes[section.class])}>
                 <Scrollbars
@@ -100,12 +100,12 @@ class MobileContent extends Component {
                     {section.items.map((item) => (
 
                       <div key={sectionKey(item.id)} className={classNames('text-wrapper', textWrapper)}
-                           onTouchTap={this.handleOpen.bind(null, item, section.class)}>
+                        onTouchTap={this.handleOpen.bind(null, item, section.class)}>
                         <FlexContainer column>
                           <Content title className={title}>
                             {item.title}
                           </Content>
-                          <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}}/>
+                          <Content text className={text} dangerouslySetInnerHTML={{__html: item.content}} />
                         </FlexContainer>
 
                         {section.class === 'courses' && learnMore}

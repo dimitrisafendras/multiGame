@@ -4,7 +4,7 @@ import { jss, isIE11 } from 'components';
 
 const styles = {
   component: {
-    backgroundColor: muiTheme.palette.blue600,
+    backgroundColor: muiTheme.palette.accent1Color,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -17,10 +17,11 @@ const styles = {
     backgroundColor: 'inherit',
   },
   backgroundImage: {
-    backgroundImage: isIE11 ? "url('images/careers/hero.png')" : Images.HeroImage,
+    backgroundImage: isIE11 ? "url('images/organisations/hero.png')" : Images.HeroImage,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: '90.4% center',
-    backgroundSize: '40%',
+    backgroundPosition: '90.6% center',
+    backgroundSize: '38%',
+    top: '40px',
   },
   title: {
     width: '70%',
@@ -44,7 +45,8 @@ const styles = {
   },
   '@media (max-width: 1300px)': {
     backgroundImage: {
-      backgroundSize: '35%',
+      backgroundSize: '36%',
+      top: '70px',
     },
     title: {
       marginBottom: '50px',
@@ -52,7 +54,8 @@ const styles = {
   },
   '@media (max-width: 1024px)': {
     backgroundImage: {
-      backgroundSize: '40%',
+      backgroundSize: '43%',
+      top: '90px',
     },
     title: {
       width: '60%',
@@ -70,6 +73,8 @@ const styles = {
       opacity: '0.2',
       backgroundSize: '81.8% 81.8%',
       backgroundPosition: 'center',
+      marginBottom: '40px',
+      top: '0px',
     },
     title: {
       width: '100%',
@@ -82,9 +87,6 @@ const styles = {
       width: '100%',
       maxWidth: '100%',
       marginTop: '15px',
-    },
-    button: {
-      justifyContent: 'center',
     },
   },
   '@media (max-width: 600px)': {

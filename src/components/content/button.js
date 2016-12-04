@@ -12,7 +12,7 @@ export const Button = ({
   children,
   className,
   style,
-  ...rest,
+  ...rest
 } : Props) => (
   <RaisedButton
     className={className}

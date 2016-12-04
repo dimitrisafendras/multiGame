@@ -5,12 +5,12 @@ import { img } from './style';
 
 import {
   Content,
-  Resizable
+  Resizable,
 } from 'components';
 
 import {
   AgileActorsLogo,
-  AgileActorsLogoIcon
+  AgileActorsLogoIcon,
 } from './images';
 
 type Props = {
@@ -28,6 +28,6 @@ const Logo = ({ className, size, resizable } : Props) => {
       </Content>
     </Link>
   );
-}
+};
 
 export default Resizable(Logo);

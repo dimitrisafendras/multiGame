@@ -5,5 +5,5 @@ const AgileActorsLogoIcon = InlineSvg(require('!!raw!./icon-agile-actors-logo'))
 
 export {
   AgileActorsLogo,
-  AgileActorsLogoIcon
+  AgileActorsLogoIcon,
 };

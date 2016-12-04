@@ -1,4 +1,4 @@
-const imageSize = (screen.width < 768 || screen.width > 1600)? '' : '-large';
+const imageSize = (screen.width < 768 || screen.width > 1600) ? '' : '-large';
 
 const image1 = require('./image1' + imageSize + '.png');
 const image2 = require('./image2' + imageSize + '.png');

@@ -26,7 +26,7 @@ const ValueProposition = ({ link }: Props) => (
         <Content largeSubTitle className={classes.subtitle}>
           {content.subTitle}
         </Content>
-        <Content largeText className={classes.text} dangerouslySetInnerHTML={{__html: content.text}}/>
+        <Content largeText className={classes.text} dangerouslySetInnerHTML={{__html: content.text}} />
         <FlexContainer className={classes.button}>
           <Button
             secondary

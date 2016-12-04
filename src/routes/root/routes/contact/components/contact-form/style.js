@@ -12,7 +12,7 @@ const styles = {
     top: '-50px',
     padding: '0px',
     maxWidth: '640px',
-    minWidth:'280px'
+    minWidth: '280px',
   },
   form: {
     paddingTop: '40px',
@@ -23,7 +23,7 @@ const styles = {
     minWidth: '260px',
   },
   textField: {
-    boxShadow : 'none'
+    boxShadow: 'none',
   },
   button: {
     height: '40px',

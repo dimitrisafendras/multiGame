@@ -1,9 +1,9 @@
 let imageSize = '';
 
-if(screen.width < 3200) {
+if (screen.width < 3200) {
   imageSize = '@3x';
 } else if (screen.width > 1600) {
-  imageSize = '@2x'
+  imageSize = '@2x';
 }
 
 const Image = require('./image' + imageSize + '.jpg');
