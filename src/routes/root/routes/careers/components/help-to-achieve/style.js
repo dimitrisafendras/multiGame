@@ -4,9 +4,14 @@ import { jss } from 'components';
 const styles = {
   outerContainer: {
     backgroundColor: muiTheme.palette.white,
+
+    '& .slick-dots button:before': {
+      color: muiTheme.palette.blue700 + ' !important',
+    },
   },
   outerTitle: {
     color: muiTheme.palette.blue700,
+
     marginBottom: '6.1%',
     textAlign: 'center',
   },
@@ -57,11 +62,6 @@ const styles = {
   },
   button: {
     marginTop: '6.1%',
-  },
-  outerContainer: {
-    '& .slick-dots button:before': {
-      color: muiTheme.palette.blue700 + ' !important',
-    },
   },
   '@media (max-width: 1581px)': {
     containerWrapper: {
