@@ -64,7 +64,8 @@
       "env": {
         "DEBUG": "app:*",
         "USER_ENABLED": "true",
-        "GRAPHIQL": "true"
+        "GRAPHIQL": "true",
+        "AGILE_ACTOR_CONFIG_FILE": "./agile-actor-config.json"
       }
     },
     "jsx2js": {
