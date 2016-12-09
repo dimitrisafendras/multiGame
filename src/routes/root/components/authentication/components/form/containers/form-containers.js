@@ -1,6 +1,7 @@
+import { compose } from 'containers';
 import {
-  onSignInAble,
-  onSignUpAble,
+  signInAble,
+  signUpAble,
 } from 'routes/root/containers';
 
 import {
@@ -8,5 +9,7 @@ import {
   AuthForm as AuthorizationForm,
 } from '../components';
 
-export const AuthProviders = onSignInAble(onSignUpAble(AuthorizationProviders));
-export const AuthForm = onSignInAble(onSignUpAble(AuthorizationForm));
+const authConnect = compose(signInAble, signUpAble);
+
+export const AuthProviders = authConnect(AuthorizationProviders);
+export const AuthForm = authConnect(AuthorizationForm);

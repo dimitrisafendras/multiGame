@@ -9,13 +9,13 @@ import { classes, styles as style } from './style';
 
 type Props = {
   toggleAuthentication: () => void,
-  onSignOut: () => void,
+  signOut: () => void,
   user: Object,
 };
 
 const UserButtonSignedIn = ({
   toggleAuthentication,
-  onSignOut,
+  signOut,
   user,
 }: Props) => (
   <div>
@@ -45,7 +45,7 @@ const UserButtonSignedIn = ({
       ].join(' ')}
       style={style.headerMenuBar.button}
       onClick={() => {
-        onSignOut();
+        signOut();
         toggleAuthentication();
       }}
       label={`logout`}
@@ -55,7 +55,7 @@ const UserButtonSignedIn = ({
 
 const UserButtonSignedOut = ({
   toggleAuthentication,
-  onSignOut,
+  signOut,
   user,
 }: Props) => (
   <FlatButton

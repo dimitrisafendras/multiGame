@@ -5,7 +5,7 @@ import { compose } from 'containers';
 import {
   contentAble,
   userAble,
-  onSignOutAble,
+  signOutAble,
   linkAble,
 } from 'routes/root/containers';
 
@@ -33,7 +33,7 @@ type Props = {
   toggleSidebar: () => void,
   toggleAuthentication: () => void,
   user: Object,
-  onSignOut: () => void,
+  signOut: () => void,
 };
 
 class Sidebar extends Component {
@@ -68,7 +68,7 @@ class Sidebar extends Component {
   };
 
   handleSignOut = () => {
-    this.props.onSignOut();
+    this.props.signOut();
     this.handleToggle();
     this.props.toggleAuthentication();
   };
@@ -162,6 +162,6 @@ class Sidebar extends Component {
 export default compose(
   contentAble,
   userAble,
-  onSignOutAble,
+  signOutAble,
   linkAble
 )(Sidebar);

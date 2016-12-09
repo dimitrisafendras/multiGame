@@ -1,12 +1,14 @@
 import { createAction } from 'redux-actions';
+import { push } from 'react-router-redux';
+import { user as userService } from 'model-services';
 
 //
 // User synchronous action creators
 //
-export const signedIn = createAction('USER_SIGNED_IN');
+const signedIn = createAction('USER_SIGNED_IN');
 signedIn.type = 'USER_SIGNED_IN';
 
-export const signedOut = createAction('USER_SIGNED_OUT');
+const signedOut = createAction('USER_SIGNED_OUT');
 signedOut.type = 'USER_SIGNED_OUT';
 
 //
@@ -15,11 +17,7 @@ signedOut.type = 'USER_SIGNED_OUT';
 // signOut
 // signUp
 //
-import { user as userService } from 'model-services';
-
-import { push } from 'react-router-redux';
-
-export const signIn = (options) => (dispatch, getState) => {
+const signIn = (options) => (dispatch, getState) => {
   const { user } = getState();
   if (user && user.email) return;
 
@@ -33,7 +31,7 @@ export const signIn = (options) => (dispatch, getState) => {
   });
 };
 
-export const signOut = () => (dispatch) => {
+const signOut = () => (dispatch) => {
   userService
   .unAuth()
   .catch((error) => {
@@ -41,7 +39,7 @@ export const signOut = () => (dispatch) => {
   });
 };
 
-export const signUp = (userData) => (dispatch) => {
+const signUp = (userData) => (dispatch) => {
   userService
   .createLocalUser(userData)
   .catch((error) => {
@@ -55,7 +53,7 @@ export const signUp = (userData) => (dispatch) => {
 // authentication state. It dispatches a signedIn(user) action when a user
 // signes in and a signedOut(null) action when a user signes out.
 //
-export const onSignInAndOnSignOut = (dispatch) => {
+const onSignInAndOnSignOut = (dispatch) => {
   userService.setOnAuth((user) => {
     dispatch(signedIn(user));
     dispatch(push('/User'));
@@ -67,4 +65,13 @@ export const onSignInAndOnSignOut = (dispatch) => {
       dispatch(push('/'));
     }
   });
+};
+
+export {
+  signedIn,
+  signedOut,
+  signIn,
+  signOut,
+  signUp,
+  onSignInAndOnSignOut,
 };

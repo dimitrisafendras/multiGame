@@ -23,14 +23,14 @@ export const linkAble = connect(
   }),
 );
 
-export const onSignOutAble = connect(
+export const signOutAble = connect(
   null,
   (dispatch) => ({
-    onSignOut: () => dispatch(signOut()),
+    signOut: () => dispatch(signOut()),
   }),
 );
 
-export const onSignInAble = connect(
+export const signInAble = connect(
   null,
   (dispatch) => ({
     signIn: (options) => { // { provider, email, password }
@@ -39,7 +39,7 @@ export const onSignInAble = connect(
   }),
 );
 
-export const onSignUpAble = connect(
+export const signUpAble = connect(
   null,
   (dispatch) => ({
     signUp: (options) => { // { email, password }

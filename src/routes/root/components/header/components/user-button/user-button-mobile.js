@@ -8,13 +8,13 @@ import { styles as style, classes } from './style';
 
 type Props = {
   toggleAuthentication: () => void,
-  onSignOut: () => void,
+  signOut: () => void,
   user: Object,
 };
 
 const UserButtonMobile = ({
   toggleAuthentication,
-  onSignOut,
+  signOut,
   user,
 } : Props) => (
   !(user && user.email) ? (
@@ -33,7 +33,7 @@ const UserButtonMobile = ({
       className={classes.headerMenuBarButton}
       style={style.headerMenuBar.button}
       iconStyle={style.headerMenuBar.icon}
-      onClick={onSignOut}
+      onClick={signOut}
       iconClassName={['material-icons', classes.headerMenuBarButtonUserLoggedIn].join(' ')}>
       exit_to_app
     </IconButton>
