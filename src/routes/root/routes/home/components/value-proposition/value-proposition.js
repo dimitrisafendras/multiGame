@@ -9,6 +9,7 @@ import {
   Button,
 } from 'components';
 
+import { compose } from 'containers';
 import { linkAble } from 'routes/root/containers';
 
 type Props = {
@@ -39,4 +40,4 @@ const ValueProposition = ({ link }: Props) => (
   </article>
 );
 
-export default linkAble(ValueProposition);
+export default compose(linkAble)(ValueProposition);

@@ -5,6 +5,7 @@ import {
   classes,
 } from './style';
 
+import { compose } from 'containers';
 import { linkAble } from 'routes/root/containers';
 
 import {
@@ -49,4 +50,4 @@ const ValueProposition = ({ link }: Props) => (
   </article>
 );
 
-export default linkAble(ValueProposition);
+export default compose(linkAble)(ValueProposition);

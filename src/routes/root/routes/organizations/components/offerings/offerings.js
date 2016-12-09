@@ -48,4 +48,4 @@ const Offerings = ({ size: { mobile }, link }: Props) => (
   </article>
 );
 
-export default compose(linkAble, Resizable)(Offerings);
+export default compose(linkAble)(Resizable(Offerings));

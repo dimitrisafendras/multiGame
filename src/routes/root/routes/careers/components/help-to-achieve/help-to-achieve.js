@@ -46,4 +46,4 @@ const HelpToAchieve = ({ size: { mobile }, link }: Props) => (
   </article>
 );
 
-export default compose(linkAble, Resizable)(HelpToAchieve);
+export default compose(linkAble)(Resizable(HelpToAchieve));
