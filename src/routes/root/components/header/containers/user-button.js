@@ -1,3 +1,5 @@
+import { compose } from 'containers';
+
 import {
   userAble,
   signOutAble,
@@ -7,5 +9,7 @@ import {
   UserButton as UserButtonComp,
  } from '../components';
 
-export const UserButton = userAble(signOutAble(UserButtonComp));
-export const UserButtonMobile = userAble(signOutAble(UserButtonMobileComp));
+const connectProps = compose(userAble, signOutAble);
+
+export const UserButton = connectProps(UserButtonComp);
+export const UserButtonMobile = connectProps(UserButtonMobileComp);
