@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Content,
+  Container,
   FlexContainer,
 } from 'components';
 
@@ -16,7 +16,7 @@ import {
   UserButtonMobile,
 } from './containers';
 
-import { classes, styles as style } from './style';
+import { classes, styles } from './style';
 
 import { signInEnabled } from './config';
 
@@ -32,33 +32,28 @@ const Header = ({
   activeRoute,
 }: Props) => (
   <FlexContainer className={classes.appBar}>
-    <Content className={classes.logo}>
+    <Container className={classes.logo}>
       <Logo resizable />
-    </Content>
-    <Content
+    </Container>
+    <Container
       className={classes.normalMenu}
       style={{
         marginLeft: 'auto',
         minWidth: '400px',
       }}>
       <HeaderMenuBar {...{ activeRoute }} />
-    </Content>
+    </Container>
 
-    <Content className={classes.normalMenu}>
+    <Container className={classes.normalMenu}>
       {signInEnabled && (
         <UserButton {...{
           handleLeftIconButtonTouchTap,
           toggleAuthentication,
         }} />
       )}
-    </Content>
+    </Container>
 
-    <Content
-      className={classes.mobileMenu}
-      style={{
-        position: 'fixed',
-        right: '0px',
-      }}>
+    <Container className={classes.mobileMenu}>
 
       {signInEnabled && (
         <UserButtonMobile {...{
@@ -68,13 +63,13 @@ const Header = ({
       )}
 
       <IconButton
-        iconStyle={style.headerMenuBar.menuIcon}
+        iconStyle={styles.headerMenuBar.menuIcon}
         onTouchTap={handleLeftIconButtonTouchTap}
         iconClassName={'material-icons'}
         className={classes.headerMenuBarButtonMenu}>
         menu
       </IconButton>
-    </Content>
+    </Container>
   </FlexContainer>
 );
 

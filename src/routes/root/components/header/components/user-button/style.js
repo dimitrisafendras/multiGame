@@ -7,6 +7,7 @@ const styles = {
     padding: '6px',
     textTransform: 'uppercase',
     color: muiTheme.palette.cyan400,
+    margin: '4px 4px 4px 0px',
   },
   headerMenuBarButtonLogin: {
     opacity: 0.75,

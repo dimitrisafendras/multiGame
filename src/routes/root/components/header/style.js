@@ -19,6 +19,8 @@ const styles = {
   },
   mobileMenu: {
     display: 'none',
+    position: 'fixed',
+    right: '0px',
   },
   headerMenuBarButton: {
     height: `${muiTheme.appBar.mobileHeight}px`,

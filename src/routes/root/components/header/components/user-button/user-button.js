@@ -6,14 +6,18 @@ import {
 } from 'material-ui';
 
 import {
-  classes,
   styles,
 } from './style';
 
-const className = [
-  classes.headerMenuBarButton,
-  classes.headerMenuBarButtonLoggedIn,
-].join(' ');
+const styleSignedIn = {
+  ...styles.headerMenuBarButton,
+  ...styles.headerMenuBarButtonLoggedIn,
+};
+
+const styleSignIn = {
+  ...styles.headerMenuBarButton,
+  ...styles.headerMenuBarButtonLogin,
+};
 
 type Props = {
   toggleAuthentication: () => void,
@@ -31,7 +35,7 @@ const UserButtonSignedIn = ({
 }: Props) => (
   <FlatButton
     title={'Profile'}
-    className={className}
+    style={styleSignedIn}
     label={name || email}
     icon={
       <FontIcon
@@ -55,7 +59,7 @@ const UserButtonSignedOut = ({
 }: Props) => (
   <FlatButton
     title={'Login / Register'}
-    className={className}
+    style={styleSignIn}
     onClick={toggleAuthentication}
     label={'Login / Register'}
     icon={
