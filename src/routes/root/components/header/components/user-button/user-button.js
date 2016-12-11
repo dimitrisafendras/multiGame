@@ -5,7 +5,15 @@ import {
   FlatButton,
 } from 'material-ui';
 
-import { classes, styles as style } from './style';
+import {
+  classes,
+  styles,
+} from './style';
+
+const className = [
+  classes.headerMenuBarButton,
+  classes.headerMenuBarButtonLoggedIn,
+].join(' ');
 
 type Props = {
   toggleAuthentication: () => void,
@@ -16,41 +24,28 @@ type Props = {
 const UserButtonSignedIn = ({
   toggleAuthentication,
   signOut,
-  user,
+  user: {
+    name,
+    email,
+  },
 }: Props) => (
-  <div>
-    <FlatButton
-      title={'Profile'}
-      className={[
-        classes.headerMenuBarButton,
-        classes.headerMenuBarButtonLogin,
-        classes.headerMenuBarButtonLoggedIn,
-      ].join(' ')}
-      style={style.headerMenuBar.button}
-      label={`Welcome,  ${(user.name) ? user.name : user.email}`}
-      icon={
-        <FontIcon
-          style={style.headerMenuBar.menuIcon}
-          className={'material-icons'}
-          icon>
-          notifications
-        </FontIcon>
-      }
-    />
-    <FlatButton
-      title={'Logout'}
-      className={[
-        classes.headerMenuBarButton,
-        classes.headerMenuBarButtonLogout,
-      ].join(' ')}
-      style={style.headerMenuBar.button}
-      onClick={() => {
-        signOut();
-        toggleAuthentication();
-      }}
-      label={`logout`}
-    />
-  </div>
+  <FlatButton
+    title={'Profile'}
+    className={className}
+    label={name || email}
+    icon={
+      <FontIcon
+        style={styles.headerMenuBar.menuIcon}
+        className={'material-icons'}
+        icon>
+        notifications
+      </FontIcon>
+    }
+    onClick={() => {
+      signOut();
+      toggleAuthentication();
+    }}
+  />
 );
 
 const UserButtonSignedOut = ({
@@ -60,11 +55,7 @@ const UserButtonSignedOut = ({
 }: Props) => (
   <FlatButton
     title={'Login / Register'}
-    className={[
-      classes.headerMenuBarButton,
-      classes.headerMenuBarButtonLogin,
-    ].join(' ')}
-    style={style.headerMenuBar.button}
+    className={className}
     onClick={toggleAuthentication}
     label={'Login / Register'}
     icon={

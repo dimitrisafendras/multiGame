@@ -1,7 +1,11 @@
 import React from 'react';
 
 import {
-  AppBar,
+  Content,
+  FlexContainer,
+} from 'components';
+
+import {
   IconButton,
 } from 'material-ui';
 
@@ -27,63 +31,54 @@ const Header = ({
   toggleAuthentication,
   activeRoute,
 }: Props) => (
-  <div className={classes.topBar}>
-    <div className={classes.mainMenu}>
-      <div className={classes.mainMenuHolder}>
-        <div className={classes.appBarContainer}>
-          <AppBar
-            className={classes.appBar}
-            title={<Logo className={classes.logo} resizable />}
-            titleStyle={style.appBarTitleStyle}
-            showMenuIconButton={false}
-          />
-        </div>
-        <div className={classes.mainMenuContent}>
+  <FlexContainer className={classes.appBar}>
+    <Content center className={classes.logo}>
+      <Logo resizable />
+    </Content>
+    <Content center
+      className={classes.normalMenu}
+      style={{
+        marginLeft: 'auto',
+        minWidth: '400px',
+      }}>
+      <HeaderMenuBar {...{ activeRoute }} />
+    </Content>
 
-          {/* Header Tabs */}
-          <div className={classes.mainMenuItem} style={style.mainMenuItemGrow}>
-            <HeaderMenuBar {...{ activeRoute }} />
-          </div>
+    <Content className={classes.normalMenu}>
+      {signInEnabled && (
+        <UserButton {...{
+          handleLeftIconButtonTouchTap,
+          toggleAuthentication,
+        }} />
+      )}
+    </Content>
 
-          <div className={[classes.mainMenuItem, classes.mainMenuItemMobile].join(' ')}>
-            <div className={classes.mainMenuIconContainer}>
+    <Content
+      className={classes.mobileMenu}
+      style={{
+        position: 'fixed',
+        right: '0px',
+      }}>
 
-              {signInEnabled && (
-                <UserButtonMobile {...{
-                  handleLeftIconButtonTouchTap,
-                  toggleAuthentication,
-                }} />
-              )}
+      {signInEnabled && (
+        <UserButtonMobile {...{
+          handleLeftIconButtonTouchTap,
+          toggleAuthentication,
+        }} />
+      )}
 
-              {/* Menu Icon */}
-              <IconButton
-                iconStyle={{
-                  ...style.headerMenuBar.icon,
-                  ...style.headerMenuBar.menuIcon,
-                }}
-                onTouchTap={handleLeftIconButtonTouchTap}
-                iconClassName={'material-icons'}
-                className={[classes.headerMenuBarButton, classes.headerMenuBarButtonMenu].join(' ')}>
-                menu
-              </IconButton>
-            </div>
-          </div>
-
-          <div className={[classes.mainMenuItem, classes.mainMenuItemTablet].join(' ')}>
-            <div className={classes.mainMenuIconContainer}>
-              {signInEnabled && (
-                <UserButton {...{
-                  handleLeftIconButtonTouchTap,
-                  toggleAuthentication,
-                }} />
-              )}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+      <IconButton
+        iconStyle={style.headerMenuBar.menuIcon}
+        onTouchTap={handleLeftIconButtonTouchTap}
+        iconClassName={'material-icons'}
+        className={[
+          classes.headerMenuBarButton,
+          classes.headerMenuBarButtonMenu].join(' ')
+        }>
+        menu
+      </IconButton>
+    </Content>
+  </FlexContainer>
 );
 
 export default Header;
