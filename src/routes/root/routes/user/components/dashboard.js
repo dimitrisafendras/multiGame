@@ -11,7 +11,7 @@ import { classes } from './style';
 type Props = {
   user: {
     displayName?: string,
-    email: string,
+    email?: string,
   },
 };
 
