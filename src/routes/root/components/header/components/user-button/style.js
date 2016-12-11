@@ -36,7 +36,7 @@ const styles = {
   },
   '@media (min-width: 768px)': {
     headerMenuBarButton: {
-      height: `${muiTheme.appBar.tabletHeight}px !important`,
+      height: `${muiTheme.appBar.tabletHeight}px`,
       padding: '10px',
       marginRight: 'auto',
     },

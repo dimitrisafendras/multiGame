@@ -21,15 +21,12 @@ const styles = {
     display: 'none',
   },
   headerMenuBarButton: {
-    height: `${muiTheme.appBar.mobileHeight}px !important`,
-    width: `${muiTheme.appBar.mobileHeight}px !important`,
-    padding: '6px !important',
-    marginLeft: 'auto !important',
+    height: `${muiTheme.appBar.mobileHeight}px`,
+    width: `${muiTheme.appBar.mobileHeight}px`,
+    padding: '6px',
+    marginLeft: 'auto',
     textTransform: 'uppercase',
     color: muiTheme.palette.cyan400,
-  },
-  headerMenuBarButtonMenu: {
-    borderLeft: `1px solid ${muiTheme.palette.grey300} !important`,
   },
   headerMenuBar: {
     button: {
@@ -59,6 +56,7 @@ const styles = {
       width: 'auto',
       padding: '10px',
       marginLeft: 'auto',
+      borderLeft: `1px solid ${muiTheme.palette.grey300}`,
     },
   },
 };

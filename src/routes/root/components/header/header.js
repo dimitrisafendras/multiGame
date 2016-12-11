@@ -32,10 +32,10 @@ const Header = ({
   activeRoute,
 }: Props) => (
   <FlexContainer className={classes.appBar}>
-    <Content center className={classes.logo}>
+    <Content className={classes.logo}>
       <Logo resizable />
     </Content>
-    <Content center
+    <Content
       className={classes.normalMenu}
       style={{
         marginLeft: 'auto',
@@ -71,10 +71,7 @@ const Header = ({
         iconStyle={style.headerMenuBar.menuIcon}
         onTouchTap={handleLeftIconButtonTouchTap}
         iconClassName={'material-icons'}
-        className={[
-          classes.headerMenuBarButton,
-          classes.headerMenuBarButtonMenu].join(' ')
-        }>
+        className={classes.headerMenuBarButtonMenu}>
         menu
       </IconButton>
     </Content>
