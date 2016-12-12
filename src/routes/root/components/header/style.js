@@ -13,6 +13,10 @@ const styles = {
     background: muiTheme.palette.white,
     boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.2)',
   },
+  tabsContainer: {
+    marginLeft: 'auto',
+    minWidth: '400px',
+  },
   logo: {
     marginTop: '10px',
     marginLeft: '40px',
@@ -27,6 +31,9 @@ const styles = {
   },
   '@media (max-width: 960px)': {
     normalMenu: {
+      display: 'none',
+    },
+    tabsContainer: {
       display: 'none',
     },
     mobileMenu: {

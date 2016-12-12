@@ -41,7 +41,8 @@
     "deploy": {
       "command": "npm run lint && npm run clean && npm run compile",
       "env": {
-        "DEBUG": "app:*"
+        "DEBUG": "app:*",
+        "USER_ENABLED": "true"
       }
     },
     "deploy:dev": {

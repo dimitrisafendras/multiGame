@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Container,
   FlexContainer,
 } from 'components';
 
@@ -32,28 +31,21 @@ const Header = ({
   activeRoute,
 }: Props) => (
   <FlexContainer className={classes.appBar}>
-    <Container className={classes.logo}>
-      <Logo resizable />
-    </Container>
-    <Container
-      className={classes.normalMenu}
-      style={{
-        marginLeft: 'auto',
-        minWidth: '400px',
-      }}>
+    <Logo resizable className={classes.logo} />
+    <div className={classes.tabsContainer}>
       <HeaderMenuBar {...{ activeRoute }} />
-    </Container>
+    </div>
 
-    <Container className={classes.normalMenu}>
+    <div className={classes.normalMenu}>
       {signInEnabled && (
         <UserButton {...{
           handleLeftIconButtonTouchTap,
           toggleAuthentication,
         }} />
       )}
-    </Container>
+    </div>
 
-    <Container className={classes.mobileMenu}>
+    <div className={classes.mobileMenu}>
 
       {signInEnabled && (
         <UserButtonMobile {...{
@@ -68,7 +60,7 @@ const Header = ({
         iconClassName={'material-icons'}>
         menu
       </IconButton>
-    </Container>
+    </div>
   </FlexContainer>
 );
 
