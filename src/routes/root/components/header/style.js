@@ -22,24 +22,8 @@ const styles = {
     position: 'fixed',
     right: '0px',
   },
-  headerMenuBarButton: {
-    height: `${muiTheme.appBar.mobileHeight}px`,
-    width: `${muiTheme.appBar.mobileHeight}px`,
-    padding: '6px',
-    marginLeft: 'auto',
-    textTransform: 'uppercase',
-    color: muiTheme.palette.cyan400,
-  },
-  headerMenuBar: {
-    button: {
-      color: muiTheme.palette.cyan400,
-    },
-    icon: {
-      color: muiTheme.palette.cyan400,
-    },
-    menuIcon: {
-      color: muiTheme.palette.blue600,
-    },
+  menuIcon: {
+    color: muiTheme.palette.blue600,
   },
   '@media (max-width: 960px)': {
     normalMenu: {
@@ -47,18 +31,6 @@ const styles = {
     },
     mobileMenu: {
       display: 'block',
-    },
-    button: {
-      marginTop: 'calc(6.1% + 20px)',
-    },
-  },
-  '@media (min-width: 768px)': {
-    headerMenuBarButton: {
-      height: `${muiTheme.appBar.tabletHeight}px`,
-      width: 'auto',
-      padding: '10px',
-      marginLeft: 'auto',
-      borderLeft: `1px solid ${muiTheme.palette.grey300}`,
     },
   },
 };

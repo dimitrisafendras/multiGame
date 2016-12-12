@@ -63,10 +63,9 @@ const Header = ({
       )}
 
       <IconButton
-        iconStyle={styles.headerMenuBar.menuIcon}
+        iconStyle={styles.menuIcon}
         onTouchTap={handleLeftIconButtonTouchTap}
-        iconClassName={'material-icons'}
-        className={classes.headerMenuBarButtonMenu}>
+        iconClassName={'material-icons'}>
         menu
       </IconButton>
     </Container>
