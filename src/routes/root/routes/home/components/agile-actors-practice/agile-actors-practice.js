@@ -54,4 +54,4 @@ const AgileActorsPractice = ({
   </article>
 );
 
-export default compose(linkAble, Resizable)(AgileActorsPractice);
+export default compose(linkAble)(Resizable(AgileActorsPractice));

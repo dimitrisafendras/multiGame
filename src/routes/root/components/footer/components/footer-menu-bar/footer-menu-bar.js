@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { compose } from 'containers';
 import { linkAble, contentAble } from 'routes/root/containers';
 
 import {
@@ -54,4 +55,4 @@ export const FooterMenuBar = ({
   </FlexContainer>
 );
 
-export default contentAble(linkAble(FooterMenuBar));
+export default compose(contentAble, linkAble)(FooterMenuBar);

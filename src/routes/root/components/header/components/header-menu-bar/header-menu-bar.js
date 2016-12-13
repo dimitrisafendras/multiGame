@@ -7,7 +7,7 @@ import {
 
 import {
   classes,
-  styles as style,
+  styles,
 } from './style';
 
 const tabKey = (link) => `aa-header-tabs--${link.replace(' ', '')}`;
@@ -29,7 +29,7 @@ const HeaderMenuBar = ({
   return (
     <Tabs
       className={classes.tabs}
-      tabItemContainerStyle={style.tabsContainer}
+      tabItemContainerStyle={styles.tabsContainer}
       value={activeTabIndex}>
       {menuItems.map((item, index) => (
         <Tab value={index}

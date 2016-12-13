@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { compose } from 'containers';
 import { linkAble } from 'routes/root/containers';
 
 import content from './content';
@@ -79,4 +80,4 @@ const Organizations = ({ link }: Props) => (
   </article>
 );
 
-export default linkAble(Organizations);
+export default compose(linkAble)(Organizations);

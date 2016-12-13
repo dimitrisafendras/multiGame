@@ -5,66 +5,61 @@ import {
   FlatButton,
 } from 'material-ui';
 
-import { classes, styles as style } from './style';
+import {
+  styles,
+} from './style';
+
+const styleSignedIn = {
+  ...styles.headerMenuBarButton,
+  ...styles.headerMenuBarButtonLoggedIn,
+};
+
+const styleSignIn = {
+  ...styles.headerMenuBarButton,
+  ...styles.headerMenuBarButtonLogin,
+};
 
 type Props = {
   toggleAuthentication: () => void,
-  onSignOut: () => void,
+  signOut: () => void,
   user: Object,
 };
 
 const UserButtonSignedIn = ({
   toggleAuthentication,
-  onSignOut,
-  user,
+  signOut,
+  user: {
+    name,
+    email,
+  },
 }: Props) => (
-  <div>
-    <FlatButton
-      title={'Profile'}
-      className={[
-        classes.headerMenuBarButton,
-        classes.headerMenuBarButtonLogin,
-        classes.headerMenuBarButtonLoggedIn,
-      ].join(' ')}
-      style={style.headerMenuBar.button}
-      label={`Welcome,  ${(user.name) ? user.name : user.email}`}
-      icon={
-        <FontIcon
-          style={style.headerMenuBar.menuIcon}
-          className={'material-icons'}
-          icon>
-          notifications
-        </FontIcon>
-      }
-    />
-    <FlatButton
-      title={'Logout'}
-      className={[
-        classes.headerMenuBarButton,
-        classes.headerMenuBarButtonLogout,
-      ].join(' ')}
-      style={style.headerMenuBar.button}
-      onClick={() => {
-        onSignOut();
-        toggleAuthentication();
-      }}
-      label={`logout`}
-    />
-  </div>
+  <FlatButton
+    title={'Profile'}
+    style={styleSignedIn}
+    label={name || email}
+    icon={
+      <FontIcon
+        style={styles.headerMenuBar.menuIcon}
+        className={'material-icons'}
+        icon>
+        notifications
+      </FontIcon>
+    }
+    onClick={() => {
+      signOut();
+      toggleAuthentication();
+    }}
+  />
 );
 
 const UserButtonSignedOut = ({
   toggleAuthentication,
-  onSignOut,
+  signOut,
   user,
 }: Props) => (
   <FlatButton
     title={'Login / Register'}
-    className={[
-      classes.headerMenuBarButton,
-      classes.headerMenuBarButtonLogin,
-    ].join(' ')}
-    style={style.headerMenuBar.button}
+    style={styleSignIn}
     onClick={toggleAuthentication}
     label={'Login / Register'}
     icon={

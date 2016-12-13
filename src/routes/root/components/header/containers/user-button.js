@@ -1,11 +1,15 @@
+import { compose } from 'containers';
+
 import {
   userAble,
-  onSignOutAble,
+  signOutAble,
 } from 'routes/root/containers';
 import {
   UserButtonMobile as UserButtonMobileComp,
   UserButton as UserButtonComp,
  } from '../components';
 
-export const UserButton = userAble(onSignOutAble(UserButtonComp));
-export const UserButtonMobile = userAble(onSignOutAble(UserButtonMobileComp));
+const connectProps = compose(userAble, signOutAble);
+
+export const UserButton = connectProps(UserButtonComp);
+export const UserButtonMobile = connectProps(UserButtonMobileComp);

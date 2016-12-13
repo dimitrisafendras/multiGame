@@ -3,9 +3,9 @@ import {
   contentAble,
   linkAble,
   userAble,
-  onSignOutAble,
-  onSignInAble,
-  onSignUpAble,
+  signOutAble,
+  signInAble,
+  signUpAble,
 } from './container-creators';
 
 export {
@@ -13,7 +13,7 @@ export {
   contentAble,
   linkAble,
   userAble,
-  onSignOutAble,
-  onSignInAble,
-  onSignUpAble,
+  signOutAble,
+  signInAble,
+  signUpAble,
 };

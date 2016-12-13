@@ -7,7 +7,9 @@ const styles = {
     boxSizing: 'border-box',
     zIndex: 1100,
   },
-  tabsContainer: {},
+  tabsContainer: {
+    display: 'inline',
+  },
   tab: {
     height: '68px',
     fontSize: '13px',
