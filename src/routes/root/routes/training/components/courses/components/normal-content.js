@@ -3,7 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import content from '../content';
 import classNames from 'classnames';
 
-import { Scrollbars } from    'react-custom-scrollbars';
+import { Scrollbars } from 'react-custom-scrollbars';
 import { classes, styles } from '../style';
 
 import {
@@ -116,7 +116,7 @@ class NormalContent extends Component {
                 disableTouchRipple
                 onActive={this.setActiveTab}
                 className={classNames(
-                     sectionTitleWrapper,
+                  sectionTitleWrapper,
                   {
                     active: index === active,
                     inactive: index !== active,
