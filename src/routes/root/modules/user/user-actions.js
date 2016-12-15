@@ -23,9 +23,9 @@ const signIn = (options) => (dispatch, getState) => {
 
   userService
   .auth(options)
-  .then((user) => {
-    dispatch(signedIn(user));
-  })
+  // .then((user) => {
+  //   dispatch(signedIn(user));
+  // })
   .catch((error) => {
     console.log('user-actions signIn', error);
   });

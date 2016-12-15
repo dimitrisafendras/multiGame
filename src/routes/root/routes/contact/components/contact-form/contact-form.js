@@ -1,6 +1,6 @@
 import React from 'react';
 import escape from 'escape-html';
-import {createContactMessage} from 'model-services/user/graphql/contacts';
+import { user } from 'model-services';
 import { Container, FlexContainer, Button } from 'components/content';
 import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
@@ -15,6 +15,8 @@ const {
   button,
   toast,
 } = classes;
+
+const { createContactMessage } = user;
 
 type Props = {
   message?: string,

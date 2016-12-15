@@ -9,5 +9,5 @@ contentUpdated.type = 'CONTENT_UPDATED';
 //
 // Static content synchronous action
 //
-import Content from 'model-services/content';
-export const contentUpdate = contentUpdated(Content);
+import { content } from 'model-services';
+export const contentUpdate = contentUpdated(content);

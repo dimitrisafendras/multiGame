@@ -31,7 +31,9 @@ const Header = ({
   activeRoute,
 }: Props) => (
   <FlexContainer className={classes.appBar}>
-    <Logo resizable className={classes.logo} />
+    <FlexContainer center className={classes.logo}>
+      <Logo resizable />
+    </FlexContainer>
     <div className={classes.tabsContainer}>
       <HeaderMenuBar {...{ activeRoute }} />
     </div>
