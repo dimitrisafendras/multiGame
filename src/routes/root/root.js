@@ -13,14 +13,17 @@ import {
 
 import { Layout } from './components';
 
-/*  Note: Instead of using JSX, we recommend using react-router
-    PlainRoute objects to build route definitions.   */
+// Note: Instead of using JSX, we recommend using react-router
+// PlainRoute objects to build route definitions.
 
 import { injectReducer } from 'store/reducers';
 import userReducer from './modules/user/user-reducer';
 import contentReducer from './modules/content/content-reducer';
+import clientConfigReducer from './modules/client-config/client-config-reducer';
 
 import { onSignInAndOnSignOut } from './modules/user/user-actions';
+import { onClientConfig } from './modules/client-config/client-config-actions';
+
 import { contentUpdate } from './modules/content/content-actions';
 
 ReactGA.initialize('UA-86819304-1');
@@ -28,6 +31,12 @@ ReactGA.initialize('UA-86819304-1');
 export const rootRoute = (store) => {
   injectReducer(store, { key: 'user', reducer: userReducer });
   injectReducer(store, { key: 'content', reducer: contentReducer });
+  injectReducer(store, { key: 'clientConfig', reducer: clientConfigReducer });
+
+  //
+  // Asynchronous listener of the changes of client config state.
+  //
+  store.dispatch(onClientConfig);
 
   //
   // Asynchronous listener of the changes of the user's authentication state.
