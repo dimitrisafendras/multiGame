@@ -43,5 +43,8 @@
     "host": "smtp.mailgun.org",
     "ssl": true,
     "recipient": "dimitris.livas@agileactors.com"
+  },
+  "clientConfig": {
+    "userSigninEnabled": true
   }
 }
