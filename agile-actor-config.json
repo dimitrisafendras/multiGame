@@ -5,6 +5,11 @@
   "maxage": 120000,
   "session": "secret-boilerplate-token",
   "token": "secret-jwt-token",
+  "workable": {
+    "serviceUrl": "https://www.workable.com/spi/v3/accounts/agileactors/",
+    "type": "Bearer",
+    "token": "49af1a990ada4c218b81f5ae89449cd4ff18134365676627516df0c040243cc6"
+  },
   "rethinkdb": {
     "host": "localhost",
     "port": 28015,
@@ -33,10 +38,13 @@
     }
   },
   "emailServer": {
-    "user": "dimitris.livas@agileactors.com",
+    "user": "postmaster@agileactors.com",
     "password": "b0cfcc3a5c06b6c77d9ff95214248c72",
     "host": "smtp.mailgun.org",
     "ssl": true,
-    "recipient": "services@agileactors.com"
+    "recipient": "dimitris.livas@agileactors.com"
+  },
+  "clientConfig": {
+    "userSigninEnabled": true
   }
 }

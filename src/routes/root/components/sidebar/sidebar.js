@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { compose } from 'containers';
 
 import {
+  userSigninEnabledAble,
   contentAble,
   userAble,
   signOutAble,
@@ -24,9 +25,8 @@ import {
   classes,
 } from './style';
 
-import { signInEnabled } from './config';
-
 type Props = {
+  userSigninEnabled: boolean,
   content: [],
   link: () => void,
   open: boolean,
@@ -103,6 +103,7 @@ class Sidebar extends Component {
   render() {
     const {
       props: {
+        userSigninEnabled,
         content,
         link,
         user,
@@ -118,7 +119,7 @@ class Sidebar extends Component {
         openSecondary
         width={style.drawerContainer.width}>
 
-        {signInEnabled && (
+        {userSigninEnabled && (
           !(user && user.email) ? (
             this.renderLoginButton()
           ) : (
@@ -160,6 +161,7 @@ class Sidebar extends Component {
 }
 
 export default compose(
+  userSigninEnabledAble,
   contentAble,
   userAble,
   signOutAble,

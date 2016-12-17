@@ -15,6 +15,12 @@ const contentAble = stateProp(({ content }) => ({ content }));
 
 const userAble = stateProp(({ user }) => ({ user }));
 
+const userSigninEnabledAble = stateProp(({
+  clientConfig: {
+    userSigninEnabled = false,
+  } = {},
+}) => ({ userSigninEnabled }));
+
 const linkAble = actionProp((dispatch) => ({
   link: (path) => {
     path.charAt(0) === '/' ? dispatch(push(path)) : window.open(path, '_newtab');
@@ -38,6 +44,7 @@ const signUpAble = actionProp((dispatch) => ({
 }));
 
 export {
+  userSigninEnabledAble,
   contentAble,
   linkAble,
   userAble,

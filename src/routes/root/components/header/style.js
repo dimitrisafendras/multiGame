@@ -18,7 +18,6 @@ const styles = {
     minWidth: '400px',
   },
   logo: {
-    marginTop: '10px',
     marginLeft: '40px',
   },
   mobileMenu: {

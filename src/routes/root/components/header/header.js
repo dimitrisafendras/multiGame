@@ -1,6 +1,14 @@
 import React from 'react';
 
 import {
+  compose,
+} from 'containers';
+
+import {
+  userSigninEnabledAble,
+} from 'routes/root/containers';
+
+import {
   FlexContainer,
 } from 'components';
 
@@ -15,29 +23,34 @@ import {
   UserButtonMobile,
 } from './containers';
 
-import { classes, styles } from './style';
-
-import { signInEnabled } from './config';
+import {
+  classes,
+  styles,
+} from './style';
 
 type Props = {
+  userSigninEnabled: boolean,
   handleLeftIconButtonTouchTap: () => void,
   toggleAuthentication: () => void,
   activeRoute: string,
 };
 
 const Header = ({
+  userSigninEnabled,
   handleLeftIconButtonTouchTap,
   toggleAuthentication,
   activeRoute,
 }: Props) => (
   <FlexContainer className={classes.appBar}>
-    <Logo resizable className={classes.logo} />
+    <FlexContainer center className={classes.logo}>
+      <Logo resizable />
+    </FlexContainer>
     <div className={classes.tabsContainer}>
       <HeaderMenuBar {...{ activeRoute }} />
     </div>
 
     <div className={classes.normalMenu}>
-      {signInEnabled && (
+      {userSigninEnabled && (
         <UserButton {...{
           handleLeftIconButtonTouchTap,
           toggleAuthentication,
@@ -47,7 +60,7 @@ const Header = ({
 
     <div className={classes.mobileMenu}>
 
-      {signInEnabled && (
+      {userSigninEnabled && (
         <UserButtonMobile {...{
           handleLeftIconButtonTouchTap,
           toggleAuthentication,
@@ -64,4 +77,4 @@ const Header = ({
   </FlexContainer>
 );
 
-export default Header;
+export default compose(userSigninEnabledAble)(Header);

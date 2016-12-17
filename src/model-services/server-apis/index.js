@@ -1,7 +1,11 @@
 import graphql from './graphql';
-import { authSocket } from './socketio';
+import {
+  authSocket,
+  clientConfigSocket,
+} from './socketio';
 
 export {
   graphql,
   authSocket,
+  clientConfigSocket,
 };

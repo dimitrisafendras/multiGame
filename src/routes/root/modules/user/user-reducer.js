@@ -7,8 +7,8 @@ import {
 
 const userReducer = handleActions(
   {
-    [signedIn.type]: (state, { payload }) => payload || {},
-    [signedOut.type]: (state, { payload }) => payload || {},
+    [signedIn.type]: (state, { payload }) => ({...payload}),
+    [signedOut.type]: (state, { payload }) => ({...payload}),
   },
   {} // default user state
 );

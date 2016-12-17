@@ -1,6 +1,6 @@
 import React from 'react';
 import escape from 'escape-html';
-import {createContactMessage} from 'model-services/user/graphql/contacts';
+import { user } from 'model-services';
 import { Container, FlexContainer, Button } from 'components/content';
 import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
@@ -15,6 +15,8 @@ const {
   button,
   toast,
 } = classes;
+
+const { createContactMessage } = user;
 
 type Props = {
   message?: string,
@@ -92,7 +94,9 @@ class SubmitValidationForm extends React.Component {
                 required floatingLabelText={field.label}
                 key={`aa-careers-form-contact-${field.name}`}
                 className={label}
-                multiLine={field.multiLine} rows={field.rows} rowsMax={field.rowsMax}
+                multiLine={field.multiLine}
+                rows={field.rows}
+                rowsMax={field.rowsMax}
                 inputStyle={styles.textField}
                 textareaStyle={styles.textField} />
           ))}

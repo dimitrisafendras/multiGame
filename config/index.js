@@ -86,7 +86,6 @@ config.globals = {
   __DEBUG__: config.env === 'development' && !argv.no_debug,
   __COVERAGE__: !argv.watch && config.env === 'test',
   __BASENAME__: JSON.stringify(process.env.BASENAME || ''),
-  __USER_ENABLED__: process.env.USER_ENABLED,
 };
 
 // ------------------------------------

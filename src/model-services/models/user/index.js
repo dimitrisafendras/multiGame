@@ -7,11 +7,15 @@ import {
 
 import {
   auth,
-} from './user';
+} from './auth';
 
 import {
   createLocalUser,
 } from './graphql/user';
+
+import {
+  createContactMessage,
+} from './graphql/contacts';
 
 import {
   setOnAuth,
@@ -27,6 +31,7 @@ export {
   unAuth,
 
   createLocalUser,
+  createContactMessage,
 
   setOnAuth,
   setOnUnAuth,
