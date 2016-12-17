@@ -100,7 +100,7 @@ class MobileContent extends Component {
                     {section.items.map((item) => (
 
                       <div key={sectionKey(item.id)} className={classNames('text-wrapper', textWrapper)}
-                        onTouchTap={() => this.handleOpen(null, item, section.class)}>
+                        onTouchTap={() => this.handleOpen(item, section.class)}>
                         <FlexContainer column>
                           <Content title className={title}>
                             {item.title}
