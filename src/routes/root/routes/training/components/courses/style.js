@@ -145,6 +145,8 @@ const styles = {
     marginTop: '4%',
   },
   dialog: {
+    overflowX: 'hidden',
+
     '& a:link': {
       color: muiTheme.palette.blue700,
     },

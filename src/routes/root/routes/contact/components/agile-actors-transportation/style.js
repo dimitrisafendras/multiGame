@@ -86,6 +86,7 @@ const styles = {
     marginTop: '10px',
     paddingLeft: '60px',
     paddingRight: '30px',
+    minHeight: '70px',
   },
   '@media (max-width: 767px)': {
     container: {
