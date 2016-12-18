@@ -5,7 +5,7 @@ import {
   classes,
 } from './style';
 
-import { compose } from 'containers';
+import { compose } from 'store';
 import { linkAble } from 'routes/root/containers';
 
 import {

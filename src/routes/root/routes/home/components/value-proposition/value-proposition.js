@@ -9,7 +9,7 @@ import {
   Button,
 } from 'components';
 
-import { compose } from 'containers';
+import { compose } from 'store';
 import { linkAble } from 'routes/root/containers';
 
 type Props = {

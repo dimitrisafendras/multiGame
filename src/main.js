@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import createStore from './store/createStore';
+import { createStore } from './store';
 import Application from './application';
 
 // ========================================================

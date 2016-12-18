@@ -13,13 +13,13 @@ import {
 const tabKey = (link) => `aa-header-tabs--${link.replace(' ', '')}`;
 
 type Props = {
-  content: [],
+  content?: [],
   link: (to: string) => void,
   activeRoute: string,
 };
 
 const HeaderMenuBar = ({
-  content,
+  content = [],
   link,
   activeRoute,
 }: Props) => {

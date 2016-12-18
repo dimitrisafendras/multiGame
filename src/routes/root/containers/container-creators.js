@@ -3,7 +3,7 @@ import { push } from 'react-router-redux';
 import {
   stateProp,
   actionProp,
-} from 'containers';
+} from 'store';
 
 import {
   signOut,

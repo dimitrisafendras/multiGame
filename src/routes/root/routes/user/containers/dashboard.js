@@ -1,4 +1,4 @@
-import { compose } from 'containers';
+import { compose } from 'store';
 import { userAble } from 'routes/root/containers';
 import { Dashboard } from '../components';
 

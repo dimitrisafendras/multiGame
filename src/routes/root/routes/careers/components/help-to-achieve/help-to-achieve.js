@@ -1,6 +1,6 @@
 import React from 'react';
 import content from './content';
-import { compose } from 'containers';
+import { compose } from 'store';
 import { classes } from './style';
 import { linkAble } from 'routes/root/containers';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { compose } from 'containers';
+import { compose } from 'store';
 
 import {
   userSigninEnabledAble,
@@ -27,7 +27,7 @@ import {
 
 type Props = {
   userSigninEnabled: boolean,
-  content: [],
+  content?: [],
   link: () => void,
   open: boolean,
   toggleSidebar: () => void,
@@ -104,7 +104,7 @@ class Sidebar extends Component {
     const {
       props: {
         userSigninEnabled,
-        content,
+        content = [],
         link,
         user,
       },

@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   compose,
-} from 'containers';
+} from 'store';
 
 import {
   userSigninEnabledAble,
