@@ -1,5 +1,3 @@
-import ReactGA from 'react-ga';
-
 // We only need to import the modules necessary for initial render
 import {
   HomeRoute,
@@ -26,8 +24,6 @@ import { onClientConfig } from './modules/client-config/client-config-actions';
 
 import { contentUpdate } from './modules/content/content-actions';
 
-ReactGA.initialize('UA-86819304-1');
-
 export const rootRoute = (store) => {
   injectReducer(store, { key: 'user', reducer: userReducer });
   injectReducer(store, { key: 'content', reducer: contentReducer });
@@ -50,22 +46,6 @@ export const rootRoute = (store) => {
   // Initialize static content
   //
   store.dispatch(contentUpdate);
-
-  //
-  // Subscribe each page view to google analytics
-  //
-  let currentPathname = '';
-  store.subscribe(() => {
-    const { router: { locationBeforeTransitions } } = store.getState();
-    if (locationBeforeTransitions === null) return;
-    const { pathname } = locationBeforeTransitions;
-    if (currentPathname === pathname) return;
-
-    currentPathname = pathname;
-    ReactGA.set({ page: currentPathname });
-    ReactGA.ga('send', 'pageview', currentPathname);
-    // ReactGA.pageview(currentPathname);
-  });
 
   return {
     path: '/',

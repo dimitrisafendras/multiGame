@@ -2,8 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+
+import ReactGA from 'react-ga';
+
 import { createStore } from './store';
 import Application from './application';
+import routes from './routes';
+
+//
+// Google Analytics
+//
+ReactGA.initialize('UA-86819304-1');
+
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+};
 
 // ========================================================
 // Store and History Instantiation
@@ -32,18 +46,15 @@ if (__DEBUG__) {
 // ========================================================
 const MOUNT_NODE = document.getElementById('root');
 
-let render = () => {
-  const routes = require('./routes/index').default(store);
-
-  ReactDOM.render(
-    <Application
-      store={store}
-      history={history}
-      routes={routes}
-    />,
-    MOUNT_NODE
-  );
-};
+let render = () => ReactDOM.render(
+  <Application
+    store={store}
+    history={history}
+    routes={routes(store)}
+    onUpdate={logPageView}
+  />,
+  MOUNT_NODE
+);
 
 // This code is excluded from production bundle
 if (__DEV__ && module.hot) {
