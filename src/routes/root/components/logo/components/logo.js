@@ -4,7 +4,6 @@ import { Link } from 'components/content';
 import { img } from './style';
 
 import {
-  Content,
   Resizable,
 } from 'components';
 
@@ -28,9 +27,9 @@ const Logo = ({ className, size: { mobile }, resizable }: Props) => {
 
   return (
     <Link to={'/'}>
-      <Content center className={classes}>
+      <div className={classes}>
         {logo}
-      </Content>
+      </div>
     </Link>
   );
 };
