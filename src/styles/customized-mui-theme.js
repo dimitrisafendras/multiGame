@@ -82,7 +82,7 @@ export default getMuiTheme({
     },
   },
   tabs: {
-    backgroundColor: white,
+    backgroundColor: 'transparent',
     selectedTextColor: blue700,
     textColor: blue700,
   },
