@@ -19,12 +19,16 @@ type Props = {
   resizable?: boolean,
 };
 
-const Logo = ({ className, size, resizable } : Props) => {
-  const logo = (resizable && size.mobile) ? <AgileActorsLogoIcon /> : <AgileActorsLogo />;
+const Logo = ({ className, size: { mobile }, resizable }: Props) => {
+  const [logo, classes] = (resizable && mobile) ? (
+      [<AgileActorsLogoIcon />, className]
+  ) : (
+      [<AgileActorsLogo />, classNames(img, className)]
+  );
 
   return (
     <Link to={'/'}>
-      <Content className={classNames(img, className)}>
+      <Content center className={classes}>
         {logo}
       </Content>
     </Link>

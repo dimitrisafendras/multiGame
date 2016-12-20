@@ -1,4 +1,4 @@
-import { Logo, SquareLogo } from './logo';
+import { Logo, LogoSmall, SquareLogo } from './logo';
 import { Signature } from './signature';
 
 import { Header } from './header';
@@ -11,6 +11,7 @@ import { Layout } from './layout';
 
 export {
   Logo,
+  LogoSmall,
   SquareLogo,
   Signature,
   Header,

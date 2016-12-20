@@ -45,7 +45,7 @@ const styles = {
     borderLeft: `1px solid ${blue200}`,
   },
   logo: {
-    padding: '12px 6px 0px 20px',
+    padding: '12px 6px 9px 20px',
     boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.25)',
   },
   divider: {

@@ -59,7 +59,6 @@ const Header = ({
     </div>
 
     <div className={classes.mobileMenu}>
-
       {userSigninEnabled && (
         <UserButtonMobile {...{
           handleLeftIconButtonTouchTap,

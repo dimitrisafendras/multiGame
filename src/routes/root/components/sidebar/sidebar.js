@@ -10,7 +10,7 @@ import {
   linkAble,
 } from 'routes/root/containers';
 
-import { Logo, Signature } from 'routes/root/components';
+import { LogoSmall, Signature } from 'routes/root/components';
 
 import {
   Drawer,
@@ -129,6 +129,8 @@ class Sidebar extends Component {
           )
         )}
 
+        <LogoSmall className={classes.logo} />
+
         <IconButton
           touch
           style={style.closeButton}
@@ -138,7 +140,7 @@ class Sidebar extends Component {
           iconClassName={'material-icons'}>
           close
         </IconButton>
-        <Logo className={classes.logo} resizable />
+
         <div className={classes.divider}>
           {content.map((item) => (
             <MenuItem

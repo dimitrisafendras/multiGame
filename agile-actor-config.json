@@ -45,6 +45,6 @@
     "recipient": "dimitris.livas@agileactors.com"
   },
   "clientConfig": {
-    "userSigninEnabled": true
+    "userSigninEnabled": false
   }
 }

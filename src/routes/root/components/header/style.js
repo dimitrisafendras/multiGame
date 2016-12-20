@@ -23,7 +23,8 @@ const styles = {
   mobileMenu: {
     display: 'none',
     position: 'fixed',
-    right: '0px',
+    right: '5px',
+    top: '10px',
   },
   menuIcon: {
     color: muiTheme.palette.blue600,
