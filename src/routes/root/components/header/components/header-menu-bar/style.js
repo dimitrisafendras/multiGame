@@ -2,6 +2,7 @@ import { jss } from 'components';
 
 const styles = {
   tabs: {
+    backgroundColor: 'transparent',
     height: '100%',
     lineHeight: '100%',
     boxSizing: 'border-box',
@@ -9,11 +10,13 @@ const styles = {
   },
   tabsContainer: {
     display: 'inline',
+    backgroundColor: 'transparent',
   },
   tab: {
     height: '68px',
     fontSize: '13px',
     fontWeight: '700',
+    backgroundColor: 'transparent',
   },
   '@media (max-width: 767px)': {
     tabs: {
