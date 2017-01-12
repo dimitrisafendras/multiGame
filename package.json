@@ -82,7 +82,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agileactors/agile-actor-x.git"
+    "url": "git+git@github.com:dimitrisafendras/Games.git"
   },
   "dependencies": {
     "babel-preset-es2016-node5": "1.1.2",
@@ -145,11 +145,6 @@
     "imports-loader": "0.7.0",
     "ip": "1.1.4",
     "json-loader": "0.5.4",
-    "jss": "6.1.1",
-    "jss-camel-case": "3.0.0",
-    "jss-isolate": "2.0.1",
-    "jss-nested": "3.0.1",
-    "jss-vendor-prefixer": "4.0.0",
     "koa-proxy": "0.6.0",
     "lokka": "1.7.0",
     "lokka-transport-http": "1.6.1",
