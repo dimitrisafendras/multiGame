@@ -15,7 +15,7 @@ import {
   appSetup,
   serveSpaRoutes,
   appModules,
-} from 'agile-actor';
+} from './agile-actor';
 
 const debug = _debug('app:server');
 const paths = config.utils_paths;

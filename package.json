@@ -61,7 +61,7 @@
       }
     },
     "start": {
-      "command": "npm run lint && babel-node bin/server",
+      "command": "babel-node bin/server",
       "env": {
         "DEBUG": "app:*",
         "USER_ENABLED": "true",
@@ -82,9 +82,41 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agileactors/agile-actor-x"
+    "url": "git+https://github.com/agileactors/agile-actor-x.git"
   },
   "dependencies": {
+    "babel-preset-es2016-node5": "1.1.2",
+    "bcrypt": "0.8.7",
+    "cookie": "0.3.1",
+    "emailjs": "1.0.8",
+    "glob": "7.1.1",
+    "graph.ql": "2.0.0",
+    "jsonwebtoken": "7.1.9",
+    "koa": "2.0.0",
+    "koa-bodyparser": "2.2.0",
+    "koa-compress": "2.0.0",
+    "koa-connect-history-api-fallback": "0.3.1",
+    "koa-convert": "1.2.0",
+    "koa-generic-session": "1.11.3",
+    "koa-generic-session-rethinkdb": "1.1.1",
+    "koa-graphql": "0.5.6",
+    "koa-logger": "2.0.0",
+    "koa-mount": "2.0.0",
+    "koa-passport": "2.2.2",
+    "koa-router": "7.0.1",
+    "koa-send": "3.2.0",
+    "koa-static": "3.0.0",
+    "net": "1.0.2",
+    "passport-facebook": "2.1.1",
+    "passport-github": "1.1.0",
+    "passport-google-openidconnect": "0.0.4",
+    "passport-linkedin-oauth2": "1.4.1",
+    "passport-local": "1.0.0",
+    "passport-twitter": "1.0.4",
+    "rethinkdbdash": "2.3.23",
+    "socket.io": "1.5.1",
+    "thinky": "2.3.7",
+    "tls": "0.0.1",
     "axios": "0.15.3",
     "babel-cli": "6.18.0",
     "babel-core": "6.21.0",
@@ -156,7 +188,9 @@
     "yargs": "6.5.0"
   },
   "devDependencies": {
-    "agile-actor": "git+https://github.com/agileactors/agile-actor.git#v0.2.7",
+    "apidoc": "0.16.1",
+    "babel-cli": "6.18.0",
+    "supertest": "2.0.1",
     "babel-eslint": "7.1.1",
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",

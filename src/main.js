@@ -1,89 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-
-import ReactGA from 'react-ga';
-
-import { createStore } from './store';
-import Application from './application';
-import routes from './routes';
-
-//
-// Google Analytics
-//
-ReactGA.initialize('UA-86819304-1');
-
-const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
-};
+import React from 'react'
+import ReactDOM from 'react-dom'
+import createStore from './store/createStore'
+import AppContainer from './containers/AppContainer'
 
 // ========================================================
-// Store and History Instantiation
+// Store Instantiation
 // ========================================================
-// Create redux store and sync with react-router-redux. We have installed the
-// react-router-redux reducer under the routerKey "router" in src/routes/index.js,
-// so we need to provide a custom `selectLocationState` to inform
-// react-router-redux of its location.
-const initialState = window.___INITIAL_STATE__;
-const store = createStore(initialState, browserHistory);
-const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: (state) => state.router,
-});
-
-// ========================================================
-// Developer Tools Setup
-// ========================================================
-if (__DEBUG__) {
-  if (window.devToolsExtension) {
-    window.devToolsExtension.open();
-  }
-}
+const initialState = window.___INITIAL_STATE__
+const store = createStore(initialState)
 
 // ========================================================
 // Render Setup
 // ========================================================
-const MOUNT_NODE = document.getElementById('root');
+const MOUNT_NODE = document.getElementById('root')
 
-let render = () => ReactDOM.render(
-  <Application
-    store={store}
-    history={history}
-    routes={routes(store)}
-    onUpdate={logPageView}
-  />,
-  MOUNT_NODE
-);
+let render = () => {
+  const routes = require('./routes/index').default(store)
+
+  ReactDOM.render(
+    <AppContainer store={store} routes={routes} />,
+    MOUNT_NODE
+  )
+}
 
 // This code is excluded from production bundle
-if (__DEV__ && module.hot) {
-  // Development render functions
-  const renderApp = render;
-  const renderError = (error) => {
-    const RedBox = require('redbox-react').default;
-    ReactDOM.render(<RedBox error={error} />, MOUNT_NODE);
-  };
+if (__DEV__) {
+  if (module.hot) {
+    // Development render functions
+    const renderApp = render
+    const renderError = (error) => {
+      const RedBox = require('redbox-react').default
 
-  // Wrap render in try/catch
-  render = () => {
-    try {
-      renderApp();
-    } catch (error) {
-      renderError(error);
+      ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
     }
-  };
 
-  // Setup hot module replacement
-  module.hot.accept('./routes/index', () => {
-    setTimeout(() => {
-      ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-      render();
-    });
-  });
+    // Wrap render in try/catch
+    render = () => {
+      try {
+        renderApp()
+      } catch (error) {
+        renderError(error)
+      }
+    }
+
+    // Setup hot module replacement
+    module.hot.accept('./routes/index', () =>
+      setImmediate(() => {
+        ReactDOM.unmountComponentAtNode(MOUNT_NODE)
+        render()
+      })
+    )
+  }
 }
 
 // ========================================================
 // Go!
 // ========================================================
-render();
+render()
