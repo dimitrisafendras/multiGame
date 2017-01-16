@@ -6,7 +6,7 @@ import hangman from './hangmanReducer'
 import home from './homeReducer'
 import { Simon } from './simonReducer'
 import memory from './memoryReducer'
-import client from '../../src/modules/client-config/client-config-reducer'
+import modelServices from 'model-services'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
