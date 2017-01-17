@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import styles from './styles.scss';
 
 export default ({
   card,
@@ -12,10 +13,10 @@ export default ({
   });
 
   return (
-    <li className="flip-container">
+    <li className= {styles.flipContainer}>
       <div className={cardClass}>
-        <div className="front" onClick={() => flipAction.flipCard(card.id)}></div>
-        <div className="back">
+        <div className= {styles.front} onClick={() => flipAction.flipCard(card.id)}></div>
+        <div className={styles.backk}>
           <img src={card.url} />
         </div>
       </div>
