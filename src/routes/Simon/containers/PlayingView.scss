@@ -1,0 +1,45 @@
+
+h2 h5 {
+  position: absolute;
+  right: 500px;
+  top: 200px;
+}
+
+.firstpad{
+    position: absolute;
+    left: 100px;
+    top: 150px;
+    background-color:green;
+    height:150px;
+    width: 150px;
+    border-radius: 150px 0 0 0;
+}
+
+
+.secondpad {
+    position: absolute;
+    left: 260px;
+    top: 150px;
+    background-color:red;
+    height:150px;
+    width: 150px;
+    border-radius: 0 150px 0 0;
+}
+.thirdpad {
+    position: absolute;
+    left: 260px;
+    top: 310px;
+    background-color:blue;
+    height:150px;
+    width: 150px;
+    border-radius: 0 0 150px 0;
+}
+.fourthpad {
+    position: absolute;
+    left: 100px;
+    top: 310px;
+    background-color:yellow;
+    height:150px;
+    width: 150px;
+    border-radius: 0 0 0 150px;
+}

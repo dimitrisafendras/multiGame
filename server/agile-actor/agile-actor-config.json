@@ -1,0 +1,50 @@
+{
+  "host": "127.0.0.1",
+  "port": 5000,
+  "graphiql": false,
+  "maxage": 120000,
+  "session": "secret-boilerplate-token",
+  "token": "secret-jwt-token",
+  "workable": {
+    "serviceUrl": "https://www.workable.com/spi/v3/accounts/agileactors/",
+    "type": "Bearer",
+    "token": "49af1a990ada4c218b81f5ae89449cd4ff18134365676627516df0c040243cc6"
+  },
+  "rethinkdb": {
+    "host": "localhost",
+    "port": 28015,
+    "db": "agileactors"
+  },
+  "rethinkdbSessions": {
+    "host": "localhost",
+    "port": 28015,
+    "db": "sessions"
+  },
+  "auth": {
+    "github": {
+      "clientID": "af1d064fd8e70c6f75bd",
+      "clientSecret": "7533db68be7a9dce2b41ff36c09e799129c0fa32",
+      "callbackURL": "http://127.0.0.1:5000/auth/github/callback"
+    },
+    "google": {
+      "clientID": "905278307733-amcaml9t4nedcf25cc2ruj6r4o7cf9id.apps.googleusercontent.com",
+      "clientSecret": "-AlX305dqdTBtIeZZYJHoGhI",
+      "callbackURL": "http://127.0.0.1:5000/auth/google/callback"
+    },
+    "linkedin": {
+      "clientID": "77dobssvg2ppek",
+      "clientSecret": "CdS78OlqH4vKLjsy",
+      "callbackURL": "http://127.0.0.1:5000/auth/linkedin/callback"
+    }
+  },
+  "emailServer": {
+    "user": "postmaster@agileactors.com",
+    "password": "b0cfcc3a5c06b6c77d9ff95214248c72",
+    "host": "smtp.mailgun.org",
+    "ssl": true,
+    "recipient": "services@agileactors.com"
+  },
+  "clientConfig": {
+    "userSigninEnabled": false
+  }
+}
