@@ -15,3 +15,9 @@ export const setOnUnAuth = (
 ) => {
   authSocket.on('unAuthorization', onUnAuth);
 };
+
+export const newAction = (
+  onUnAuth: () => void,
+) => {
+  authSocket.on('newAction', onUnAuth);
+};
