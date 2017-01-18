@@ -18,10 +18,10 @@ const style = {
      width: "280px",
      height: "40px"
   }
-}
+};
 
 let SignInButton = ({onSubmit}) => (
-  <form method="post" enctype="multipart/form-data" onSubmit={onSubmit} >
+  <form method="post" encType="multipart/form-data" onSubmit={onSubmit} >
    <fieldset style = {{border: '0'}}>
         <input type="text" name="username" placeholder="Enter Your Username.." style = {style.input} autoFocus/>
         <br/>
@@ -29,9 +29,9 @@ let SignInButton = ({onSubmit}) => (
         <input type="submit" value="Log In" style = {style.button} />
      </fieldset>
   </form>
-)
+);
 
-authSocket.on('dispachAction', (action)=>{
+authSocket.on('dispachAction', (action) => {
   alert('im in');
   console.log('wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww');
   store.dispatch(action);
