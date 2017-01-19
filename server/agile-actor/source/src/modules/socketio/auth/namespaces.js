@@ -22,14 +22,12 @@ export default (io) => {
    const sid = `koa:sess:${sessionCookieId}`;
    log('  --> SocketIO on connection', id, sessionCookieId);
 
-
    socket.on('newAction', (action) => {
      console.log('Emiting Action');
+     socket.emit('dispachAction', action);
      socket.broadcast.emit('dispachAction', action);
-
      console.log('Action Emited');
-   }
-   );
+   });
 
    if (next) next();
  });
