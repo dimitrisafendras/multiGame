@@ -36,7 +36,7 @@ const updateCtxCloseClientWindow = (ctx, user) => {
   ctx.body = `
     <html>
       <head>
-        <title>User Authentication</title
+        <title>User Authentication</title>
       <head>
       <body>
         <script>

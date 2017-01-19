@@ -5,7 +5,7 @@ export const prefix = '/auth';
 const test = (ctx) =>{
   console.log(ctx.params.username);
   ctx.body = ctx.params.username;
-}
+};
 
 export const routes = [
   {

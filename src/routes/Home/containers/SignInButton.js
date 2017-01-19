@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { authSocket } from '../../../model-services/server-apis';

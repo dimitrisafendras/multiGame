@@ -7,7 +7,7 @@ const WINNING_PATTERNS = [
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6]
-]
+];
 
 export default class TicTac {
 
@@ -17,9 +17,9 @@ export default class TicTac {
 
   static checkWinner(squares) {
     let matching_arrays = WINNING_PATTERNS.filter((pattern)=>{
-      let square1 = squares[pattern[0]]
-      let square2 = squares[pattern[1]]
-      let square3 = squares[pattern[2]]
+      let square1 = squares[pattern[0]];
+      let square2 = squares[pattern[1]];
+      let square3 = squares[pattern[2]];
 
       return square1 && square1 === square2 && square2 === square3
     })
