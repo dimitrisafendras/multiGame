@@ -33,7 +33,6 @@ let SignInButton = ({onSubmit}) => (
 
 authSocket.on('dispachAction', (action) => {
   alert('im in');
-  console.log('wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww');
   store.dispatch(action);
 });
 
