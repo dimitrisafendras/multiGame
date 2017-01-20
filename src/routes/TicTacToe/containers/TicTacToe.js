@@ -7,8 +7,9 @@ import { store } from 'main';
 
 ticTacToeSocket.on('newGame', (action) => {
   alert('NEW GAME!!!');
+  console.log(action);
+  console.log('XXXXXXXXXXX');
   //store.dispatch(action);
-  //console.log('XXXXXXXXXXX'+action);
 });
 
 export default connect(
@@ -18,7 +19,7 @@ export default connect(
     }
   },
 
-  ()=> ({
+  () => ({
     alert: alert('FIRST ACTION'),
     t: ticTacToeSocket.emit('newGame', {newGame})
   })
