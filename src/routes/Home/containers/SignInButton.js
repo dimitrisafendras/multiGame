@@ -52,10 +52,11 @@ SignInButton = connect(
             payload: {
               username: response.data
             }
-          }
-          ); }
+          });
+        }
       )
-    }})
+    }
+  })
 )(SignInButton);
 
 export { SignInButton };

@@ -19,7 +19,6 @@ export function Square({ id, squares, markTile, currentPlayer, victory, gameStyl
   return (
     <div className={clickable()} onClick={() => { selectTile() }}>{squares[id]}</div>
   )
-
 }
 
 function mapStateToProps(state) {
