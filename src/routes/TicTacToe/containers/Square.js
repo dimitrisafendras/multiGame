@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { markTile } from '../modules/actions/index';
+import { markTile } from '../modules/actions';
 
 
 export function Square({ id, squares, markTile, currentPlayer, victory, gameStyle }) {
