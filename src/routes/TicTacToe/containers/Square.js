@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { markTile } from '../modules/actions/index';
-import { ticTacToeSocket } from '../../../model-services/server-apis';
 
 
 export function Square({ id, squares, markTile, currentPlayer, victory, gameStyle }) {

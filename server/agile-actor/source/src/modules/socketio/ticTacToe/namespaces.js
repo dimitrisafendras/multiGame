@@ -7,7 +7,7 @@ export default (io) => {
     console.log('  --> SocketIO on connection', id);
 
     socket.on('newGame', (action)=>{
-      console.log('NEWGAME ACTION');
+      console.log('NEWGAME ACTION', action);
       socket.emit('newGame', action);
       socket.broadcast.emit('newGame', action);
     })
