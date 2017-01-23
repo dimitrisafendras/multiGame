@@ -10,6 +10,13 @@ export default (io) => {
       console.log('NEWGAME ACTION', action);
       socket.emit('newGame', action);
       socket.broadcast.emit('newGame', action);
-    })
+    });
+
+    socket.on('markTile', (action)=>{
+      console.log('Mark ACTION', action);
+      socket.emit('markTile', action);
+      socket.broadcast.emit('markTile', action);
+    });
+
   });
 };
