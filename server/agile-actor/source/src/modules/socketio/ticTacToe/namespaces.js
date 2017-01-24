@@ -14,7 +14,6 @@ export default (io) => {
 
     socket.on('markTile', (action)=>{
       console.log('Mark ACTION', action);
-      socket.emit('markTile', action);
       socket.broadcast.emit('markTile', action);
     });
 
