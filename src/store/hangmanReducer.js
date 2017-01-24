@@ -4,7 +4,7 @@ const initialState =
     usedLetters: [],
     wordToGuess: '',
     wordMask: '*'
-}
+};
 
 export default function(state = initialState, action){
   console.log(state);

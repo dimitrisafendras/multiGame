@@ -21,7 +21,7 @@ export const createRoutes = (store) => ({
     Simon,
     Memory,
   ]
-})
+});
 
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically
     using getChildRoutes with the following signature:
