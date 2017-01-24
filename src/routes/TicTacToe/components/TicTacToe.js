@@ -20,7 +20,7 @@ const TicTacToe = ({victory, newGame}) =>{
       <div className={styles.game}>
         <h1 style = {{fontFamily: 'Times New Roman'}}> Tic Tac Toe </h1>
         <div className={styles.controls}>
-          <button onClick={() => { ticTacToeSocket.emit('newGame', newGame('x', 'opvp')) }} className="btn btn-primary" style={{ backgroundColor: "pink" }}>Online PvP</button>
+          <button onClick={() => { ticTacToeSocket.emit('newGame', newGame('x', 'pvp')) }} className="btn btn-primary" style={{ backgroundColor: "pink" }}>Online PvP</button>
           <button onClick={() => { newGame('x', 'pvp') }} className="btn btn-primary" style={{ backgroundColor: "green" }}>Play With Friend</button>
           <button onClick={() => { newGame('x', 'pvb') }} className="btn btn-primary">I go first</button>
           <button onClick={() => { newGame('o', 'pvb') }} className="btn btn-danger">Bot goes first</button>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { markTile } from '../modules/actions';
-
+import { ticTacToeSocket } from '../../../model-services/server-apis';
+import { store } from 'main';
 
 export function Square({ id, squares, markTile, currentPlayer, victory, gameStyle }) {
 
@@ -32,3 +33,8 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { markTile })(Square);
+
+ticTacToeSocket.on('markTile', (action)=> {
+  console.log('XXXXXXXXXXXXXXXXXXXX', action);
+  store.dispatch(action);
+});
