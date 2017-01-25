@@ -1,4 +1,5 @@
 import passport from 'koa-passport';
+import { indexOf } from 'lodash';
 
 const updateCtx = (ctx, user, body) => {
   if (!user) {
@@ -98,10 +99,18 @@ const updateCtxCloseClientWindow = (ctx, user) => {
  *       "error": "Unauthorized"
  *     }
  */
-export async function authUser(ctx, next) {
-  return passport.authenticate('local', (user) => {
-    updateCtx(ctx, user, { user });
-  })(ctx, next);
+let userArray = [];
+export async function checkUser(ctx, next) {
+  let username = ctx.params.username;
+
+  console.log(username);
+
+  if (indexOf(userArray, username) === -1){
+    userArray.push(username);
+    ctx.body = true;
+    return
+  }
+  ctx.body = false;
 }
 
 /**

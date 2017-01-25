@@ -8,8 +8,10 @@ export function Square({ id, squares, markTile, currentPlayer, victory, gameStyl
 
   function selectTile() {
     if ( !squares[id] && !victory ) {
-      return markTile(currentPlayer, id)
+     return  markTile(currentPlayer, id);
+
     }
+    return selectTile()
   }
 
   function clickable() {
@@ -19,7 +21,7 @@ export function Square({ id, squares, markTile, currentPlayer, victory, gameStyl
   }
 
   return (
-    <div className={clickable()} onClick={() => { ticTacToeSocket.emit('markTile', selectTile()) }}>{squares[id]}</div>
+    <div className={clickable()} onClick={() => {ticTacToeSocket.emit('markTile', selectTile())} }>{squares[id]}</div>
   )
 }
 
