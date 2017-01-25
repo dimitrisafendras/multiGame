@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { authSocket } from '../../../model-services/server-apis';
 import { store } from 'main';
+import { logIn } from '../../../model-services/models/user/rest/logIn';
 
 const style = {
   button: {
@@ -15,19 +16,19 @@ const style = {
   },
   input: {
     color: 'black',
-     width: "280px",
-     height: "40px"
+    width: "280px",
+    height: "40px"
   }
 };
 
 let SignInButton = ({onSubmit}) => (
   <form method="post" encType="multipart/form-data" onSubmit={onSubmit} >
-   <fieldset style = {{border: '0'}}>
-        <input type="text" name="username" placeholder="Enter Your Username.." style = {style.input} autoFocus/>
-        <br/>
-        <br/>
-        <input type="submit" value="Log In" style = {style.button} />
-     </fieldset>
+    <fieldset style = {{border: '0'}}>
+      <input type="text" name="username" placeholder="Enter Your Username.." style = {style.input} autoFocus/>
+      <br/>
+      <br/>
+      <input type="submit" value="Log In" style = {style.button} />
+    </fieldset>
   </form>
 );
 
@@ -41,20 +42,22 @@ SignInButton = connect(
   (dispatch) => ({
     onSubmit: (e) => {
       e.preventDefault();
-
       axios
-      .get(`/auth/${e.target.username.value}`)
-      .then(
-        (response) => {
-          alert(response.data);
-          authSocket.emit('newAction', {
-            type: 'LOG_IN',
-            payload: {
-              username: response.data
+        .get(`/logIn/${e.target.username.value}`)
+        .then(
+          (response) => {
+            if (response.data) {
+              dispatch({
+                type: 'LOG_IN',
+                payload: {
+                  username: response.data
+                }
+              })
+            }
+            else {
+              alert('Invalid Name')
             }
           });
-        }
-      )
     }
   })
 )(SignInButton);

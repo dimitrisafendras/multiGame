@@ -8,7 +8,6 @@ export default (io) => {
 
     socket.on('newGame', (action)=>{
       console.log('NEWGAME ACTION', action);
-      socket.emit('newGame', action);
       socket.broadcast.emit('newGame', action);
     });
 
