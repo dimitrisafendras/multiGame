@@ -9,9 +9,7 @@ export function Square({ id, squares, markTile, currentPlayer, victory, gameStyl
   function selectTile() {
     if ( !squares[id] && !victory ) {
      return  markTile(currentPlayer, id);
-
     }
-    return selectTile()
   }
 
   function clickable() {
