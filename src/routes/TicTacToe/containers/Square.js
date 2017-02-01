@@ -1,38 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { markTile } from '../modules/actions';
+import { offline } from '../modules/actions';
 import { ticTacToeSocket } from '../../../model-services/server-apis';
 import { store } from 'main';
 
-export function Square({ id, squares, markTile, currentPlayer, victory, gameStyle }) {
+const markTile = offline.markTile;
 
-  function selectTile() {
+export const Square= ({ id, squares, markTile = offline.markTile, currentPlayer, victory, gameStyle })=> {
+
+  const selectTile = ()=> {
     if ( !squares[id] && !victory ) {
      return  markTile(currentPlayer, id);
     }
-  }
+  };
 
-  function clickable() {
+  const clickable = ()=> {
     if ( gameStyle == 'pvp' || currentPlayer == 'x' ){
       return 'clickable'
     }
-  }
+  };
 
   return (
     <div className={clickable()} onClick={() => {ticTacToeSocket.emit('markTile', selectTile())} }>{squares[id]}</div>
   )
-}
+};
 
-function mapStateToProps(state) {
-  return {
+const mapStateToProps = (state)=> ({
     squares: state.game.squares,
     currentPlayer: state.players.current_turn,
     victory: state.game.victory,
     gameStyle: state.game.gameStyle,
-  }
-}
+});
 
-export default connect(mapStateToProps, { markTile })(Square);
+export default connect(mapStateToProps, {markTile} )(Square);
 
 ticTacToeSocket.on('markTile', (action)=> {
   console.log('XXXXXXXXXXXXXXXXXXXX', action);
