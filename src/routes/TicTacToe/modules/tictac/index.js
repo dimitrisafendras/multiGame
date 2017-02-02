@@ -22,7 +22,7 @@ export default class TicTac {
       let square3 = squares[pattern[2]];
 
       return square1 && square1 === square2 && square2 === square3
-    })
+    });
 
     if (matching_arrays.length > 0) {
       return squares[matching_arrays[0][0]]

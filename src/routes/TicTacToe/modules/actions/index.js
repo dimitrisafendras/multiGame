@@ -1,20 +1,32 @@
 'use strict';
 
-import { MARK_TILE } from '../constants'
-import { NEW_GAME } from '../constants'
+import {
+  MARK_TILE,
+  MARK_TILE_ONLINE,
+  NEW_GAME,
+  NEW_GAME_ONLINE
+} from '../constants'
 
 export const options = {
 
   markTile:{
-    offline: (player, key) => ({
+    offline: (player, key)=> ({
       type: MARK_TILE,
       payload: {player: player, key: key}
     }),
+    online: (player, key)=> ({
+      type: MARK_TILE_ONLINE,
+      payload: {player: player, key: key}
+    })
   },
 
   newGame: {
-    offline: (player, gameStyle) => ({
+    offline: (player, gameStyle)=> ({
       type: NEW_GAME,
+      payload: {player: player, gameStyle}
+    }),
+    online: (player, gameStyle)=> ({
+      type: NEW_GAME_ONLINE,
       payload: {player: player, gameStyle}
     })
   }
