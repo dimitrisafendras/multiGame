@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { markTile } from '../modules/actions/index';
+import { markTile } from '../modules/constants';
 import TicTac from '../modules/tictac/index';
 
 export class Bot extends Component {

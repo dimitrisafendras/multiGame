@@ -1,11 +1,11 @@
 'use strict';
 
 import TicTac from '../routes/TicTacToe/modules/tictac/index';
+import { MARK_TILE } from '../routes/TicTacToe/modules/constants';
+import { NEW_GAME } from '../routes/TicTacToe/modules/constants';
+
 
 const INITIAL_STATE = { squares: Array(9), victory: false };
-const MARK_TILE = 'MARK_TILE';
-const NEW_GAME = 'NEW_GAME';
-const UNDO_MOVE = 'UNDO_MOVE';
 
 export default function(state = INITIAL_STATE, action) {
 

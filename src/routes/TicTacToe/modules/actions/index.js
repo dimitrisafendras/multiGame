@@ -1,19 +1,20 @@
 'use strict';
 
-const MARK_TILE = 'MARK_TILE';
-const NEW_GAME = 'NEW_GAME';
-const UNDO_MOVE = 'UNDO_MOVE';
+import { MARK_TILE } from '../constants'
+import { NEW_GAME } from '../constants'
 
 export const offline = {
   markTile: (player, key) => ({
     type: MARK_TILE,
     payload: {player: player, key: key}
+  }),
+
+  newGame: (player, gameStyle)=> ({
+    type: NEW_GAME,
+    payload: { player: player, gameStyle }
   })
 };
 
-export const newGame = (player, gameStyle)=> ({
-    type: NEW_GAME,
-    payload: { player: player, gameStyle }
-});
+
 
 
