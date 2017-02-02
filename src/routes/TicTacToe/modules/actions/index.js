@@ -20,7 +20,7 @@ export const options = {
     })
   },
 
-  newGame: {
+  newGame:{
     offline: (player, gameStyle)=> ({
       type: NEW_GAME,
       payload: {player: player, gameStyle}
