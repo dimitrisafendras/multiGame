@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { offline } from '../modules/actions';
+import { markTile } from '../modules/constants';
 import { ticTacToeSocket } from '../../../model-services/server-apis';
 import { store } from 'main';
 
-const markTile = offline.markTile;
-
-export const Square= ({ id, squares, markTile = offline.markTile, currentPlayer, victory, gameStyle })=> {
+export const Square= ({ id, squares, markTile, currentPlayer, victory, gameStyle })=> {
 
   const selectTile = ()=> {
     if ( !squares[id] && !victory ) {

@@ -1,8 +1,9 @@
 'use strict';
 
+import { MARK_TILE } from '../routes/TicTacToe/modules/constants';
+import { NEW_GAME } from '../routes/TicTacToe/modules/constants';
+
 const INITIAL_STATE = { current_turn: 'x' };
-const MARK_TILE = 'MARK_TILE';
-const NEW_GAME = 'NEW_GAME';
 const OPPONENT = {
   'x': 'o',
   'o': 'x'
