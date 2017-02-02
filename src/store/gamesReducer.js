@@ -23,7 +23,11 @@ export default function(state = INITIAL_STATE, action) {
       return { ...state, squares: squares, victory: TicTac.checkWinner(squares) };
 
     case MARK_TILE_ONLINE:
-      let onlineSquares = [...state.squares.slice(0, action.payload.key), action.payload.player, ...state.squares.slice(action.payload.key + 1)];
+      let onlineSquares = [
+        ...state.squares.slice(0, action.payload.key),
+        action.payload.player,
+        ...state.squares.slice(action.payload.key + 1)
+      ];
       return { ...state, squares: onlineSquares, victory: TicTac.checkWinner(onlineSquares) };
 
     case NEW_GAME:
