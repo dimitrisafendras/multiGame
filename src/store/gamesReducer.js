@@ -15,7 +15,11 @@ export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
 
     case MARK_TILE:
-      let squares = [...state.squares.slice(0, action.payload.key), action.payload.player, ...state.squares.slice(action.payload.key + 1)];
+      let squares = [
+        ...state.squares.slice(0, action.payload.key),
+        action.payload.player,
+        ...state.squares.slice(action.payload.key + 1)
+      ];
       return { ...state, squares: squares, victory: TicTac.checkWinner(squares) };
 
     case MARK_TILE_ONLINE:
