@@ -6,5 +6,5 @@ export const MARK_TILE = 'MARK_TILE';
 export const NEW_GAME = 'NEW_GAME';
 
 //action creator constants
-export const markTile = options.offline.markTile;
-export const newGame = options.offline.newGame;
+export const markTile = options.markTile.offline;
+export const newGame = options.newGame.offline;
