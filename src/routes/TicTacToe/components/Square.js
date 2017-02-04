@@ -33,6 +33,6 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
       <div className={clickable()} onClick={() => {selectTile()}}>
         {squares[id]}
       </div>
-    );
+    )
   }
 };
