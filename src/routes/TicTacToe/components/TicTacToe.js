@@ -1,6 +1,5 @@
 import React from 'react'
 import Square from '../containers/Square';
-import OnlineSquare from '../containers/OnlineSquare';
 import Bot from '../containers/bot';
 import styles from './styles.scss'
 import { ticTacToeSocket } from '../../../model-services/server-apis';
