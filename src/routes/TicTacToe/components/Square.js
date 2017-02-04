@@ -16,7 +16,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
   };
 
   const clickable = () => {
-    if (gameStyle == 'pvp' || currentPlayer == 'x') {
+    if (gameStyle == 'pvp' || gameStyle == 'Opvp' || currentPlayer == 'x') {
       return 'clickable'
     }
   };
