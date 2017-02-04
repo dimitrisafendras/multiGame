@@ -23,7 +23,8 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
 
   if (gameStyle == 'Opvp'){
     return (
-      <div className={clickable()} onClick={()=> {ticTacToeSocket.emit('markTile', selectTileOnline())}}>
+      <div className={clickable()} onClick={()=>
+      {ticTacToeSocket.emit('markTile', selectTileOnline())}}>
         {squares[id]}
       </div>
     )
