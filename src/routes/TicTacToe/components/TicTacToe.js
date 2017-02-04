@@ -30,7 +30,7 @@ const TicTacToe = ({victory, newGame, newGameOnline}) =>{
         <div className={styles.board}>
           {
             [...Array(9).keys()].map((key) => {
-              return <OnlineSquare key={key} id={key}/>
+              return <Square key={key} id={key}/>
             })
           }
         </div>
