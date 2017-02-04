@@ -14,7 +14,6 @@ export default connect(
 )(TicTacToe);
 
 ticTacToeSocket.on('newGame', (action) => {
-  console.log('--------------', action);
   store.dispatch(action);
 });
 

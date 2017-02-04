@@ -16,6 +16,5 @@ const mapStateToProps = (state)=> ({
 export default connect(mapStateToProps, {markTile, markTileOnline} )(Square);
 
 ticTacToeSocket.on('markTile', (action)=> {
-  console.log('XXXXXXXXXXXXXXXXXXXX', action);
   store.dispatch(action);
 });
