@@ -1,6 +1,7 @@
 'use strict';
 
-import { MARK_TILE,
+import {
+  MARK_TILE,
   MARK_TILE_ONLINE,
   NEW_GAME,
   NEW_GAME_ONLINE
