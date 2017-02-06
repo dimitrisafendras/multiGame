@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { markTile } from '../modules/constants';
-import { markTileOnline } from '../modules/constants';
+import { markTile, markTileOnline } from '../modules/constants';
 import { Square } from '../components/Square';
 import { ticTacToeSocket } from '../../../model-services/server-apis';
 import { store } from 'main';
