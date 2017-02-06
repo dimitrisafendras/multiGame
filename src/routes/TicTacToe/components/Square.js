@@ -28,7 +28,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
   }
   else{
     return (
-      <div className={clickable()} onClick={() => {selectTile(gameStyle)}}>
+      <div className={clickable()} onClick={()=> {selectTile()}}>
         {squares[id]}
       </div>
     )
