@@ -3,32 +3,35 @@ import { ticTacToeSocket } from '../../../model-services/server-apis';
 
 export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, victory, gameStyle })=> {
 
-  const clickable = () => {
-    if (gameStyle == 'pvp' || currentPlayer == 'x') {
-      return 'clickable'
+  const selectTile = ()=> {
+    if (!squares[id] && !victory) {
+      return markTile(currentPlayer, id);
     }
   };
 
-  const selectTile = (gameStyle)=> {
-    if (!squares[id] && !victory && gameStyle == 'Opvp') {
+  const selectTileOnline = ()=>{
+    if (!squares[id] && !victory) {
       return markTileOnline(currentPlayer, id);
     }
-    else if (!squares[id] && !victory) {
-      return markTile(currentPlayer, id);
+  };
+
+  const clickable = () => {
+    if (gameStyle == 'pvp' || gameStyle == 'Opvp' || currentPlayer == 'x') {
+      return 'clickable'
     }
   };
 
   if (gameStyle == 'Opvp'){
     return (
       <div className={clickable()} onClick={()=>
-      {ticTacToeSocket.emit('markTile', selectTile(gameStyle))}}>
+      {ticTacToeSocket.emit('markTile', selectTileOnline())}}>
         {squares[id]}
       </div>
     )
   }
   else{
     return (
-      <div className={clickable()} onClick={()=> {selectTile()}}>
+      <div className={clickable()} onClick={() => {selectTile()}}>
         {squares[id]}
       </div>
     )
