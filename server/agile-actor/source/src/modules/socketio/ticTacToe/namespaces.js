@@ -1,5 +1,5 @@
 
-export default (io) => {
+export default (io)=> {
   const sessionIo = io.of('/ticTacToe');
 
   sessionIo.on('connection', (socket) => {
