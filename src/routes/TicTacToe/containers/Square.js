@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { markTile, markTileOnline } from '../modules/constants';
 import { Square } from '../components/Square';
-import { ticTacToeSocket } from '../../../model-services/server-apis';
-import { store } from 'main';
+import { onMarkTile } from '../../../model-services/ticTacToe/socketio/ticTacToe';
 
 const mapStateToProps = (state)=> ({
     squares: state.game.squares,
@@ -14,6 +13,4 @@ const mapStateToProps = (state)=> ({
 
 export default connect(mapStateToProps, {markTile, markTileOnline} )(Square);
 
-ticTacToeSocket.on('markTile', (action)=> {
-  store.dispatch(action);
-});
+onMarkTile();

@@ -1,8 +1,7 @@
 import TicTacToe from '../components/TicTacToe';
 import { connect } from 'react-redux';
 import { newGame, newGameOnline } from '../modules/constants';
-import { ticTacToeSocket } from '../../../model-services/server-apis';
-import { store } from 'main';
+import { onNewGame } from '../../../model-services/ticTacToe/socketio/ticTacToe';
 
 export default connect(
   (state) => {
@@ -13,6 +12,4 @@ export default connect(
   {newGameOnline, newGame}
 )(TicTacToe);
 
-ticTacToeSocket.on('newGame', (action) => {
-  store.dispatch(action);
-});
+onNewGame();

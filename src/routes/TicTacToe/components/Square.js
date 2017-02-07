@@ -1,5 +1,5 @@
 import React from 'react';
-import { ticTacToeSocket } from '../../../model-services/server-apis';
+import { onlineMode } from '../modules/functions';
 
 export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, victory, gameStyle })=> {
 
@@ -21,7 +21,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
   if (gameStyle == 'Opvp'){
     return (
       <div className={clickable()} onClick={()=>
-      {ticTacToeSocket.emit('markTile', selectTile(gameStyle))}}>
+      {onlineMode('markTile', selectTile(gameStyle))}}>
         {squares[id]}
       </div>
     )
