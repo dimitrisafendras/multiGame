@@ -21,7 +21,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
   if (gameStyle == 'Opvp'){
     return (
       <div className={clickable()} onClick={()=>
-      {onlineMode('markTile', selectTile(gameStyle))}}>
+      { onlineMode('markTile', selectTile(gameStyle)) }}>
         {squares[id]}
       </div>
     )
