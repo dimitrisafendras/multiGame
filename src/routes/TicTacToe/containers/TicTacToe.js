@@ -16,5 +16,3 @@ export default connect(
 ticTacToeSocket.on('newGame', (action) => {
   store.dispatch(action);
 });
-
-
