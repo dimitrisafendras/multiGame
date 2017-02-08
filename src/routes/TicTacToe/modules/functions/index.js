@@ -5,6 +5,6 @@ export const onlineMode = (event, action)=> ({
   online: ticTacToeSocket.emit(event, action)
 });
 
-export const dispatcher = (a)=> (
-  store.dispatch(a)
+export const dispatcher = (action)=> (
+  store.dispatch(action)
 );
