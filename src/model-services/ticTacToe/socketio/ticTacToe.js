@@ -1,7 +1,7 @@
 import { ticTacToeSocket } from '../../../model-services/server-apis';
 import { store } from 'main';
 
-export const onMarkTile = ()=>({
+export const onMarkTile = ()=> ({
   onMarkTile: ticTacToeSocket.on('markTile', (action)=> {
     store.dispatch(action);
   })
