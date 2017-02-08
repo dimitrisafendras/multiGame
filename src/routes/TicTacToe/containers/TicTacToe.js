@@ -13,6 +13,4 @@ export default connect(
   {newGameOnline, newGame}
 )(TicTacToe);
 
-console.log('dddddddddddddddd', onNewGame, onNewGame());
-
 onNewGame();
