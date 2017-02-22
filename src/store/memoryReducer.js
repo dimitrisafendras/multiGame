@@ -1,4 +1,4 @@
-import {FLIP_CARD, RESTART_GAME} from "../routes/MemoryGame/modules/constants/memoryGame";
+import {FLIP_CARD, RESTART_GAME} from "../routes/MemoryGame/modules/constants/index";
 import generateCards from "../routes/MemoryGame/modules/data/cards";
 
 const initialState = {

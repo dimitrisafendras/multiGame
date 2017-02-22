@@ -7,7 +7,6 @@ const initialState =
 };
 
 export default function(state = initialState, action){
-  console.log(state);
   switch(action.type) {
     case 'LETTER_CHOOSEN':
       if (state.wordToGuess.indexOf(action.payload.guess) > -1) {
@@ -30,7 +29,7 @@ export default function(state = initialState, action){
     case 'PLAY_WITH_FRIEND':
       return Object.assign({}, state, {
         playWithFriend: true
-      })
+      });
     case 'RESET_GAME':
       return initialState;
     default:

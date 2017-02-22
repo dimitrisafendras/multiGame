@@ -4,7 +4,6 @@ export default ({
   round,
   restart
 }) => {
-  console.log(round, restart)
   return (
   <div>
     <h2>Round: {round}</h2>

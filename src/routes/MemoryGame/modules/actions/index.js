@@ -1,14 +1,15 @@
-import {FLIP_CARD, RESTART_GAME} from "../constants/memoryGame";
+import {FLIP_CARD, RESTART_GAME} from "../constants/index";
 
-
-export const flipCard = (id) => ({
+export const options = {
+  flipCard: (id) => ({
     type: FLIP_CARD,
     id,
-  })
+  }),
 
- export const restart = () => ({
+  restart: () => ({
     type: RESTART_GAME
-  })
+  }),
+};
 
 
 
