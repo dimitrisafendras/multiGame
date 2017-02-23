@@ -20,12 +20,7 @@ export const Header = () => (
     <Link to='/simon' activeClassName='route--active'>
       Simon
     </Link>
-    {' · '}
-    <Link to='/memoryGame' activeClassName='route--active'>
-      MemoryGame
-    </Link>
-
   </div>
-)
+);
 
 export default Header
