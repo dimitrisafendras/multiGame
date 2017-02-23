@@ -5,7 +5,6 @@ import game from './gamesReducer'
 import hangman from './hangmanReducer'
 import home from './homeReducer'
 import { Simon } from './simonReducer'
-import memory from './memoryReducer'
 import modelServices from 'model-services'
 
 export const makeRootReducer = (asyncReducers) => {
@@ -17,7 +16,6 @@ export const makeRootReducer = (asyncReducers) => {
     hangman,
     home,
     Simon,
-    memory
   })
 };
 
