@@ -16,4 +16,4 @@ export const HangmanPicture = ({errorsCount}) => {
     <img src={pictures[7]} width="225" height="200"  />
   </div>
   )
-}
+};

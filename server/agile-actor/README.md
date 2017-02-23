@@ -3,7 +3,7 @@ The agile actors server framework and project.
 This project is a copy/child of the [koa2-api-boilerplate]
 https://github.com/adrianObel/koa2-api-boilerplate.git project.
 The major change until now is that mongodb/mongoose is replaced by rethinkdb/thinky. Until I write some more detailed documentation, you
-can set up and start the server if you have installed rethinkdb on your system and you start the rethinkdb server on the default port before you start this server. 
+can set up and start the server if you have installed rethinkdb on your system and you start the rethinkdb server on the default port before you start this server.
 
 The purpose of this project is to provide the framework for the api servers and the web/mobile/ui servers of agile actors.
 
@@ -48,7 +48,7 @@ git clone https://github.com/agileactors/agile-actor.git
 │   │   ├── development.js
 │   │   ├── production.js
 │   │   └── test.js
-│   ├── index.js             # Config entrypoint - exports config according to envionrment and commons
+│   ├── MemoryGame.js             # Config entrypoint - exports config according to envionrment and commons
 │   └── passport.js          # Passportjs config of strategies
 ├── src                      # Source code
 │   ├── modules
