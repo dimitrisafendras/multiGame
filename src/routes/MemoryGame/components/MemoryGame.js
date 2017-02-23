@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 const MemoryGame = ()=> {
  return(
-  <div>
-    hello world
-  </div>
+      <div>
+        hello world
+      </div>
  )
 };
 
