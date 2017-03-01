@@ -10,7 +10,7 @@ export const MOVE_FIGURE = 'MOVE_FIGURE';
 // action creators
 export const newGame = options.newGame.offline;
 export const resetGame = options.resetGame.offline;
-//export const moveFigure = options.moveFigure.offline;
+//export const moveFigure = options.moveFigure.offline; //FIX
 
 // initial state
 export const initialState = {
