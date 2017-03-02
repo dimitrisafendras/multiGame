@@ -1,4 +1,4 @@
-import { NEW_GAME, RESET_GAME, MOVE_FIGURE } from '../constants';
+import { NEW_GAME, RESET_GAME, MOVE_FIGURE, SELECT_FIGURE } from '../constants';
 
 export const options = {
 
@@ -9,15 +9,22 @@ export const options = {
   },
 
   resetGame:{
-    offline: ()=>({
+    offline: ()=> ({
       type: RESET_GAME
-    }),
+    })
+  },
 
-    moveFigure:{
-      offline: (squareID, figureID)=>({
-        type: MOVE_FIGURE,
-        payload: {squareID, figureID}
-      })
-    }
+  selectFigure:{
+    offline: (squareID, figureID)=>({
+      type: SELECT_FIGURE,
+      payload: {squareID, figureID}
+    })
+  },
+
+  moveFigure:{
+    offline: (squareID, figureID)=>({
+      type: MOVE_FIGURE,
+      payload: {squareID, figureID}
+    })
   }
 };
