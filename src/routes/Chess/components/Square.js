@@ -1,11 +1,11 @@
-import styles from './styles.scss'
+import React from 'react'
 
-export const Square = ({ id, squares, markTile, currentPlayer, victory })=> {
-
+const Square = ({ id, squares, markTile, currentPlayer, victory })=> {
   return (
-    <div className= styles.>
-
+    <div>
+      {squares[id]}
     </div>
   )
-
 };
+
+export default Square;

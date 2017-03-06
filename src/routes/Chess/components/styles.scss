@@ -1,32 +1,68 @@
-body{
-  background: #abdc28;
-  padding: 20px;
+body {
+  background-color: #fff;
+  color: #999;
+  font-family: Verdana, sans-serif;
+  font-size: 18px;
 }
-
-table{
-  margin: 0 auto;
-  border-collapse: collapse;
-  background: black;
+h1 {
+  text-align: center;
+  color: #000;
 }
-
-td{
-  width: 40px;
-  height: 40px;
+.btn {
+  margin: 10px;
 }
-
-tr{
-  &:nth-child(odd) {
-    td {
-      &:nth-child(even) {
-        background: white;
-      }
-    }
+.victoryMessage {
+  text-align: center;
+  color: #f00;
+}
+.controls {
+  margin: 40px;
+  text-align: center;
+}
+.board {
+  div:nth-child(even) {
+    background-color: black;
+  },
+  div:nth-child(odd) {
+    background-color: red;
   }
-  &:nth-child(even) {
-    td {
-      &:nth-child(odd) {
-        background: white;
-      }
-    }
+}
+
+.line {
+  margin: 0 5rem 0 5rem;
+  box-sizing: content-box;
+  height: 8rem;
+  width: 64rem;
+  >div {
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    font-size: 9rem;
+    font-weight: bold;
+    height: 8rem;
+    line-height: 9rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 8rem;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+.board.won {
+  >div.x {
+    color: #e6e6e6;
+  }
+  >div.o {
+    color: #e6e6e6;
+  }
+  >div.x.win {
+    color: #e61919;
+  }
+  >div.o.win {
+    color: #19e619;
   }
 }
