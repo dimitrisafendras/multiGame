@@ -1,22 +1,18 @@
-import {
-  wKing, wQueen, wRook, wBishop,
-  wKnight, wPawn, bKing, bQueen,
-  bRook, bBishop, bKnight, bPawn
-} from '../../components/chessPieces'
+import * as img from '../../components/chessPieces'
 
 const figures = new Map([
-  ['wKing', wKing],
-  ['bKing', bKing],
-  ['wQueen', wQueen],
-  ['bQueen', bQueen],
-  ['wRook', wRook],
-  ['bRook', bRook],
-  ['wBishop', wBishop],
-  ['bBishop', bBishop],
-  ['wKnight', wKnight],
-  ['bKnight', bKnight],
-  ['wPawn', wPawn],
-  ['bPawn', bPawn],
+  ['wKing', img.wKing],
+  ['bKing', img.bKing],
+  ['wQueen', img.wQueen],
+  ['bQueen', img.bQueen],
+  ['wRook', img.wRook],
+  ['bRook', img.bRook],
+  ['wBishop', img.wBishop],
+  ['bBishop', img.bBishop],
+  ['wKnight', img.wKnight],
+  ['bKnight', img.bKnight],
+  ['wPawn', img.wPawn],
+  ['bPawn', img.bPawn],
 ]);
 
 export default (key)=> (figures.get(key));
