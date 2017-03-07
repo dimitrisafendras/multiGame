@@ -20,16 +20,21 @@ h1 {
   text-align: center;
 }
 .board {
+  margin-top: 8rem;
   div:nth-child(even) {
-    background-color: black;
-  },
+    div:nth-child(even) {
+      background-color: black;
+    }
+  };
   div:nth-child(odd) {
-    background-color: red;
-  }
+    div:nth-child(odd) {
+      background-color: black;
+    }
+  };
 }
 
 .line {
-  margin: 0 5rem 0 5rem;
+  margin:  auto;
   box-sizing: content-box;
   height: 8rem;
   width: 64rem;
