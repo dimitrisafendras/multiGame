@@ -1,5 +1,5 @@
 import React from 'react'
-import Square from '../../TicTacToe/containers/Square';
+import Square from '../containers/Square';
 import styles from './styles.scss'
 
 const SquareLine = ()=> {
