@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
+import figures from '../modules/constructs';
 
-const Square = ({ id, squares, markTile, currentPlayer, victory })=> {
-  return (
-    <div>
-      {squares[id]}
-    </div>
-  )
+const Square = ({ id, squares, currentPlayer, victory })=> {
+
+  return figures('king')
 };
 
 export default Square;

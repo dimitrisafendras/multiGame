@@ -16,4 +16,5 @@ export const resetGame = options.resetGame.offline;
 // initial state
 export const initialState = {
   round: 1,
+  square: Array(64),
 };
