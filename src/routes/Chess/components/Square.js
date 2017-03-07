@@ -1,9 +1,11 @@
 import React from 'react';
 import figures from '../modules/constructs';
 
-const Square = ({ id, squares, currentPlayer, victory })=> {
-
-  return figures('king')
+const Square = ({ squareId, lineId, squares, currentPlayer, victory })=> {
+  if (!squares[squareId][lineId]){
+    return <div></div>
+  }
+  return figures(squares[squareId][lineId]);
 };
 
 export default Square;

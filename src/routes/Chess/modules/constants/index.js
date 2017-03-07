@@ -1,6 +1,7 @@
 'use strict';
 
 import {options} from '../actions';
+import squares from '../functions'
 
 // action constants
 export const NEW_GAME = 'NEW_GAME';
@@ -16,5 +17,6 @@ export const resetGame = options.resetGame.offline;
 // initial state
 export const initialState = {
   round: 1,
-  square: Array(64),
+  squares,
 };
+

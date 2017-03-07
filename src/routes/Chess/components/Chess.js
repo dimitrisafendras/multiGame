@@ -9,7 +9,7 @@ const Chess = ()=> {
         <div className = {styles.board}>
           {
             [...Array(8).keys()].map((key) => {
-              return < SquareLine key={key} id={key}/>
+              return < SquareLine key={key} lineKey = {key} id={key}/>
             })
           }
         </div>
