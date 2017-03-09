@@ -13,6 +13,7 @@ const figures = new Map([
   ['bKnight', img.bKnight],
   ['wPawn', img.wPawn],
   ['bPawn', img.bPawn],
+  ['',img.Empty]
 ]);
 
 export default (key)=> (figures.get(key));

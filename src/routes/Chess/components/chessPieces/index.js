@@ -1,20 +1,21 @@
 import React from 'react'
 
-const wKing = <div> &#9812; </div>;
-const wQueen = <div> &#9813; </div>;
-const wRook = <div> &#9814; </div>;
-const wBishop = <div> &#9815; </div>;
-const wKnight = <div> &#9816; </div>;
-const wPawn = <div> &#9817; </div>;
-const bKing = <div> &#9818; </div>;
-const bQueen = <div> &#9819; </div>;
-const bRook = <div> &#9820; </div>;
-const bBishop = <div> &#9821; </div>;
-const bKnight = <div> &#9822; </div>;
-const bPawn = <div> &#9823; </div>;
+const wKing = <span> &#9812; </span>;
+const wQueen = <span> &#9813; </span>;
+const wRook = <span> &#9814; </span>;
+const wBishop = <span> &#9815; </span>;
+const wKnight = <span> &#9816; </span>;
+const wPawn = <span> &#9817; </span>;
+const bKing = <span> &#9818; </span>;
+const bQueen = <span> &#9819; </span>;
+const bRook = <span> &#9820; </span>;
+const bBishop = <span> &#9821; </span>;
+const bKnight = <span> &#9822; </span>;
+const bPawn = <span> &#9823; </span>;
+const Empty = <span></span>;
 
 export {
   wKing, wQueen, wRook, wBishop,
   wKnight, wPawn, bKing, bQueen,
-  bRook, bBishop, bKnight, bPawn
+  bRook, bBishop, bKnight, bPawn, Empty
 }

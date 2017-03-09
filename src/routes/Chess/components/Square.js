@@ -1,11 +1,10 @@
 import React from 'react';
 import figures from '../modules/constructs';
 
-const Square = ({ squareId, lineId, squares, currentPlayer, victory })=> {
-  if (!squares[squareId][lineId]){
-    return <div></div>
-  }
-  return figures(squares[squareId][lineId]);
+const Square = ({ squares, selectTile, squareId, lineId })=> {
+  return <div onClick={ () => selectTile(squareId, lineId)}>
+    {figures(squares[squareId][lineId])}
+  </div>
 };
 
 export default Square;
