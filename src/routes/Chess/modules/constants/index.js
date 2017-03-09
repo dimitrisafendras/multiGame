@@ -20,5 +20,5 @@ export const initialState = {
   selectedTile:[undefined, undefined],
 };
 
-export const maxRows = 8;
-export const maxCols = 8;
+export const MAX_ROWS = 8;
+export const MAX_COLS = 8;
