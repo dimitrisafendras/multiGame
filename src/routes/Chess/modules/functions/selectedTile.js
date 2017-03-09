@@ -1,4 +1,4 @@
-import { maxCols } from '../constants';
+import { MAX_COLS } from '../constants';
 
 const selectedATile = (state, { squareId, lineId })=> {
   if(!state.selectedTile[0] && !state.selectedTile[1]) {
@@ -9,7 +9,7 @@ const selectedATile = (state, { squareId, lineId })=> {
   }
 
   if (true) {
-    let newSquares = state.squares.slice(0, maxCols);
+    let newSquares = state.squares.slice(0, MAX_COLS);
     let sID = state.selectedTile[0];
     let lID = state.selectedTile[1];
     newSquares[squareId][lineId] = state.squares[sID][lID];

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SquareLine from './SquareLine';
-import styles from './styles.scss'
+import styles from './styles.scss';
+import { MAX_ROWS } from '../modules/constants';
 
 const Chess = ()=> {
   return(
@@ -8,7 +9,7 @@ const Chess = ()=> {
       Chess
         <div className = {styles.board}>
           {
-            [...Array(8).keys()].map((key) => {
+            [...Array(MAX_ROWS).keys()].map((key) => {
               return < SquareLine key={key} lineKey = {key} id={key}/>
             })
           }
