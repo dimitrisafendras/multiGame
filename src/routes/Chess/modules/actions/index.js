@@ -1,4 +1,4 @@
-import { NEW_GAME, RESET_GAME, MOVE_FIGURE, SELECT_FIGURE } from '../constants';
+import { NEW_GAME, RESET_GAME, MOVE_FIGURE, SELECT_TILE } from '../constants';
 
 export const options = {
 
@@ -14,10 +14,10 @@ export const options = {
     })
   },
 
-  selectFigure:{
-    offline: (squareID, figureID)=>({
-      type: SELECT_FIGURE,
-      payload: {squareID, figureID}
+  selectTile:{
+    offline: (squareId, lineId)=>({
+      type: SELECT_TILE,
+      payload: {squareId, lineId}
     })
   },
 
