@@ -1,7 +1,7 @@
 'use strict';
 
 import {options} from '../actions';
-import squares from '../functions'
+import  squares  from '../functions'
 
 // action constants
 export const NEW_GAME = 'NEW_GAME';
@@ -12,13 +12,6 @@ export const SELECT_TILE = 'SELECT_TILE';
 // action creators
 export const newGame = options.newGame.offline;
 export const selectTile = options.selectTile.offline;
-
-// initial state
-export const initialState = {
-  round: 1,
-  squares,
-  selectedTile:[undefined, undefined],
-};
 
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;

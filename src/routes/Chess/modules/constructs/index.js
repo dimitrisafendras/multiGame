@@ -1,6 +1,6 @@
 import * as img from '../../components/chessPieces'
 
-const figures = new Map([
+export const figures = new Map([
   ['wKing', img.wKing],
   ['bKing', img.bKing],
   ['wQueen', img.wQueen],
