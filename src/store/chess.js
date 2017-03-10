@@ -3,9 +3,9 @@ import selectedATile from '../routes/Chess/modules/functions/selectedTile';
 import squares from '../routes/Chess/modules/functions';
 
 const initialState = {
-  round: 1,
+  round: 'white',
   squares,
-  selectedTile:[undefined, undefined],
+  selectedTile:[null, null],
 };
 
 export default function chess(state = initialState, action) {
