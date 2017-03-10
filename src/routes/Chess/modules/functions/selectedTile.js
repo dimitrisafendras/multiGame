@@ -1,5 +1,6 @@
 import { MAX_COLS } from '../constants';
 //import { ally, enemy } from '../functions'; //FIX
+
 import moveOptions from '../functions/moveOptions';
 
 const selectedATile = (state, { squareId, lineId })=> {
