@@ -1,9 +1,10 @@
-import { MAX_COLS, MAX_ROWS } from '../constants';
-
+import { MAX_COLS, MAX_ROWS } from '../constants/index.js';
+import {a} from './index'
+console.log(MAX_COLS, MAX_ROWS, a);
 //FIX: optimize the way we initialize the board
 //FIX: MAX_COLS, MAX_ROWS
 
-const boardInitializer = () => {
+const boardInitializer = (() => {
   const squares = new Array(8);
 
   for (let i = 0; i < 8; i++) {
@@ -36,6 +37,6 @@ const boardInitializer = () => {
   squares[7][7] = 'bRook';
 
   return squares;
-};
+})();
 
-export default boardInitializer();
+export default boardInitializer;

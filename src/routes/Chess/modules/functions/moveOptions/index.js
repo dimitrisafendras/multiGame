@@ -1,6 +1,6 @@
 import moveKing from './moveKing'
 
-export {
+export default {
 
   moveKing
 
