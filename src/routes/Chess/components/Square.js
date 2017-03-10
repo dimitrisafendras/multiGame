@@ -1,14 +1,18 @@
 import React from 'react';
 import figures from '../modules/constructs';
+import styles from './styles.scss';
 
 const Square = ({ squares, boolBoard, selectTile, squareId, lineId })=> {
-  if (boolBoard[squareId][lineId]){
-    return <div onClick={ () => selectTile(squareId, lineId)} style = { {backgroundColor: 'red'}}>
-      {figures(squares[squareId][lineId])}
-    </div>
-  }
+  const moveBoolean = boolBoard[squareId][lineId];
+  const canMove = (moveBoolean) => {
+    if (moveBoolean) return 'moveable';
+    return '';
+  };
+
   return <div onClick={ () => selectTile(squareId, lineId)}>
+    <span className = {styles[canMove(moveBoolean)]}>
     {figures(squares[squareId][lineId])}
+    </span>
   </div>
 };
 

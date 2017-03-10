@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const wKing = <span> &#9812; </span>;
 const wQueen = <span> &#9813; </span>;
 const wRook = <span> &#9814; </span>;
