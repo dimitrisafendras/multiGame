@@ -15,3 +15,17 @@ export const selectTile = options.selectTile.offline;
 
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
+
+
+export const INITIAL_BOOL_BOARD = (() => {
+  const squares = new Array(8);
+
+  for (let i = 0; i < 8; i++) {
+    squares[i] = new Array(8);
+    for (let j = 0; j < 8; j++) {
+      squares[i][j] = false;
+    }
+  }
+  return squares;
+})();
+console.log(INITIAL_BOOL_BOARD);

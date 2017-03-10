@@ -5,6 +5,7 @@ import {selectTile} from '../modules/constants';
 
 const mapStateToProps = (state)=> ({
   squares: state.chess.squares,
+  boolBoard: state.chess.boolBoard,
 });
 
 
