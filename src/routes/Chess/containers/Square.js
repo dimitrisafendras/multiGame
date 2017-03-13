@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Square from '../components/Square';
-import {selectTile} from '../modules/constants';
+import { selectOptions } from '../modules/constants';
 
 const mapStateToProps = (state)=> ({
   squares: state.chess.squares,
   boolBoard: state.chess.boolBoard,
+  selectedTile: state.chess.selectedTile,
 });
 
 
 
-export default connect(mapStateToProps, {selectTile})(Square);
+export default connect(mapStateToProps, selectOptions )(Square);
 

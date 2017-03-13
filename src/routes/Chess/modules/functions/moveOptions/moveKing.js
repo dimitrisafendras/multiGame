@@ -1,22 +1,21 @@
 // FIX
-import { INITIAL_BOOL_BOARD } from '../../constants'
-//  tLineID = target line ID
-let boolBoard = INITIAL_BOOL_BOARD;
-console.log(boolBoard);
+import { CREATE_BOOL_BOARD, MAX_ROWS, MAX_COLS } from '../../constants'
+
 const moveKing = ( selLineID, selSquareID, squares )=> {
-  for( let [i, line] of squares.entries()){
-    for( let [j, square] of line.entries()){
-      if(true){
+  const boolBoard = CREATE_BOOL_BOARD();
+  for( let i = 0; i< MAX_ROWS; i++){
+    for( let j = 0; j< MAX_COLS; j++){
+      if((squares[selLineID][selSquareID].charAt(0) != squares[i][j].charAt(0)) ){
         if(
           (Math.abs(Math.abs(i) - Math.abs(selLineID))) <= 1 &&
           Math.abs(Math.abs(j) - Math.abs(selSquareID)) <= 1
         ){
+          console.log(squares[selLineID][selSquareID].charAt(0),squares[j][i].charAt(0));
           boolBoard[i][j] = true;
         }
       }
     }
   }
-  console.log(boolBoard[1][3], boolBoard[3][1]);
   return boolBoard;
 };
 

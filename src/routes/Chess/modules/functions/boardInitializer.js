@@ -1,10 +1,9 @@
 import { MAX_COLS, MAX_ROWS } from '../constants/index.js';
-import {a} from './index'
-console.log(MAX_COLS, MAX_ROWS, a);
+console.log(MAX_COLS, MAX_ROWS);
 //FIX: optimize the way we initialize the board
 //FIX: MAX_COLS, MAX_ROWS
 
-const boardInitializer = (() => {
+const boardInitializer = () => {
   const squares = new Array(8);
 
   for (let i = 0; i < 8; i++) {
@@ -15,28 +14,28 @@ const boardInitializer = (() => {
   }
 
   for (let i = 0; i < 8; i++) {
-    squares[i][1] = 'wPawn';
-    squares[i][6] = 'bPawn';
   }
 
   squares[0][0] = 'wRook';
-  squares[1][0] = 'wKnight';
-  squares[2][0] = 'wBishop';
-  squares[3][0] = 'wQueen';
-  squares[4][0] = 'wKing';
-  squares[5][0] = 'wBishop';
-  squares[6][0] = 'wKnight';
-  squares[7][0] = 'wRook';
-  squares[0][7] = 'bRook';
-  squares[1][7] = 'bKnight';
-  squares[2][7] = 'bBishop';
-  squares[3][7] = 'bQueen';
-  squares[4][7] = 'bKing';
-  squares[5][7] = 'bBishop';
-  squares[6][7] = 'bKnight';
+  squares[0][1] = 'wKnight';
+  squares[0][2] = 'wBishop';
+  squares[0][3] = 'wQueen';
+  squares[0][4] = 'wKing';
+  squares[0][5] = 'wBishop';
+  squares[0][6] = 'wKnight';
+  squares[0][7] = 'wRook';
+  squares[7][0] = 'bRook';
+  squares[7][1] = 'bKnight';
+  squares[7][2] = 'bBishop';
+  squares[7][3] = 'bQueen';
+  squares[7][4] = 'bKing';
+  squares[7][5] = 'bBishop';
+  squares[7][6] = 'bKnight';
   squares[7][7] = 'bRook';
 
   return squares;
-})();
+};
 
-export default boardInitializer;
+const squares = boardInitializer();
+
+export default squares;
