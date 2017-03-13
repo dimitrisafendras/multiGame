@@ -1,6 +1,7 @@
-import { SELECT_TILE, MOVE_TILE, CREATE_BOOL_BOARD } from '../routes/Chess/modules/constants';
+import { SELECT_TILE, MOVE_TILE, CREATE_BOOL_BOARD, TOGGLE_OFF } from '../routes/Chess/modules/constants';
 import moveTile from '../routes/Chess/modules/functions/moveTile';
 import selectATile from '../routes/Chess/modules/functions/selectTile';
+import toggleOff from '../routes/Chess/modules/functions/toggleOff';
 import squares from '../routes/Chess/modules/functions/boardInitializer';
 
 const initialState = {
@@ -18,6 +19,8 @@ export default function chess(state = initialState, action) {
 
     case MOVE_TILE:
       return moveTile(state, action.payload);
+    case TOGGLE_OFF:
+      return toggleOff(state);
 
     default:
       return state;

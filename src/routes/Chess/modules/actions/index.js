@@ -1,4 +1,4 @@
-import { NEW_GAME, RESET_GAME, MOVE_FIGURE, SELECT_TILE, MOVE_TILE } from '../constants';
+import { NEW_GAME, RESET_GAME, MOVE_FIGURE, SELECT_TILE, MOVE_TILE, TOGGLE_OFF } from '../constants';
 
 export const options = {
 
@@ -18,6 +18,11 @@ export const options = {
     offline: (squareId, lineId)=>({
       type: SELECT_TILE,
       payload: {squareId, lineId}
+    })
+  },
+  toggleOff: {
+    offline: () => ({
+      type: TOGGLE_OFF,
     })
   },
 

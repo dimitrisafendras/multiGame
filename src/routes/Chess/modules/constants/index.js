@@ -8,14 +8,18 @@ export const RESET_GAME = 'RESET_GAME';
 export const MOVE_FIGURE = 'MOVE_FIGURE';
 export const SELECT_TILE = 'SELECT_TILE';
 export const MOVE_TILE = 'MOVE_TILE';
+export const TOGGLE_OFF = 'TOGGLE_OFF';
 
 // action creators
 export const newGame = options.newGame.offline;
 const selectTile = options.selectTile.offline;
 const moveTile = options.moveTile.offline;
+const toggleOff = options.toggleOff.offline;
+
 export const selectOptions = {
   moveTile,
   selectTile,
+  toggleOff,
 };
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
