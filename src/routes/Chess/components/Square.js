@@ -8,11 +8,15 @@ const style = {
   }
 };
 
-const Square = ({ squares, boolBoard, selectedTile, selectTile, moveTile, squareId, lineId })=> {
+const Square = ({ squares, boolBoard, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
 
   const haveSelected = () => {
     if (selectedTile[0] || (selectedTile[0] === 0)) {
-      if (boolBoard[squareId][lineId])  return moveTile(squareId, lineId);
+      if (boolBoard[squareId][lineId])  {
+        return moveTile(squareId, lineId)
+      }
+
+      return toggleOff();
   }
     return selectTile(squareId,lineId);
   };
