@@ -1,6 +1,6 @@
 import React from 'react';
 import figures from '../modules/constructs';
-import { DEFAULT_TILE } from '../modules/constants';
+import haveSelected from '../modules/functions/haveSelected';
 
 const style = {
   moveAble: {
@@ -11,31 +11,25 @@ const style = {
 
 const Square = ({ squares, boolBoard, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
 
-  const clickTile = () => {
+  const canMove = () => {
+    if ((boolBoard[lineId][squareId])) return 'moveAble';
+    return '';
+  };
 
+  const clickTile = () => {
     if (haveSelected(selectedTile)) {
-      console.log(boolBoard);
       if (boolBoard[lineId][squareId])  {
         return moveTile(lineId, squareId)
       }
-
       return toggleOff();
-  }
-
+    }
     return selectTile(lineId, squareId);
   };
 
   return <div onClick={ () => clickTile()}
-       style={style[canMove(boolBoard[lineId][squareId])]}>
+              style={style[canMove()]}>
     {figures(squares[lineId][squareId])}
   </div>
 };
-
-const canMove = (moveBoolean) => {
-  if (moveBoolean) return 'moveAble';
-  return '';
-};
-
-
 
 export default Square;
