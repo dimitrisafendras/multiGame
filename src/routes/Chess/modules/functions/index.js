@@ -4,7 +4,7 @@ import moveTile from './moveTile';
 import selectTile from './selectTile';
 import toggleOff from './toggleOff';
 
-export default {
+export {
   squares,
   haveSelected,
   moveTile,

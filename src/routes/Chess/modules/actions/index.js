@@ -17,7 +17,7 @@ export const options = {
   selectTile:{
     offline: (lineId, squareId)=>({
       type: SELECT_TILE,
-      payload: {squareId, lineId}
+      payload: { lineId, squareId}
     })
   },
   toggleOff: {
@@ -29,14 +29,8 @@ export const options = {
   moveTile:{
     offline: (lineId, squareId)=>({
       type: MOVE_TILE,
-      payload: {squareId, lineId}
+      payload: { lineId, squareId}
     })
   },
 
-  moveFigure:{
-    offline: (figureId, squareId)=>({
-      type: MOVE_FIGURE,
-      payload: {figureId, squareId}
-    })
-  }
 };
