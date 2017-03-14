@@ -12,18 +12,18 @@ const Square = ({ squares, boolBoard, selectedTile, selectTile, moveTile, toggle
 
   const haveSelected = () => {
     if (selectedTile[0] || (selectedTile[0] === 0)) {
-      if (boolBoard[squareId][lineId])  {
-        return moveTile(squareId, lineId)
+      if (boolBoard[lineId][squareId])  {
+        return moveTile(lineId, squareId)
       }
 
       return toggleOff();
   }
-    return selectTile(squareId,lineId);
+    return selectTile(lineId, squareId);
   };
 
   return <div onClick={ () => haveSelected()}
-       style={style[canMove(boolBoard[squareId][lineId])]}>
-    {figures(squares[squareId][lineId])}
+       style={style[canMove(boolBoard[lineId][squareId])]}>
+    {figures(squares[lineId][squareId])}
   </div>
 };
 

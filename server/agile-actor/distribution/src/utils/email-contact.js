@@ -27,10 +27,10 @@ const emailContact = (_ref) => {
       message = _ref.message;
 
   const messageText = `
-    ${ name }
-    ${ email }
-    ${ subject }
-    ${ message }
+    ${name}
+    ${email}
+    ${subject}
+    ${message}
   `;
 
   return new Promise((resolve, reject) => {

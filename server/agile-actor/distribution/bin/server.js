@@ -20,7 +20,7 @@ const app = new _koa2.default();
 const server = (0, _lib.appModules)(app);
 
 server.listen(_lib.config.port, () => {
-  console.log(` -- Agile Actor Server started on port ${ _lib.config.port }`);
+  console.log(` -- Agile Actor Server started on port ${_lib.config.port}`);
 });
 
 exports.default = server;

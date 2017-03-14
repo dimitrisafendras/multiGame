@@ -65,7 +65,7 @@ describe('Users', () => {
 
       request.get('/users').set({
         Accept: 'application/json',
-        Authorization: `Unknown ${ token }`
+        Authorization: `Unknown ${token}`
       }).expect(401, done);
     });
 
@@ -81,7 +81,7 @@ describe('Users', () => {
 
       request.get('/users').set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).expect(200, (err, res) => {
         if (err) {
           return done(err);
@@ -109,7 +109,7 @@ describe('Users', () => {
 
       request.get('/users/1').set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).expect(404, done);
     });
 
@@ -118,9 +118,9 @@ describe('Users', () => {
             token = context.token;
 
 
-      request.get(`/users/${ id }`).set({
+      request.get(`/users/${id}`).set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).expect(200, (err, res) => {
         if (err) {
           return done(err);
@@ -148,7 +148,7 @@ describe('Users', () => {
 
       request.put('/users/1').set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).expect(404, done);
     });
 
@@ -157,9 +157,9 @@ describe('Users', () => {
             token = context.token;
 
 
-      request.put(`/users/${ id }`).set({
+      request.put(`/users/${id}`).set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).send({ user: { username: 'updatedcoolname' } }).expect(200, (err, res) => {
         if (err) {
           return done(err);
@@ -187,7 +187,7 @@ describe('Users', () => {
 
       request.delete('/users/1').set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).expect(404, done);
     });
 
@@ -196,9 +196,9 @@ describe('Users', () => {
             token = context.token;
 
 
-      request.delete(`/users/${ id }`).set({
+      request.delete(`/users/${id}`).set({
         Accept: 'application/json',
-        Authorization: `Bearer ${ token }`
+        Authorization: `Bearer ${token}`
       }).expect(200, done);
     });
   });

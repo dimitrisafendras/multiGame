@@ -7,7 +7,7 @@ const moveTile = (state, {lineId, squareId})=> {
     let newSquares = state.squares.slice(0, MAX_COLS);
     let lID = state.selectedTile[0];
     let sID = state.selectedTile[1];
-    newSquares[squareId][lineId] = state.squares[lID][sID];
+    newSquares[lineId][squareId] = state.squares[lID][sID];
     newSquares[lID][sID] = '';
     const newBoolBoard = CREATE_BOOL_BOARD();
     return {...state, squares: newSquares, selectedTile: [null, null], boolBoard: newBoolBoard }
@@ -15,6 +15,3 @@ const moveTile = (state, {lineId, squareId})=> {
 };
 
 export default moveTile;
-
-
-
