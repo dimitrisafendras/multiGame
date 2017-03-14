@@ -1,8 +1,8 @@
-import { CREATE_BOOL_BOARD } from '../constants';
+import { CREATE_BOOL_BOARD, DEFAULT_TILE } from '../constants';
 
 const toggleOff = (state)=> {
 
-  return {...state, selectedTile:[null, null], boolBoard : CREATE_BOOL_BOARD() }
+  return {...state, selectedTile:DEFAULT_TILE, boolBoard : CREATE_BOOL_BOARD() }
 };
 
 

@@ -1,4 +1,5 @@
 import { MAX_COLS, MAX_ROWS } from '../constants/index.js';
+
 console.log(MAX_COLS, MAX_ROWS);
 //FIX: optimize the way we initialize the board
 //FIX: MAX_COLS, MAX_ROWS
