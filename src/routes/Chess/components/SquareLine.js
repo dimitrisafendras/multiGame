@@ -9,7 +9,7 @@ const SquareLine = ({lineKey})=> {
   <div className={styles.line}>
     {
       [...Array(MAX_COLS).keys()].map((key) => {
-        return <Square key={key+(MAX_COLS*lineKey)} squareId={key} lineId={lineKey}/>
+        return <Square key={key+(MAX_COLS*lineKey)} lineId={lineKey} squareId={key}/>
       })
     }
   </div>

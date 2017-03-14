@@ -39,8 +39,6 @@ export const CREATE_BOOL_BOARD = (() => {
   return squares;
 });
 
-export const INITIAL_BOOL_BOARD = CREATE_BOOL_BOARD();
-
 //initial state
 export const initialState = {
   round: 'white',
