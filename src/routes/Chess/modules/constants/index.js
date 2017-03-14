@@ -1,5 +1,5 @@
 'use strict';
-
+import squares from '../functions/boardInitializer';
 import {options} from '../actions';
 
 // action constants
@@ -21,9 +21,14 @@ export const selectOptions = {
   selectTile,
   toggleOff,
 };
+
+//other consts
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
-
+export const DEFAULT_TILE = {
+  line: '',
+  square: '',
+};
 
 export const CREATE_BOOL_BOARD = (() => {
   const squares = new Array(8);
@@ -38,3 +43,11 @@ export const CREATE_BOOL_BOARD = (() => {
 });
 
 export const INITIAL_BOOL_BOARD = CREATE_BOOL_BOARD();
+
+//initial state
+export const initialState = {
+  round: 'white',
+  squares,
+  selectedTile:[null, null],
+  boolBoard: CREATE_BOOL_BOARD(),
+};
