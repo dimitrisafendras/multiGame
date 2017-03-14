@@ -22,7 +22,7 @@ exports.default = app => {
   const server = _http2.default.createServer(app.callback());
   const io = new _socket2.default(server);
 
-  (0, _glob2.default)(`${ __dirname }/*/`, (err, matches) => {
+  (0, _glob2.default)(`${__dirname}/*/`, (err, matches) => {
     if (err) throw err;
     matches.forEach(mod => require(mod).default(io));
   });

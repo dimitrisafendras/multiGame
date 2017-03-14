@@ -19,18 +19,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // takes an `id` argument and returns the User with that ID.
 // Note that the `query` is a GraphQLObjectType, just like User.
 var _graphqlSchema = (0, _graph2.default)(`
-  ${ _models.contacts.types }
+  ${_models.contacts.types}
 
-  ${ _models.user.types }
+  ${_models.user.types}
 
   type Query {
-    ${ _models.contacts.queries }
-    ${ _models.user.queries }
+    ${_models.contacts.queries}
+    ${_models.user.queries}
   }
 
   type Mutation {
-    ${ _models.contacts.mutations }
-    ${ _models.user.mutations }
+    ${_models.contacts.mutations}
+    ${_models.user.mutations}
   }
   `, {
   Query: _extends({}, _models.contacts.queriesImpl, _models.user.queriesImpl),

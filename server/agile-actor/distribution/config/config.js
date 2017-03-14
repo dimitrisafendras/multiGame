@@ -13,7 +13,7 @@ var _common2 = _interopRequireDefault(_common);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const env = process.env.NODE_ENV || 'development';
-const defaultConfig = require(`./env/${ env }`).default;
+const defaultConfig = require(`./env/${env}`).default;
 
 exports.default = config => {
   const updatedConfig = _extends({}, _common2.default, defaultConfig, config || {});

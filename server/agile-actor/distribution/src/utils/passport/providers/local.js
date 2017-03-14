@@ -14,7 +14,7 @@ const transformUser = exports.transformUser = providerUser => {
         currentLoginAttempt = providerUser.currentLoginAttempt;
 
 
-  const name = firstName && lastName && `${ firstName } ${ lastName }`;
+  const name = firstName && lastName && `${firstName} ${lastName}`;
   const altName = email && email.slice(0, email.indexOf('@'));
 
   return {

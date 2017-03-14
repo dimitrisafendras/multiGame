@@ -26,17 +26,17 @@ const config = {
     github: {
       clientID: 'af1d064fd8e70c6f75bd',
       clientSecret: '7533db68be7a9dce2b41ff36c09e799129c0fa32',
-      callbackURL: `http://${ host }:${ port }/auth/github/callback`
+      callbackURL: `http://${host}:${port}/auth/github/callback`
     },
     google: {
       clientID: '905278307733-amcaml9t4nedcf25cc2ruj6r4o7cf9id.apps.googleusercontent.com',
       clientSecret: '-AlX305dqdTBtIeZZYJHoGhI',
-      callbackURL: `http://${ host }:${ port }/auth/google/callback`
+      callbackURL: `http://${host}:${port}/auth/google/callback`
     },
     linkedin: {
       clientID: '77dobssvg2ppek',
       clientSecret: 'CdS78OlqH4vKLjsy',
-      callbackURL: `http://${ host }:${ port }/auth/linkedin/callback`
+      callbackURL: `http://${host}:${port}/auth/linkedin/callback`
     }
   },
   emailServer: {

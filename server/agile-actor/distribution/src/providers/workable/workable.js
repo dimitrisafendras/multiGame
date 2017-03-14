@@ -22,7 +22,7 @@ const serviceUrl = _ref.serviceUrl,
 
 
 const headers = {
-  Authorization: `${ type } ${ token }`
+  Authorization: `${type} ${token}`
 };
 
 const url = params => serviceUrl ? [serviceUrl, ...Object.values(params)].join('/') : 'none';

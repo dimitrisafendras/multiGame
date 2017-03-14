@@ -10,7 +10,6 @@ const moveKing = ( selLineID, selSquareID, squares )=> {
           (Math.abs(Math.abs(i) - Math.abs(selLineID))) <= 1 &&
           Math.abs(Math.abs(j) - Math.abs(selSquareID)) <= 1
         ){
-          console.log(squares[selLineID][selSquareID].charAt(0),squares[j][i].charAt(0));
           boolBoard[i][j] = true;
         }
       }

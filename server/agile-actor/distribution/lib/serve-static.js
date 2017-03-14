@@ -17,6 +17,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const maxage = _config2.default.maxage;
 
 exports.default = app => {
-  app.use((0, _koaStatic2.default)(`${ process.cwd() }/static`, { maxage }));
-  app.use((0, _koaStatic2.default)(`${ process.cwd() }/static/docs`, { maxage }));
+  app.use((0, _koaStatic2.default)(`${process.cwd()}/static`, { maxage }));
+  app.use((0, _koaStatic2.default)(`${process.cwd()}/static/docs`, { maxage }));
 };
