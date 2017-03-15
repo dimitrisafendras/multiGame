@@ -5,7 +5,7 @@ import haveSelected from '../functions/haveSelected';
 
 const selectAtile = (state, { lineId, squareId })=> {
   if (!haveSelected(state.selectedTile)) {
-    if (!(state.squares[lineId][squareId] === '')) {
+    if (!(state.squares[lineId][squareId] === 'empty')) {
       let piece = 'move' + state.squares[lineId][squareId].substring(1);
       let newBoolBoard = moveOptions[piece](lineId, squareId, state.squares);
       return {
