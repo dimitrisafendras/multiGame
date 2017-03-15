@@ -39,6 +39,17 @@ export const CREATE_BOOL_BOARD = (() => {
   return squares;
 });
 
+export const PAWN_OPTIONS = {
+  b:{
+    direction: -1,
+    startLine: 6,
+  },
+  w:{
+    direction: 1,
+    startLine: 1,
+  },
+};
+
 //initial state
 export const initialState = {
   round: 'white',
@@ -46,3 +57,4 @@ export const initialState = {
   selectedTile:DEFAULT_TILE,
   boolBoard: CREATE_BOOL_BOARD(),
 };
+
