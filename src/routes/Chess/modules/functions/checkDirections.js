@@ -1,33 +1,33 @@
 import figureIs from './figureIs';
 import { MAX_COLS, MAX_ROWS } from '../constants';
+
 const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard)=> {
 
+  let targetLine = squares[selLineID+x];
+  let selectSquare = squares[selLineID][selSquareID];
+  let targetSquare = squares[selLineID + x][selSquareID + y];
+  let thisFigure = figureIs(selectSquare, targetSquare);
   let noFigureBetween = true;
-  //FIXXXXXXXXXXXXXXXXXXXXx!!!
-  let dirX = 0;
-  let dirY = 0;
-  if (x != 0){
-    dirX = x/Math.abs(x);
-  }
-  if (y != 0){
-    dirY = y/Math.abs(y);
-  }
+  let dirX = x.valueOf();
+  let dirY = y.valueOf();
 
   while((selLineID + x <= MAX_ROWS) && (selSquareID + y <= MAX_COLS) && (noFigureBetween)){
-    if(!(squares[selLineID+x]) || !(squares[selLineID + x][selSquareID +y]) ){
+    if(!(targetLine) || !(targetSquare) ){
       return boolBoard;
     }
-    if(figureIs(squares[selLineID][selSquareID], squares[selLineID + x][selSquareID + y]) === 'EMPTY'){
+
+    if(thisFigure === 'EMPTY'){
       boolBoard[selLineID + x][selSquareID + y] = true;
       x += dirX;
       y += dirY;
-      console.log(x,y);
     }
-    else if (figureIs(squares[selLineID][selSquareID], squares[selLineID + x][selSquareID + y]) === 'FOE'){
+
+    else if (thisFigure === 'FOE'){
       boolBoard[selLineID + x][selSquareID + y] = true;
       noFigureBetween = false;
     }
-    else if (figureIs(squares[selLineID][selSquareID], squares[selLineID + x][selSquareID + y]) === 'ALLY'){
+
+    else if (thisFigure === 'ALLY'){
       noFigureBetween = false;
     }
   }
