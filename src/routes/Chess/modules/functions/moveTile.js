@@ -8,7 +8,7 @@ const moveTile = (state, {lineId, squareId})=> {
     let lID = state.selectedTile.line;
     let sID = state.selectedTile.square;
     newSquares[lineId][squareId] = state.squares[lID][sID];
-    newSquares[lID][sID] = '';
+    newSquares[lID][sID] = 'empty';
     const newBoolBoard = CREATE_BOOL_BOARD();
 
     return {
