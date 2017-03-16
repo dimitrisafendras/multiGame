@@ -5,7 +5,6 @@ import {options} from '../actions';
 // action constants
 export const NEW_GAME = 'NEW_GAME';
 export const RESET_GAME = 'RESET_GAME';
-export const MOVE_FIGURE = 'MOVE_FIGURE';
 export const SELECT_TILE = 'SELECT_TILE';
 export const MOVE_TILE = 'MOVE_TILE';
 export const TOGGLE_OFF = 'TOGGLE_OFF';

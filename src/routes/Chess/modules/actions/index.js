@@ -1,4 +1,4 @@
-import { NEW_GAME, RESET_GAME, MOVE_FIGURE, SELECT_TILE, MOVE_TILE, TOGGLE_OFF } from '../constants';
+import { NEW_GAME, RESET_GAME, SELECT_TILE, MOVE_TILE, TOGGLE_OFF } from '../constants';
 
 export const options = {
 
