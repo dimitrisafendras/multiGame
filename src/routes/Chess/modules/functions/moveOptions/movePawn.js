@@ -5,14 +5,16 @@ import figureIs from '../figureIs';
 const movePawn = (selLineID, selSquareID, squares)=> {
   let boolBoard = CREATE_BOOL_BOARD();
   let thisPawnOptions = PAWN_OPTIONS[squares[selLineID][selSquareID].charAt(0)];
-  if (
+
+  if(
     figureIs(
       squares[selLineID][selSquareID],
       squares[selLineID + thisPawnOptions.direction][selSquareID]
     ) === 'EMPTY'
   ){
     boolBoard[selLineID + thisPawnOptions.direction][selSquareID] = true;
-    if ((thisPawnOptions.startLine === selLineID)
+    if(
+      (thisPawnOptions.startLine === selLineID)
       && (
         figureIs(
           squares[selLineID][selSquareID],
