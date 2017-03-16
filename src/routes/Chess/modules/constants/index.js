@@ -59,5 +59,6 @@ export const initialState = {
   squares,
   selectedTile:DEFAULT_TILE,
   boolBoard: CREATE_BOOL_BOARD(),
+  victory: false,
 };
 

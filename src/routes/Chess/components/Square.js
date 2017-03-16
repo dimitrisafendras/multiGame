@@ -10,7 +10,7 @@ const style = {
   }
 };
 
-const Square = ({ squares, boolBoard, round, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
+const Square = ({ squares, boolBoard, round, victory, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
 
   const canMove = () => {
     if ((boolBoard[lineId][squareId])) return 'moveAble';
@@ -18,16 +18,19 @@ const Square = ({ squares, boolBoard, round, selectedTile, selectTile, moveTile,
   };
 
   const clickTile = () => {
-    if (haveSelected(selectedTile)) {
-      if (boolBoard[lineId][squareId]) {
-        return moveTile(lineId, squareId)
+    if(!victory){
+      if (haveSelected(selectedTile)) {
+        if (boolBoard[lineId][squareId]) {
+          return moveTile(lineId, squareId)
+        }
+        return toggleOff();
       }
-      return toggleOff();
-    }
-    if (figureIs(round, squares[lineId][squareId]) === 'ALLY'){
-      return selectTile(lineId, squareId);
-    }
-  };
+      if (figureIs(round, squares[lineId][squareId]) === 'ALLY'){
+        return selectTile(lineId, squareId);
+      }
+    };
+  }
+
 
   return <div onClick={ () => clickTile()}
               style={style[canMove()]}>
