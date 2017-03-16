@@ -16,16 +16,34 @@ const movePawn = (selLineID, selSquareID, squares)=> {
     if(
       (thisPawnOptions.startLine === selLineID)
       && (
-        figureIs(
-          squares[selLineID][selSquareID],
-          squares[selLineID + (2 * thisPawnOptions.direction)][selSquareID]
-        ) === 'EMPTY')
+      figureIs(
+        squares[selLineID][selSquareID],
+        squares[selLineID + (2 * thisPawnOptions.direction)][selSquareID]
+      ) === 'EMPTY')
     ){
       boolBoard[selLineID + (2 * thisPawnOptions.direction)][selSquareID] = true;
     }
   }
+  if (
+    (figureIs(
+        squares[selLineID][selSquareID],
+          squares[selLineID + thisPawnOptions.direction][selSquareID + 1]
+      ) === 'FOE'
+    )
+  ){
+    boolBoard[selLineID + (thisPawnOptions.direction)][selSquareID + 1] = true;
+  }
+  if (
+    (figureIs(
+        squares[selLineID][selSquareID],
+          squares[selLineID + thisPawnOptions.direction][selSquareID - 1]
+      ) === 'FOE'
+    )
+  ){
+    boolBoard[selLineID + (thisPawnOptions.direction)][selSquareID - 1] = true;
+  }
 
-    return boolBoard;
+  return boolBoard;
 };
 
 export default movePawn;

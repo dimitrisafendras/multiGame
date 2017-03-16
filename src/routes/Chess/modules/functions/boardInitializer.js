@@ -1,4 +1,4 @@
-import { MAX_COLS, MAX_ROWS } from '../constants/index.js';
+import { MAX_COLS, MAX_ROWS, PAWN_OPTIONS } from '../constants/index.js';
 
 console.log(MAX_COLS, MAX_ROWS);
 //FIX: optimize the way we initialize the board
@@ -16,9 +16,10 @@ const boardInitializer = () => {
 
   //pawns initializer
   for (let i = 0; i < 8; i++) {
+    squares[1][i] = 'wPawn';
+    squares[6][i] = 'bPawn';
   }
-  squares[1][0] = 'wPawn';
-  squares[6][0] = 'bPawn';
+
   squares[0][0] = 'wRook';
   squares[0][1] = 'wKnight';
   squares[0][2] = 'wBishop';

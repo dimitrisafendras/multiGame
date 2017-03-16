@@ -1,5 +1,6 @@
 import React from 'react';
 import figures from '../modules/constructs';
+import figureIs from '../modules/functions/figureIs';
 import haveSelected from '../modules/functions/haveSelected';
 
 const style = {
@@ -9,7 +10,7 @@ const style = {
   }
 };
 
-const Square = ({ squares, boolBoard, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
+const Square = ({ squares, boolBoard, round, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
 
   const canMove = () => {
     if ((boolBoard[lineId][squareId])) return 'moveAble';
@@ -18,12 +19,14 @@ const Square = ({ squares, boolBoard, selectedTile, selectTile, moveTile, toggle
 
   const clickTile = () => {
     if (haveSelected(selectedTile)) {
-      if (boolBoard[lineId][squareId])  {
+      if (boolBoard[lineId][squareId]) {
         return moveTile(lineId, squareId)
       }
       return toggleOff();
     }
-    return selectTile(lineId, squareId);
+    if (figureIs(round, squares[lineId][squareId]) === 'ALLY'){
+      return selectTile(lineId, squareId);
+    }
   };
 
   return <div onClick={ () => clickTile()}
