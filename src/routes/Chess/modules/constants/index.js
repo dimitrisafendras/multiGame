@@ -26,6 +26,10 @@ export const selectOptions = {
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
 export const DEFAULT_TILE = {};
+export const NEXT_ROUND = {
+  white: 'black',
+  black: 'white',
+};
 
 export const CREATE_BOOL_BOARD = (() => {
   const squares = new Array(8);

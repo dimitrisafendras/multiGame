@@ -7,9 +7,8 @@ const mapStateToProps = (state)=> ({
   squares: state.chess.squares,
   boolBoard: state.chess.boolBoard,
   selectedTile: state.chess.selectedTile,
+  round: state.chess.round,
 });
-
-
 
 export default connect(mapStateToProps, selectOptions )(Square);
 

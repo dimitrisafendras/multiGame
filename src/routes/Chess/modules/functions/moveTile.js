@@ -1,4 +1,4 @@
-import { MAX_COLS, CREATE_BOOL_BOARD, DEFAULT_TILE} from '../constants';
+import { MAX_COLS, CREATE_BOOL_BOARD, DEFAULT_TILE, NEXT_ROUND} from '../constants';
 //import { ally, enemy } from '../functions'; //FIX
 
 const moveTile = (state, {lineId, squareId})=> {
@@ -14,7 +14,9 @@ const moveTile = (state, {lineId, squareId})=> {
     return {
       ...state, squares: newSquares,
       selectedTile: DEFAULT_TILE,
-      boolBoard: newBoolBoard }
+      boolBoard: newBoolBoard,
+      round: NEXT_ROUND[state.round],
+    }
   }
 };
 
