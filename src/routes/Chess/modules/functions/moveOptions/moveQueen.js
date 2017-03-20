@@ -4,7 +4,7 @@ import { directions } from '../../constructs';
 
 const moveQueen = (selLineID, selSquareID, squares)=> {
   const boolBoard = CREATE_BOOL_BOARD();
-  for(let vector of directions.queen) {
+  for(let vector of directions.queenKing) {
     checkDirections(selLineID, selSquareID, squares, vector.x, vector.y, boolBoard);
   }
   return boolBoard;
