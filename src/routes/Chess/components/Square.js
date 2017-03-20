@@ -4,7 +4,7 @@ import { figureIs, haveSelected } from '../modules/functions';
 
 const style = {
   moveAble: {
-    backgroundColor: 'red',
+    backgroundColor: 'green',
     opacity: 0.9,
   }
 };
