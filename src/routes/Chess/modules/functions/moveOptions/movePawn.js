@@ -1,6 +1,5 @@
-
 import { CREATE_BOOL_BOARD, PAWN_OPTIONS } from '../../constants';
-import figureIs from '../figureIs';
+import { figureIs } from '../';
 import { directions } from '../../constructs';
 
 const movePawn = (selLineID, selSquareID, squares, round)=> {

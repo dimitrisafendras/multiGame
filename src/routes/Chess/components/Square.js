@@ -1,7 +1,6 @@
 import React from 'react';
 import { figures } from '../modules/constructs';
-import figureIs from '../modules/functions/figureIs';
-import haveSelected from '../modules/functions/haveSelected';
+import { figureIs, haveSelected } from '../modules/functions';
 
 const style = {
   moveAble: {

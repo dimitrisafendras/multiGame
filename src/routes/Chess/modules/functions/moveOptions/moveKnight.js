@@ -1,5 +1,5 @@
 import { CREATE_BOOL_BOARD } from '../../constants';
-import figureIs from '../figureIs';
+import { figureIs } from '../';
 import { directions } from '../../constructs';
 
 const moveKnight = (selLineID, selSquareID, squares)=> {
