@@ -1,4 +1,4 @@
-import checkDirections from '../checkDirections';
+import { checkDirections } from '../';
 import { CREATE_BOOL_BOARD } from '../../constants';
 import { directions } from '../../constructs';
 
