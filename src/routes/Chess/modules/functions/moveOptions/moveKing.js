@@ -1,4 +1,4 @@
-import { CREATE_BOOL_BOARD, MAX_ROWS, MAX_COLS } from '../../constants';
+import { CREATE_BOOL_BOARD } from '../../constants';
 import figureIs from '../figureIs';
 import { directions } from '../../constructs';
 
