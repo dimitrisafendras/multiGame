@@ -11,5 +11,4 @@ const mapStateToProps = (state)=> ({
   victory: state.chess.victory,
 });
 
-export default connect(mapStateToProps, selectOptions )(Square);
-
+export default connect(mapStateToProps, selectOptions)(Square);

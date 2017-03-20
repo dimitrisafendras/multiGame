@@ -17,5 +17,6 @@ const Empty = <span></span>;
 export {
   wKing, wQueen, wRook, wBishop,
   wKnight, wPawn, bKing, bQueen,
-  bRook, bBishop, bKnight, bPawn, Empty
+  bRook, bBishop, bKnight, bPawn,
+  Empty
 }
