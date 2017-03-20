@@ -15,13 +15,13 @@ const selectTile = options.selectTile.offline;
 const moveTile = options.moveTile.offline;
 const toggleOff = options.toggleOff.offline;
 
+//other consts
 export const selectOptions = {
   moveTile,
   selectTile,
   toggleOff,
 };
 
-//other consts
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
 export const DEFAULT_TILE = {};
@@ -29,18 +29,6 @@ export const NEXT_ROUND = {
   white: 'black',
   black: 'white',
 };
-
-export const CREATE_BOOL_BOARD = (() => {
-  const squares = new Array(8);
-
-  for (let i = 0; i < 8; i++) {
-    squares[i] = new Array(8);
-    for (let j = 0; j < 8; j++) {
-      squares[i][j] = false;
-    }
-  }
-  return squares;
-});
 
 export const PAWN_OPTIONS = {
   b:{
@@ -53,11 +41,25 @@ export const PAWN_OPTIONS = {
   },
 };
 
+//boolean board initializer
+export const CREATE_BOOL_BOARD = (()=> {
+
+  const squares = new Array(MAX_ROWS);
+
+  for (let i = 0; i < MAX_ROWS; i++){
+    squares[i] = new Array(MAX_COLS);
+    for (let j = 0; j < MAX_COLS; j++){
+      squares[i][j] = false;
+    }
+  }
+  return squares;
+});
+
 //initial state
 export const initialState = {
   round: 'white',
   squares,
-  selectedTile:DEFAULT_TILE,
+  selectedTile: DEFAULT_TILE,
   boolBoard: CREATE_BOOL_BOARD(),
   victory: false,
 };

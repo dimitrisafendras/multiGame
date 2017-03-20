@@ -15,22 +15,21 @@ export const options = {
   },
 
   selectTile:{
-    offline: (lineId, squareId)=>({
+    offline: (lineId, squareId)=> ({
       type: SELECT_TILE,
       payload: { lineId, squareId}
     })
   },
   toggleOff: {
-    offline: () => ({
+    offline: ()=> ({
       type: TOGGLE_OFF,
     })
   },
 
   moveTile:{
-    offline: (lineId, squareId)=>({
+    offline: (lineId, squareId)=> ({
       type: MOVE_TILE,
       payload: { lineId, squareId}
     })
   },
-
 };
