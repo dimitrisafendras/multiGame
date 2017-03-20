@@ -30,11 +30,14 @@ export const NEXT_ROUND = {
   black: 'white',
 };
 
+//starting point of pawns and direction of their movement
 export const PAWN_OPTIONS = {
+
   b:{
     direction: -1,
     startLine: 6,
   },
+
   w:{
     direction: 1,
     startLine: 1,
@@ -43,11 +46,11 @@ export const PAWN_OPTIONS = {
 
 //boolean board initializer
 export const CREATE_BOOL_BOARD = (()=> {
-
   const squares = new Array(MAX_ROWS);
 
   for (let i = 0; i < MAX_ROWS; i++){
     squares[i] = new Array(MAX_COLS);
+
     for (let j = 0; j < MAX_COLS; j++){
       squares[i][j] = false;
     }
@@ -63,4 +66,3 @@ export const initialState = {
   boolBoard: CREATE_BOOL_BOARD(),
   victory: false,
 };
-
