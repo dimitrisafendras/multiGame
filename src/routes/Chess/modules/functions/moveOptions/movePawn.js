@@ -20,9 +20,7 @@ const movePawn = (selLineID, selSquareID, squares, round)=> {
   if (squares[selLineID + moveVector] && squares[selLineID + moveVector][selSquareID]){
     if((figureIs(squares[selLineID][selSquareID], squares[selLineID + moveVector][selSquareID]) === 'EMPTY' )) {
       boolBoard[selLineID + moveVector][selSquareID] = true;
-    }
-    if(selLineID === pawnStartLine){
-      if((figureIs(squares[selLineID][selSquareID], squares[selLineID + moveVector * 2][selSquareID]) === 'EMPTY' )) {
+      if ((selLineID === pawnStartLine) && (figureIs(squares[selLineID][selSquareID], squares[selLineID + moveVector * 2][selSquareID]) === 'EMPTY' )) {
         boolBoard[selLineID + moveVector * 2][selSquareID] = true;
       }
     }

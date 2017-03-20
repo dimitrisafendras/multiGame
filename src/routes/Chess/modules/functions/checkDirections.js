@@ -1,4 +1,4 @@
-import figureIs from './figureIs';
+import { figureIs } from './';
 import { MAX_COLS, MAX_ROWS } from '../constants';
 
 const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard)=> {

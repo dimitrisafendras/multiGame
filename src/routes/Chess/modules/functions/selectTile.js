@@ -1,5 +1,4 @@
-import moveOptions from '../functions/moveOptions';
-import haveSelected from '../functions/haveSelected';
+import { moveOptions, haveSelected } from '../functions';
 
 const selectAtile = (state, { lineId, squareId })=> {
   if (!haveSelected(state.selectedTile)) {
