@@ -1,15 +1,13 @@
 import checkDirections from '../checkDirections';
 import { CREATE_BOOL_BOARD } from '../../constants';
+import { directions } from '../../constructs';
 
 const moveQueen = (selLineID, selSquareID, squares)=> {
   const boolBoard = CREATE_BOOL_BOARD();
-  for (let i = -1 ; i<= 1 ; i++){
-    for (let j = -1 ; j<=1 ; j++){
-      checkDirections(selLineID, selSquareID, squares, i, j, boolBoard);
-    }
+  for(let vector of directions.queen) {
+    checkDirections(selLineID, selSquareID, squares, vector.x, vector.y, boolBoard);
   }
   return boolBoard;
-
 };
 
 export default moveQueen;
