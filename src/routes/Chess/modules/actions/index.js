@@ -27,9 +27,9 @@ export const options = {
   },
 
   moveTile:{
-    offline: (lineId, squareId)=> ({
+    offline: (lineId, squareId, selectedTile)=> ({
       type: MOVE_TILE,
-      payload: { lineId, squareId}
+      payload: { lineId, squareId, selectedTile }
     })
   },
 };

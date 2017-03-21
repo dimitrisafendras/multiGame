@@ -6,9 +6,3 @@ export const onMovedTile = ()=> ({
     dispatcher(action)
   ))
 });
-
-export const onNewGame = ()=> ({
-  onNewGame: chessSocket.on('newGame', (action)=> (
-    dispatcher(action)
-  ))
-});

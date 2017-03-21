@@ -1,11 +1,11 @@
 import { MAX_COLS, CREATE_BOOL_BOARD, DEFAULT_TILE, NEXT_ROUND} from '../constants';
 //import { ally, enemy } from '../functions'; //FIX
 
-const moveTile = (state, {lineId, squareId})=> {
+const moveTile = (state, {lineId, squareId, selectedTile})=> {
     let victory = false;
     let newSquares = state.squares.slice(0, MAX_COLS);
-    let lID = state.selectedTile.line;
-    let sID = state.selectedTile.square;
+    let lID = selectedTile.line;
+    let sID = selectedTile.square;
     if (state.squares[lineId][squareId].substring(1) === 'King'){
       victory = state.round;
     }

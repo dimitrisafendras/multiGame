@@ -1,6 +1,8 @@
 import React from 'react';
 import { figures } from '../modules/constructs';
 import { figureIs, haveSelected } from '../modules/functions';
+import { MOVE_TILE, moveTile } from '../modules/constants';
+import { chessSocket } from '../../../model-services/server-apis';
 
 const style = {
   moveAble: {
@@ -9,18 +11,24 @@ const style = {
   }
 };
 
-const Square = ({ squares, boolBoard, round, victory, selectedTile, selectTile, moveTile, toggleOff, squareId, lineId })=> {
+const Square = ({ squares, boolBoard, round, victory,
+                  mode, selectTile, selectedTile,  moveTile,
+                  toggleOff, squareId, lineId })=> {
 
-  const canMove = ()=> {
+  const canMove = ()=>{
     if ((boolBoard[lineId][squareId])) return 'moveAble';
     return '';
   };
 
   const clickTile = ()=> {
     if(!victory){
-      if (haveSelected(selectedTile)) {
-        if (boolBoard[lineId][squareId]) {
-          return moveTile(lineId, squareId)
+      if (haveSelected(selectedTile)){
+        if (boolBoard[lineId][squareId]){
+          if (mode === 'online') return chessSocket.emit('moveTile', {
+            type: MOVE_TILE,
+            payload: { lineId, squareId, selectedTile }
+          });
+          return moveTile(lineId, squareId, selectedTile)
         }
         return toggleOff();
       }

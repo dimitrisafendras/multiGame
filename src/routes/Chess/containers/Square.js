@@ -10,8 +10,9 @@ const mapStateToProps = (state)=> ({
   selectedTile: state.chess.selectedTile,
   round: state.chess.round,
   victory: state.chess.victory,
+  mode: state.chess.mode,
 });
 
-
+onMovedTile();
 
 export default connect(mapStateToProps, selectOptions)(Square);
