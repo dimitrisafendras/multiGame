@@ -11,9 +11,9 @@ export const TOGGLE_OFF = 'TOGGLE_OFF';
 
 // action creators
 export const newGame = options.newGame.offline;
-const selectTile = options.selectTile.offline;
-const moveTile = options.moveTile.offline;
-const toggleOff = options.toggleOff.offline;
+export const selectTile = options.selectTile.offline;
+export const moveTile = options.moveTile.offline;
+export const toggleOff = options.toggleOff.offline;
 
 //other consts
 export const selectOptions = {
@@ -65,4 +65,5 @@ export const initialState = {
   selectedTile: DEFAULT_TILE,
   boolBoard: CREATE_BOOL_BOARD(),
   victory: false,
+  mode: 'online',
 };
