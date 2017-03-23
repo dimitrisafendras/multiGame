@@ -52,18 +52,9 @@ export const CREATE_BOOL_BOARD = (()=> {
     squares[i] = new Array(MAX_COLS);
 
     for (let j = 0; j < MAX_COLS; j++){
-      squares[i][j] = false;
+      squares[i][j] = {canMoveTo: false};
     }
   }
   return squares;
 });
 
-//initial state
-export const initialState = {
-  round: 'white',
-  squares,
-  selectedTile: DEFAULT_TILE,
-  boolBoard: CREATE_BOOL_BOARD(),
-  victory: false,
-  mode: 'online',
-};

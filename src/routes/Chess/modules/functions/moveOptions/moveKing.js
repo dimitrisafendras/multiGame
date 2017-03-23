@@ -7,7 +7,7 @@ const moveKing = (selLineID, selSquareID, squares)=> {
   for(let vector of directions.queenKing) {
     if (squares[selLineID + vector.x] && squares[selLineID + vector.x][selSquareID + vector.y]){
       if(!(figureIs(squares[selLineID][selSquareID], squares[selLineID + vector.x][selSquareID + vector.y]) === 'ALLY' )) {
-        boolBoard[selLineID + vector.x][selSquareID + vector.y] = true;
+        boolBoard[selLineID + vector.x][selSquareID + vector.y] = {canMoveTo: true};
       }
     }
   }

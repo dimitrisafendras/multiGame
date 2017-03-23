@@ -1,10 +1,10 @@
 
 const figureIs  = (selectedFigure, targetFigure)=> {
   if (!targetFigure) return 'ERROR';
-  if (selectedFigure.charAt(0) === targetFigure.charAt(0)) {
+  if (selectedFigure.color === targetFigure.color) {
     return 'ALLY'
   }
-  else if(targetFigure === 'empty'){
+  else if(targetFigure.color === 'empty'){
     return 'EMPTY'
   }
   return 'FOE'

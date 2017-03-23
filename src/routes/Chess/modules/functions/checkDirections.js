@@ -17,16 +17,16 @@ const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard)=> {
     thisFigure = figureIs(squares[selLineID][selSquareID], squares[selLineID + x][selSquareID + y]);
 
     if(thisFigure === 'EMPTY'){
-      boolBoard[selLineID + x][selSquareID + y] = true;
+      boolBoard[selLineID + x][selSquareID + y] = {canMoveTo: true};
       x += dirX;
       y += dirY;
     }
     else if (thisFigure === 'FOE'){
-      boolBoard[selLineID + x][selSquareID + y] = true;
-      noFigureBetween = false;
+      boolBoard[selLineID + x][selSquareID + y] = {canMoveTo: true};
+      noFigureBetween = {canMoveTo: false};
     }
     else if (thisFigure === 'ALLY'){
-      noFigureBetween = false;
+      noFigureBetween = {canMoveTo: false};
     }
   }
   return boolBoard;

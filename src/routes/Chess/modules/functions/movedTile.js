@@ -1,7 +1,7 @@
 import { MAX_COLS, CREATE_BOOL_BOARD, DEFAULT_TILE, NEXT_ROUND} from '../constants';
 //import { ally, enemy } from '../functions'; //FIX
 
-const moveTile = (state, {lineId, squareId, selectedTile})=> {
+const movedTile = (state, {lineId, squareId, selectedTile})=> {
     let victory = false;
     let newSquares = state.squares.slice(0, MAX_COLS);
     let lID = selectedTile.line;
@@ -19,7 +19,8 @@ const moveTile = (state, {lineId, squareId, selectedTile})=> {
       boolBoard: newBoolBoard,
       round: NEXT_ROUND[state.round],
       victory,
+      clickOptions: 'selectTile',
     }
 };
 
-export default moveTile;
+export default movedTile;
