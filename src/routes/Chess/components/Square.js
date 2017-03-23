@@ -1,46 +1,43 @@
 import React from 'react';
 import { figures } from '../modules/constructs';
-import { figureIs, haveSelected } from '../modules/functions';
-import { MOVE_TILE, moveTile } from '../modules/constants';
-import { chessSocket } from '../../../model-services/server-apis';
+import { figureIs } from '../modules/functions';
 
 const style = {
-  moveAble: {
     backgroundColor: 'green',
     opacity: 0.9,
-  }
 };
 
-const Square = ({ squares, boolBoard, round, victory,
-                  mode, selectTile, selectedTile,  moveTile,
-                  toggleOff, squareId, lineId })=> {
+const Square = ({
+  square, line, col,
+  selectedTile, clickOptions, victory, round,
+  selectTile,  moveTile, toggleOff
+})=> {
 
-  const canMove = ()=>{
-    if ((boolBoard[lineId][squareId])) return 'moveAble';
-    return '';
-  };
+  if (victory){
+    return <div>
+      {figures(square.figure, square.color)}
+    </div>
+  }
 
-  const clickTile = ()=> {
-    if(!victory){
-      if (haveSelected(selectedTile)){
-        if (boolBoard[lineId][squareId]){
-          if (mode === 'online') return chessSocket.emit('moveTile', {
-            type: MOVE_TILE,
-            payload: { lineId, squareId, selectedTile }
-          });
-          return moveTile(lineId, squareId, selectedTile)
-        }
-        return toggleOff();
-      }
-      if (figureIs(round, squares[lineId][squareId]) === 'ALLY'){
-        return selectTile(lineId, squareId);
-      }
-    }
-  };
+  if (!square.canMoveTo && (clickOptions === 'moveTile'))
+  {
+    return <div onClick={ ()=> toggleOff()}>
+      {figures(square.figure, square.color)}
+    </div>
+  }
 
-  return <div onClick={ ()=> clickTile()} style={style[canMove()]}>
-    {figures(squares[lineId][squareId])}
-  </div>
+  if(square.canMoveTo && clickOptions === 'moveTile') {
+    return <div onClick={ ()=> moveTile(line, col, selectedTile) } style={style}>
+      {figures(square.figure, square.color)}
+    </div>
+  }
+
+  if(clickOptions === 'selectTile' &&  (square.color === round)) {
+    return <div onClick={ ()=> selectTile(line, col, selectedTile) }>
+      {figures(square.figure, square.color)}
+    </div>
+  }
+  return <div>{figures(square.figure, square.color)}</div>
 };
 
 export default Square;

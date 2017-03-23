@@ -5,12 +5,11 @@ import { selectOptions } from '../modules/constants';
 import { onMovedTile } from '../../../model-services/chess/socketio/chessSocket';
 
 const mapStateToProps = (state)=> ({
-  squares: state.chess.squares,
-  boolBoard: state.chess.boolBoard,
   selectedTile: state.chess.selectedTile,
-  round: state.chess.round,
   victory: state.chess.victory,
   mode: state.chess.mode,
+  clickOptions: state.chess.clickOptions,
+  round: state.chess.round,
 });
 
 onMovedTile();

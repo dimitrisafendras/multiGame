@@ -3,14 +3,16 @@ import SquareLine from './SquareLine';
 import styles from './styles.scss';
 import { MAX_ROWS } from '../modules/constants';
 
-const Chess = ()=> {
+
+const Chess = ({ squares })=> {
+  console.log(squares[0]);
   return(
     <div>
       Chess
         <div className = {styles.board}>
           {
             [...Array(MAX_ROWS).keys()].map((key) => {
-              return <SquareLine key={key} lineKey={key} id={key}/>
+              return <SquareLine key={key} lineKey={key} squareLine={squares[key] } />
             })
           }
         </div>

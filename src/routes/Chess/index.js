@@ -1,4 +1,4 @@
-import Chess from './components/Chess'
+import Chess from './containers/Chess'
 
 export default {
   path: 'chess',
