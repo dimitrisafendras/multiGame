@@ -18,10 +18,6 @@ const Square = ({
 
   };
 
-  const styleFunction = (boolean) => {
-    if (boolean) return 'moveable';
-  };
-
   if (mode === 'offline' || playerColor === round) {
     if (square.color === round && clickOptions === 'selectTile') {
       return <div onClick={ () => selectTile(line, col) }>
