@@ -4,7 +4,10 @@ import styles from './styles.scss';
 import { MAX_ROWS } from '../modules/constants';
 
 
-const Chess = ({ squares })=> {
+const Chess = ({ squares, victory, round })=> {
+  if(victory){
+    return <h2> The {round} player won the match!</h2>
+  }
   return(
     <div>
       Chess

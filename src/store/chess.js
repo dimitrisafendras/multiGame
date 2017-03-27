@@ -8,8 +8,9 @@ export const initialState = {
   selectedTile: DEFAULT_TILE,
   boolBoard: createBoolBoard(),
   victory: false,
-  mode: 'online',
+  mode: 'offline',
   clickOptions: 'selectTile',
+  playerColor:'white',
 };
 
 

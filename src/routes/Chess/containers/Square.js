@@ -6,10 +6,10 @@ import { onMovedTile } from '../../../model-services/chess/socketio/chessSocket'
 
 const mapStateToProps = (state)=> ({
   selectedTile: state.chess.selectedTile,
-  victory: state.chess.victory,
   mode: state.chess.mode,
   clickOptions: state.chess.clickOptions,
   round: state.chess.round,
+  playerColor: state.chess.playerColor
 });
 
 onMovedTile();

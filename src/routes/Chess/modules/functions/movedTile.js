@@ -1,20 +1,22 @@
 import { MAX_COLS, DEFAULT_TILE, NEXT_ROUND} from '../constants';
 import { assignBoolboardToSquares, createSquare, createBoolBoard } from '../../../../lib/chess';
 
-const movedTile = (state, {lineId, squareId, selectedTile})=> {
+const movedTile = (state, {line, col, selectedTile})=> {
 
   let victory = false;
   let newSquares = state.squares.slice(0, MAX_COLS);
   let lID = selectedTile.line;
-  let sID = selectedTile.square;
+  let cID = selectedTile.col;
 
-  if (state.squares[lineId][squareId].figure.substring(5) === 'King'){
-    victory = state.round;
+  console.log(state.squares[line][col].figure);
+
+  if (state.squares[line][col].figure === 'King'){
+    victory = true;
   }
 
   const newBoolBoard = createBoolBoard();
-  newSquares[lineId][squareId] = state.squares[lID][sID];
-  newSquares[lID][sID] = createSquare('empty');
+  newSquares[line][col] = state.squares[lID][cID];
+  newSquares[lID][cID] = createSquare('empty');
   newSquares = assignBoolboardToSquares(newSquares,newBoolBoard);
 
   return {
