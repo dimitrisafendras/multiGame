@@ -20,6 +20,7 @@ const selectATile = (state, { lineId, squareId })=> {
 
       let newSquares = newBoolBoardFromOld(state.squares, newBoolBoard);
 
+
       return {
         ...state,
         selectedTile: {
