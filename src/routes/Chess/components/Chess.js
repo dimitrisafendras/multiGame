@@ -5,7 +5,6 @@ import { MAX_ROWS } from '../modules/constants';
 
 
 const Chess = ({ squares })=> {
-  console.log(squares[0]);
   return(
     <div>
       Chess

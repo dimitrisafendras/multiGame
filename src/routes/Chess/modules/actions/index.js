@@ -1,35 +1,32 @@
-import { NEW_GAME, RESET_GAME, SELECT_TILE, MOVE_TILE, TOGGLE_OFF } from '../constants';
+import { NEW_GAME, RESET_GAME, SELECT_TILE, MOVE_TILE, TOGGLE_OFF , SENT_MOVE } from '../constants';
+import { emiter } from '../functions'
 
 export const options = {
 
-  newGame:{
-    offline: ()=>({
+  newGame: {
+    offline: () => ({
       type: NEW_GAME
     }),
   },
 
-  resetGame:{
-    offline: ()=> ({
+  resetGame: {
+    offline: () => ({
       type: RESET_GAME
     })
   },
 
-  selectTile:{
-    offline: (lineId, squareId)=> ({
-      type: SELECT_TILE,
-      payload: { lineId, squareId}
-    })
-  },
-  toggleOff: {
-    offline: ()=> ({
-      type: TOGGLE_OFF,
-    })
-  },
+  selectTile: (lineId, squareId) => ({
+    type: SELECT_TILE,
+    payload: {lineId, squareId}
+  }),
 
-  moveTile:{
-    offline: (lineId, squareId, selectedTile)=> ({
-      type: MOVE_TILE,
-      payload: { lineId, squareId, selectedTile }
-    })
-  },
+  toggleOff: () => ({
+    type: TOGGLE_OFF,
+  }),
+
+  moveTile: (lineId, squareId, selectedTile) => ({
+    type: MOVE_TILE,
+    payload: {lineId, squareId, selectedTile}
+  })
 };
+
