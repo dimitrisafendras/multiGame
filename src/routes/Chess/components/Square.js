@@ -7,9 +7,9 @@ const style = {
 };
 
 const Square = ({
-  square, line, col,
+  square, line, col, mode,
   selectedTile, clickOptions, victory, round,
-  selectTile,  moveTile, toggleOff
+  selectTile,  moveTileOnline, moveTileOffline, toggleOff
 })=> {
 
   if (victory){
@@ -26,7 +26,12 @@ const Square = ({
   }
 
   if(square.canMoveTo && clickOptions === 'moveTile') {
-    return <div onClick={ ()=> moveTile(line, col, selectedTile) } style={style}>
+    if(mode === 'online') {
+      return <div onClick={ () => moveTileOnline(line, col, selectedTile) } style={style}>
+        {figures(square.figure, square.color)}
+      </div>
+    }
+    return <div onClick={ () => moveTileOffline(line, col, selectedTile) } style={style}>
       {figures(square.figure, square.color)}
     </div>
   }
