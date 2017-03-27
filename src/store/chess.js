@@ -1,4 +1,4 @@
-import { boardInitializer, createBoolBoard } from '/src/lib/chess';
+import { boardInitializer, createBoolBoard } from '../../src/lib/chess';
 import { SELECT_TILE, MOVE_TILE, TOGGLE_OFF, DEFAULT_TILE } from '../routes/Chess/modules/constants';
 import { movedTile, selectATile, toggleOff } from '../routes/Chess/modules/functions';
 
@@ -6,7 +6,7 @@ export const initialState = {
   round: 'white',
   squares: boardInitializer(),
   selectedTile: DEFAULT_TILE,
-  boolBoard: CREATE_BOOL_BOARD(),
+  boolBoard: createBoolBoard(),
   victory: false,
   mode: 'online',
   clickOptions: 'selectTile',

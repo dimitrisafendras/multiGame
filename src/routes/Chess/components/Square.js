@@ -1,6 +1,5 @@
 import React from 'react';
-import { figures } from '../modules/constructs';
-import { figureIs } from '../modules/functions';
+import  figures  from '../modules/figures';
 
 const style = {
     backgroundColor: 'green',
