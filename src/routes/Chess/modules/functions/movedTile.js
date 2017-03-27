@@ -1,5 +1,5 @@
 import { MAX_COLS, CREATE_BOOL_BOARD, DEFAULT_TILE, NEXT_ROUND} from '../constants';
-//import { ally, enemy } from '../functions'; //FIX
+import { assignBoolboardToSquares, createSquare } from '../../../../lib/chess';
 
 const movedTile = (state, {lineId, squareId, selectedTile})=> {
     let victory = false;

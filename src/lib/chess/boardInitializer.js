@@ -1,37 +1,22 @@
-import {MAX_COLS, MAX_ROWS} from "../constants/index.js";
+import createSquare from './createSquare';
 
-console.log(MAX_COLS, MAX_ROWS);
-//FIX: optimize the way we initialize the board
-//FIX: MAX_COLS, MAX_ROWS
-const createSquare = (fig)=> {
-  if (fig === 'empty') return {
-    figure: 'empty',
-    color: 'empty',
-    canMoveTo: 'false',
-  };
-  return {
-    color: fig.substring(0,5),
-    figure: fig.substring(5),
-    canMoveTo: 'false',
-  }
-};
+const boardInitializer = (max_rows=8, max_cols=8)=> {
 
-const BoardInitializer = () => {
-  const squares = new Array(8);
+  const squares = new Array(max_rows);
 
-  for (let i = 0; i < 8; i++) {
-    squares[i] = new Array(8);
-    for (let j = 0; j < 8; j++) {
+  for (let i = 0; i<max_rows; i++) {
+    squares[i] = new Array(max_cols);
+    for (let j = 0; j<max_cols; j++) {
       squares[i][j] = createSquare('empty');
     }
   }
 
   //pawns initializer
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i<max_cols; i++) {
     squares[1][i] = createSquare('whitePawn');
     squares[6][i] = createSquare('blackPawn');
   }
-
+//FIX: initialize dynamicly
   squares[0][0] = createSquare('whiteRook');
   squares[0][1] = createSquare('whiteKnight');
   squares[0][2] = createSquare('whiteBishop');
@@ -52,6 +37,4 @@ const BoardInitializer = () => {
   return squares;
 };
 
-const squares = BoardInitializer();
-
-export default squares;
+export default boardInitializer;
