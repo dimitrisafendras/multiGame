@@ -15,18 +15,18 @@ export const options = {
     })
   },
 
-  selectTile: (lineId, squareId) => ({
+  selectTile: (line, col) => ({
     type: SELECT_TILE,
-    payload: {lineId, squareId}
+    payload: {line, col}
   }),
 
   toggleOff: () => ({
     type: TOGGLE_OFF,
   }),
 
-  moveTile: (lineId, squareId, selectedTile) => ({
+  moveTile: (line, col, selectedTile) => ({
     type: MOVE_TILE,
-    payload: {lineId, squareId, selectedTile}
+    payload: {line, col, selectedTile}
   })
 };
 

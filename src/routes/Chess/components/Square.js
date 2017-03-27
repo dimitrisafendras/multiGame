@@ -2,46 +2,42 @@ import React from 'react';
 import  figures  from '../modules/figures';
 
 const style = {
-    backgroundColor: 'green',
-    opacity: 0.9,
+  backgroundColor: 'green',
+  opacity: 0.9,
 };
 
 const Square = ({
-  square, line, col, mode,
-  selectedTile, clickOptions, victory, round,
-  selectTile,  moveTileOnline, moveTileOffline, toggleOff
-})=> {
+                  square, line, col, mode, playerColor,
+                  selectedTile, clickOptions, round,
+                  selectTile,  moveTileOnline, moveTileOffline, toggleOff
+                })=> {
 
-  if (victory){
-    return <div>
-      {figures(square.figure, square.color)}
-    </div>
-  }
+  const moveTile = {
+    online: moveTileOnline,
+    offline: moveTileOffline,
 
-  if (!square.canMoveTo && (clickOptions === 'moveTile'))
-  {
-    return <div onClick={ ()=> toggleOff()}>
-      {figures(square.figure, square.color)}
-    </div>
-  }
+  };
 
-  if(square.canMoveTo && clickOptions === 'moveTile') {
-    if(mode === 'online') {
-      return <div onClick={ () => moveTileOnline(line, col, selectedTile) } style={style}>
+  const styleFunction = (boolean) => {
+    if (boolean) return 'moveable';
+  };
+
+  if (mode === 'offline' || playerColor === round) {
+    if (square.color === round && clickOptions === 'selectTile') {
+      return <div onClick={ () => selectTile(line, col) }>
         {figures(square.figure, square.color)}
       </div>
     }
-    return <div onClick={ () => moveTileOffline(line, col, selectedTile) } style={style}>
+    if (clickOptions === 'moveTile'){
+      if(square.canMoveTo) return <div onClick={ () => moveTile[mode](line, col, selectedTile) } style = {style}>
+        {figures(square.figure, square.color)}
+      </div>
+    }
+    return <div onClick={ () => toggleOff() }>
       {figures(square.figure, square.color)}
     </div>
   }
-
-  if(clickOptions === 'selectTile' &&  (square.color === round)) {
-    return <div onClick={ ()=> selectTile(line, col, selectedTile) }>
-      {figures(square.figure, square.color)}
-    </div>
-  }
-  return <div>{figures(square.figure, square.color)}</div>
-};
+  return <div></div>;
+}
 
 export default Square;
