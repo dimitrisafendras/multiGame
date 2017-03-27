@@ -1,9 +1,8 @@
-import { checkDirections } from '../';
-import { CREATE_BOOL_BOARD } from '../../constants';
+import { checkDirections, createBoolBoard } from '../';
 import { directions } from '../../constructs';
 
 const moveQueen = (selLineID, selSquareID, squares)=> {
-  const boolBoard = CREATE_BOOL_BOARD();
+  const boolBoard = createBoolBoard();
   for(let vector of directions.queenKing) {
     checkDirections(selLineID, selSquareID, squares, vector.x, vector.y, boolBoard);
   }

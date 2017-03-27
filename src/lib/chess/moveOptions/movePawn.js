@@ -1,13 +1,25 @@
-import { CREATE_BOOL_BOARD, PAWN_OPTIONS } from '../../constants';
-import { figureIs } from '../';
+import { figureIs, createBoolBoard } from '../';
 import { directions } from '../../constructs';
+
+const PAWN_OPTIONS = {
+
+  b:{
+    direction: -1,
+    startLine: 6,
+  },
+
+  w:{
+    direction: 1,
+    startLine: 1,
+  },
+};
 
 const movePawn = (selLineID, selSquareID, squares, round)=> {
   let thisPawn = PAWN_OPTIONS[round.charAt(0)];
   let pawnSide = thisPawn.direction;
   let pawnStartLine = thisPawn.startLine;
   let moveVector = directions.pawn.move.x * pawnSide;
-  const boolBoard = CREATE_BOOL_BOARD();
+  const boolBoard = createBoolBoard();
 
   for(let vector of directions.pawn.attack) {
     if (squares[selLineID + vector.x * pawnSide] && squares[selLineID + vector.x * pawnSide][selSquareID + vector.y]){

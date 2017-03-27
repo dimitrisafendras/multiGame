@@ -1,18 +1,13 @@
 import { figureIs } from './';
-import { MAX_COLS, MAX_ROWS } from '../constants';
 
-const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard)=> {
+const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard, max_rows, max_cols)=> {
 
   let thisFigure;
   let noFigureBetween = true;
   let dirX = x.valueOf();
   let dirY = y.valueOf();
 
-  while((selLineID + x <= MAX_ROWS) && (selSquareID + y <= MAX_COLS) && (noFigureBetween)){
-
-    if(!(squares[selLineID+x]) || !(squares[selLineID + x][selSquareID +y]) ){
-      return boolBoard;
-    }
+  while(squares[selLineID+x] && squares[selLineID + x][selSquareID +y] && (noFigureBetween)){
 
     thisFigure = figureIs(squares[selLineID][selSquareID], squares[selLineID + x][selSquareID + y]);
 

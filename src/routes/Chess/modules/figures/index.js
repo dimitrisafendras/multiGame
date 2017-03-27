@@ -14,9 +14,20 @@ const bKnight = <span> &#9822; </span>;
 const bPawn = <span> &#9823; </span>;
 const Empty = <span></span>;
 
-export {
-  wKing, wQueen, wRook, wBishop,
-  wKnight, wPawn, bKing, bQueen,
-  bRook, bBishop, bKnight, bPawn,
-  Empty
-}
+const figures = new Map([
+  ['whiteKing', wKing],
+  ['blackKing', bKing],
+  ['whiteQueen', wQueen],
+  ['blackQueen', bQueen],
+  ['whiteRook', wRook],
+  ['blackRook', bRook],
+  ['whiteBishop', wBishop],
+  ['blackBishop', bBishop],
+  ['whiteKnight', wKnight],
+  ['blackKnight', bKnight],
+  ['whitePawn', wPawn],
+  ['blackPawn', bPawn],
+  ['empty', Empty],
+]);
+
+export default (figure,color)=> (figures.get(color.concat(figure)));
