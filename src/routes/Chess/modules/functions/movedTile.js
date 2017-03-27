@@ -8,8 +8,6 @@ const movedTile = (state, {line, col, selectedTile})=> {
   let lID = selectedTile.line;
   let cID = selectedTile.col;
 
-  console.log(state.squares[line][col].figure);
-
   if (state.squares[line][col].figure === 'King'){
     victory = true;
   }
