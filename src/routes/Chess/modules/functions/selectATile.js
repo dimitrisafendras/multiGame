@@ -1,5 +1,4 @@
-import { moveOptions, haveSelected } from '../functions';
-import assignBoolboardToSquares from '../../../../lib/chess/assignBoolboardToSquares';
+import { moveOptions, haveSelected, assignBoolboardToSquares } from '../../../../lib/chess';
 
 const selectATile = (state, { lineId, squareId })=> {
   if (!haveSelected(state.selectedTile)) {
