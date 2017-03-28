@@ -1,5 +1,5 @@
 import { boardInitializer, createBoolBoard } from '../../src/lib/chess';
-import { SELECT_TILE, MOVE_TILE, TOGGLE_OFF, DEFAULT_TILE , CHOOSE_MODE } from '../routes/Chess/modules/constants';
+import { SELECT_TILE, MOVE_TILE, TOGGLE_OFF, DEFAULT_TILE , CHOOSE_MODE, RESET_CHESS } from '../routes/Chess/modules/constants';
 import { movedTile, selectATile, toggleOff } from '../routes/Chess/modules/functions';
 
 export const initialState = {
@@ -29,6 +29,8 @@ export default function chess(state = initialState, action) {
     case CHOOSE_MODE:
       return {...state, mode: action.payload.mode}
 
+    case RESET_CHESS:
+      return initialState;
     default:
       return state;
   }

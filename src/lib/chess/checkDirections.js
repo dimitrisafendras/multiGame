@@ -1,6 +1,6 @@
 import { figureIs } from './';
 
-const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard, max_rows, max_cols)=> {
+const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard)=> {
 
   let thisFigure;
   let noFigureBetween = true;

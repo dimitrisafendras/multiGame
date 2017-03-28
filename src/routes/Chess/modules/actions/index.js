@@ -1,4 +1,4 @@
-import { NEW_GAME, RESET_GAME, SELECT_TILE, MOVE_TILE, TOGGLE_OFF, SENT_MOVE, CHOOSE_MODE } from '../constants';
+import { NEW_GAME, RESET_CHESS, SELECT_TILE, MOVE_TILE, TOGGLE_OFF, SENT_MOVE, CHOOSE_MODE } from '../constants';
 
 export const options = {
 
@@ -8,11 +8,9 @@ export const options = {
     }),
   },
 
-  resetGame: {
-    offline: () => ({
-      type: RESET_GAME
-    })
-  },
+  resetChess: ()=> ({
+      type: RESET_CHESS
+    }),
 
   selectTile: (line, col) => ({
     type: SELECT_TILE,
