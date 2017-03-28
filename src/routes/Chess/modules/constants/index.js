@@ -29,7 +29,10 @@ export const selectOptions = {
 
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
-export const DEFAULT_TILE = {};
+export const DEFAULT_TILE = {
+  line:'',
+  col: '',
+};
 export const NEXT_ROUND = {
   white: 'black',
   black: 'white',

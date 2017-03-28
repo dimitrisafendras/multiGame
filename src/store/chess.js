@@ -10,7 +10,7 @@ export const initialState = {
   victory: false,
   mode: '',
   clickOptions: 'selectTile',
-  playerColor:'white',
+  playerColor:'',
 };
 
 
