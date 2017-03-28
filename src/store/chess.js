@@ -31,6 +31,10 @@ export default function chess(state = initialState, action) {
 
     case RESET_CHESS:
       return initialState;
+
+    case 'CHOOSE_COLOR':
+      return {...state, playerColor: action.payload.playerColor}
+
     default:
       return state;
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Square from '../components/Square';
 import { selectOptions } from '../modules/constants';
-import { onMovedTile } from '../../../model-services/chess/socketio/chessSocket';
+import { onMovedTile, onGotReady } from '../../../model-services/chess/socketio/chessSocket';
 
 const mapStateToProps = (state)=> ({
   selectedTile: state.chess.selectedTile,
@@ -13,5 +13,6 @@ const mapStateToProps = (state)=> ({
 });
 
 onMovedTile();
+onGotReady();
 
 export default connect(mapStateToProps, selectOptions)(Square);

@@ -8,14 +8,24 @@ export const emiter = (event, action)=> {
 export const dispatcher = (action)=> (
   store.dispatch(action)
 );
+//FIX TO USE ACTIONS AND NOT WRITE THEM
+export const emiterOptions = {
 
-export const moveTileOnline = (line, col, selectedTile)=> {
-  emiter('moveTile', {
-    type: 'MOVE_TILE',
-    payload: {line, col, selectedTile}
-  });
-  console.log('did it')
-  return {
-    type:'SENT_MOVE'
-  }
-};
+  moveTileOnline : (line, col, selectedTile)=> {
+    emiter('moveTile', {
+      type: 'MOVE_TILE',
+      payload: {line, col, selectedTile}
+    });
+    return {
+      type:'SENT_MOVE'
+    }
+  },
+
+  getReady: ()=> {
+    emiter('getReady','user');
+    console.log('ready???')
+    return {
+      type:'AM_READY'
+    }
+  },
+}
