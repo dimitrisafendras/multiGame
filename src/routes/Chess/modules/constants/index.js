@@ -1,7 +1,7 @@
 'use strict';
 import squares from '../../../../lib/chess/boardInitializer';
 import {options} from '../actions';
-import { moveTileOnline } from '../functions/emiter';
+import { emiterOptions } from '../functions/emiter';
 
 // action constants
 export const NEW_GAME = 'NEW_GAME';
@@ -19,6 +19,10 @@ export const moveTileOffline = options.moveTile;
 export const toggleOff = options.toggleOff;
 export const chooseMode = options.chooseMode;
 export const resetChess = options.resetChess
+
+// event creators
+export const moveTileOnline = emiterOptions.moveTileOnline;
+export const getReady = emiterOptions.getReady;
 
 //other consts
 export const selectOptions = {
