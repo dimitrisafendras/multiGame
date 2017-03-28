@@ -5,7 +5,7 @@ import { moveTileOnline } from '../functions/emiter';
 
 // action constants
 export const NEW_GAME = 'NEW_GAME';
-export const RESET_GAME = 'RESET_GAME';
+export const RESET_CHESS = 'RESET_CHESS';
 export const SELECT_TILE = 'SELECT_TILE';
 export const MOVE_TILE = 'MOVE_TILE';
 export const TOGGLE_OFF = 'TOGGLE_OFF';
@@ -18,6 +18,7 @@ export const selectTile = options.selectTile;
 export const moveTileOffline = options.moveTile;
 export const toggleOff = options.toggleOff;
 export const chooseMode = options.chooseMode;
+export const resetChess = options.resetChess
 
 //other consts
 export const selectOptions = {
