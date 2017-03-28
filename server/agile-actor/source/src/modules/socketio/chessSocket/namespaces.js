@@ -6,6 +6,7 @@ export default (io)=> {
     console.log('  --> SocketIO on connection CHESS', id);
 
     socket.on('moveTile', (action)=>{
+      console.log('aaaaaaaaaaaaa');
       socket.broadcast.emit('movedTile', action);
       socket.emit('movedTile', action);
     });

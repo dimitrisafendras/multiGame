@@ -1,4 +1,4 @@
-import { GameView } from './components/GameView'
+import GameView from './containers/GameView'
 
 export default {
   path: 'chess',

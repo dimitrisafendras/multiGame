@@ -33,7 +33,7 @@ const Square = ({
       {figures(square.figure, square.color)}
     </div>
   }
-  return <div></div>;
+  return <div>{figures(square.figure, square.color)}</div>;
 }
 
 export default Square;
