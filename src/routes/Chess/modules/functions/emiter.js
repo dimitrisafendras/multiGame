@@ -9,11 +9,12 @@ export const dispatcher = (action)=> (
   store.dispatch(action)
 );
 
-export const moveTileOnline = (lineId, squareId, selectedTile)=> {
+export const moveTileOnline = (line, col, selectedTile)=> {
   emiter('moveTile', {
     type: 'MOVE_TILE',
-    payload: {lineId, squareId, selectedTile}
+    payload: {line, col, selectedTile}
   });
+  console.log('did it')
   return {
     type:'SENT_MOVE'
   }

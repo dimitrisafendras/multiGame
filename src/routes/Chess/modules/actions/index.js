@@ -1,5 +1,4 @@
-import { NEW_GAME, RESET_GAME, SELECT_TILE, MOVE_TILE, TOGGLE_OFF , SENT_MOVE } from '../constants';
-import { emiter } from '../functions'
+import { NEW_GAME, RESET_GAME, SELECT_TILE, MOVE_TILE, TOGGLE_OFF, SENT_MOVE, CHOOSE_MODE } from '../constants';
 
 export const options = {
 
@@ -27,6 +26,9 @@ export const options = {
   moveTile: (line, col, selectedTile) => ({
     type: MOVE_TILE,
     payload: {line, col, selectedTile}
-  })
+  }),
+  chooseMode: (mode) => ({
+    type: CHOOSE_MODE,
+    payload: { mode }
+  }),
 };
-

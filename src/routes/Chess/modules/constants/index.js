@@ -10,11 +10,14 @@ export const SELECT_TILE = 'SELECT_TILE';
 export const MOVE_TILE = 'MOVE_TILE';
 export const TOGGLE_OFF = 'TOGGLE_OFF';
 export const SENT_MOVE = 'SENT_MOVE';
+export const CHOOSE_MODE = 'CHOOSE_MODE';
+
 // action creators
 export const newGame = options.newGame;
 export const selectTile = options.selectTile;
 export const moveTileOffline = options.moveTile;
 export const toggleOff = options.toggleOff;
+export const chooseMode = options.chooseMode;
 
 //other consts
 export const selectOptions = {
@@ -31,8 +34,3 @@ export const NEXT_ROUND = {
   white: 'black',
   black: 'white',
 };
-
-
-
-
-
