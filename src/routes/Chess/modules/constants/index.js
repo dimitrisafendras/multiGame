@@ -20,9 +20,12 @@ export const toggleOff = options.toggleOff;
 export const chooseMode = options.chooseMode;
 export const resetChess = options.resetChess
 
+
 // event creators
 export const moveTileOnline = emiterOptions.moveTileOnline;
 export const getReady = emiterOptions.getReady;
+export const challengePlayer = emiterOptions.challengePlayer;
+export const readyToPlay = emiterOptions.readyToPlay;
 
 //other consts
 export const selectOptions = {

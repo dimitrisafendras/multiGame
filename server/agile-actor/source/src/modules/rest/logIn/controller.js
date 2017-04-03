@@ -107,8 +107,8 @@ export async function checkUser(ctx, next) {
 
   if (indexOf(userArray, username) === -1){
     userArray.push(username);
-    ctx.body = true;
-    return
+    ctx.body = username;
+    return ;
   }
   ctx.body = false;
 }

@@ -8,11 +8,50 @@ export const onMovedTile = ()=> {
 };
 
 export const onGotReady = ()=> {
- chessSocket.on('gotReady', (payload)=> {
-    console.log('aaaaaaaaaaaa');
+  chessSocket.on('gotReady', (payload)=> {
     dispatcher({
       type: 'CHOOSE_COLOR',
       payload,
     });
   })
 };
+
+export const onUpdatePlayers = ()=> {
+  chessSocket.on('updatePlayers', (payload)=> {
+    dispatcher({
+      type: 'UPDATE_PLAYERS',
+      payload,
+    });
+  })
+};
+
+export const onError = ()=> {
+  chessSocket.on('loginError', (msg)=> {
+    alert(msg);
+  })
+};
+
+export const onGetOnline = ()=> {
+  chessSocket.on('getOnline', ()=> {
+    console.log('oooo');
+    dispatcher({
+      type: 'GET_ONLINE_CHESS'
+    })
+  })
+};
+
+
+export const onGotChallenged = ()=> {
+  chessSocket.on('gotChallenged', (user)=> {
+    dispatcher({
+      type: 'GOT_CHALLENGED',
+      payload:{
+        opponent: user,
+      }
+    })
+  })
+};
+
+
+
+
