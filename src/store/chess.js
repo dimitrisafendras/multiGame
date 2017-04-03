@@ -11,6 +11,8 @@ export const initialState = {
   mode: '',
   clickOptions: 'selectTile',
   playerColor:'',
+  onlinePlayers:[],
+  challenged: '',
 };
 
 
@@ -27,13 +29,22 @@ export default function chess(state = initialState, action) {
       return toggleOff(state);
 
     case CHOOSE_MODE:
-      return {...state, mode: action.payload.mode}
+      return {...state, mode: action.payload.mode};
 
     case RESET_CHESS:
       return initialState;
 
     case 'CHOOSE_COLOR':
-      return {...state, playerColor: action.payload.playerColor}
+      return {...state, playerColor: action.payload.playerColor};
+
+    case 'UPDATE_PLAYERS':
+      return {...state, onlinePlayers: action.payload};
+
+    case 'GET_ONLINE_CHESS':
+      return {...state, mode:'online'};
+
+    case 'GOT_CHALLENGED':
+      return {...state, opponent: action.payload.opponent };
 
     default:
       return state;

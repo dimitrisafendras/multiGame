@@ -13,16 +13,18 @@ const style = {
   }
 };
 
-const onClick = (mode, chooseMode, getReady) => {
-  chooseMode(mode);
-  if (mode === 'online') {
-    getReady();
+const onClick = (mode, chooseMode, getReady, username) => {
+  if (mode === 'offline'){
+    chooseMode(mode);
   }
-}
+  if (mode === 'online') {
+    getReady(username);
+  }
+};
 
-const ChessButton = ({ mode, chooseMode, getReady })=> {
+const ChessButton = ({ mode, chooseMode, getReady, username })=> {
   if (mode === 'online' || mode === 'offline'){
-    return <button  onClick = {()=> onClick(mode, chooseMode, getReady)} style = { style.button } >Play {mode}</button>
+    return <button  onClick = {()=> onClick(mode, chooseMode, getReady, username)} style = { style.button } >Play {mode}</button>
   }
   return <div>ERROR</div>
 }

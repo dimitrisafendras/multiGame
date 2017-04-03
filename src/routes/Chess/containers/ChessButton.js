@@ -3,4 +3,10 @@ import { connect } from 'react-redux';
 import { chooseMode, getReady } from '../modules/constants';
 import ChessButton from '../components/ChessButton';
 
-export default connect(null, { chooseMode, getReady })(ChessButton);
+const mapStateToProps = (state)=> ({
+  squares: state.chess.squares,
+  victory: state.chess.victory,
+  round: state.chess.round,
+  username: state.home.username,
+});
+export default connect(mapStateToProps, { chooseMode, getReady })(ChessButton);
