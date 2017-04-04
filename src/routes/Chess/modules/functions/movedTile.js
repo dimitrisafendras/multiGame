@@ -1,7 +1,7 @@
 import { MAX_COLS, DEFAULT_TILE, NEXT_ROUND} from '../constants';
 import { assignBoolboardToSquares, createSquare, createBoolBoard } from '../../../../lib/chess';
 
-const movedTile = (state, {line, col, selectedTile})=> {
+const movedTile = (state, {line, col, selectedTile}) => {
 
   let victory = false;
   let newSquares = state.squares.slice(0, MAX_COLS);

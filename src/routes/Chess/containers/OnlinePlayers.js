@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import OnlinePlayers from '../components/OnlinePlayers';
 import { challengePlayer } from '../modules/constants';
 
-const mapStateToProps = (state)=> ({
+const mapStateToProps = (state) => ({
   onlinePlayers: state.chess.onlinePlayers,
   username: state.home.username,
 });

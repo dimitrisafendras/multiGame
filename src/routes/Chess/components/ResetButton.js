@@ -12,6 +12,6 @@ const style = {
   },
 };
 
-const ResetButton = ({ resetChess })=> (<button  onClick = {resetChess} style = { style.button } >RESET</button>);
+const ResetButton = ({ username, getDisconnected })=> (<button  onClick = { () => getDisconnected(username) } style = { style.button } >RESET</button>);
 
 export default ResetButton;

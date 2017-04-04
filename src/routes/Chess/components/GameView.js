@@ -5,7 +5,7 @@ import ResetButton from '../containers/ResetButton';
 import OnlinePlayers from '../containers/OnlinePlayers';
 import ChallengeButton from '../containers/ChallengeButton';
 
-const GameView = ({ mode, playerColor })=> {
+const GameView = ({ mode, playerColor }) => {
   if(!mode) {
     return <div>
             <h1>Chess</h1>
@@ -19,7 +19,6 @@ const GameView = ({ mode, playerColor })=> {
 
     return <div>
         <h1>Chess</h1>
-        <h2> Choose an opponent</h2>
         <OnlinePlayers />
         <ChallengeButton/>
         <ResetButton/>
