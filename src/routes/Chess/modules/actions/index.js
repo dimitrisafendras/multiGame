@@ -1,32 +1,61 @@
-import { NEW_GAME, RESET_CHESS, SELECT_TILE, MOVE_TILE, TOGGLE_OFF, SENT_MOVE, CHOOSE_MODE } from '../constants';
+import {
+  NEW_GAME, RESET_CHESS,
+  SELECT_TILE, MOVE_TILE,
+  TOGGLE_OFF, CHOOSE_MODE,
+  SENT_MOVE, AM_READY,
+  SEND_CHALLENGE, STARTING_MATCH
+} from '../constants';
 
 export const options = {
 
   newGame: {
-    offline: () => ({
+    offline: ()=> ({
       type: NEW_GAME
     }),
   },
 
   resetChess: ()=> ({
-      type: RESET_CHESS
-    }),
+    type: RESET_CHESS
+  }),
 
-  selectTile: (line, col) => ({
+  selectTile: (line, col)=> ({
     type: SELECT_TILE,
     payload: {line, col}
   }),
 
-  toggleOff: () => ({
+  toggleOff: ()=> ({
     type: TOGGLE_OFF,
   }),
 
-  moveTile: (line, col, selectedTile) => ({
+  moveTile: (line, col, selectedTile)=> ({
     type: MOVE_TILE,
     payload: {line, col, selectedTile}
   }),
-  chooseMode: (mode) => ({
+
+  chooseMode: (mode)=> ({
     type: CHOOSE_MODE,
     payload: { mode }
+  }),
+
+  moveTileDummy: ()=> ({
+    type: SENT_MOVE
+  }),
+
+  sendChallengeDummy: ()=> ({
+    type: SEND_CHALLENGE
+  }),
+
+  startingMatchDummy: ()=> ({
+    type: STARTING_MATCH
+  }),
+
+  iAmReadyDummy: ()=> ({
+    type:AM_READY
+  }),
+
+  //FIX WTF ONLY PAYLOAD
+  players: (username, opponent)=> ({
+      player: username,
+      opponent
   }),
 };

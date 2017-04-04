@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const style = {
   button: {
     marginTop: '20px',
@@ -27,6 +26,6 @@ const ChessButton = ({ mode, chooseMode, getReady, username })=> {
     return <button  onClick = {()=> onClick(mode, chooseMode, getReady, username)} style = { style.button } >Play {mode}</button>
   }
   return <div>ERROR</div>
-}
+};
 
 export default ChessButton;

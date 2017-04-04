@@ -1,6 +1,10 @@
 import { chessSocket } from '../../../../model-services/server-apis';
 import { store } from 'main';
-import {options} from '../actions';
+import {
+  moveTileOffline, moveTileDummy,
+  iAmReadyDummy, sendChallengeDummy,
+  startingMatchDummy, players
+} from '../constants';
 
 export const emiter = (event, action)=> {
   chessSocket.emit(event, action)
@@ -9,35 +13,27 @@ export const emiter = (event, action)=> {
 export const dispatcher = (action)=> (
   store.dispatch(action)
 );
+
 //FIX TO USE ACTIONS AND NOT WRITE THEM
 export const emiterOptions = {
-
-  moveTileOnline : (line, col, selectedTile)=> {
-    emiter('moveTile', options.moveTile(line, col, selectedTile));
-    return {
-      type:'SENT_MOVE'
-    }
+//FIX MOVETILEOFFLINE
+  moveTileOnline: (line, col, selectedTile)=> {
+    emiter('moveTile', moveTileOffline(line, col, selectedTile));
+    return moveTileDummy();
   },
 
   getReady: (username)=> {
     emiter('getReady', username);
-    return {
-      type:'AM_READY'
-    }
+    return iAmReadyDummy();
   },
 
   challengePlayer: (username, opponent)=> {
-    emiter('challengePlayer', {player: username, opponent: opponent});
-    return {
-      type:'SEND_CHALLENGE'
-    }
+    emiter('challengePlayer', players(username, opponent));
+    return sendChallengeDummy();
   },
 
   readyToPlay: (username, opponent)=> {
-    console.log(opponent);
-    emiter('readyToPlay', {player:username, opponent: opponent});
-    return {
-      type:'STARTING_MATCH'
-    }
+    emiter('readyToPlay', players(username, opponent));
+    return startingMatchDummy();
   },
-}
+};

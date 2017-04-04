@@ -16,10 +16,12 @@ const checkDirections = (selLineID, selSquareID, squares, x, y, boolBoard)=> {
       x += dirX;
       y += dirY;
     }
+
     else if (thisFigure === 'FOE'){
       boolBoard[selLineID + x][selSquareID + y] = {canMoveTo: true};
       noFigureBetween = false;
     }
+
     else if (thisFigure === 'ALLY'){
       noFigureBetween = false;
     }

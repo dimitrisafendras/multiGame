@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const style = {
   button: {
     margin: '20px',

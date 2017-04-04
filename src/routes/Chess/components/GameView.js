@@ -5,8 +5,6 @@ import ResetButton from '../containers/ResetButton';
 import OnlinePlayers from '../containers/OnlinePlayers';
 import ChallengeButton from '../containers/ChallengeButton';
 
-
-
 const GameView = ({ mode, playerColor })=> {
   if(!mode) {
     return <div>
@@ -16,6 +14,7 @@ const GameView = ({ mode, playerColor })=> {
             <ChessButton mode = {'offline'} />
           </div>
   }
+
   if(mode === 'online' && !playerColor) {
 
     return <div>
@@ -35,6 +34,5 @@ const GameView = ({ mode, playerColor })=> {
   }
   return <div>ERROR</div>
 };
-
 
 export default GameView;

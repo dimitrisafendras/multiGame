@@ -1,5 +1,4 @@
 'use strict';
-import squares from '../../../../lib/chess/boardInitializer';
 import {options} from '../actions';
 import { emiterOptions } from '../functions/emiter';
 
@@ -11,6 +10,9 @@ export const MOVE_TILE = 'MOVE_TILE';
 export const TOGGLE_OFF = 'TOGGLE_OFF';
 export const SENT_MOVE = 'SENT_MOVE';
 export const CHOOSE_MODE = 'CHOOSE_MODE';
+export const AM_READY = 'AM_READY';
+export const SEND_CHALLENGE = 'SEND_CHALLENGE';
+export const STARTING_MATCH = 'STARTING_MATCH';
 
 // action creators
 export const newGame = options.newGame;
@@ -18,8 +20,12 @@ export const selectTile = options.selectTile;
 export const moveTileOffline = options.moveTile;
 export const toggleOff = options.toggleOff;
 export const chooseMode = options.chooseMode;
-export const resetChess = options.resetChess
-
+export const resetChess = options.resetChess;
+export const moveTileDummy = options.moveTileDummy;
+export const iAmReadyDummy = options.iAmReadyDummy;
+export const sendChallengeDummy = options.sendChallengeDummy;
+export const startingMatchDummy = options.startingMatchDummy;
+export const players = options.players;
 
 // event creators
 export const moveTileOnline = emiterOptions.moveTileOnline;
@@ -41,6 +47,7 @@ export const DEFAULT_TILE = {
   line:'',
   col: '',
 };
+
 export const NEXT_ROUND = {
   white: 'black',
   black: 'white',

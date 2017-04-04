@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 const OnlinePlayers = ({ onlinePlayers, username, challengePlayer }) => {
   return (
     <div>
@@ -14,7 +12,7 @@ const OnlinePlayers = ({ onlinePlayers, username, challengePlayer }) => {
         onlinePlayers.map((user) => {
           if (user != username) {
             return (
-              <li key={ user } onClick={ () => challengePlayer(username, user) }>
+              <li key={ user } onClick={ ()=> challengePlayer(username, user) }>
                 { user }
               </li>
             );
@@ -22,7 +20,6 @@ const OnlinePlayers = ({ onlinePlayers, username, challengePlayer }) => {
         })
       }
       </ul>
-
     </div>
   );
 };
