@@ -32,6 +32,7 @@ export const moveTileOnline = emiterOptions.moveTileOnline;
 export const getReady = emiterOptions.getReady;
 export const challengePlayer = emiterOptions.challengePlayer;
 export const readyToPlay = emiterOptions.readyToPlay;
+export const getDisconnected = emiterOptions.getDisconnected;
 
 //other consts
 export const selectOptions = {

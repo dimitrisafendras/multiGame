@@ -25,15 +25,16 @@ const Square = ({
     }
 
     if ((clickOptions === 'moveTile') && square.canMoveTo){
-       return <div onClick={ ()=> moveTile[mode](line, col, selectedTile) } style = {style}>
+       return <div onClick={ () => moveTile[mode](line, col, selectedTile) } style = {style}>
       {figures(square.figure, square.color)}
       </div>
     }
 
     if ((clickOptions === 'moveTile') && !square.canMoveTo){
-      return <div onClick={ ()=> toggleOff() }>
-      {figures(square.figure, square.color)}
-      </div>
+      return(
+      <div onClick={ ()=> toggleOff() }>
+        {figures(square.figure, square.color)}
+      </div>)
     }
   }
     return <div>{figures(square.figure, square.color)}</div>;

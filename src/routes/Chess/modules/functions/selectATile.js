@@ -1,6 +1,6 @@
 import { moveOptions, haveSelected, assignBoolboardToSquares } from '../../../../lib/chess';
 
-const selectATile = (state, { line, col })=> {
+const selectATile = (state, { line, col }) => {
 
   if (!haveSelected(state.selectedTile)) {
     if (!(state.squares[line][col].figure === 'empty')) {

@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { resetChess } from '../modules/constants';
 import ResetButton from '../components/ResetButton';
+import { getDisconnected } from '../modules/constants';
 
-export default connect(null, { resetChess })(ResetButton);
+const mapStateToProps = (state) => ({
+  username: state.home.username,
+});
+
+export default connect(mapStateToProps, { getDisconnected })(ResetButton);
