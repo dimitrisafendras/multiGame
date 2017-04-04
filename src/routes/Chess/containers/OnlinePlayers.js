@@ -7,4 +7,5 @@ const mapStateToProps = (state)=> ({
   onlinePlayers: state.chess.onlinePlayers,
   username: state.home.username,
 });
+
 export default connect(mapStateToProps, { challengePlayer })(OnlinePlayers);

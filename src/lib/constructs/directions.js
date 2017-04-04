@@ -31,9 +31,7 @@ const directions = {
       {x: 1, y: -1},
     ],
     move: {x: 1, y: 0},
-
     },
-
 };
 
 export default directions;

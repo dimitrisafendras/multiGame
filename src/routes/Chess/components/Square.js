@@ -1,5 +1,5 @@
 import React from 'react';
-import  figures  from '../modules/figures';
+import figures from '../modules/figures';
 
 const style = {
   backgroundColor: 'green',
@@ -15,27 +15,28 @@ const Square = ({
   const moveTile = {
     online: moveTileOnline,
     offline: moveTileOffline,
-
   };
 
   if (mode === 'offline' || playerColor === round) {
     if (square.color === round && clickOptions === 'selectTile') {
-      return <div onClick={ () => selectTile(line, col) }>
+      return <div onClick={ ()=> selectTile(line, col) }>
       {figures(square.figure, square.color)}
       </div>
     }
+
     if ((clickOptions === 'moveTile') && square.canMoveTo){
-       return <div onClick={ () => moveTile[mode](line, col, selectedTile) } style = {style}>
+       return <div onClick={ ()=> moveTile[mode](line, col, selectedTile) } style = {style}>
       {figures(square.figure, square.color)}
       </div>
     }
+
     if ((clickOptions === 'moveTile') && !square.canMoveTo){
-      return <div onClick={ () => toggleOff() }>
+      return <div onClick={ ()=> toggleOff() }>
       {figures(square.figure, square.color)}
       </div>
     }
   }
     return <div>{figures(square.figure, square.color)}</div>;
-}
+};
 
 export default Square;

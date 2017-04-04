@@ -15,7 +15,7 @@ const movedTile = (state, {line, col, selectedTile})=> {
   const newBoolBoard = createBoolBoard();
   newSquares[line][col] = state.squares[lID][cID];
   newSquares[lID][cID] = createSquare('empty');
-  newSquares = assignBoolboardToSquares(newSquares,newBoolBoard);
+  newSquares = assignBoolboardToSquares(newSquares, newBoolBoard);
 
   return {
     ...state,

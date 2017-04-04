@@ -16,12 +16,12 @@ const ChallengeButton = ({ username, opponent, readyToPlay })=> {
   if (opponent) {
     return (
       <div>
-        <button onClick={() => readyToPlay(username, opponent)} style={ style.button }>ACCEPT</button>
-        <button  style={ style.button }>DECLINE</button>
+        <button onClick={()=> readyToPlay(username, opponent)} style={style.button}>ACCEPT</button>
+        <button  style={style.button}>DECLINE</button>
       </div>
     );
   }
-  return (<div></div>);
+  return <div></div>;
 };
 
 export default ChallengeButton;

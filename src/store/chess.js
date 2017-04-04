@@ -1,6 +1,10 @@
 import { boardInitializer, createBoolBoard } from '../../src/lib/chess';
-import { SELECT_TILE, MOVE_TILE, TOGGLE_OFF, DEFAULT_TILE , CHOOSE_MODE, RESET_CHESS } from '../routes/Chess/modules/constants';
 import { movedTile, selectATile, toggleOff } from '../routes/Chess/modules/functions';
+import {
+  SELECT_TILE, MOVE_TILE,
+  TOGGLE_OFF, DEFAULT_TILE ,
+  CHOOSE_MODE, RESET_CHESS
+} from '../routes/Chess/modules/constants';
 
 export const initialState = {
   round: 'white',
@@ -14,7 +18,6 @@ export const initialState = {
   onlinePlayers:[],
   challenged: '',
 };
-
 
 export default function chess(state = initialState, action) {
   switch (action.type){
