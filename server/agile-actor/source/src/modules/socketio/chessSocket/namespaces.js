@@ -13,15 +13,24 @@ export default (io) => {
     }
   };
 
+  const removeFromArray = (userToRemove) =>{
+    const indexToRemove = users.indexOf(userToRemove);
+    users.splice(indexToRemove, 1);
+  };
+
   sessionIo.on('connection', (socket) => {
     let player = '';
     let opponent = '';
     console.log('  --> SocketIO on connection CHESS');
 
-    socket.on('challengePlayer', (users) => {
-      player = players.get(users.player);
-      opponent = players.get(users.opponent);
-      opponent.emit('gotChallenged', users.player);
+    socket.on('challengePlayer', (opponents) => {
+      player = players.get(opponents.player);
+      opponent = players.get(opponents.opponent);
+      removeFromArray(player);
+      removeFromArray(opponent);
+      console.log(users);
+      socket.broadcast.emit('updatePlayers', users);
+      opponent.emit('gotChallenged', opponents.player);
     });
 
     socket.on('moveTile', (action) => {
@@ -51,15 +60,13 @@ export default (io) => {
 
     socket.on('getDisconnected', (username) => {
       players.delete(username);
-      const indexToRemove = users.indexOf(username);
-      users.splice(indexToRemove, 1);
+      removeFromArray(username);
       socket.broadcast.emit('updatePlayers', users);
     });
 
     socket.on('disconnect', () => {
       const userToRemove = getKeyByValue(players, socket, users);
-      const indexToRemove = users.indexOf(userToRemove);
-      users.splice(indexToRemove, 1);
+      removeFromArray(userToRemove);
       socket.broadcast.emit('updatePlayers', users);
     });
 
