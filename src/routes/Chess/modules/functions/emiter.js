@@ -14,7 +14,6 @@ export const dispatcher = (action) => (
   store.dispatch(action)
 );
 
-//FIX TO USE ACTIONS AND NOT WRITE THEM
 export const emiterOptions = {
 //FIX MOVETILEOFFLINE
   moveTileOnline: (line, col, selectedTile) => {
