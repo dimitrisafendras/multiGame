@@ -30,4 +30,4 @@ const figures = new Map([
   ['empty', Empty],
 ]);
 
-export default (figure,color)=> (figures.get(color.concat(figure)));
+export default (figure,color) => (figures.get(color.concat(figure)));
