@@ -4,6 +4,15 @@ export default (io) => {
   let black = '';
   let users = [];
   let players = new Map();
+
+  const getKeyByValue = (players, socket, users) => {
+    for(let i=0; i<players.size; i++){
+      if(players.get(users[i]) === socket){
+        return users[i];
+      }
+    }
+  };
+
   sessionIo.on('connection', (socket) => {
     let player = '';
     let opponent = '';
@@ -43,6 +52,13 @@ export default (io) => {
     socket.on('getDisconnected', (username) => {
       players.delete(username);
       const indexToRemove = users.indexOf(username);
+      users.splice(indexToRemove, 1);
+      socket.broadcast.emit('updatePlayers', users);
+    });
+
+    socket.on('disconnect', () => {
+      const userToRemove = getKeyByValue(players, socket, users);
+      const indexToRemove = users.indexOf(userToRemove);
       users.splice(indexToRemove, 1);
       socket.broadcast.emit('updatePlayers', users);
     });

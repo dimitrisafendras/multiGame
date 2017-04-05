@@ -9,43 +9,43 @@ import {
 export const options = {
 
   newGame: {
-    offline: ()=> ({
+    offline: () => ({
       type: NEW_GAME
     }),
   },
 
-  resetChess: ()=> ({
+  resetChess: () => ({
     type: RESET_CHESS
   }),
 
-  selectTile: (line, col)=> ({
+  selectTile: (line, col) => ({
     type: SELECT_TILE,
     payload: {line, col}
   }),
 
-  toggleOff: ()=> ({
+  toggleOff: () => ({
     type: TOGGLE_OFF,
   }),
 
-  moveTile: (line, col, selectedTile)=> ({
+  moveTile: (line, col, selectedTile) => ({
     type: MOVE_TILE,
     payload: {line, col, selectedTile}
   }),
 
-  chooseMode: (mode)=> ({
+  chooseMode: (mode) => ({
     type: CHOOSE_MODE,
     payload: { mode }
   }),
 
-  moveTileDummy: ()=> ({
+  moveTileDummy: () => ({
     type: SENT_MOVE
   }),
 
-  sendChallengeDummy: ()=> ({
+  sendChallengeDummy: () => ({
     type: SEND_CHALLENGE
   }),
 
-  startingMatchDummy: ()=> ({
+  startingMatchDummy: () => ({
     type: STARTING_MATCH
   }),
 
@@ -54,7 +54,7 @@ export const options = {
   }),
 
   //FIX WTF ONLY PAYLOAD
-  players: (username, opponent)=> ({
+  players: (username, opponent) => ({
       player: username,
       opponent
   }),
