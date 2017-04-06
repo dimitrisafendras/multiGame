@@ -28,7 +28,7 @@ export default (io) => {
       opponent = players.get(opponents.opponent);
       removeFromArray(player);
       removeFromArray(opponent);
-      console.log(users);
+      socket.emit('updatePlayers', users);
       socket.broadcast.emit('updatePlayers', users);
       opponent.emit('gotChallenged', opponents.player);
     });
@@ -38,11 +38,19 @@ export default (io) => {
       opponent.emit('movedTile', action);
     });
 
-    socket.on('readyToPlay', (users) => {
-      player = players.get(users.player);
-      opponent = players.get(users.opponent);
-      player.emit('gotReady',{playerColor: 'white'});
-      opponent.emit('gotReady',{playerColor: 'black'})
+    socket.on('answerChallenge', (opponents) => {
+      if (opponents.answer){
+        player = players.get(opponents.player);
+        opponent = players.get(opponents.opponent);
+        player.emit('gotReady',{playerColor: 'white'});
+        opponent.emit('gotReady',{playerColor: 'black'});
+      }
+      else {
+        users.push(opponents.player);
+        users.push(opponents.opponent);
+        socket.emit('updatePlayers', users);
+        socket.broadcast.emit('updatePlayers', users);
+      }
     });
 
     socket.on('getReady',(username)=> {

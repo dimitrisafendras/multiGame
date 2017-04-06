@@ -1,6 +1,8 @@
 import { chessSocket } from '../../../model-services/server-apis';
 import { dispatcher } from '../../../routes/TicTacToe/modules/functions';
 
+
+//FIX
 export const onMovedTile = () => {
   chessSocket.on('movedTile', (action) => (
     dispatcher(action)
@@ -42,6 +44,7 @@ export const onGetOnline = () => {
 
 export const onGotChallenged = () => {
   chessSocket.on('gotChallenged', (user) => {
+    console.log(user);
     dispatcher({
       type: 'GOT_CHALLENGED',
       payload:{
@@ -50,7 +53,3 @@ export const onGotChallenged = () => {
     })
   })
 };
-
-
-
-
