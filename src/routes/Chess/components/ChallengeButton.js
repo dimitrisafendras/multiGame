@@ -12,12 +12,12 @@ const style = {
   },
 };
 
-const ChallengeButton = ({ username, opponent, readyToPlay }) => {
+const ChallengeButton = ({ username, opponent, answerChallenge }) => {
   if (opponent) {
     return (
       <div>
-        <button onClick={() => readyToPlay(username, opponent)} style={style.button}>ACCEPT</button>
-        <button  style={style.button}>DECLINE</button>
+        <button onClick={() => answerChallenge(username, opponent, true)} style={style.button}>ACCEPT</button>
+        <button onClick={() => answerChallenge(username, opponent, false)} style={style.button}>DECLINE</button>
       </div>
     );
   }

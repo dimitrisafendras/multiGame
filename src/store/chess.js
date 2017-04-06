@@ -3,7 +3,10 @@ import { movedTile, selectATile, toggleOff } from '../routes/Chess/modules/funct
 import {
   SELECT_TILE, MOVE_TILE,
   TOGGLE_OFF, DEFAULT_TILE ,
-  CHOOSE_MODE, RESET_CHESS
+  CHOOSE_MODE, RESET_CHESS,
+  DECLINE_MATCH, CHOOSE_COLOR,
+  UPDATE_PLAYERS, GET_ONLINE_CHESS,
+  GOT_CHALLENGED,
 } from '../routes/Chess/modules/constants';
 
 export const initialState = {
@@ -37,17 +40,20 @@ export default function chess(state = initialState, action) {
     case RESET_CHESS:
       return initialState;
 
-    case 'CHOOSE_COLOR':
+    case CHOOSE_COLOR:
       return {...state, playerColor: action.payload.playerColor};
 
-    case 'UPDATE_PLAYERS':
+    case UPDATE_PLAYERS:
       return {...state, onlinePlayers: action.payload};
 
-    case 'GET_ONLINE_CHESS':
+    case GET_ONLINE_CHESS:
       return {...state, mode:'online'};
 
-    case 'GOT_CHALLENGED':
+    case GOT_CHALLENGED:
       return {...state, opponent: action.payload.opponent };
+
+    case DECLINE_MATCH:
+      return {...state, opponent: '' };
 
     default:
       return state;

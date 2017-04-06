@@ -3,7 +3,8 @@ import { store } from 'main';
 import {
   moveTileOffline, moveTileDummy,
   iAmReadyDummy, sendChallengeDummy,
-  startingMatchDummy, players, resetChess
+  startingMatchDummy, players,
+  resetChess, declineMatch,
 } from '../constants';
 
 export const emiter = (event, action)=> {
@@ -26,13 +27,16 @@ export const emiterOptions = {
     return iAmReadyDummy();
   },
 
-  challengePlayer: (username, opponent)=> {
-    emiter('challengePlayer', players(username, opponent));
+  challengePlayer: (player, opponent)=> {
+    emiter('challengePlayer', {player, opponent});
     return sendChallengeDummy();
   },
 
-  readyToPlay: (username, opponent)=> {
-    emiter('readyToPlay', players(username, opponent));
+  answerChallenge: (player, opponent, answer)=> {
+    emiter('answerChallenge', {player, opponent, answer});
+    if(!answer){
+      return declineMatch();
+    }
     return startingMatchDummy();
   },
 

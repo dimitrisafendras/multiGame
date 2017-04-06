@@ -13,6 +13,11 @@ export const CHOOSE_MODE = 'CHOOSE_MODE';
 export const AM_READY = 'AM_READY';
 export const SEND_CHALLENGE = 'SEND_CHALLENGE';
 export const STARTING_MATCH = 'STARTING_MATCH';
+export const DECLINE_MATCH = 'DECLINE_MATCH';
+export const GOT_CHALLENGED = 'GOT_CHALLENGED';
+export const GET_ONLINE_CHESS = 'GET_ONLINE_CHESS';
+export const UPDATE_PLAYERS = 'UPDATE_PLAYERS';
+export const CHOOSE_COLOR = 'CHOOSE_COLOR';
 
 // action creators
 export const newGame = options.newGame;
@@ -26,12 +31,13 @@ export const iAmReadyDummy = options.iAmReadyDummy;
 export const sendChallengeDummy = options.sendChallengeDummy;
 export const startingMatchDummy = options.startingMatchDummy;
 export const players = options.players;
+export const declineMatch = options.declineMatch;
 
 // event creators
 export const moveTileOnline = emiterOptions.moveTileOnline;
 export const getReady = emiterOptions.getReady;
 export const challengePlayer = emiterOptions.challengePlayer;
-export const readyToPlay = emiterOptions.readyToPlay;
+export const answerChallenge = emiterOptions.answerChallenge;
 export const getDisconnected = emiterOptions.getDisconnected;
 
 //other consts

@@ -3,7 +3,7 @@ import {
   SELECT_TILE, MOVE_TILE,
   TOGGLE_OFF, CHOOSE_MODE,
   SENT_MOVE, AM_READY,
-  SEND_CHALLENGE, STARTING_MATCH
+  SEND_CHALLENGE, STARTING_MATCH, DECLINE_MATCH
 } from '../constants';
 
 export const options = {
@@ -53,6 +53,9 @@ export const options = {
     type:AM_READY
   }),
 
+  declineMatch: ()=> ({
+    type:DECLINE_MATCH
+  }),
   //FIX WTF ONLY PAYLOAD
   players: (username, opponent) => ({
       player: username,
