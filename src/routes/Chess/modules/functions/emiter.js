@@ -40,4 +40,5 @@ export const emiterOptions = {
     emiter('getDisconnected', username);
     return resetChess();
   },
+
 };
