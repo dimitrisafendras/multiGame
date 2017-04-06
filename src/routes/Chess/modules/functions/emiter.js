@@ -6,37 +6,37 @@ import {
   startingMatchDummy, players, resetChess
 } from '../constants';
 
-export const emiter = (event, action) => {
+export const emiter = (event, action)=> {
   chessSocket.emit(event, action)
 };
 
-export const dispatcher = (action) => (
+export const dispatcher = (action)=> (
   store.dispatch(action)
 );
 
 export const emiterOptions = {
 //FIX MOVETILEOFFLINE
-  moveTileOnline: (line, col, selectedTile) => {
+  moveTileOnline: (line, col, selectedTile)=> {
     emiter('moveTile', moveTileOffline(line, col, selectedTile));
     return moveTileDummy();
   },
 
-  getReady: (username) => {
+  getReady: (username)=> {
     emiter('getReady', username);
     return iAmReadyDummy();
   },
 
-  challengePlayer: (username, opponent) => {
+  challengePlayer: (username, opponent)=> {
     emiter('challengePlayer', players(username, opponent));
     return sendChallengeDummy();
   },
 
-  readyToPlay: (username, opponent) => {
+  readyToPlay: (username, opponent)=> {
     emiter('readyToPlay', players(username, opponent));
     return startingMatchDummy();
   },
 
-  getDisconnected: (username) => {
+  getDisconnected: (username)=> {
     emiter('getDisconnected', username);
     return resetChess();
   },
