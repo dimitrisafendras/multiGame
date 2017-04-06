@@ -1,22 +1,17 @@
 import { setOnEvent } from '../../../model-services/chess/socketio/chessSocket';
 import { store } from 'main';
+import { chooseColor,  updatePlayers, getOnline , gotChallenged} from './constants';
 
 setOnEvent('movedTile', (action)=> (
   store.dispatch(action)
 ));
 
 setOnEvent('gotReady', (payload)=> {
-  store.dispatch({
-      type: 'CHOOSE_COLOR',
-      payload,
-  });
+  store.dispatch(chooseColor(payload));
 });
 
 setOnEvent('updatePlayers', (payload)=> {
-  store.dispatch({
-    type: 'UPDATE_PLAYERS',
-    payload,
-  });
+  store.dispatch(updatePlayers(payload));
 });
 
 setOnEvent('loginError', (msg)=> {
@@ -24,16 +19,9 @@ setOnEvent('loginError', (msg)=> {
 });
 
 setOnEvent('getOnline', ()=> {
-  store.dispatch({
-    type: 'GET_ONLINE_CHESS'
-  })
+  store.dispatch(getOnline());
 });
 
 setOnEvent('gotChallenged', (user)=> {
-  store.dispatch({
-    type: 'GOT_CHALLENGED',
-    payload:{
-      opponent: user,
-    }
-  })
+  store.dispatch(gotChallenged(user));
 });

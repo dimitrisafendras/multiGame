@@ -1,6 +1,9 @@
+/**
+ * Created by dimitrisafendras on 4/6/17.
+ */
 'use strict';
-import {options} from '../actions';
-import { emiterOptions } from '../functions/emiter';
+import {options} from './actions';
+import { emiterOptions } from './utils/emiter';
 
 // action constants
 export const NEW_GAME = 'NEW_GAME';
@@ -32,6 +35,11 @@ export const sendChallengeDummy = options.sendChallengeDummy;
 export const startingMatchDummy = options.startingMatchDummy;
 export const players = options.players;
 export const declineMatch = options.declineMatch;
+export const chooseColor = options.chooseColor;
+export const updatePlayers = options.updatePlayers;
+export const getOnline = options.getOnline;
+export const gotChallenged = options.gotChallenged;
+
 
 // event creators
 export const moveTileOnline = emiterOptions.moveTileOnline;

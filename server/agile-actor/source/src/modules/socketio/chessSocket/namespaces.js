@@ -54,7 +54,6 @@ export default (io) => {
     });
 
     socket.on('getReady',(username)=> {
-      console.log(username);
       if (username){
         players.set(username, socket);
         users.push(username);
