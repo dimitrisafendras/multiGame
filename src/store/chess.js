@@ -1,5 +1,6 @@
 import { boardInitializer, createBoolBoard } from '../../src/lib/chess';
 import { movedTile, selectATile, toggleOff } from '../routes/Chess/modules/functions';
+import * as useless from '../routes/Chess/modules/subscriptions';
 import {
   SELECT_TILE, MOVE_TILE,
   TOGGLE_OFF, DEFAULT_TILE ,
@@ -20,6 +21,7 @@ export const initialState = {
   playerColor:'',
   onlinePlayers:[],
   challenged: '',
+  opponent: '',
 };
 
 export default function chess(state = initialState, action) {

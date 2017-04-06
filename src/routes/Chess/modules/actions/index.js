@@ -45,7 +45,7 @@ export const options = {
     type: SEND_CHALLENGE
   }),
 
-  startingMatchDummy: () => ({
+  startingMatchDummy: ()=> ({
     type: STARTING_MATCH
   }),
 
@@ -57,7 +57,7 @@ export const options = {
     type:DECLINE_MATCH
   }),
   //FIX WTF ONLY PAYLOAD
-  players: (username, opponent) => ({
+  players: (username, opponent)=> ({
       player: username,
       opponent
   }),
