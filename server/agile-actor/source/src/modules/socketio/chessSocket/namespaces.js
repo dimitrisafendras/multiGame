@@ -2,7 +2,7 @@ export default (io) => {
   const sessionIo = io.of('/chessSocket');
   let white = '';
   let black = '';
-  let users = [];
+  let users = []; //FIX make it set
   let players = new Map();
 
   const getKeyByValue = (players, socket, users) => {
@@ -13,7 +13,7 @@ export default (io) => {
     }
   };
 
-  const removeFromArray = (userToRemove) =>{
+  const removeFromArray = (userToRemove)=> {
     const indexToRemove = users.indexOf(userToRemove);
     users.splice(indexToRemove, 1);
   };
@@ -23,7 +23,7 @@ export default (io) => {
     let opponent = '';
     console.log('  --> SocketIO on connection CHESS');
 
-    socket.on('challengePlayer', (opponents) => {
+    socket.on('challengePlayer', (opponents)=> {
       player = players.get(opponents.player);
       opponent = players.get(opponents.opponent);
       removeFromArray(player);
@@ -45,7 +45,7 @@ export default (io) => {
       opponent.emit('gotReady',{playerColor: 'black'})
     });
 
-    socket.on('getReady',(username) => {
+    socket.on('getReady',(username)=> {
       if (username){
         players.set(username, socket);
         users.push(username);
@@ -58,13 +58,13 @@ export default (io) => {
       }
     });
 
-    socket.on('getDisconnected', (username) => {
+    socket.on('getDisconnected', (username)=> {
       players.delete(username);
       removeFromArray(username);
       socket.broadcast.emit('updatePlayers', users);
     });
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', ()=> {
       const userToRemove = getKeyByValue(players, socket, users);
       removeFromArray(userToRemove);
       socket.broadcast.emit('updatePlayers', users);
