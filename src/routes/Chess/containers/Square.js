@@ -15,11 +15,4 @@ const mapStateToProps = (state)=> ({
   playerColor: state.chess.playerColor
 });
 
-onMovedTile();
-onGotReady();
-onUpdatePlayers();
-onError();
-onGetOnline();
-onGotChallenged();
-
 export default connect(mapStateToProps, selectOptions)(Square);
