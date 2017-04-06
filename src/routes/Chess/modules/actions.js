@@ -4,7 +4,7 @@ import {
   TOGGLE_OFF, CHOOSE_MODE,
   SENT_MOVE, AM_READY,
   SEND_CHALLENGE, STARTING_MATCH, DECLINE_MATCH
-} from '../constants';
+} from './constants';
 
 export const options = {
 
@@ -37,6 +37,27 @@ export const options = {
     payload: { mode }
   }),
 
+  gotChallenged: (user)=> ({
+    type: 'GOT_CHALLENGED',
+    payload:{
+      opponent: user,
+    }
+  }),
+
+  getOnline: ()=> ({
+    type: 'GET_ONLINE_CHESS'
+  }),
+
+  chooseColor: (color)=> ({
+      type: 'CHOOSE_COLOR',
+      payload: color,
+    }),
+
+  updatePlayers: (users)=> ({
+    type: 'UPDATE_PLAYERS',
+    payload: users,
+  }),
+
   moveTileDummy: ()=> ({
     type: SENT_MOVE
   }),
@@ -58,7 +79,8 @@ export const options = {
   }),
   //FIX WTF ONLY PAYLOAD
   players: (username, opponent)=> ({
-      player: username,
-      opponent
+    player: username,
+    opponent
   }),
 };
+
