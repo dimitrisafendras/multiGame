@@ -5,7 +5,7 @@ import {
   MARK_TILE_ONLINE,
   NEW_GAME,
   NEW_GAME_ONLINE
-} from '../constants'
+} from './constants'
 
 export const options = {
 
@@ -14,6 +14,7 @@ export const options = {
       type: MARK_TILE,
       payload: {player: player, key: key}
     }),
+
     online: (player, key)=> ({
       type: MARK_TILE_ONLINE,
       payload: {player: player, key: key}
@@ -25,6 +26,7 @@ export const options = {
       type: NEW_GAME,
       payload: {player: player, gameStyle}
     }),
+
     online: (player, gameStyle)=> ({
       type: NEW_GAME_ONLINE,
       payload: {player: player, gameStyle}

@@ -12,7 +12,7 @@ const WINNING_PATTERNS = [
 export default class TicTac {
 
   static allSquaresOccupied(squares) {
-    return squares.findIndex((sq) => { return sq === undefined}) == -1
+    return squares.findIndex((sq) => { return sq === undefined}) === -1
   }
 
   static checkWinner(squares) {

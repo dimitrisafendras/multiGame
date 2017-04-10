@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux'
 import locationReducer from './location'
-import players from './playersReducer'
-import game from './gamesReducer'
+import players from './ticTacToeReducers/playersReducer'
+import game from './ticTacToeReducers/gamesReducer'
 import hangman from './hangmanReducer'
 import home from './homeReducer'
 import { Simon } from './simonReducer'
-import memoryGame from './memoryGameReducer'
 import chess from './chess'
 
 export const makeRootReducer = (asyncReducers) => {
@@ -17,8 +16,7 @@ export const makeRootReducer = (asyncReducers) => {
     hangman,
     home,
     Simon,
-    memoryGame,
-    chess
+    chess,
   })
 };
 
