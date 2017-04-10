@@ -33,4 +33,5 @@ export const Square = ({ id, squares, markTile, currentPlayer, victory, gameStyl
       </div>
     )
   }
+
 };
