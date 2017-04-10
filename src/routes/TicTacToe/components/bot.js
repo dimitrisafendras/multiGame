@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TicTac from '../../../lib/ticTacToe/tictac/index';
+import TicTac from '../../../lib/ticTacToe/tictac';
 
 export class Bot extends Component{
 

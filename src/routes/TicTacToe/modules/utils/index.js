@@ -1,10 +1,10 @@
-import { ticTacToeSocket } from '../../../../model-services/server-apis';
-import { store } from 'main';
+import {onlineMode, dispatcher} from './emiter';
+import {newGame} from './newGame';
+import {markTile} from './markTile';
 
-export const onlineMode = (event, action)=> ({
-  online: ticTacToeSocket.emit(event, action)
-});
-
-export const dispatcher = (action)=> (
-  store.dispatch(action)
-);
+export {
+  onlineMode,
+  dispatcher,
+  newGame,
+  markTile,
+}
