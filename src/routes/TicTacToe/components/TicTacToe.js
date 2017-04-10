@@ -2,10 +2,9 @@ import React from 'react'
 import Square from '../containers/Square';
 import Bot from '../containers/bot';
 import styles from './styles.scss'
-import { onlineMode } from '../modules/utils';
-import { newGame, newGameOnline } from '../modules/constants';
+import { onlineMode, newGame } from '../modules/utils';
 
-const TicTacToe = ({victory, newGame, newGameOnline}) =>{
+const TicTacToe = ({victory, newGame}) =>{
 
   function displayWinner() {
     if (victory) {
@@ -21,7 +20,7 @@ const TicTacToe = ({victory, newGame, newGameOnline}) =>{
       <div className={styles.game}>
         <h1 style = {{fontFamily: 'Times New Roman'}}> Tic Tac Toe </h1>
         <div className={styles.controls}>
-          <button onClick={() => { onlineMode('newGame', newGameOnline('x', 'Opvp')) }} className="btn btn-primary" style={{ backgroundColor: "pink" }}>Online PvP</button>
+          <button onClick={() => { onlineMode('newGame', newGame('x', 'Opvp')) }} className="btn btn-primary" style={{ backgroundColor: "pink" }}>Online PvP</button>
           <button onClick={() => { newGame('x', 'pvp') }} className="btn btn-primary" style={{ backgroundColor: "green" }}>Play With Friend</button>
           <button onClick={() => { newGame('x', 'pvb') }} className="btn btn-primary">I go first</button>
           <button onClick={() => { newGame('o', 'pvb') }} className="btn btn-danger">Bot goes first</button>
