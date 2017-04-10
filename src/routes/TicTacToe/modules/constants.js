@@ -1,5 +1,5 @@
 'use strict';
-import { options } from '../actions';
+import { options } from './actions';
 
 //action constants
 export const MARK_TILE = 'MARK_TILE';

@@ -2,14 +2,14 @@ import React from 'react'
 import Square from '../containers/Square';
 import Bot from '../containers/bot';
 import styles from './styles.scss'
-import { onlineMode } from '../modules/functions';
+import { onlineMode } from '../modules/utils';
 import { newGame, newGameOnline } from '../modules/constants';
 
 const TicTacToe = ({victory, newGame, newGameOnline}) =>{
 
   function displayWinner() {
     if (victory) {
-      if (victory == 'tie') {
+      if (victory === 'tie') {
         return <div className={styles.victoryMessage}>Its a {victory} </div>
       }
       return <div className={styles.victoryMessage}>Player {victory} has won</div>

@@ -5,7 +5,6 @@ import CounterRoute from './Counter'
 import TicTacToeRoute from './TicTacToe'
 import HangManRoute from './Hangman'
 import Simon from './Simon'
-import MemoryGame from './MemoryGame'
 import Chess from './Chess'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -19,7 +18,6 @@ export const createRoutes = (store) => ({
     TicTacToeRoute,
     HangManRoute,
     Simon,
-    MemoryGame,
     Chess
   ]
 });

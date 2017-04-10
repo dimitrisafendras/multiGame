@@ -1,5 +1,5 @@
 import { ticTacToeSocket } from '../../../model-services/server-apis';
-import { dispatcher } from '../../../routes/TicTacToe/modules/functions';
+import { dispatcher } from '../../../routes/TicTacToe/modules/utils';
 
 export const onMarkTile = ()=> ({
   onMarkTile: ticTacToeSocket.on('markTile', (action)=> (

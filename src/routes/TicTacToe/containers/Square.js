@@ -11,6 +11,6 @@ const mapStateToProps = (state)=> ({
     gameStyle: state.game.gameStyle,
 });
 
-export default connect(mapStateToProps, {markTile, markTileOnline} )(Square);
+export default connect(mapStateToProps, {markTile, markTileOnline})(Square);
 
 onMarkTile();

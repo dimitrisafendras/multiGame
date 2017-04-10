@@ -1,5 +1,5 @@
 import { figureIs, createBoolBoard } from '../';
-import { directions } from '../../constructs';
+import { directions } from '../../constructsForChess';
 
 const moveKing = (selLineID, selSquareID, squares)=> {
   const boolBoard = createBoolBoard();

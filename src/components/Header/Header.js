@@ -21,10 +21,6 @@ export const Header = () => (
       Simon
     </Link>
     {' · '}
-    <Link to='/memoryGame' activeClassName='route--active'>
-      Memory Game
-    </Link>
-    {' · '}
     <Link to='/chess' activeClassName='route--active'>
       Chess
     </Link>

@@ -1,16 +1,16 @@
 import React from 'react';
-import { onlineMode } from '../modules/functions';
+import { onlineMode } from '../modules/utils';
 
-export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, victory, gameStyle })=> {
+export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, victory, gameStyle})=> {
 
-  const clickable = () => {
-    if (gameStyle == 'pvp' || currentPlayer == 'x') {
+  const clickable = ()=> {
+    if (gameStyle === 'pvp' || currentPlayer === 'x') {
       return 'clickable'
     }
   };
 
   const selectTile = (gameStyle)=> {
-    if (!squares[id] && !victory && gameStyle == 'Opvp') {
+    if (!squares[id] && !victory && gameStyle === 'Opvp') {
       return markTileOnline(currentPlayer, id);
     }
     else if (!squares[id] && !victory) {
@@ -18,7 +18,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
     }
   };
 
-  if (gameStyle == 'Opvp'){
+  if (gameStyle === 'Opvp'){
     return (
       <div className={clickable()} onClick={()=>
       { onlineMode('markTile', selectTile(gameStyle)) }}>
@@ -28,7 +28,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
   }
   else{
     return (
-      <div onClick={()=> { selectTile() }}>
+      <div onClick={()=> {selectTile() }}>
         {squares[id]}
       </div>
     )
