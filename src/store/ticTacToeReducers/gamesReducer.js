@@ -1,5 +1,4 @@
 'use strict';
-import TicTac from '../../lib/ticTacToe/tictac';
 import {
   MARK_TILE,
   MARK_TILE_ONLINE,
