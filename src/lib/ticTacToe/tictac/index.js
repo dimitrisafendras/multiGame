@@ -31,7 +31,6 @@ export default class TicTac {
     if (this.allSquaresOccupied(squares)) {
       return 'tie'
     }
-
     return false;
   }
 }
