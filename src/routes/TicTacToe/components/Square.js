@@ -1,7 +1,7 @@
 import React from 'react';
 import { onlineMode } from '../modules/utils';
 
-export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, victory, gameStyle})=> {
+export const Square = ({ id, squares, markTile, currentPlayer, victory, gameStyle})=> {
 
   const clickable = ()=> {
     if (gameStyle === 'pvp' || currentPlayer === 'x') {
@@ -11,7 +11,7 @@ export const Square = ({ id, squares, markTile, markTileOnline, currentPlayer, v
 
   const selectTile = (gameStyle)=> {
     if (!squares[id] && !victory && gameStyle === 'Opvp') {
-      return markTileOnline(currentPlayer, id);
+      return markTile(currentPlayer, id);
     }
     else if (!squares[id] && !victory) {
       return markTile(currentPlayer, id);

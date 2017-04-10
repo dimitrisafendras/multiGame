@@ -2,7 +2,6 @@
 
 import {
   MARK_TILE,
-  MARK_TILE_ONLINE,
   NEW_GAME,
   NEW_GAME_ONLINE
 } from './constants'
@@ -14,11 +13,6 @@ export const options = {
       type: MARK_TILE,
       payload: {player: player, key: key}
     }),
-
-    online: (player, key)=> ({
-      type: MARK_TILE_ONLINE,
-      payload: {player: player, key: key}
-    })
   },
 
   newGame:{
