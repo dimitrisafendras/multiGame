@@ -1,4 +1,6 @@
 'use strict';
+import '../../routes/TicTacToe/modules/subscriptions';
+
 import {
   MARK_TILE,
   NEW_GAME,

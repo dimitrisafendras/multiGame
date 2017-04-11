@@ -1,8 +1,5 @@
-/**
- * Created by dimitrisafendras on 4/6/17.
- */
 'use strict';
-import {options} from './actions';
+import { options } from './actions';
 import { emiterOptions } from './utils/emiter';
 
 // action constants

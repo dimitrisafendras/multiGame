@@ -1,10 +1,9 @@
 import React from 'react'
 import Square from '../containers/Square';
 import Bot from '../containers/Bot';
-import styles from './styles.scss'
-import { onlineMode, newGame } from '../modules/utils';
+import styles from './styles.scss';
 
-const TicTacToe = ({victory, newGame}) =>{
+const TicTacToe = ({victory, newGame, newGameEvent}) =>{
 
   function displayWinner() {
     if (victory) {
@@ -20,7 +19,7 @@ const TicTacToe = ({victory, newGame}) =>{
       <div className={styles.game}>
         <h1 style = {{fontFamily: 'Times New Roman'}}> Tic Tac Toe </h1>
         <div className={styles.controls}>
-          <button onClick={() => { onlineMode('newGame', newGame('x', 'Opvp')) }} className="btn btn-primary" style={{ backgroundColor: "pink" }}>Online PvP</button>
+          <button onClick={() => { newGameEvent('x', 'Opvp') }} className="btn btn-primary" style={{ backgroundColor: "pink" }}>Online PvP</button>
           <button onClick={() => { newGame('x', 'pvp') }} className="btn btn-primary" style={{ backgroundColor: "green" }}>Play With Friend</button>
           <button onClick={() => { newGame('x', 'pvb') }} className="btn btn-primary">I go first</button>
           <button onClick={() => { newGame('o', 'pvb') }} className="btn btn-danger">Bot goes first</button>
@@ -34,7 +33,7 @@ const TicTacToe = ({victory, newGame}) =>{
         </div>
       </div>
       { displayWinner() }
-      <Bot />
+      <Bot/>
     </div>
   )
 };

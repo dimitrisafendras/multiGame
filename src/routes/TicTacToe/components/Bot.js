@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import TicTac from '../../../lib/ticTacToe/tictac';
 
 export class Bot extends Component{
@@ -25,7 +25,6 @@ export class Bot extends Component{
   }
 
   minimax(squares, player, depth) {
-
     if (TicTac.checkWinner(squares)) {
       switch(TicTac.checkWinner(squares)) {
         case this.current_player:

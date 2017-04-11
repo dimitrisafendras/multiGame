@@ -1,4 +1,3 @@
-
 export const newGame = (state, initialState, action)=> {
 
   let gameStyle = {
