@@ -1,6 +1,6 @@
 import React from 'react'
 import Square from '../containers/Square';
-import Bot from '../containers/bot';
+import Bot from '../containers/Bot';
 import styles from './styles.scss'
 import { onlineMode, newGame } from '../modules/utils';
 
