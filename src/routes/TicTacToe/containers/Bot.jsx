@@ -1,7 +1,7 @@
 import React from 'react';
 import {Bot} from '../components/Bot';
-import { connect } from 'react-redux';
-import { markTile } from '../modules/constants';
+import {connect} from 'react-redux';
+import {markTile} from '../modules/constants';
 
 function mapStateToProps(state) {
   return {
@@ -12,4 +12,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { markTile })(Bot);
+export default connect(mapStateToProps, {markTile})(Bot);

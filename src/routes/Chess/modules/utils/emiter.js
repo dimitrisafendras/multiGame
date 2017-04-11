@@ -3,20 +3,15 @@ import { store } from 'main';
 import {
   moveTileOffline, moveTileDummy,
   iAmReadyDummy, sendChallengeDummy,
-  startingMatchDummy, players,
-  resetChess, declineMatch,
+  startingMatchDummy, resetChess, declineMatch,
 } from '../constants';
 
 export const emiter = (event, action)=> {
   chessSocket.emit(event, action)
 };
 
-export const dispatcher = (action)=> (
-  store.dispatch(action)
-);
-
 export const emiterOptions = {
-//FIX MOVETILEOFFLINE
+
   moveTileOnline: (line, col, selectedTile)=> {
     emiter('moveTile', moveTileOffline(line, col, selectedTile));
     return moveTileDummy();
@@ -44,5 +39,4 @@ export const emiterOptions = {
     emiter('getDisconnected', username);
     return resetChess();
   },
-
 };
