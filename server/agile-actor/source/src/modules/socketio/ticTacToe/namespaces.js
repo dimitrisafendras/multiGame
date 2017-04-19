@@ -6,13 +6,11 @@ export default (io)=> {
     console.log('  --> SocketIO on connection', id);
 
     socket.on('newGame', (action)=>{
-      console.log(action);
       socket.emit('newGame', action);
       socket.broadcast.emit('newGame', action);
     });
 
     socket.on('markTile', (action)=>{
-      console.log(action);
       socket.emit('markTile', action);
       socket.broadcast.emit('markTile', action);
     });

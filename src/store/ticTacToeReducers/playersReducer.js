@@ -13,7 +13,7 @@ const OPPONENT = {
 };
 
 export default function(state = INITIAL_STATE, action) {
-  console.log(action);
+
   switch(action.type) {
 
     case MARK_TILE: {
