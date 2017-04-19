@@ -5,6 +5,7 @@ import {
   clientConfigSocket,
   ticTacToeSocket,
   chessSocket,
+  simonSocket
 } from './socketio';
 
 export {
@@ -13,4 +14,5 @@ export {
   clientConfigSocket,
   ticTacToeSocket,
   chessSocket,
+  simonSocket
 };
