@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SquareLine from './SquareLine';
 import styles from './styles.scss';
 import { MAX_ROWS } from '../modules/constants';
