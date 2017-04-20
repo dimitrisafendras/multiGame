@@ -1,3 +1,7 @@
-# Agile Actor eXperience Project
+1 npm install
 
-This project is the UI/UX implementation of the Agile Actor services.
+2 npm install in server
+
+3 rethinkdb
+
+4 npm start

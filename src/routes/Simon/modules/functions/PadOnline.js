@@ -1,14 +1,14 @@
 import { lighten } from './Lighten'
-import { Play } from './Play'
+import { store } from 'main.js'
+import { simonSocket } from '../../../../model-services/server-apis';
 
-export const Pad = (state, pad) => {
+export const PadOnline = (state, pad) => {
   if(state.sequence[0] == pad){
-    console.log(state);
     lighten(pad);
     if (state.sequence.length==1){
-      Play(state);
+      simonSocket.emit('nextLevel');
       return{
-        ...state
+        ...state,
       }
     }
     state.sequence.shift();
@@ -26,3 +26,5 @@ export const Pad = (state, pad) => {
     }
   }
 };
+
+

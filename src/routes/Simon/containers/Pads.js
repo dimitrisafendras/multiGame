@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { clickPad } from '../modules/actions'
+import options from '../modules/actions'
 import styles from './PlayingView.scss'
 
 export let Pads = ({ actions }) => (
@@ -16,6 +16,6 @@ export let Pads = ({ actions }) => (
 Pads = connect(
   null,
   (dispatch) => ({
-    actions: bindActionCreators({ clickPad }, dispatch),
+    actions: bindActionCreators({ clickPad: options.offline.clickPad }, dispatch),
   }),
 )(Pads);
