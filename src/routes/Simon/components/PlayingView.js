@@ -25,7 +25,10 @@ export let PlayingView =  ({ actions, gameState, score, highScore, onlinePlayers
 
     case 'startedOnline':
       return(
-          <StartedOnline score = { score } highScore = { highScore } onlinePlayers = { onlinePlayers } reset = { actions.reset } startGameOnline = { actions.onlineGame  } />
+          <StartedOnline score = { score } highScore = { highScore }
+                         onlinePlayers = { onlinePlayers } reset = { actions.reset }
+                         startGameOnline = { actions.onlineGame  }
+          />
       );
 
     case 'lose':

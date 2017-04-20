@@ -14,8 +14,6 @@ const generalOptions = ((options)=>({
   waitPlayers: options.waitPlayers
 }))(options);
 
-console.log(generalOptions);
-
 const mapStateToProps = ({ Simon: { gameState, score, highScore, onlinePlayers } }) => ({
   gameState,
   score,

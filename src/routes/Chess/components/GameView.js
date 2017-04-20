@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Chess from '../containers/Chess';
 import ChessButton from '../containers/ChessButton';
 import ResetButton from '../containers/ResetButton';
@@ -17,7 +17,6 @@ const GameView = ({ mode, playerColor }) => {
   }
 
   if(mode === 'online' && !playerColor) {
-
     return <div>
       <h1>Chess</h1>
       <OnlinePlayers/>
