@@ -7,7 +7,7 @@ import home from './homeReducer'
 import { Simon } from './simonReducer'
 import chess from './chess'
 
-export const makeRootReducer = (asyncReducers) => {
+export const makeRootReducer = (asyncReducers)=> {
   return combineReducers({
     location: locationReducer,
     ...asyncReducers,
