@@ -13,7 +13,7 @@ const Chess = ({ squares, victory, round }) => {
       <h1 style = {{color:'black'}}>Chess</h1>
         <div className = {styles.board}>
           {
-            [...Array(MAX_ROWS).keys()].map((key) => {
+            [...Array(MAX_ROWS).keys()].map( (key)=> {
               return <SquareLine key={key} lineKey={key} squareLine={squares[key] } />
             })
           }

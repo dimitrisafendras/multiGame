@@ -8,7 +8,7 @@ const SquareLine = ({lineKey, squareLine }) => {
   return (
   <div className={styles.line}>
     {
-      [...Array(MAX_COLS).keys()].map((key) => {
+      [...Array(MAX_COLS).keys()].map( (key)=> {
         return <Square key={key+(MAX_COLS*lineKey)} square = { squareLine[key] }
                 line = {lineKey} col = {key} />
       })
