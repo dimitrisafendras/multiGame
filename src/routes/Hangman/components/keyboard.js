@@ -6,13 +6,13 @@ const style = {
   background: '#dddddd',
   width: '32px',
   bordeRadius: '5px',
-}
+};
 
 export const Keyboard = ({ guessLetter, usedLetters }) => {
   let handleBtnClick = (letter) => {
-    guessLetter(letter)
+    guessLetter(letter);
     console.log(usedLetters);
-  }
+  };
   return (
     <div>
       {ALPHABET.map( elem =>
@@ -27,4 +27,4 @@ export const Keyboard = ({ guessLetter, usedLetters }) => {
       )}
     </div>
   );
-}
+};

@@ -22,7 +22,7 @@ if (configFile) {
     const configData = _fs2.default.readFileSync(configFile, 'utf8');
     configObject = JSON.parse(configData || '{}');
   } catch (err) {
-    console.warn(`--> Config File : ${ configFile } NOT FOUNT continue with default confing`);
+    console.warn(`--> Config File : ${configFile} NOT FOUNT continue with default confing`);
   }
 }
 

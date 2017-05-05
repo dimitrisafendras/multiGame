@@ -1,5 +1,3 @@
-//import { users } from './userList';
-import { connect } from 'react-redux'
 import { lighten } from './Lighten'
 import { Play } from './Play'
 

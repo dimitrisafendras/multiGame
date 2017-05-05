@@ -21,11 +21,14 @@ export const Header = () => (
       Simon
     </Link>
     {' · '}
-    <Link to='/memoryGame' activeClassName='route--active'>
-      MemoryGame
+    <Link to='/chess' activeClassName='route--active'>
+      Chess
     </Link>
-
+    {' · '}
+    <Link to='/practice' activeClassName='route--active'>
+      Practice Area For Devs
+    </Link>
   </div>
-)
+);
 
 export default Header

@@ -15,7 +15,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 const updateUser = exports.updateUser = (() => {
   var _ref = _asyncToGenerator(function* (provider, userData, done) {
-    const transformUser = require(`./${ provider }`).transformUser;
+    const transformUser = require(`./${provider}`).transformUser;
     const updatedUser = transformUser(userData);
 
     if (!updatedUser) {

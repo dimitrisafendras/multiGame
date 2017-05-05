@@ -1,12 +1,9 @@
 import TicTacToe from '../components/TicTacToe';
 import { connect } from 'react-redux';
-import { newGame } from '../modules/actions/index';
+import { newGame, newGameEvent } from '../modules/constants';
 
-export default connect(
-  (state) => {
-    return {
-      victory: state.game.victory
-    }
-  },
-  { newGame }
-)(TicTacToe);
+const mapStateToProps = (state)=> ({
+  victory: state.game.victory,
+});
+
+export default connect(mapStateToProps, { newGame, newGameEvent })(TicTacToe);

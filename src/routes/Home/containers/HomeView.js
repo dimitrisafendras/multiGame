@@ -17,7 +17,8 @@ const style = {
     color: 'black',
     fontFamily: 'Times New Roman'
   }
-}
+};
+
 let HomeView = ({ username, onClick}) => {
   if (!username) {
     return(
@@ -40,7 +41,7 @@ let HomeView = ({ username, onClick}) => {
         <button onClick= {() => onClick} style = {style.button} >Log Out</button>
     </div>
   )
-}
+};
 
 HomeView = connect(
   ({home: { username }}) => ({
@@ -49,7 +50,7 @@ HomeView = connect(
   (dispatch) => ({
     onClick : dispatch({type: 'LOG_OUT'})
   })
-)(HomeView)
+)(HomeView);
 
 
 export default HomeView

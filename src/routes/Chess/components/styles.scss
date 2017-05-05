@@ -1,0 +1,53 @@
+h2 {
+  font-size: 3rem;
+  padding: 10px 20px;
+  color: #dd8b37;
+}
+
+h2 span {
+  font-size: 3rem;
+  color: #559fdd;
+}
+
+.user:hover{
+  color: black;
+}
+
+.board {
+  margin-top: 1rem;
+  div:nth-child(even) {
+    div:nth-child(even) {
+      background-color: black;
+    }
+  };
+  div:nth-child(odd) {
+    div:nth-child(odd) {
+      background-color: black;
+    }
+  };
+}
+
+.line {
+  margin:  auto;
+  box-sizing: content-box;
+  height: 8rem;
+  width: 64rem;
+  >div {
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    font-size: 9rem;
+    font-weight: bold;
+    height: 8rem;
+    line-height: 9rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 8rem;
+  }
+}
+
+.moveable {
+  color: red;
+}
